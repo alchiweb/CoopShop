@@ -1,0 +1,9 @@
+﻿{
+  "RootNamespace": "CoopShop",
+  "ServerTypings": {
+    "Assemblies": []
+  },
+  "Connections": [],
+  "BaseRowClasses": [],
+  "RemoveForeignFields": []
+}
