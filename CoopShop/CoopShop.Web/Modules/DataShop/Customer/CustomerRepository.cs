@@ -2,6 +2,8 @@
 
 namespace CoopShop.DataShop.Repositories
 {
+    using System.Text.RegularExpressions;
+    using Serenity;
     using Serenity.Data;
     using Serenity.Services;
     using System;
@@ -47,7 +49,68 @@ namespace CoopShop.DataShop.Repositories
             return GetNextNumberHelper.GetNextNumber(connection, request, fld.CustomerID);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> { }
+        //alchiweb private class MySaveHandler : SaveRequestHandler<MyRow> { }
+
+        private class MySaveHandler : SaveRequestHandler<MyRow>
+        {
+
+            protected override void ValidateRequest()
+            {
+                base.ValidateRequest();
+                if (IsUpdate)
+                {
+                    if (Row.CustomerID != Old.CustomerID)
+                        Row.CustomerID = MySaveHandler.ValidateCustomerID(this.Connection, Row.CustomerID, Old.ID.Value);
+                }
+
+                if (IsCreate)
+                {
+                    this.Row.CustomerID = ValidateCustomerID(this.Connection, this.Row.CustomerID, null);
+                }
+            }
+
+            private static bool IsValidCustomerID(string name)
+            {
+                return new Regex("^[a-z|A-Z|0-9|\\.]+$").IsMatch(name);
+            }
+
+            private static string ValidateCustomerID(IDbConnection connection, string customerId, Int32? existingId)
+            {
+                customerId = customerId.TrimToNull();
+
+                if (customerId == null)
+                    throw DataValidation.RequiredError(fld.CustomerID.Name, fld.CustomerID.Title);
+
+                if (!IsValidCustomerID(customerId))
+                    throw new ValidationError("InvalidCustomerID", "CustomerID",
+                        "CustomerIDs only contain letters and numbers!");
+
+                var existing = GetCustomer(connection,
+                    new Criteria(fld.CustomerID) == customerId);
+
+                if (existing != null && existingId != existing.ID)
+                    throw new ValidationError("UniqueViolation", "Username",
+                        "A user with same name exists. Please choose another!");
+
+                return customerId;
+            }
+
+            private static MyRow GetCustomer(IDbConnection connection, BaseCriteria filter)
+            {
+                var row = new MyRow();
+                if (new SqlQuery().From(row)
+                    .Select(
+                        fld.ID,
+                        fld.CustomerID)
+                    .Where(filter)
+                    .GetFirst(connection))
+                {
+                    return row;
+                }
+
+                return null;
+            }
+        }
 
         private class MyDeleteHandler : DeleteRequestHandler<MyRow>
         {

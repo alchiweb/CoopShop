@@ -97,6 +97,15 @@ namespace CoopShop.DataShop.Entities
             set { Fields.HomePage[this] = value; }
         }
 
+        //alchiweb
+        [DisplayName("Commission Percentage"), LookupInclude]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single? CommissionPercentage
+        {
+            get { return Fields.CommissionPercentage[this]; }
+            set { Fields.CommissionPercentage[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.SupplierID; }
@@ -128,6 +137,8 @@ namespace CoopShop.DataShop.Entities
             public StringField Phone;
             public StringField Fax;
             public StringField HomePage;
+            //alchiweb
+            public SingleField CommissionPercentage;
 
             public RowFields()
             {

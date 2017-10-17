@@ -1,5 +1,10 @@
 ﻿namespace CoopShop.DataShop {
-
+    //import ProductRow = CoopShop.DataShop.ProductRow;
+    //import ProductDialog = CoopShop.DataShop.ProductDialog;
+    //import CategoryRow = CoopShop.DataShop.CategoryRow;
+    //import BrandRow = CoopShop.DataShop.BrandRow;
+    //import SupplierRow = CoopShop.DataShop.SupplierRow;
+    
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.filterable()
     export class ProductGrid extends Serenity.EntityGrid<ProductRow, any> {
@@ -11,10 +16,36 @@
 
         private pendingChanges: Q.Dictionary<any> = {};
 
+        //alchiweb
+        private numericPrecision = '0.##';
+        private numeric2Precision = '0.###';
+        private searchText: string;
+
         constructor(container: JQuery) {
             super(container);
 
             this.slickContainer.on('change', '.edit:input', (e) => this.inputsChange(e));
+
+            //alchiweb
+            this.slickContainer.on('change', 'select', e => {
+                if (!e.target.classList.contains('edit')) {
+                    var cell = this.slickGrid.getCellFromEvent(e);
+                    if (!cell)
+                        return;
+                    var item = this.itemAt(cell.row);
+                    var field = this.slickGrid.getColumns()[cell.cell].field;
+                    item[field] = Q.toId($(e.target).val());
+
+                    var pending = this.pendingChanges[item.ProductID];
+
+                    this.pendingChanges[item.ProductID] = item;
+                    this.setSaveButtonState();
+
+                    if (!e.target.classList.contains('dirty'))
+                        e.target.classList.add('dirty');
+
+                }
+            });
         }
 
         protected getButtons()
@@ -49,7 +80,7 @@
             }));
 
             buttons.push({
-                title: 'Save Changes',
+                title: 'Enregister les changements', //'Save Changes',
                 cssClass: 'apply-changes-button disabled',
                 onClick: e => this.saveClick(),
                 separator: true
@@ -76,8 +107,9 @@
          * but it's not supported by SlickGrid as we are only allowed to return a string, and should attach
          * no event handlers to rendered cell contents
          */
-        private numericInputFormatter(ctx) {
-            var klass = 'edit numeric';
+        //alchiweb: modif (add numericClass)
+        private numericInputFormatter(ctx, numericClass = 'numeric') {
+            var klass = 'edit ' + numericClass;
             var item = ctx.item as ProductRow;
             var pending = this.pendingChanges[item.ProductID];
 
@@ -128,13 +160,15 @@
             var markup = "<select class='" + klass +
                 "' data-field='" + idField + 
                 "' style='width: 100%; max-width: 100%'>";
-            for (var c of lookup.items) {
-                let id = c[lookup.idField];
-                markup += "<option value='" + id + "'"
-                if (id == value) {
-                    markup += " selected";
+            if (lookup != null) { //alchiweb
+                for (var c of lookup.items) {
+                    let id = c[lookup.idField];
+                    markup += "<option value='" + id + "'"
+                    if (id == value) {
+                        markup += " selected";
+                    }
+                    markup += ">" + Q.htmlEncode(c[lookup.textField]) + "</option>";
                 }
-                markup += ">" + Q.htmlEncode(c[lookup.textField]) + "</option>";
             }
             return markup + "</select>";
         }
@@ -151,10 +185,13 @@
         protected getColumns() {
             var columns = super.getColumns();
             var num = ctx => this.numericInputFormatter(ctx);
+            var numMorePrecise = ctx => this.numericInputFormatter(ctx, 'numeric2'); //alchiweb
             var str = ctx => this.stringInputFormatter(ctx);
             var fld = ProductRow.Fields;
 
-            Q.first(columns, x => x.field === 'QuantityPerUnit').format = str;
+            //alchiweb
+            //Q.first(columns, x => x.field === 'QuantityPerUnit').format = str;
+            Q.first(columns, x => x.field === fld.QuantityPerUnit).format = numMorePrecise;
 
             var category = Q.first(columns, x => x.field === fld.CategoryName);
             category.referencedFields = [fld.CategoryID];
@@ -164,10 +201,19 @@
             supplier.referencedFields = [fld.SupplierID];
             supplier.format = ctx => this.selectFormatter(ctx, fld.SupplierID, SupplierRow.getLookup());
 
+            //alchiweb
+            var brand = Q.first(columns, x => x.field === fld.BrandName);
+            brand.referencedFields = [fld.BrandID];
+            brand.format = ctx => this.selectFormatter(ctx, fld.BrandID, BrandRow.getLookup());
+
             Q.first(columns, x => x.field === fld.UnitPrice).format = num;
             Q.first(columns, x => x.field === fld.UnitsInStock).format = num;
             Q.first(columns, x => x.field === fld.UnitsOnOrder).format = num;
             Q.first(columns, x => x.field === fld.ReorderLevel).format = num;
+
+            //alchiweb
+            Q.first(columns, x => x.field === fld.BuyingPrice).format = num;
+            Q.first(columns, x => x.field === fld.InternalRef).format = str;
 
             return columns;
         }
@@ -177,26 +223,44 @@
             var item = this.itemAt(cell.row);
             var input = $(e.target);
             var field = input.data('field');
-            var text = Q.coalesce(Q.trimToNull(input.val()), '0');
+            //alchiweb: TODO
+            //var text = Q.coalesce(Q.trimToNull(input.val()), '0');
+            var text = Q.coalesce(Q.trimToNull(input.val()), '0').replace(".", ",");
+
             var pending = this.pendingChanges[item.ProductID];
 
             var effective = this.getEffectiveValue(item, field);
             var oldText: string;
-            if (input.hasClass("numeric"))
-                oldText = Q.formatNumber(effective, '0.##');
+            if (input.hasClass("numeric") || input.hasClass("numeric2")) //alchiweb
+                //oldText = Q.formatNumber(effective, '0.##');
+                oldText = Q.formatNumber(effective, input.hasClass("numeric") ? this.numericPrecision : this.numeric2Precision);
             else
                 oldText = effective as string;
 
             var value;
-            if (field === 'UnitPrice') {
+            if (field === 'BuyingPrice' || field === 'UnitPrice' || field === 'QuantityPerUnit') {
                 value = Q.parseDecimal(text);
                 if (value == null || isNaN(value)) {
                     Q.notifyError(Q.text('Validation.Decimal'), '', null);
                     input.val(oldText);
                     input.focus();
                     return;
+                } else {
+                    if (field === 'BuyingPrice') {
+                        this.updatePrice(input, pending, item);
+                    }
+
                 }
             }
+            //if (field === 'UnitPrice') {
+            //    value = Q.parseDecimal(text);
+            //    if (value == null || isNaN(value)) {
+            //        Q.notifyError(Q.text('Validation.Decimal'), '', null);
+            //        input.val(oldText);
+            //        input.focus();
+            //        return;
+            //    }
+            //}
             else if (input.hasClass("numeric")) {
                 var i = Q.parseInteger(text);
                 if (isNaN(i) || i > 32767 || i < 0) {
@@ -210,6 +274,18 @@
             else
                 value = text;
 
+            //alchiweb
+            if (field === "SupplierID") {
+                var sup = SupplierRow.getLookup().itemById[value].CommissionPercentage;
+                var inputBuyingPrice = input.closest(".slick-row").find("input[data-field='BuyingPrice']");
+
+                inputBuyingPrice.parent().next().text(sup.toString().replace(".", ","));
+                this.updatePrice(inputBuyingPrice, pending, item);
+                item['SupplierCommissionPercentage'] = sup;
+
+            }
+
+
             if (!pending) {
                 this.pendingChanges[item.ProductID] = pending = {};
             }
@@ -218,12 +294,33 @@
             item[field] = value;
             this.view.refresh();
 
-            if (input.hasClass("numeric"))
-                value = Q.formatNumber(value, '0.##');
+            if (input.hasClass("numeric") || input.hasClass("numeric2"))
+                value = Q.formatNumber(value, input.hasClass("numeric") ? this.numericPrecision : this.numeric2Precision);
+
+            //if (input.hasClass("numeric"))
+            //    value = Q.formatNumber(value, '0.##');
 
             input.val(value).addClass('dirty');
 
             this.setSaveButtonState();
+        }
+
+        //alchiweb
+        private updatePrice(inputBuyingPrice, pending, item) {
+            var inputUnitPrice = inputBuyingPrice.closest(".slick-row").find("input[data-field='UnitPrice']");
+            var commPerc = parseFloat(inputBuyingPrice.parent().next().text().replace(",", "."));
+            var fieldUnitPrice = inputUnitPrice.data('field');
+            var valuePrice: number = 0;
+
+            if (commPerc !== 0.)
+                valuePrice = Math.ceil(parseFloat(inputBuyingPrice.val().replace(",", ".")) * (1. + commPerc) * 10.0) / 10.0;
+
+            if (valuePrice > 0) {
+                var stringPrice = valuePrice.toString().replace(".", ",");
+                inputUnitPrice.val(stringPrice).addClass('dirty');
+                pending[fieldUnitPrice] = valuePrice;
+                item[fieldUnitPrice] = valuePrice;
+            }
         }
 
         private setSaveButtonState() {
@@ -268,11 +365,29 @@
             if (q["cat"]) {
                 var category = Q.tryFirst(flt, x => x.field == "CategoryID");
                 category.init = e => {
-                    e.element.getWidget(Serenity.LookupEditor).value = q["cat"];
+//                    e.element.getWidget(Serenity.LookupEditor).value = q["cat"];
+                    e.element.getWidget(Serenity.LookupEditor).value = q["cat"].toLowerCase();
                 };
             }
-
+            if (q["brand"]) {
+                var brand = Q.tryFirst(flt, x => x.field == "BrandID");
+                brand.init = e => {
+                    e.element.getWidget(Serenity.LookupEditor).value = q["brand"].toLowerCase();
+                };
+            }
             return flt;
+        }
+
+        //alchiweb
+        protected usePager() {
+            return true;//false;
+        }
+
+        //alchiweb
+        protected getViewOptions(): Slick.RemoteViewOptions {
+            var slickRemoteViewOptions: Slick.RemoteViewOptions = super.getViewOptions();
+            slickRemoteViewOptions.rowsPerPage = 2500;
+            return slickRemoteViewOptions;
         }
 
     }

@@ -217,6 +217,21 @@ namespace CoopShop.DataShop.Entities
             set { Fields.DetailList[this] = value; }
         }
 
+        //alchiweb
+        [DisplayName("Payment Method"), NotNull, DefaultValue(0)]
+        public PaymentMethodType PaymentMethod
+        {
+            get { return (PaymentMethodType)Fields.PaymentMethod[this]; }
+            set { Fields.PaymentMethod[this] = (Int16?)value; }
+        }
+
+        [DisplayName("Payment Total"), Scale(4), NotNull, DefaultValue(0)]
+        public Decimal? PaymentTotal
+        {
+            get { return Fields.PaymentTotal[this]; }
+            set { Fields.PaymentTotal[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.OrderID; }
@@ -269,6 +284,10 @@ namespace CoopShop.DataShop.Entities
 
             public Int32Field ShippingState;
             public RowListField<OrderDetailRow> DetailList;
+
+            //alchiweb
+            public DecimalField PaymentTotal;
+            public Int16Field PaymentMethod;
 
             public RowFields()
             {

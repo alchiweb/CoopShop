@@ -6,8 +6,11 @@
         Discontinued?: boolean;
         SupplierID?: number;
         CategoryID?: number;
-        QuantityPerUnit?: string;
+        BrandID?: number;
+        QuantityPerUnit?: number;
+        SoldQuantity?: number;
         UnitPrice?: number;
+        BuyingPrice?: number;
         UnitsInStock?: number;
         UnitsOnOrder?: number;
         ReorderLevel?: number;
@@ -22,9 +25,16 @@
         SupplierPhone?: string;
         SupplierFax?: string;
         SupplierHomePage?: string;
+        SupplierCommissionPercentage?: number;
         CategoryName?: string;
         CategoryDescription?: string;
         CategoryPicture?: number[];
+        BrandName?: string;
+        BrandDescription?: string;
+        BrandPicture?: number[];
+        QuantitySymbol?: QuantitySymbolType;
+        InternalRef?: string;
+        SupplierRef?: string;
     }
 
     export namespace ProductRow {
@@ -44,8 +54,11 @@
             export declare const Discontinued: string;
             export declare const SupplierID: string;
             export declare const CategoryID: string;
+            export declare const BrandID: string;
             export declare const QuantityPerUnit: string;
+            export declare const SoldQuantity: string;
             export declare const UnitPrice: string;
+            export declare const BuyingPrice: string;
             export declare const UnitsInStock: string;
             export declare const UnitsOnOrder: string;
             export declare const ReorderLevel: string;
@@ -60,9 +73,16 @@
             export declare const SupplierPhone: string;
             export declare const SupplierFax: string;
             export declare const SupplierHomePage: string;
+            export declare const SupplierCommissionPercentage: string;
             export declare const CategoryName: string;
             export declare const CategoryDescription: string;
             export declare const CategoryPicture: string;
+            export declare const BrandName: string;
+            export declare const BrandDescription: string;
+            export declare const BrandPicture: string;
+            export declare const QuantitySymbol: string;
+            export declare const InternalRef: string;
+            export declare const SupplierRef: string;
         }
 
         [
@@ -72,8 +92,11 @@
             'Discontinued', 
             'SupplierID', 
             'CategoryID', 
+            'BrandID', 
             'QuantityPerUnit', 
+            'SoldQuantity', 
             'UnitPrice', 
+            'BuyingPrice', 
             'UnitsInStock', 
             'UnitsOnOrder', 
             'ReorderLevel', 
@@ -88,9 +111,16 @@
             'SupplierPhone', 
             'SupplierFax', 
             'SupplierHomePage', 
+            'SupplierCommissionPercentage', 
             'CategoryName', 
             'CategoryDescription', 
-            'CategoryPicture'
+            'CategoryPicture', 
+            'BrandName', 
+            'BrandDescription', 
+            'BrandPicture', 
+            'QuantitySymbol', 
+            'InternalRef', 
+            'SupplierRef'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

@@ -5,18 +5,23 @@
     }
 
     export interface ProductForm {
+        InternalRef: Serenity.StringEditor;
         ProductName: Serenity.StringEditor;
-        ProductImage: Serenity.ImageUploadEditor;
-        Discontinued: Serenity.BooleanEditor;
         SupplierID: Serenity.LookupEditor;
         CategoryID: Serenity.LookupEditor;
-        QuantityPerUnit: Serenity.StringEditor;
+        BrandID: Serenity.LookupEditor;
+        QuantityPerUnit: Serenity.DecimalEditor;
+        QuantitySymbol: Serenity.EnumEditor;
         UnitPrice: Serenity.DecimalEditor;
-        UnitsInStock: Serenity.IntegerEditor;
-        UnitsOnOrder: Serenity.IntegerEditor;
-        ReorderLevel: Serenity.IntegerEditor;
+        BuyingPrice: Serenity.DecimalEditor;
+        SupplierCommissionPercentage: Serenity.DecimalEditor;
+        UnitsInStock: Serenity.DecimalEditor;
+        UnitsOnOrder: Serenity.DecimalEditor;
+        ReorderLevel: Serenity.DecimalEditor;
+        SupplierRef: Serenity.StringEditor;
+        ProductImage: Serenity.ImageUploadEditor;
+        Discontinued: Serenity.BooleanEditor;
     }
 
-    [['ProductName', () => Serenity.StringEditor], ['ProductImage', () => Serenity.ImageUploadEditor], ['Discontinued', () => Serenity.BooleanEditor], ['SupplierID', () => Serenity.LookupEditor], ['CategoryID', () => Serenity.LookupEditor], ['QuantityPerUnit', () => Serenity.StringEditor], ['UnitPrice', () => Serenity.DecimalEditor], ['UnitsInStock', () => Serenity.IntegerEditor], ['UnitsOnOrder', () => Serenity.IntegerEditor], ['ReorderLevel', () => Serenity.IntegerEditor]].forEach(x => Object.defineProperty(ProductForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
+    [['InternalRef', () => Serenity.StringEditor], ['ProductName', () => Serenity.StringEditor], ['SupplierID', () => Serenity.LookupEditor], ['CategoryID', () => Serenity.LookupEditor], ['BrandID', () => Serenity.LookupEditor], ['QuantityPerUnit', () => Serenity.DecimalEditor], ['QuantitySymbol', () => Serenity.EnumEditor], ['UnitPrice', () => Serenity.DecimalEditor], ['BuyingPrice', () => Serenity.DecimalEditor], ['SupplierCommissionPercentage', () => Serenity.DecimalEditor], ['UnitsInStock', () => Serenity.DecimalEditor], ['UnitsOnOrder', () => Serenity.DecimalEditor], ['ReorderLevel', () => Serenity.DecimalEditor], ['SupplierRef', () => Serenity.StringEditor], ['ProductImage', () => Serenity.ImageUploadEditor], ['Discontinued', () => Serenity.BooleanEditor]].forEach(x => Object.defineProperty(ProductForm.prototype, <string>x[0], { get: function () { return this.w(x[0], (x[1] as any)()); }, enumerable: true, configurable: true }));
 }
-

@@ -7,8 +7,15 @@
 
 <script type="text/javascript">
     jQuery(function () {
-        var orderGrid = new CoopShop.DataShop.OrderGrid($('#GridDiv'), {
-        });
+        //alchiweb
+        //var orderGrid = new CoopShop.DataShop.OrderGrid($('#GridDiv'), {
+        //});
+        var orderGrid = new CoopShop.DataShop.OrderGrid($('#GridDiv'),
+            {
+            }).init()
+        {
+            addLabel();
+        };
 
         var q = Q.parseQueryString();
         if (q.shippingState != null && q.shippingState.length) {
@@ -17,4 +24,8 @@
 
         Q.initFullHeightGridPage($('#GridDiv'));
     });
+
+    function addLabel() {
+        $(".tool-buttons").append('<span id="sumtotal"></span>');
+    }
 </script>

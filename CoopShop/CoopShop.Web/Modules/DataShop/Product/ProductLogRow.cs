@@ -79,7 +79,15 @@ namespace CoopShop.DataShop.Entities
             set { Fields.CategoryID[this] = value; }
         }
 
-        public String QuantityPerUnit
+        //alchiweb
+        public Int32? BrandID
+        {
+            get { return Fields.BrandID[this]; }
+            set { Fields.BrandID[this] = value; }
+        }
+        //alchiweb: modif
+        [Scale(4)]
+        public Single? QuantityPerUnit
         {
             get { return Fields.QuantityPerUnit[this]; }
             set { Fields.QuantityPerUnit[this] = value; }
@@ -92,23 +100,54 @@ namespace CoopShop.DataShop.Entities
             set { Fields.UnitPrice[this] = value; }
         }
 
-        public Int16? UnitsInStock
+        //alchiweb
+        [Scale(4)]
+        public Decimal? BuyingPrice
+        {
+            get { return Fields.BuyingPrice[this]; }
+            set { Fields.BuyingPrice[this] = value; }
+        }
+
+        //alchiweb: modif
+        public Single? UnitsInStock
         {
             get { return Fields.UnitsInStock[this]; }
             set { Fields.UnitsInStock[this] = value; }
         }
 
-        public Int16? UnitsOnOrder
+        //alchiweb: modif
+        public Single? UnitsOnOrder
         {
             get { return Fields.UnitsOnOrder[this]; }
             set { Fields.UnitsOnOrder[this] = value; }
         }
 
-        public Int16? ReorderLevel
+        //alchiweb: modif
+        public Single? ReorderLevel
         {
             get { return Fields.ReorderLevel[this]; }
             set { Fields.ReorderLevel[this] = value; }
         }
+
+        //alchiweb
+        public Int16? QuantitySymbol
+        {
+            get { return Fields.QuantitySymbol[this]; }
+            set { Fields.QuantitySymbol[this] = value; }
+        }
+
+        public String InternalRef
+        {
+            get { return Fields.InternalRef[this]; }
+            set { Fields.InternalRef[this] = value; }
+        }
+
+        public String SupplierRef
+        {
+            get { return Fields.SupplierRef[this]; }
+            set { Fields.SupplierRef[this] = value; }
+        }
+
 
         IIdField IIdRow.IdField
         {
@@ -156,11 +195,22 @@ namespace CoopShop.DataShop.Entities
             public BooleanField Discontinued;
             public Int32Field SupplierID;
             public Int32Field CategoryID;
-            public StringField QuantityPerUnit;
+
+            public Int32Field BrandID;
+            public SingleField QuantityPerUnit;
             public DecimalField UnitPrice;
-            public Int16Field UnitsInStock;
-            public Int16Field UnitsOnOrder;
-            public Int16Field ReorderLevel;
+            public DecimalField BuyingPrice;
+            public SingleField UnitsInStock;
+            public SingleField UnitsOnOrder;
+            public SingleField ReorderLevel;
+            public Int16Field QuantitySymbol;
+            public StringField InternalRef;
+            public StringField SupplierRef;
+            //public StringField QuantityPerUnit;
+            //public DecimalField UnitPrice;
+            //public Int16Field UnitsInStock;
+            //public Int16Field UnitsOnOrder;
+            //public Int16Field ReorderLevel;
 
             public RowFields()
                 : base("ProductLog")

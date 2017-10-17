@@ -29,6 +29,8 @@
         ShipViaPhone?: string;
         ShippingState?: OrderShippingState;
         DetailList?: OrderDetailRow[];
+        PaymentTotal?: number;
+        PaymentMethod?: PaymentMethodType;
     }
 
     export namespace OrderRow {
@@ -71,6 +73,8 @@
             export declare const ShipViaPhone: string;
             export declare const ShippingState: string;
             export declare const DetailList: string;
+            export declare const PaymentTotal: string;
+            export declare const PaymentMethod: string;
         }
 
         [
@@ -102,7 +106,9 @@
             'ShipViaCompanyName', 
             'ShipViaPhone', 
             'ShippingState', 
-            'DetailList'
+            'DetailList', 
+            'PaymentTotal', 
+            'PaymentMethod'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

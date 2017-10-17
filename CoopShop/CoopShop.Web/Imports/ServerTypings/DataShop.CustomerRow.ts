@@ -1,5 +1,6 @@
 ﻿namespace CoopShop.DataShop {
     export interface CustomerRow {
+        IsCoop?: boolean;
         ID?: number;
         CustomerID?: string;
         CompanyName?: string;
@@ -31,6 +32,7 @@
         }
 
         export namespace Fields {
+            export declare const IsCoop: string;
             export declare const ID: string;
             export declare const CustomerID: string;
             export declare const CompanyName: string;
@@ -52,6 +54,7 @@
         }
 
         [
+            'IsCoop', 
             'ID', 
             'CustomerID', 
             'CompanyName', 

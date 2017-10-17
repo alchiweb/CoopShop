@@ -3,6 +3,7 @@ namespace CoopShop.DataShop.Forms
 {
     using Serenity.ComponentModel;
     using System;
+    using System.ComponentModel;
 
     [FormScript("DataShop.Supplier")]
     [BasedOnRow(typeof(Entities.SupplierRow))]
@@ -19,5 +20,8 @@ namespace CoopShop.DataShop.Forms
         public String Phone { get; set; }
         public String Fax { get; set; }
         public String HomePage { get; set; }
+        //alchiweb
+        [DefaultValue(.1)]
+        public String CommissionPercentage { get; set; }
     }
 }

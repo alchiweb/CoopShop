@@ -12,6 +12,7 @@
         Phone?: string;
         Fax?: string;
         HomePage?: string;
+        CommissionPercentage?: number;
     }
 
     export namespace SupplierRow {
@@ -37,6 +38,7 @@
             export declare const Phone: string;
             export declare const Fax: string;
             export declare const HomePage: string;
+            export declare const CommissionPercentage: string;
         }
 
         [
@@ -51,7 +53,8 @@
             'Country', 
             'Phone', 
             'Fax', 
-            'HomePage'
+            'HomePage', 
+            'CommissionPercentage'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

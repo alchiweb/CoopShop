@@ -25,8 +25,10 @@ namespace CoopShop.DataShop
 
                 data.Order = connection.TryById<OrderRow>(this.OrderID, q => q
                      .SelectTableFields()
-                     .Select(o.EmployeeFullName)
-                     .Select(o.ShipViaCompanyName)) ?? new OrderRow();
+                     //alchiweb
+                     //.Select(o.EmployeeFullName)
+                     //.Select(o.ShipViaCompanyName)
+                     ) ?? new OrderRow();
 
                 var od = OrderDetailRow.Fields;
                 data.Details = connection.List<OrderDetailRow>(q => q

@@ -10,18 +10,24 @@ namespace CoopShop.DataShop.Forms
     [BasedOnRow(typeof(Entities.OrderRow))]
     public class OrderForm
     {
-        [Tab("General")]
+        //alchiweb
+        //[Tab("General")]
         [Category("Order")]
         public String CustomerID { get; set; }
         [DefaultValue("now")]
         public DateTime OrderDate { get; set; }
-        public DateTime RequiredDate { get; set; }
-        public Int32? EmployeeID { get; set; }
+        //public DateTime RequiredDate { get; set; }
+        //public Int32? EmployeeID { get; set; }
 
         [Category("Order Details")]
         [OrderDetailsEditor]
         public List<Entities.OrderDetailRow> DetailList { get; set; }
 
+        [Category("Order Payment")]
+        public Decimal PaymentTotal { get; set; }
+        public PaymentMethodType PaymentMethod { get; set; }
+
+        /*
         [Tab("Shipping")]
         [Category("Info")]
         public DateTime ShippedDate { get; set; }
@@ -35,5 +41,6 @@ namespace CoopShop.DataShop.Forms
         public String ShipRegion { get; set; }
         public String ShipPostalCode { get; set; }
         public String ShipCountry { get; set; }
+        */
     }
 }

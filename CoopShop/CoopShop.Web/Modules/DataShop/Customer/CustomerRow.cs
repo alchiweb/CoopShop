@@ -17,6 +17,14 @@ namespace CoopShop.DataShop.Entities
     [LookupScript(typeof(Scripts.CustomerLookup))]
     public sealed class CustomerRow : Row, IIdRow, INameRow
     {
+        //alchiweb
+        [DisplayName("IsCoop"), DefaultValue(false)]
+        public Boolean? IsCoop
+        {
+            get { return Fields.IsCoop[this]; }
+            set { Fields.IsCoop[this] = value; }
+        }
+
         [DisplayName("ID"), Identity]
         public Int32? ID
         {
@@ -137,7 +145,8 @@ namespace CoopShop.DataShop.Entities
         }
         
         [LookupEditor(typeof(EmployeeRow), Multiple = true), NotMapped]
-        [LinkingSetRelation(typeof(CustomerRepresentativesRow), "CustomerId", "EmployeeId")]
+        //alchiweb[LinkingSetRelation(typeof(CustomerRepresentativesRow), "CustomerId", "EmployeeId")]
+        [LinkingSetRelation(typeof(CustomerRepresentativesRow), "CustomerId", "CustomerId")]
         [MinSelectLevel(SelectLevel.Details), QuickFilter]
         public List<Int32> Representatives
         {
@@ -164,6 +173,7 @@ namespace CoopShop.DataShop.Entities
 
         public class RowFields : RowFieldsBase
         {
+            public BooleanField IsCoop;
             public Int32Field ID;
             public StringField CustomerID;
             public StringField CompanyName;

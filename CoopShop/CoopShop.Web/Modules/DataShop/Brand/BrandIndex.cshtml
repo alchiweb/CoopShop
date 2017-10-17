@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.DataShop.Brand.EntityPlural");
+}
+
+
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new CoopShop.DataShop.BrandGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

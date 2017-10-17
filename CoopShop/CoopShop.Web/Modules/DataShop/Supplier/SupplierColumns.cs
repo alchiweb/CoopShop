@@ -11,6 +11,9 @@ namespace CoopShop.DataShop.Forms
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 SupplierID { get; set; }
+        //alchiweb
+        [Width(40)]
+        public Single CommissionPercentage { get; set; }
         [EditLink, Width(250)]
         public String CompanyName { get; set; }
         [Width(150)]

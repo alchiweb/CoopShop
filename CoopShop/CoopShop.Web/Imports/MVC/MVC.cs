@@ -295,6 +295,11 @@ namespace MVC
 
         public static class DataShop
         {
+            public static class Brand
+            {
+                public const string BrandIndex = "~/Modules/DataShop/Brand/BrandIndex.cshtml";
+            }
+
             public static class Category
             {
                 public const string CategoryIndex = "~/Modules/DataShop/Category/CategoryIndex.cshtml";

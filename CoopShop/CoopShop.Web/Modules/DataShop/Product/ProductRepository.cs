@@ -60,6 +60,22 @@ namespace CoopShop.DataShop.Repositories
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyUndeleteHandler : UndeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> { }
+
+        private class MyListHandler : ListRequestHandler<MyRow>
+        {
+            //alchiweb
+            protected override void PrepareQuery(SqlQuery query)
+            {
+                var od = Entities.OrderDetailRow.Fields.As("od");
+                var t0 = MyRow.Fields.As("t0");
+                MyRow.Fields.SoldQuantity.Expression = query.SubQuery()
+                    .From(od)
+                    .Where(t0.ProductID == od.ProductID)
+                    .GroupBy(od.ProductName)
+                    .Select(Sql.Sum(od.Quantity.Expression)).Text;
+                base.PrepareQuery(query);
+            }
+
+        }
     }
 }

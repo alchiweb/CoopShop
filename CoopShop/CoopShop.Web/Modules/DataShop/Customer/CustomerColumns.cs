@@ -10,6 +10,10 @@ namespace CoopShop.DataShop.Columns
     [BasedOnRow(typeof(Entities.CustomerRow))]
     public class CustomerColumns
     {
+        //alchiweb
+        [QuickFilter]
+        public Boolean IsCoop { get; set; }
+
         [EditLink, DisplayName("Db.Shared.RecordId"), Width(100)]
         public String CustomerID { get; set; }
         [EditLink, Width(250)]

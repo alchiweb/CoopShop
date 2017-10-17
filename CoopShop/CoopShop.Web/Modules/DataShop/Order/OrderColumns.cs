@@ -3,6 +3,7 @@ namespace CoopShop.DataShop.Columns
 {
     using Serenity.ComponentModel;
     using System;
+    using Common;
 
     [ColumnsScript("DataShop.Order")]
     [BasedOnRow(typeof(Entities.OrderRow))]
@@ -20,24 +21,43 @@ namespace CoopShop.DataShop.Columns
         [Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), QuickFilter]
         public String EmployeeFullName { get; set; }
 
+        [Hidden] //alchiweb
         public DateTime? RequiredDate { get; set; }
 
-        [FilterOnly, QuickFilter]
+        //alchiweb
+        //[FilterOnly, QuickFilter]
+        [FilterOnly, Hidden]
         public OrderShippingState ShippingState { get; set; }
 
+        [Hidden] //alchiweb
         public DateTime? ShippedDate { get; set; }
 
-        [Width(140), ShipperFormatter, QuickFilter, QuickFilterOption("multiple", true)]
+        //alchiweb
+        //[Width(140), ShipperFormatter, QuickFilter, QuickFilterOption("multiple", true)]
+        [Width(140), ShipperFormatter, QuickFilterOption("multiple", true), Hidden]
         public String ShipViaCompanyName { get; set; }
 
-        [Width(100), QuickFilter, LookupEditor(typeof(Scripts.OrderShipCountryLookup))]
+        //alchiweb
+        //[Width(100), QuickFilter, LookupEditor(typeof(Scripts.OrderShipCountryLookup))]
+        [Width(100), Hidden]
         public String ShipCountry { get; set; }
 
-        [Width(100), LookupEditor(typeof(Scripts.OrderShipCityLookup))]
-        [QuickFilter, QuickFilterOption("CascadeFrom", "ShipCountry")]
+        //alchiweb
+        //[Width(100), LookupEditor(typeof(Scripts.OrderShipCityLookup))]
+        //[QuickFilter, QuickFilterOption("CascadeFrom", "ShipCountry")]
+        [Width(100), Hidden]
         public String ShipCity { get; set; }
 
-        [FreightFormatter]
+        //alchiweb
+        //[FreightFormatter]
+        [FreightFormatter, Hidden]
         public Decimal? Freight { get; set; }
+
+        //alchiweb
+        [Width(80), Sortable(false), EnumSelectFormatter(EnumKey = "DataShop.PaymentMethodType", AllowClear = false)]
+        public PaymentMethodType PaymentMethod { get; set; }
+
+        [Width(80), AlignRight, Updatable(false)]
+        public Decimal PaymentTotal { get; set; }
     }
 }

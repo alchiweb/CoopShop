@@ -7,6 +7,8 @@ namespace CoopShop.DataShop.Entities
     using System;
     using System.ComponentModel;
     using System.IO;
+    using System.Linq;
+    using Microsoft.AspNetCore.Mvc;
 
     [ConnectionKey("DataShop"), TableName("Products"), DisplayName("Products"), InstanceName("Product"), TwoLevelCached]
     [ReadPermission(PermissionKeys.General)]
@@ -38,6 +40,8 @@ namespace CoopShop.DataShop.Entities
             set { Fields.ProductImage[this] = value; }
         }
 
+        //alchiwed
+        //[DisplayName("Discontinued"), NotNull, LookupInclude]
         [DisplayName("Discontinued"), NotNull]
         public Boolean? Discontinued
         {
@@ -47,6 +51,7 @@ namespace CoopShop.DataShop.Entities
 
         [DisplayName("Supplier"), ForeignKey(typeof(SupplierRow)), LeftJoin("sup")]
         [LookupEditor(typeof(SupplierRow), InplaceAdd = true)]
+        [NotNull] //alchiweb
         public Int32? SupplierID
         {
             get { return Fields.SupplierID[this]; }
@@ -55,12 +60,21 @@ namespace CoopShop.DataShop.Entities
 
         [DisplayName("Category"), ForeignKey(typeof(CategoryRow)), LeftJoin("cat"), LookupInclude]
         [LookupEditor(typeof(CategoryRow), InplaceAdd = true)]
+        [NotNull] //alchiweb
         public Int32? CategoryID
         {
             get { return Fields.CategoryID[this]; }
             set { Fields.CategoryID[this] = value; }
         }
 
+        [DisplayName("Brand"), ForeignKey(typeof(BrandRow)), LeftJoin("brand"), LookupInclude, NotNull, DefaultValue(2094)]
+        [LookupEditor(typeof(BrandRow), InplaceAdd = true)]
+        public Int32? BrandID
+        {
+            get { return Fields.BrandID[this]; }
+            set { Fields.BrandID[this] = value; }
+        }
+        /*
         [DisplayName("Quantity Per Unit"), Size(20)]
         public String QuantityPerUnit
         {
@@ -95,6 +109,81 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.ReorderLevel[this]; }
             set { Fields.ReorderLevel[this] = value; }
         }
+        */
+        [DisplayName("Quantity Per Unit"), Scale(6), DisplayFormat("#,##0.###"), LookupInclude, DecimalEditor(Decimals = 3), DefaultValue(1)]
+        public Single? QuantityPerUnit
+        {
+            get { return Fields.QuantityPerUnit[this]; }
+            set { Fields.QuantityPerUnit[this] = value; }
+        }
+        [DisplayName("Sold Quantity"), Scale(6), DefaultValue(1), DisplayFormat("#,##0.###"), Expression("(t0.QuantityPerUnit)")]
+        public Single? SoldQuantity
+        {
+            get
+            {
+                return Fields.SoldQuantity[this];
+            }
+            set
+            {
+                Fields.SoldQuantity[this] = value;
+            }
+        }
+
+        [DisplayName("Quantity Symbol"), NotNull, DefaultValue(1), LookupInclude]
+        public QuantitySymbolType? QuantitySymbol
+        {
+            get { return (QuantitySymbolType?)Fields.QuantitySymbol[this]; }
+            set { Fields.QuantitySymbol[this] = (Int16?)value; }
+        }
+
+        [DisplayName("Internal Reference"), Unique, QuickSearch(SearchType.Equals, numericOnly: 1), LookupInclude]
+        public String InternalRef
+        {
+            get { return Fields.InternalRef[this]; }
+            set { Fields.InternalRef[this] = value; }
+        }
+
+        [DisplayName("Supplier Reference")]
+        public String SupplierRef
+        {
+            get { return Fields.SupplierRef[this]; }
+            set { Fields.SupplierRef[this] = value; }
+        }
+
+        [DisplayName("Unit Price"), Scale(4), LookupInclude, NotNull, DefaultValue(0)]
+        public Decimal? UnitPrice
+        {
+            get { return Fields.UnitPrice[this]; }
+            set { Fields.UnitPrice[this] = value; }
+        }
+        [DisplayName("Buying Price"), Scale(4), LookupInclude, DefaultValue(0)]
+        public Decimal? BuyingPrice
+        {
+            get { return Fields.BuyingPrice[this]; }
+            set { Fields.BuyingPrice[this] = value; }
+        }
+        [DisplayName("Units In Stock"), NotNull, DefaultValue(1), LookupInclude]
+        public Single? UnitsInStock
+        {
+            get { return Fields.UnitsInStock[this]; }
+            set { Fields.UnitsInStock[this] = value; }
+        }
+
+        [DisplayName("Units On Order"), NotNull, DefaultValue(0)]
+        public Single? UnitsOnOrder
+        {
+            get { return Fields.UnitsOnOrder[this]; }
+            set { Fields.UnitsOnOrder[this] = value; }
+        }
+
+        [DisplayName("Reorder Level"), NotNull, DefaultValue(0)]
+        public Single? ReorderLevel
+        {
+            get { return Fields.ReorderLevel[this]; }
+            set { Fields.ReorderLevel[this] = value; }
+        }
+
+
 
         [Origin("sup"), DisplayName("Supplier"), LookupInclude]
         public String SupplierCompanyName
@@ -173,7 +262,17 @@ namespace CoopShop.DataShop.Entities
             set { Fields.SupplierHomePage[this] = value; }
         }
 
+        //alchiweb
+        [Origin("sup"), ReadOnly(true), DisplayFormat("#,##0.00"), LookupInclude]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single? SupplierCommissionPercentage
+        {
+            get { return Fields.SupplierCommissionPercentage[this]; }
+            set { Fields.SupplierCommissionPercentage[this] = value; }
+        }
+
         [Origin("cat"), DisplayName("Category")]
+        [ QuickSearch, LookupInclude] //alchiweb
         public String CategoryName
         {
             get { return Fields.CategoryName[this]; }
@@ -193,6 +292,28 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.CategoryPicture[this]; }
             set { Fields.CategoryPicture[this] = value; }
         }
+
+        [Origin("brand"), DisplayName("Brand"), QuickSearch, LookupInclude]
+        public String BrandName
+        {
+            get { return Fields.BrandName[this]; }
+            set { Fields.BrandName[this] = value; }
+        }
+
+        [Origin("brand")]
+        public String BrandDescription
+        {
+            get { return Fields.BrandDescription[this]; }
+            set { Fields.BrandDescription[this] = value; }
+        }
+
+        [Origin("brand")]
+        public Stream BrandPicture
+        {
+            get { return Fields.BrandPicture[this]; }
+            set { Fields.BrandPicture[this] = value; }
+        }
+
 
         IIdField IIdRow.IdField
         {
@@ -219,11 +340,21 @@ namespace CoopShop.DataShop.Entities
             public BooleanField Discontinued;
             public Int32Field SupplierID;
             public Int32Field CategoryID;
-            public StringField QuantityPerUnit;
+
+            //public StringField QuantityPerUnit;
+            //public DecimalField UnitPrice;
+            //public Int16Field UnitsInStock;
+            //public Int16Field UnitsOnOrder;
+            //public Int16Field ReorderLevel;
+
+            public Int32Field BrandID;
+            public SingleField QuantityPerUnit;
+            public SingleField SoldQuantity;
             public DecimalField UnitPrice;
-            public Int16Field UnitsInStock;
-            public Int16Field UnitsOnOrder;
-            public Int16Field ReorderLevel;
+            public DecimalField BuyingPrice;
+            public SingleField UnitsInStock;
+            public SingleField UnitsOnOrder;
+            public SingleField ReorderLevel;
 
             public StringField SupplierCompanyName;
             public StringField SupplierContactName;
@@ -236,10 +367,20 @@ namespace CoopShop.DataShop.Entities
             public StringField SupplierPhone;
             public StringField SupplierFax;
             public StringField SupplierHomePage;
+            public SingleField SupplierCommissionPercentage;
 
             public StringField CategoryName;
             public StringField CategoryDescription;
             public StreamField CategoryPicture;
+
+            public StringField BrandName;
+            public StringField BrandDescription;
+            public StreamField BrandPicture;
+
+            public Int16Field QuantitySymbol;
+
+            public StringField InternalRef;
+            public StringField SupplierRef;
 
             public RowFields()
             {

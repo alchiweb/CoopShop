@@ -15,6 +15,9 @@ namespace CoopShop.Common.Pages
         [PageAuthorize, HttpGet, Route("~/")]
         public ActionResult Index()
         {
+            //alchiweb
+            return RedirectToAction("Index", "Order");
+            /*
             var cachedModel = TwoLevelCache.GetLocalStoreOnly("DashboardPageModel", TimeSpan.FromMinutes(5),
                 OrderRow.Fields.GenerationKey, () =>
                 {
@@ -33,6 +36,7 @@ namespace CoopShop.Common.Pages
                     return model;
                 });
             return View(MVC.Views.Common.Dashboard.DashboardIndex, cachedModel);
+            */
         }
     }
 }

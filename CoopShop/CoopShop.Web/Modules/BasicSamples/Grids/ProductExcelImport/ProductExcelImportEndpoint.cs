@@ -103,7 +103,7 @@ namespace CoopShop.BasicSamples.Endpoints
                     else
                         product.CategoryID = null;
 
-                    product.QuantityPerUnit = Convert.ToString(worksheet.Cells[row, 4].Value ?? "");
+                    product.QuantityPerUnit = Convert.ToSingle(worksheet.Cells[row, 4].Value ?? "");
                     product.UnitPrice = Convert.ToDecimal(worksheet.Cells[row, 5].Value ?? 0);
                     product.UnitsInStock = Convert.ToInt16(worksheet.Cells[row, 6].Value ?? 0);
                     product.UnitsOnOrder = Convert.ToInt16(worksheet.Cells[row, 7].Value ?? 0);

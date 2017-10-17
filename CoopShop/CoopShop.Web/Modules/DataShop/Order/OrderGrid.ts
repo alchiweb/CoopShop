@@ -1,5 +1,11 @@
 ﻿namespace CoopShop.DataShop {
 
+    //import IDataGrid = Serenity.IDataGrid;
+    //import ListRequest = Serenity.ListRequest;
+    //import getColumns = Q.getColumns;
+    //import SlickFormatting = Serenity.SlickFormatting;
+
+
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.filterable()
     export class OrderGrid extends Serenity.EntityGrid<OrderRow, any> {
@@ -15,6 +21,31 @@
             super(container);
         }
 
+        //alchiweb
+        onViewProcessData(response: Serenity.ListResponse<DataShop.OrderRow>): Serenity.ListResponse<DataShop.OrderRow> {
+            var eltsumtotal: Element = $("#sumtotal")[0];
+
+            if (eltsumtotal !== undefined) {
+                var sumtotal: number = 0.;
+                var salestotal: number = 0;
+                for (var resp of response.Entities) {
+                    sumtotal += Math.round(resp.PaymentTotal * 100) / 100;
+                    salestotal++;
+                }
+                sumtotal = Math.round(sumtotal * 100) / 100;
+                var salesaverage: number = Math.round(sumtotal / salestotal * 100) / 100;
+                eltsumtotal.innerHTML =
+                    "<font color=\"#0000FF\">Total des ventes affichées (dans la page) : <font color=\"#FF0000\">" +
+                    sumtotal.toString().replace('.', ',') +
+                    "</font> €<br/>Pour <font color=\"#FF0000\">" +
+                    salestotal +
+                    "</font> ventes. Prix moyen par vente : <font color=\"#FF0000\">" +
+                    salesaverage.toString().replace('.', ',') +
+                    "</font> €</font>";
+            }
+            return super.onViewProcessData(response);
+        }
+
         protected getQuickFilters() {
             var filters = super.getQuickFilters();
 
@@ -24,7 +55,7 @@
                     lookupKey: ProductRow.lookupKey
                 },
                 field: 'ProductID',
-                title: 'Contains Product in Details',
+                title: 'Contient le produit...',//'Contains Product in Details',
                 handler: w => {
                     (this.view.params as OrderListRequest).ProductID = Q.toId(w.value);
                 }
@@ -36,8 +67,9 @@
         protected createQuickFilters() {
             super.createQuickFilters();
 
-            let fld = OrderRow.Fields;
-            this.shippingStateFilter = this.findQuickFilter(Serenity.EnumEditor, fld.ShippingState);
+            //alchiweb
+            //let fld = OrderRow.Fields;
+            //this.shippingStateFilter = this.findQuickFilter(Serenity.EnumEditor, fld.ShippingState);
         }
 
         protected getButtons()
@@ -102,6 +134,12 @@
             }
         }
 
+        //alchiweb
+        protected getViewOptions(): Slick.RemoteViewOptions {
+            var slickRemoteViewOptions: Slick.RemoteViewOptions = super.getViewOptions();
+            slickRemoteViewOptions.rowsPerPage = 2500;
+            return slickRemoteViewOptions;
+        }
 
         public set_shippingState(value: number): void {
             this.shippingStateFilter.value = value == null ? '' : value.toString();
