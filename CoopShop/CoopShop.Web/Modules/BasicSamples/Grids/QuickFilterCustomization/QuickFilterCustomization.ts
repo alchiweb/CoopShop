@@ -1,15 +1,15 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class QuickFilterCustomization extends Serenity.EntityGrid<Northwind.OrderRow, any> {
+    export class QuickFilterCustomization extends Serenity.EntityGrid<DataShop.OrderRow, any> {
 
-        protected getColumnsKey() { return "Northwind.Order"; }
-        protected getDialogType() { return Northwind.OrderDialog; }
-        protected getIdProperty() { return Northwind.OrderRow.idProperty; }
-        protected getLocalTextPrefix() { return Northwind.OrderRow.localTextPrefix; }
-        protected getService() { return Northwind.OrderService.baseUrl; }
+        protected getColumnsKey() { return "DataShop.Order"; }
+        protected getDialogType() { return DataShop.OrderDialog; }
+        protected getIdProperty() { return DataShop.OrderRow.idProperty; }
+        protected getLocalTextPrefix() { return DataShop.OrderRow.localTextPrefix; }
+        protected getService() { return DataShop.OrderService.baseUrl; }
 
         constructor(container: JQuery) {
             super(container);
@@ -26,7 +26,7 @@ namespace CoopShop.BasicSamples {
             let filters = super.getQuickFilters();
 
             // get a reference to order row field names
-            let fld = Northwind.OrderRow.Fields;
+            let fld = DataShop.OrderRow.Fields;
 
             // we start by turning CustomerID filter to a Not Equal one
             let filter = Q.first(filters, x => x.field == fld.CustomerID);

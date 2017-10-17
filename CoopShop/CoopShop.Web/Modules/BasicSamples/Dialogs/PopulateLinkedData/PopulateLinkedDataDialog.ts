@@ -1,13 +1,13 @@
 ﻿namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class PopulateLinkedDataDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
+    export class PopulateLinkedDataDialog extends Serenity.EntityDialog<DataShop.OrderRow, any> {
 
         protected getFormKey() { return PopulateLinkedDataForm.formKey; }
-        protected getIdProperty() { return Northwind.OrderRow.idProperty; }
-        protected getLocalTextPrefix() { return Northwind.OrderRow.localTextPrefix; }
-        protected getNameProperty() { return Northwind.OrderRow.nameProperty; }
-        protected getService() { return Northwind.OrderService.baseUrl; }
+        protected getIdProperty() { return DataShop.OrderRow.idProperty; }
+        protected getLocalTextPrefix() { return DataShop.OrderRow.localTextPrefix; }
+        protected getNameProperty() { return DataShop.OrderRow.nameProperty; }
+        protected getService() { return DataShop.OrderService.baseUrl; }
 
         protected form = new PopulateLinkedDataForm(this.idPrefix);
 
@@ -25,13 +25,13 @@
                     return;
                 }
 
-                // in northwind CustomerID is a string like "ALFKI", 
+                // in datashop CustomerID is a string like "ALFKI", 
                 // while its actual integer ID value is 1.
                 // so we need to convert customer ID to ID.
                 // you won't have to do this conversion with your tables
-                var id = Q.first(Northwind.CustomerRow.getLookup().items, x => x.CustomerID == customerID).ID;
+                var id = Q.first(DataShop.CustomerRow.getLookup().items, x => x.CustomerID == customerID).ID;
 
-                Northwind.CustomerService.Retrieve({
+                DataShop.CustomerService.Retrieve({
                     EntityId: id
                 }, response => {
                     this.setCustomerDetails(response.Entity);
@@ -39,7 +39,7 @@
             });
         }
 
-        private setCustomerDetails(details: Northwind.CustomerRow) {
+        private setCustomerDetails(details: DataShop.CustomerRow) {
             this.form.CustomerCity.value = details.City;
             this.form.CustomerContactName.value = details.ContactName;
             this.form.CustomerContactTitle.value = details.ContactTitle;
@@ -55,7 +55,7 @@
          * This has no effect other than looks on populate linked data demonstration
          */
         protected getCssClass() {
-            return super.getCssClass() + " s-OrderDialog s-Northwind-OrderDialog";
+            return super.getCssClass() + " s-OrderDialog s-DataShop-OrderDialog";
         }
 
 

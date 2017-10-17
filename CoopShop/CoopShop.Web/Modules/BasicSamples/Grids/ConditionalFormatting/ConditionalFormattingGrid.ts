@@ -1,13 +1,13 @@
 ﻿namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class ConditionalFormattingGrid extends Serenity.EntityGrid<Northwind.ProductRow, any> {
+    export class ConditionalFormattingGrid extends Serenity.EntityGrid<DataShop.ProductRow, any> {
 
-        protected getColumnsKey() { return "Northwind.Product"; }
-        protected getDialogType() { return <any>Northwind.ProductDialog; }
-        protected getIdProperty() { return Northwind.ProductRow.idProperty; }
-        protected getLocalTextPrefix() { return Northwind.ProductRow.localTextPrefix; }
-        protected getService() { return Northwind.ProductService.baseUrl; }
+        protected getColumnsKey() { return "DataShop.Product"; }
+        protected getDialogType() { return <any>DataShop.ProductDialog; }
+        protected getIdProperty() { return DataShop.ProductRow.idProperty; }
+        protected getLocalTextPrefix() { return DataShop.ProductRow.localTextPrefix; }
+        protected getService() { return DataShop.ProductService.baseUrl; }
 
         constructor(container: JQuery) {
             super(container);
@@ -21,7 +21,7 @@
         protected getColumns(): Slick.Column[] {
             var columns = super.getColumns();
 
-            var fld = Northwind.ProductRow.Fields;
+            var fld = DataShop.ProductRow.Fields;
 
             // adding a specific css class to UnitPrice column, 
             // to be able to format cell with a different background
@@ -36,7 +36,7 @@
          * @param item Data item for current row
          * @param index Index of the row in grid
          */
-        protected getItemCssClass(item: Northwind.ProductRow, index: number): string {
+        protected getItemCssClass(item: DataShop.ProductRow, index: number): string {
             let klass: string = "";
 
             if (item.Discontinued == true)

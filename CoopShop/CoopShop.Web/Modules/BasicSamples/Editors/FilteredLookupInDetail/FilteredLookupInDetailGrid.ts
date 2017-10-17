@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * Subclass of OrderGrid to override dialog type to FilteredLookupInDetailDialog
      */
     @Serenity.Decorators.registerClass()
-    export class FilteredLookupInDetailGrid extends Northwind.OrderGrid {
+    export class FilteredLookupInDetailGrid extends DataShop.OrderGrid {
 
         protected getDialogType() { return FilteredLookupInDetailDialog; }
 

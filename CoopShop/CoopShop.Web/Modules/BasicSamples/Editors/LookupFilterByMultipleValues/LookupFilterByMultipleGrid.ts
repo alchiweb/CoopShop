@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+﻿/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
      */
     @Serenity.Decorators.registerClass()
-    export class LookupFilterByMultipleGrid extends Northwind.ProductGrid {
+    export class LookupFilterByMultipleGrid extends DataShop.ProductGrid {
 
         protected getDialogType() { return LookupFilterByMultipleDialog; }
 

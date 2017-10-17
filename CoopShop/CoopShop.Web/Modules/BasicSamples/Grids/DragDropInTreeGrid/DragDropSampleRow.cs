@@ -7,9 +7,9 @@ namespace CoopShop.BasicSamples.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Northwind"), DisplayName("Tree Items"), InstanceName("Tree Item"), TwoLevelCached]
-    [ReadPermission(Northwind.PermissionKeys.General)]
-    [ModifyPermission(Northwind.PermissionKeys.General)]
+    [ConnectionKey("DataShop"), DisplayName("Tree Items"), InstanceName("Tree Item"), TwoLevelCached]
+    [ReadPermission(DataShop.PermissionKeys.General)]
+    [ModifyPermission(DataShop.PermissionKeys.General)]
     public sealed class DragDropSampleRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Identity]

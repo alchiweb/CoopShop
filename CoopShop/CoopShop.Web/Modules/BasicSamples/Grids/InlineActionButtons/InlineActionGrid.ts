@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Customer/CustomerGrid.ts" />
+﻿/// <reference path="../../../DataShop/Customer/CustomerGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class InlineActionGrid extends Northwind.CustomerGrid {
+    export class InlineActionGrid extends DataShop.CustomerGrid {
 
         constructor(container: JQuery) {
             super(container);
@@ -61,7 +61,7 @@ namespace CoopShop.BasicSamples {
 
                 if (target.hasClass('delete-row')) {
                     Q.confirm('Delete record?', () => {
-                        Northwind.CustomerService.Delete({
+                        DataShop.CustomerService.Delete({
                             EntityId: item.ID,
                         }, response => {
                             this.refresh();
@@ -72,9 +72,9 @@ namespace CoopShop.BasicSamples {
                     this.editItem(item.ID);
                 }
                 else if (target.hasClass('new-order')) {
-                    var dlg = new Northwind.OrderDialog();
+                    var dlg = new DataShop.OrderDialog();
                     this.initDialog(dlg);
-                    dlg.loadEntityAndOpenDialog(<Northwind.OrderRow>{
+                    dlg.loadEntityAndOpenDialog(<DataShop.OrderRow>{
                         CustomerID: item.CustomerID
                     });
                 }

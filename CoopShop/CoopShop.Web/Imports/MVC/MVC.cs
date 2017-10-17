@@ -290,6 +290,56 @@ namespace MVC
             {
                 public const string ReportPage = "~/Modules/Common/Reporting/ReportPage.cshtml";
             }
+
+        }
+
+        public static class DataShop
+        {
+            public static class Category
+            {
+                public const string CategoryIndex = "~/Modules/DataShop/Category/CategoryIndex.cshtml";
+            }
+
+            public static class Customer
+            {
+                public const string CustomerIndex = "~/Modules/DataShop/Customer/CustomerIndex.cshtml";
+            }
+
+            public static class Order
+            {
+                public const string OrderDetailReport = "~/Modules/DataShop/Order/OrderDetailReport.cshtml";
+                public const string OrderIndex = "~/Modules/DataShop/Order/OrderIndex.cshtml";
+            }
+
+            public static class OrderDetail
+            {
+                public const string OrderDetailIndex = "~/Modules/DataShop/OrderDetail/OrderDetailIndex.cshtml";
+            }
+
+            public static class Product
+            {
+                public const string ProductIndex = "~/Modules/DataShop/Product/ProductIndex.cshtml";
+            }
+
+            public static class Region
+            {
+                public const string RegionIndex = "~/Modules/DataShop/Region/RegionIndex.cshtml";
+            }
+
+            public static class Shipper
+            {
+                public const string ShipperIndex = "~/Modules/DataShop/Shipper/ShipperIndex.cshtml";
+            }
+
+            public static class Supplier
+            {
+                public const string SupplierIndex = "~/Modules/DataShop/Supplier/SupplierIndex.cshtml";
+            }
+
+            public static class Territory
+            {
+                public const string TerritoryIndex = "~/Modules/DataShop/Territory/TerritoryIndex.cshtml";
+            }
         }
 
         public static class Errors
@@ -362,56 +412,6 @@ namespace MVC
                     public const string AccountSignUp = "~/Modules/Membership/Account/SignUp/AccountSignUp.cshtml";
                     public const string AccountSignUp_AdminLTE = "~/Modules/Membership/Account/SignUp/AccountSignUp.AdminLTE.cshtml";
                 }
-            }
-
-        }
-
-        public static class Northwind
-        {
-            public static class Category
-            {
-                public const string CategoryIndex = "~/Modules/Northwind/Category/CategoryIndex.cshtml";
-            }
-
-            public static class Customer
-            {
-                public const string CustomerIndex = "~/Modules/Northwind/Customer/CustomerIndex.cshtml";
-            }
-
-            public static class Order
-            {
-                public const string OrderDetailReport = "~/Modules/Northwind/Order/OrderDetailReport.cshtml";
-                public const string OrderIndex = "~/Modules/Northwind/Order/OrderIndex.cshtml";
-            }
-
-            public static class OrderDetail
-            {
-                public const string OrderDetailIndex = "~/Modules/Northwind/OrderDetail/OrderDetailIndex.cshtml";
-            }
-
-            public static class Product
-            {
-                public const string ProductIndex = "~/Modules/Northwind/Product/ProductIndex.cshtml";
-            }
-
-            public static class Region
-            {
-                public const string RegionIndex = "~/Modules/Northwind/Region/RegionIndex.cshtml";
-            }
-
-            public static class Shipper
-            {
-                public const string ShipperIndex = "~/Modules/Northwind/Shipper/ShipperIndex.cshtml";
-            }
-
-            public static class Supplier
-            {
-                public const string SupplierIndex = "~/Modules/Northwind/Supplier/SupplierIndex.cshtml";
-            }
-
-            public static class Territory
-            {
-                public const string TerritoryIndex = "~/Modules/Northwind/Territory/TerritoryIndex.cshtml";
             }
 
         }

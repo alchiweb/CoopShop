@@ -1,18 +1,18 @@
 @import "site.mixins.less";
 
-.s-Northwind-ProductDialog {
+.s-DataShop-ProductDialog {
     > .size { width: 650px; }
     .caption { width: 180px; }
     .s-PropertyGrid .categories { height: 500px; }
 }
 
-.s-Northwind-CategoryDialog {
+.s-DataShop-CategoryDialog {
     > .size { .widthAndMin(650px); }
     .dialog-styles(@h: auto, @l: 150px, @e: 400px);
     .s-PropertyGrid .categories { height: 260px; }
 }
 
-.s-Northwind-CustomerDialog {
+.s-DataShop-CustomerDialog {
     > .size { .widthAndMin(850px); .heightAndMin(580px); }
     .ui-dialog-content { overflow: hidden; }
     .caption { width: 130px; }
@@ -22,13 +22,13 @@
     .grid-toolbar { .flex(0, 0, auto); }
 }
 
-.s-Northwind-OrderDialog, .s-CustomerOrderDialog {
+.s-DataShop-OrderDialog, .s-CustomerOrderDialog {
     > .size { width: 850px; }
     .caption { width: 130px; }
     .s-PropertyGrid .categories { height: 450px; }
 }
 
-.s-Northwind-OrderDetailDialog {
+.s-DataShop-OrderDetailDialog {
     > .size { .widthAndMin(450px); }
     .dialog-styles(@h: auto, @l: 80px, @e: 310px);
 
@@ -38,36 +38,36 @@
     }
 }
 
-.s-Northwind-OrderGrid {
+.s-DataShop-OrderGrid {
     .s-CustomerEditor { .widthAndMin(250px); }
 }
 
-.s-Northwind-ProductGrid {
+.s-DataShop-ProductGrid {
     .slick-cell {
         input[type=text] { text-align: right; border-radius: 0; width: 100%; padding: 0 2px; border: 1px solid #e7e7e7; }
         .dirty { background-color: #ffe0e0; }
     }
 }
 
-.s-Northwind-RegionDialog {
+.s-DataShop-RegionDialog {
     > .size { .widthAndMin(650px); }
     .dialog-styles(@h: auto, @l: 150px, @e: 400px);
     .s-PropertyGrid .categories { height: 260px; }
 }
 
-.s-Northwind-ShipperDialog {
+.s-DataShop-ShipperDialog {
     > .size { .widthAndMin(650px); }
     .dialog-styles(@h: auto, @l: 150px, @e: 400px);
     .s-PropertyGrid .categories { height: 260px; }
 }
 
-.s-Northwind-SupplierDialog {
+.s-DataShop-SupplierDialog {
     > .size { .widthAndMin(650px); }
     .dialog-styles(@h: auto, @l: 150px, @e: 400px);
     .s-PropertyGrid .categories { height: 460px; }
 }
 
-.s-Northwind-TerritoryDialog {
+.s-DataShop-TerritoryDialog {
     > .size { .widthAndMin(650px); }
     .dialog-styles(@h: auto, @l: 150px, @e: 400px);
     .s-PropertyGrid .categories { height: 260px; }

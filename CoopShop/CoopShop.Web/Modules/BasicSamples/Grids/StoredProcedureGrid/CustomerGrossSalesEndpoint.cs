@@ -8,7 +8,7 @@
     using System.Data;
     using Microsoft.AspNetCore.Mvc;
     using MyRepository = Repositories.CustomerGrossSalesRepository;
-    using MyRow = Northwind.Entities.CustomerGrossSalesRow;
+    using MyRow = DataShop.Entities.CustomerGrossSalesRow;
 
     [Route("Services/BasicSamples/CustomerGrossSales/[action]")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize(typeof(MyRow))]

@@ -1,7 +1,7 @@
 ﻿
 namespace CoopShop.BasicSamples.Endpoints
 {
-    using Northwind.Entities;
+    using DataShop.Entities;
     using Serenity.Data;
     using Serenity.Services;
     using System;

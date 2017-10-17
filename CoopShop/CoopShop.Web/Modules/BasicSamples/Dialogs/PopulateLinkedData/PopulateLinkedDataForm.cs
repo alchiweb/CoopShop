@@ -1,7 +1,7 @@
 ﻿
 namespace CoopShop.BasicSamples.Forms
 {
-    using Northwind;
+    using DataShop;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using System;
@@ -12,7 +12,7 @@ namespace CoopShop.BasicSamples.Forms
     /// A custom order form that contains read-only details about customer
     /// </summary>
     [FormScript("BasicSamples.PopulateLinkedData")]
-    [BasedOnRow(typeof(Northwind.Entities.OrderRow))]
+    [BasedOnRow(typeof(DataShop.Entities.OrderRow))]
     public class PopulateLinkedDataForm
     {
         [Category("Order")]
@@ -40,6 +40,6 @@ namespace CoopShop.BasicSamples.Forms
         public DateTime RequiredDate { get; set; }
         public Int32? EmployeeID { get; set; }
         [OrderDetailsEditor]
-        public List<Northwind.Entities.OrderDetailRow> DetailList { get; set; } 
+        public List<DataShop.Entities.OrderDetailRow> DetailList { get; set; } 
     }
 }

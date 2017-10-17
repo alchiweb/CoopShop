@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class InitialValuesForQuickFilters extends Northwind.OrderGrid {
+    export class InitialValuesForQuickFilters extends DataShop.OrderGrid {
 
         constructor(container: JQuery) {
             super(container);
@@ -20,7 +20,7 @@ namespace CoopShop.BasicSamples {
             let filters = super.getQuickFilters();
 
             // get a reference to order row field names
-            let fld = Northwind.OrderRow.Fields;
+            let fld = DataShop.OrderRow.Fields;
 
             // quick filter init method is a good place to set initial
             // value for a quick filter editor, just after it is created
@@ -41,7 +41,7 @@ namespace CoopShop.BasicSamples {
 
             Q.first(filters, x => x.field == fld.ShippingState).init = w => {
                 // enum editor has a string value, so need to call toString()
-                (w as Serenity.EnumEditor).value = Northwind.OrderShippingState.NotShipped.toString()
+                (w as Serenity.EnumEditor).value = DataShop.OrderShippingState.NotShipped.toString()
             };
 
             return filters;
@@ -63,7 +63,7 @@ namespace CoopShop.BasicSamples {
             super.createQuickFilters();
 
             // get a reference to order row field names
-            let fld = Northwind.OrderRow.Fields;
+            let fld = DataShop.OrderRow.Fields;
 
             // find a quick filter widget by its field name
             this.findQuickFilter(Serenity.LookupEditor, fld.ShipVia).values = ["1", "2"];

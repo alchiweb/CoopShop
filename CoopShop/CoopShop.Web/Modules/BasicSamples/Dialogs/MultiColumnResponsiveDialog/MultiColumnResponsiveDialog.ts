@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Order/OrderDialog.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -8,7 +8,7 @@ namespace CoopShop.BasicSamples {
      * this version requires much less JS and CSS code.
      */
     @Serenity.Decorators.registerClass()
-    export class MultiColumnResponsiveDialog extends Northwind.OrderDialog {
+    export class MultiColumnResponsiveDialog extends DataShop.OrderDialog {
 
         constructor() {
             super();

@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Customer/CustomerGrid.ts" />
+﻿/// <reference path="../../../DataShop/Customer/CustomerGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * Subclass of CustomerGrid to override dialog type to SerialAutoNumberDialog
      */
     @Serenity.Decorators.registerClass()
-    export class SerialAutoNumberGrid extends Northwind.CustomerGrid {
+    export class SerialAutoNumberGrid extends DataShop.CustomerGrid {
 
         protected getDialogType() { return SerialAutoNumberDialog; }
 

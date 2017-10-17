@@ -1,8 +1,8 @@
 ﻿
 namespace CoopShop.Common.Pages
 {
-    using Northwind;
-    using Northwind.Entities;
+    using DataShop;
+    using DataShop.Entities;
     using Serenity;
     using Serenity.Data;
     using Serenity.Web;

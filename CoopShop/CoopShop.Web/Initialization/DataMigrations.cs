@@ -16,7 +16,7 @@
     { 
         private static string[] databaseKeys = new[] {
             "Default"
-            , "Northwind"
+            , "DataShop"
         };
 
         public static void Initialize()

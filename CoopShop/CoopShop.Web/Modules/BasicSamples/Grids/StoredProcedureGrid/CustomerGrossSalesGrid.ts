@@ -1,12 +1,12 @@
 ﻿namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class CustomerGrossSalesGrid extends Serenity.EntityGrid<Northwind.CustomerGrossSalesRow, any> {
+    export class CustomerGrossSalesGrid extends Serenity.EntityGrid<DataShop.CustomerGrossSalesRow, any> {
 
         protected getColumnsKey() { return "BasicSamples.CustomerGrossSales"; }
         protected getIdProperty() { return "__id"; }
-        protected getNameProperty() { return Northwind.CustomerGrossSalesRow.nameProperty; }
-        protected getLocalTextPrefix() { return Northwind.CustomerGrossSalesRow.localTextPrefix; }
+        protected getNameProperty() { return DataShop.CustomerGrossSalesRow.nameProperty; }
+        protected getLocalTextPrefix() { return DataShop.CustomerGrossSalesRow.localTextPrefix; }
         protected getService() { return CustomerGrossSalesService.baseUrl; }
 
         private nextId = 1;
@@ -18,7 +18,7 @@
         /**
          * This method is called to preprocess data returned from the list service
          */
-        protected onViewProcessData(response: Serenity.ListResponse<Northwind.SalesByCategoryRow>) {
+        protected onViewProcessData(response: Serenity.ListResponse<DataShop.SalesByCategoryRow>) {
             response = super.onViewProcessData(response);
 
             // there is no __id property in CustomerGrossSalesRow but 

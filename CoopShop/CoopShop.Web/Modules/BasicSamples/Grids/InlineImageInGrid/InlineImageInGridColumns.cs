@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples.Columns
     using System.ComponentModel;
 
     [ColumnsScript("BasicSamples.InlineImageInGrid")]
-    [BasedOnRow(typeof(Northwind.Entities.ProductRow))]
+    [BasedOnRow(typeof(DataShop.Entities.ProductRow))]
     public class InlineImageInGridColumns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]

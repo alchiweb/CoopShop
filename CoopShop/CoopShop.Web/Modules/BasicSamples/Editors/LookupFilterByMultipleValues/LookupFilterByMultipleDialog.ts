@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Product/ProductDialog.ts" />
+﻿/// <reference path="../../../DataShop/Product/ProductDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -7,7 +7,7 @@ namespace CoopShop.BasicSamples {
      * (LookupFilterByMultipleForm) with our special category editor.
      */
     @Serenity.Decorators.registerClass()
-    export class LookupFilterByMultipleDialog extends Northwind.ProductDialog {
+    export class LookupFilterByMultipleDialog extends DataShop.ProductDialog {
 
         protected getFormKey() { return LookupFilterByMultipleForm.formKey; }
     }

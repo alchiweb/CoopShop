@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/OrderDetail/OrderDetailDialog.ts" />
+﻿/// <reference path="../../../DataShop/OrderDetail/OrderDetailDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -7,17 +7,17 @@ namespace CoopShop.BasicSamples {
      * that will be used to set CascadeValue of product editor
      */
     @Serenity.Decorators.registerClass()
-    export class FilteredLookupOrderDetailDialog extends Northwind.OrderDetailDialog {
+    export class FilteredLookupOrderDetailDialog extends DataShop.OrderDetailDialog {
 
         constructor() {
             super();
 
-            this.form = new Northwind.OrderDetailForm(this.idPrefix);
+            this.form = new DataShop.OrderDetailForm(this.idPrefix);
 
             // we can set cascade field in constructor
             // we could also use FilterField but in this case, when CategoryID is null
             // lookup editor would show all products in any category
-            this.form.ProductID.cascadeField = Northwind.ProductRow.Fields.CategoryID;
+            this.form.ProductID.cascadeField = DataShop.ProductRow.Fields.CategoryID;
 
             // but CategoryID value is not yet available here as detail editor will set it 
             // after calling constructor (creating a detail dialog) so we'll use BeforeLoadEntity

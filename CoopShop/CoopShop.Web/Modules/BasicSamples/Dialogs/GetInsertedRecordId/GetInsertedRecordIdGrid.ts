@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Category/CategoryGrid.ts" />
+﻿/// <reference path="../../../DataShop/Category/CategoryGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * Subclass of CategoryGrid to override dialog type to GetInsertedRecordIdDialog
      */
     @Serenity.Decorators.registerClass()
-    export class GetInsertedRecordIdGrid extends Northwind.CategoryGrid {
+    export class GetInsertedRecordIdGrid extends DataShop.CategoryGrid {
 
         protected getDialogType() { return GetInsertedRecordIdDialog; }
 

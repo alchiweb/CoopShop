@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Supplier/SupplierGrid.ts" />
+﻿/// <reference path="../../../DataShop/Supplier/SupplierGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class RemovingAddButton extends Northwind.SupplierGrid {
+    export class RemovingAddButton extends DataShop.SupplierGrid {
 
         constructor(container: JQuery) {
             super(container);

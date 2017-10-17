@@ -1,11 +1,11 @@
 ﻿namespace CoopShop.BasicSamples {
     @Serenity.Decorators.registerClass()
-    export class ViewWithoutIDGrid extends Serenity.EntityGrid<Northwind.SalesByCategoryRow, any> {
-        protected getColumnsKey() { return "Northwind.SalesByCategory"; }
+    export class ViewWithoutIDGrid extends Serenity.EntityGrid<DataShop.SalesByCategoryRow, any> {
+        protected getColumnsKey() { return "DataShop.SalesByCategory"; }
         protected getIdProperty() { return "__id"; }
-        protected getNameProperty() { return Northwind.SalesByCategoryRow.nameProperty; }
-        protected getLocalTextPrefix() { return Northwind.SalesByCategoryRow.localTextPrefix; }
-        protected getService() { return Northwind.SalesByCategoryService.baseUrl; }
+        protected getNameProperty() { return DataShop.SalesByCategoryRow.nameProperty; }
+        protected getLocalTextPrefix() { return DataShop.SalesByCategoryRow.localTextPrefix; }
+        protected getService() { return DataShop.SalesByCategoryService.baseUrl; }
 
         // this is our autoincrementing counter
         private nextId = 1; 
@@ -17,7 +17,7 @@
         /**
          * This method is called to preprocess data returned from the list service
          */
-        protected onViewProcessData(response: Serenity.ListResponse<Northwind.SalesByCategoryRow>) {
+        protected onViewProcessData(response: Serenity.ListResponse<DataShop.SalesByCategoryRow>) {
             response = super.onViewProcessData(response);
 
             // there is no __id property in SalesByCategoryRow but 

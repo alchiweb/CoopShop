@@ -8512,78 +8512,78 @@ section.content > .s-DataGrid {
   font-style: italic;
   color: #966;
 }
-.s-Northwind-ProductDialog > .size {
+.s-DataShop-ProductDialog > .size {
   width: 650px;
 }
-.s-Northwind-ProductDialog .caption {
+.s-DataShop-ProductDialog .caption {
   width: 180px;
 }
-.s-Northwind-ProductDialog .s-PropertyGrid .categories {
+.s-DataShop-ProductDialog .s-PropertyGrid .categories {
   height: 500px;
 }
-.s-Northwind-CategoryDialog > .size {
+.s-DataShop-CategoryDialog > .size {
   min-width: 650px;
   width: 650px;
 }
-.s-Northwind-CategoryDialog .tab-pane {
+.s-DataShop-CategoryDialog .tab-pane {
   height: auto;
 }
-.s-Northwind-CategoryDialog .caption {
+.s-DataShop-CategoryDialog .caption {
   width: 150px;
 }
-.s-Northwind-CategoryDialog .editor {
+.s-DataShop-CategoryDialog .editor {
   width: 400px;
 }
-.s-Northwind-CategoryDialog input.editor[type=checkbox] {
+.s-DataShop-CategoryDialog input.editor[type=checkbox] {
   width: auto;
 }
-.s-Northwind-CategoryDialog .s-Form .editor.dateQ {
+.s-DataShop-CategoryDialog .s-Form .editor.dateQ {
   width: 376px;
 }
-.s-Northwind-CategoryDialog .s-Form .editor.emailuser {
+.s-DataShop-CategoryDialog .s-Form .editor.emailuser {
   width: 170px;
 }
-.s-Northwind-CategoryDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+.s-DataShop-CategoryDialog .s-Form .editor.dateQ.s-DateTimeEditor {
   width: 281px;
 }
-.s-Northwind-CategoryDialog .s-Form .editor.s-DateTimeEditor.time {
+.s-DataShop-CategoryDialog .s-Form .editor.s-DateTimeEditor.time {
   width: 64px;
   margin-left: 4px;
 }
-.s-Northwind-CategoryDialog .s-Form .editor.has-inplace-button {
+.s-DataShop-CategoryDialog .s-Form .editor.has-inplace-button {
   width: 374px;
 }
-.s-Northwind-CategoryDialog .s-Form .emaildomain {
+.s-DataShop-CategoryDialog .s-Form .emaildomain {
   width: 215px;
 }
-.s-Northwind-CategoryDialog .s-PropertyGrid .categories {
+.s-DataShop-CategoryDialog .s-PropertyGrid .categories {
   height: 260px;
 }
-.s-Northwind-CustomerDialog > .size {
+.s-DataShop-CustomerDialog > .size {
   min-width: 850px;
   width: 850px;
   min-height: 580px;
   height: 580px;
 }
-.s-Northwind-CustomerDialog .ui-dialog-content {
+.s-DataShop-CustomerDialog .ui-dialog-content {
   overflow: hidden;
 }
-.s-Northwind-CustomerDialog .caption {
+.s-DataShop-CustomerDialog .caption {
   width: 130px;
 }
-.s-Northwind-CustomerDialog .categories {
+.s-DataShop-CustomerDialog .categories {
   height: 380px;
 }
-.s-Northwind-CustomerDialog .s-CustomerOrdersGrid > .grid-container {
+.s-DataShop-CustomerDialog .s-CustomerOrdersGrid > .grid-container {
   height: 296px;
 }
-.s-Northwind-CustomerDialog .s-NotesEditor {
+.s-DataShop-CustomerDialog .s-NotesEditor {
   height: 100%;
   margin: 6px;
   width: initial !important;
   min-width: 100%;
 }
-.s-Northwind-CustomerDialog .grid-toolbar {
+.s-DataShop-CustomerDialog .grid-toolbar {
   -webkit-box-flex: 0;
   -moz-box-flex: 0;
   -webkit-flex: 0 0 auto;
@@ -8594,254 +8594,254 @@ section.content > .s-DataGrid {
   -ms-flex-negative: 0;
   -ms-flex-preferred-size: auto;
 }
-.s-Northwind-OrderDialog > .size,
+.s-DataShop-OrderDialog > .size,
 .s-CustomerOrderDialog > .size {
   width: 850px;
 }
-.s-Northwind-OrderDialog .caption,
+.s-DataShop-OrderDialog .caption,
 .s-CustomerOrderDialog .caption {
   width: 130px;
 }
-.s-Northwind-OrderDialog .s-PropertyGrid .categories,
+.s-DataShop-OrderDialog .s-PropertyGrid .categories,
 .s-CustomerOrderDialog .s-PropertyGrid .categories {
   height: 450px;
 }
-.s-Northwind-OrderDetailDialog > .size {
+.s-DataShop-OrderDetailDialog > .size {
   min-width: 450px;
   width: 450px;
 }
-.s-Northwind-OrderDetailDialog .tab-pane {
+.s-DataShop-OrderDetailDialog .tab-pane {
   height: auto;
 }
-.s-Northwind-OrderDetailDialog .caption {
+.s-DataShop-OrderDetailDialog .caption {
   width: 80px;
 }
-.s-Northwind-OrderDetailDialog .editor {
+.s-DataShop-OrderDetailDialog .editor {
   width: 310px;
 }
-.s-Northwind-OrderDetailDialog input.editor[type=checkbox] {
+.s-DataShop-OrderDetailDialog input.editor[type=checkbox] {
   width: auto;
 }
-.s-Northwind-OrderDetailDialog .s-Form .editor.dateQ {
+.s-DataShop-OrderDetailDialog .s-Form .editor.dateQ {
   width: 286px;
 }
-.s-Northwind-OrderDetailDialog .s-Form .editor.emailuser {
+.s-DataShop-OrderDetailDialog .s-Form .editor.emailuser {
   width: 170px;
 }
-.s-Northwind-OrderDetailDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+.s-DataShop-OrderDetailDialog .s-Form .editor.dateQ.s-DateTimeEditor {
   width: 191px;
 }
-.s-Northwind-OrderDetailDialog .s-Form .editor.s-DateTimeEditor.time {
+.s-DataShop-OrderDetailDialog .s-Form .editor.s-DateTimeEditor.time {
   width: 64px;
   margin-left: 4px;
 }
-.s-Northwind-OrderDetailDialog .s-Form .editor.has-inplace-button {
+.s-DataShop-OrderDetailDialog .s-Form .editor.has-inplace-button {
   width: 284px;
 }
-.s-Northwind-OrderDetailDialog .s-Form .emaildomain {
+.s-DataShop-OrderDetailDialog .s-Form .emaildomain {
   width: 125px;
 }
 @media (max-width: 445px) {
-  .s-Northwind-OrderDetailDialog > .size {
+  .s-DataShop-OrderDetailDialog > .size {
     min-width: 320px;
     width: 320px;
   }
-  .s-Northwind-OrderDetailDialog .tab-pane {
+  .s-DataShop-OrderDetailDialog .tab-pane {
     height: auto;
   }
-  .s-Northwind-OrderDetailDialog .caption {
+  .s-DataShop-OrderDetailDialog .caption {
     width: 80px;
   }
-  .s-Northwind-OrderDetailDialog .editor {
+  .s-DataShop-OrderDetailDialog .editor {
     width: 180px;
   }
-  .s-Northwind-OrderDetailDialog input.editor[type=checkbox] {
+  .s-DataShop-OrderDetailDialog input.editor[type=checkbox] {
     width: auto;
   }
-  .s-Northwind-OrderDetailDialog .s-Form .editor.dateQ {
+  .s-DataShop-OrderDetailDialog .s-Form .editor.dateQ {
     width: 156px;
   }
-  .s-Northwind-OrderDetailDialog .s-Form .editor.emailuser {
+  .s-DataShop-OrderDetailDialog .s-Form .editor.emailuser {
     width: 170px;
   }
-  .s-Northwind-OrderDetailDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+  .s-DataShop-OrderDetailDialog .s-Form .editor.dateQ.s-DateTimeEditor {
     width: 61px;
   }
-  .s-Northwind-OrderDetailDialog .s-Form .editor.s-DateTimeEditor.time {
+  .s-DataShop-OrderDetailDialog .s-Form .editor.s-DateTimeEditor.time {
     width: 64px;
     margin-left: 4px;
   }
-  .s-Northwind-OrderDetailDialog .s-Form .editor.has-inplace-button {
+  .s-DataShop-OrderDetailDialog .s-Form .editor.has-inplace-button {
     width: 154px;
   }
-  .s-Northwind-OrderDetailDialog .s-Form .emaildomain {
+  .s-DataShop-OrderDetailDialog .s-Form .emaildomain {
     width: -5px;
   }
 }
-.s-Northwind-OrderGrid .s-CustomerEditor {
+.s-DataShop-OrderGrid .s-CustomerEditor {
   min-width: 250px;
   width: 250px;
 }
-.s-Northwind-ProductGrid .slick-cell input[type=text] {
+.s-DataShop-ProductGrid .slick-cell input[type=text] {
   text-align: right;
   border-radius: 0;
   width: 100%;
   padding: 0 2px;
   border: 1px solid #e7e7e7;
 }
-.s-Northwind-ProductGrid .slick-cell .dirty {
+.s-DataShop-ProductGrid .slick-cell .dirty {
   background-color: #ffe0e0;
 }
-.s-Northwind-RegionDialog > .size {
+.s-DataShop-RegionDialog > .size {
   min-width: 650px;
   width: 650px;
 }
-.s-Northwind-RegionDialog .tab-pane {
+.s-DataShop-RegionDialog .tab-pane {
   height: auto;
 }
-.s-Northwind-RegionDialog .caption {
+.s-DataShop-RegionDialog .caption {
   width: 150px;
 }
-.s-Northwind-RegionDialog .editor {
+.s-DataShop-RegionDialog .editor {
   width: 400px;
 }
-.s-Northwind-RegionDialog input.editor[type=checkbox] {
+.s-DataShop-RegionDialog input.editor[type=checkbox] {
   width: auto;
 }
-.s-Northwind-RegionDialog .s-Form .editor.dateQ {
+.s-DataShop-RegionDialog .s-Form .editor.dateQ {
   width: 376px;
 }
-.s-Northwind-RegionDialog .s-Form .editor.emailuser {
+.s-DataShop-RegionDialog .s-Form .editor.emailuser {
   width: 170px;
 }
-.s-Northwind-RegionDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+.s-DataShop-RegionDialog .s-Form .editor.dateQ.s-DateTimeEditor {
   width: 281px;
 }
-.s-Northwind-RegionDialog .s-Form .editor.s-DateTimeEditor.time {
+.s-DataShop-RegionDialog .s-Form .editor.s-DateTimeEditor.time {
   width: 64px;
   margin-left: 4px;
 }
-.s-Northwind-RegionDialog .s-Form .editor.has-inplace-button {
+.s-DataShop-RegionDialog .s-Form .editor.has-inplace-button {
   width: 374px;
 }
-.s-Northwind-RegionDialog .s-Form .emaildomain {
+.s-DataShop-RegionDialog .s-Form .emaildomain {
   width: 215px;
 }
-.s-Northwind-RegionDialog .s-PropertyGrid .categories {
+.s-DataShop-RegionDialog .s-PropertyGrid .categories {
   height: 260px;
 }
-.s-Northwind-ShipperDialog > .size {
+.s-DataShop-ShipperDialog > .size {
   min-width: 650px;
   width: 650px;
 }
-.s-Northwind-ShipperDialog .tab-pane {
+.s-DataShop-ShipperDialog .tab-pane {
   height: auto;
 }
-.s-Northwind-ShipperDialog .caption {
+.s-DataShop-ShipperDialog .caption {
   width: 150px;
 }
-.s-Northwind-ShipperDialog .editor {
+.s-DataShop-ShipperDialog .editor {
   width: 400px;
 }
-.s-Northwind-ShipperDialog input.editor[type=checkbox] {
+.s-DataShop-ShipperDialog input.editor[type=checkbox] {
   width: auto;
 }
-.s-Northwind-ShipperDialog .s-Form .editor.dateQ {
+.s-DataShop-ShipperDialog .s-Form .editor.dateQ {
   width: 376px;
 }
-.s-Northwind-ShipperDialog .s-Form .editor.emailuser {
+.s-DataShop-ShipperDialog .s-Form .editor.emailuser {
   width: 170px;
 }
-.s-Northwind-ShipperDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+.s-DataShop-ShipperDialog .s-Form .editor.dateQ.s-DateTimeEditor {
   width: 281px;
 }
-.s-Northwind-ShipperDialog .s-Form .editor.s-DateTimeEditor.time {
+.s-DataShop-ShipperDialog .s-Form .editor.s-DateTimeEditor.time {
   width: 64px;
   margin-left: 4px;
 }
-.s-Northwind-ShipperDialog .s-Form .editor.has-inplace-button {
+.s-DataShop-ShipperDialog .s-Form .editor.has-inplace-button {
   width: 374px;
 }
-.s-Northwind-ShipperDialog .s-Form .emaildomain {
+.s-DataShop-ShipperDialog .s-Form .emaildomain {
   width: 215px;
 }
-.s-Northwind-ShipperDialog .s-PropertyGrid .categories {
+.s-DataShop-ShipperDialog .s-PropertyGrid .categories {
   height: 260px;
 }
-.s-Northwind-SupplierDialog > .size {
+.s-DataShop-SupplierDialog > .size {
   min-width: 650px;
   width: 650px;
 }
-.s-Northwind-SupplierDialog .tab-pane {
+.s-DataShop-SupplierDialog .tab-pane {
   height: auto;
 }
-.s-Northwind-SupplierDialog .caption {
+.s-DataShop-SupplierDialog .caption {
   width: 150px;
 }
-.s-Northwind-SupplierDialog .editor {
+.s-DataShop-SupplierDialog .editor {
   width: 400px;
 }
-.s-Northwind-SupplierDialog input.editor[type=checkbox] {
+.s-DataShop-SupplierDialog input.editor[type=checkbox] {
   width: auto;
 }
-.s-Northwind-SupplierDialog .s-Form .editor.dateQ {
+.s-DataShop-SupplierDialog .s-Form .editor.dateQ {
   width: 376px;
 }
-.s-Northwind-SupplierDialog .s-Form .editor.emailuser {
+.s-DataShop-SupplierDialog .s-Form .editor.emailuser {
   width: 170px;
 }
-.s-Northwind-SupplierDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+.s-DataShop-SupplierDialog .s-Form .editor.dateQ.s-DateTimeEditor {
   width: 281px;
 }
-.s-Northwind-SupplierDialog .s-Form .editor.s-DateTimeEditor.time {
+.s-DataShop-SupplierDialog .s-Form .editor.s-DateTimeEditor.time {
   width: 64px;
   margin-left: 4px;
 }
-.s-Northwind-SupplierDialog .s-Form .editor.has-inplace-button {
+.s-DataShop-SupplierDialog .s-Form .editor.has-inplace-button {
   width: 374px;
 }
-.s-Northwind-SupplierDialog .s-Form .emaildomain {
+.s-DataShop-SupplierDialog .s-Form .emaildomain {
   width: 215px;
 }
-.s-Northwind-SupplierDialog .s-PropertyGrid .categories {
+.s-DataShop-SupplierDialog .s-PropertyGrid .categories {
   height: 460px;
 }
-.s-Northwind-TerritoryDialog > .size {
+.s-DataShop-TerritoryDialog > .size {
   min-width: 650px;
   width: 650px;
 }
-.s-Northwind-TerritoryDialog .tab-pane {
+.s-DataShop-TerritoryDialog .tab-pane {
   height: auto;
 }
-.s-Northwind-TerritoryDialog .caption {
+.s-DataShop-TerritoryDialog .caption {
   width: 150px;
 }
-.s-Northwind-TerritoryDialog .editor {
+.s-DataShop-TerritoryDialog .editor {
   width: 400px;
 }
-.s-Northwind-TerritoryDialog input.editor[type=checkbox] {
+.s-DataShop-TerritoryDialog input.editor[type=checkbox] {
   width: auto;
 }
-.s-Northwind-TerritoryDialog .s-Form .editor.dateQ {
+.s-DataShop-TerritoryDialog .s-Form .editor.dateQ {
   width: 376px;
 }
-.s-Northwind-TerritoryDialog .s-Form .editor.emailuser {
+.s-DataShop-TerritoryDialog .s-Form .editor.emailuser {
   width: 170px;
 }
-.s-Northwind-TerritoryDialog .s-Form .editor.dateQ.s-DateTimeEditor {
+.s-DataShop-TerritoryDialog .s-Form .editor.dateQ.s-DateTimeEditor {
   width: 281px;
 }
-.s-Northwind-TerritoryDialog .s-Form .editor.s-DateTimeEditor.time {
+.s-DataShop-TerritoryDialog .s-Form .editor.s-DateTimeEditor.time {
   width: 64px;
   margin-left: 4px;
 }
-.s-Northwind-TerritoryDialog .s-Form .editor.has-inplace-button {
+.s-DataShop-TerritoryDialog .s-Form .editor.has-inplace-button {
   width: 374px;
 }
-.s-Northwind-TerritoryDialog .s-Form .emaildomain {
+.s-DataShop-TerritoryDialog .s-Form .emaildomain {
   width: 215px;
 }
-.s-Northwind-TerritoryDialog .s-PropertyGrid .categories {
+.s-DataShop-TerritoryDialog .s-PropertyGrid .categories {
   height: 260px;
 }
 .employee-symbol {

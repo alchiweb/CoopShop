@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+﻿/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class GroupingAndSummariesInGrid extends Northwind.ProductGrid {
+    export class GroupingAndSummariesInGrid extends DataShop.ProductGrid {
 
         constructor(container: JQuery) {
             super(container);

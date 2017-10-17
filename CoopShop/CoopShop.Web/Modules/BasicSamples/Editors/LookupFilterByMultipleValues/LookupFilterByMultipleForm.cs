@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples.Forms
     using System.ComponentModel;
 
     [FormScript("BasicSamples.LookupFilterByMultiple")]
-    [BasedOnRow(typeof(Northwind.Entities.ProductRow))]
+    [BasedOnRow(typeof(DataShop.Entities.ProductRow))]
     public class LookupFilterByMultipleForm
     {
         [Category("General")]

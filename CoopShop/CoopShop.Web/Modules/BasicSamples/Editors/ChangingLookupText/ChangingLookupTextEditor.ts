@@ -5,17 +5,17 @@ namespace CoopShop.BasicSamples {
      * Our custom product editor type
      */
     @Serenity.Decorators.registerEditor()
-    export class ChangingLookupTextEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, Northwind.ProductRow> {
+    export class ChangingLookupTextEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, DataShop.ProductRow> {
 
         constructor(container: JQuery, options: Serenity.LookupEditorOptions) {
             super(container, options);
         }
 
         protected getLookupKey() {
-            return Northwind.ProductRow.lookupKey;
+            return DataShop.ProductRow.lookupKey;
         }
 
-        protected getItemText(item: Northwind.ProductRow, lookup: Q.Lookup<Northwind.ProductRow>) {
+        protected getItemText(item: DataShop.ProductRow, lookup: Q.Lookup<DataShop.ProductRow>) {
             return super.getItemText(item, lookup) +
                 ' (' +
                 '$' + Q.formatNumber(item.UnitPrice, '#,##0.00') +

@@ -3,9 +3,9 @@
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class ChangingLookupTextDialog extends Common.GridEditorDialog<Northwind.OrderDetailRow> {
+    export class ChangingLookupTextDialog extends Common.GridEditorDialog<DataShop.OrderDetailRow> {
         protected getFormKey() { return ChangingLookupTextForm.formKey; }
-        protected getLocalTextPrefix() { return Northwind.OrderDetailRow.localTextPrefix; }
+        protected getLocalTextPrefix() { return DataShop.OrderDetailRow.localTextPrefix; }
 
         protected form: ChangingLookupTextForm;
 
@@ -17,7 +17,7 @@ namespace CoopShop.BasicSamples {
             this.form.ProductID.changeSelect2(e => {
                 var productID = Q.toId(this.form.ProductID.value);
                 if (productID != null) {
-                    this.form.UnitPrice.value = Northwind.ProductRow.getLookup().itemById[productID].UnitPrice;
+                    this.form.UnitPrice.value = DataShop.ProductRow.getLookup().itemById[productID].UnitPrice;
                 }
             });
 

@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Category/CategoryDialog.ts" />
+﻿/// <reference path="../../../DataShop/Category/CategoryDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class GetInsertedRecordIdDialog extends Northwind.CategoryDialog {
+    export class GetInsertedRecordIdDialog extends DataShop.CategoryDialog {
 
         /**
          * This method is called after the save request to service
@@ -18,10 +18,10 @@ namespace CoopShop.BasicSamples {
                 Q.notifySuccess("Just inserted a category with ID: " + response.EntityId);
 
                 // you could also open a new dialog
-                // new Northwind.CategoryDialog().loadByIdAndOpenDialog(response.EntityId);
+                // new DataShop.CategoryDialog().loadByIdAndOpenDialog(response.EntityId);
 
                 // but let's better load inserted record using Retrieve service
-                Northwind.CategoryService.Retrieve(<any>{
+                DataShop.CategoryService.Retrieve(<any>{
                     EntityId: response.EntityId
                 }, resp => {
                     Q.notifyInfo("Looks like the category you added has name: " + resp.Entity.CategoryName);

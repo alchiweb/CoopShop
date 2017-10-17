@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class CustomLinksInGrid extends Northwind.OrderGrid {
+    export class CustomLinksInGrid extends DataShop.OrderGrid {
 
         constructor(container: JQuery) {
             super(container);
@@ -16,7 +16,7 @@ namespace CoopShop.BasicSamples {
         protected getColumns(): Slick.Column[] {
             var columns = super.getColumns();
 
-            var fld = Northwind.OrderRow.Fields;
+            var fld = DataShop.OrderRow.Fields;
 
             Q.first(columns, x => x.field == fld.CustomerCompanyName).format =
                 ctx => `<a href="javascript:;" class="customer-link">${Q.htmlEncode(ctx.value)}</a>`;
@@ -61,15 +61,15 @@ namespace CoopShop.BasicSamples {
                 Q.confirm(message, () => {
                     // CustomerDialog doesn't use CustomerID but ID (identity)
                     // so need to find customer to get its actual ID
-                    var customer = Q.first(Northwind.CustomerRow.getLookup().items,
+                    var customer = Q.first(DataShop.CustomerRow.getLookup().items,
                         x => x.CustomerID == item.CustomerID);
 
-                    new Northwind.CustomerDialog().loadByIdAndOpenDialog(customer.ID);
+                    new DataShop.CustomerDialog().loadByIdAndOpenDialog(customer.ID);
                 },
                     {
                         htmlEncode: false,
                         onNo: () => {
-                            new Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
+                            new DataShop.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
                         }
                     });
             }
@@ -89,7 +89,7 @@ namespace CoopShop.BasicSamples {
                     "so i've opened a new Order Dialog from same customer " +
                     "with that employee prepopulated!");
 
-                new Northwind.OrderDialog().loadEntityAndOpenDialog(<Northwind.OrderRow>{
+                new DataShop.OrderDialog().loadEntityAndOpenDialog(<DataShop.OrderRow>{
                     CustomerID: item.CustomerID,
                     EmployeeID: item.EmployeeID
                 });
@@ -99,7 +99,7 @@ namespace CoopShop.BasicSamples {
 
                 Q.notifySuccess("Let's filter the grid to orders from " + item.ShipCountry);
                 var countryFilter = this.findQuickFilter(Serenity.LookupEditor,
-                    Northwind.OrderRow.Fields.ShipCountry);
+                    DataShop.OrderRow.Fields.ShipCountry);
                 countryFilter.value = item.ShipCountry;
                 this.refresh();
             }
@@ -126,7 +126,7 @@ namespace CoopShop.BasicSamples {
                 // ask for confirmation
                 Q.confirm(Q.format("You clicked edit link for order with ID: {0} and Date: {1}. Should i open that order?",
                     item.OrderID, date), () => {
-                        new Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
+                        new DataShop.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
                     });
             }
             else {

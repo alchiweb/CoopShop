@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/OrderDetail/OrderDetailsEditor.ts" />
+﻿/// <reference path="../../../DataShop/OrderDetail/OrderDetailsEditor.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * Our subclass of Order Details editor with a CategoryID property
      */
     @Serenity.Decorators.registerEditor()
-    export class FilteredLookupDetailEditor extends Northwind.OrderDetailsEditor {
+    export class FilteredLookupDetailEditor extends DataShop.OrderDetailsEditor {
 
         protected getDialogType() { return FilteredLookupOrderDetailDialog; }
 

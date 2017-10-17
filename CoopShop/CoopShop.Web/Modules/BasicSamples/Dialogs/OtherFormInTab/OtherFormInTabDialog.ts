@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Order/OrderDialog.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,10 +6,10 @@ namespace CoopShop.BasicSamples {
      * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
      */
     @Serenity.Decorators.registerClass()
-    export class OtherFormInTabDialog extends Northwind.OrderDialog {
+    export class OtherFormInTabDialog extends DataShop.OrderDialog {
 
         private customerPropertyGrid: Serenity.PropertyGrid;
-        private customerForm: Northwind.CustomerForm;
+        private customerForm: DataShop.CustomerForm;
         private customerValidator: JQueryValidation.Validator;
 
         constructor() {
@@ -18,12 +18,12 @@ namespace CoopShop.BasicSamples {
             // entity dialogs by default creates a property grid on element with ID "PropertyGrid".
             // here we explicitly create another, the customer property grid (vertical form) on element with ID "CustomerPropertyGrid".
             this.customerPropertyGrid = new Serenity.PropertyGrid(this.byId("CustomerPropertyGrid"), {
-                items: Q.getForm(Northwind.CustomerForm.formKey).filter(x => x.name != 'CustomerID'),
+                items: Q.getForm(DataShop.CustomerForm.formKey).filter(x => x.name != 'CustomerID'),
                 useCategories: true
             });
 
             // this is just a helper to access editors if needed
-            this.customerForm = new Northwind.CustomerForm((this.customerPropertyGrid as any).idPrefix);
+            this.customerForm = new DataShop.CustomerForm((this.customerPropertyGrid as any).idPrefix);
 
             // initialize validator for customer form
             this.customerValidator = this.byId("CustomerForm").validate(Q.validateOptions({}));
@@ -44,15 +44,15 @@ namespace CoopShop.BasicSamples {
                             return;
 
                         // prepare an empty entity to serialize customer details into
-                        var c = <Northwind.CustomerRow>{};
+                        var c = <DataShop.CustomerRow>{};
                         this.customerPropertyGrid.save(c);
 
-                        Northwind.CustomerService.Update({
+                        DataShop.CustomerService.Update({
                             EntityId: id,
                             Entity: c
                         }, response => {
                             // reload customer list just in case
-                            Q.reloadLookup(Northwind.CustomerRow.lookupKey);
+                            Q.reloadLookup(DataShop.CustomerRow.lookupKey);
 
                             // set flag that we are triggering customer select change event
                             // otherwise active tab will change to first one
@@ -88,7 +88,7 @@ namespace CoopShop.BasicSamples {
                 }
 
                 // load selected customer into customer form by calling CustomerService
-                Northwind.CustomerService.Retrieve({
+                DataShop.CustomerService.Retrieve({
                     EntityId: customerID
                 }, response => {
                     this.customerPropertyGrid.load(response.Entity);
@@ -107,11 +107,11 @@ namespace CoopShop.BasicSamples {
             // the ID (auto increment ID) are different, so we need to 
             // find numeric ID from customer lookups. 
             // you'll probably won't need this step.
-            return Q.first(Northwind.CustomerRow.getLookup().items,
+            return Q.first(DataShop.CustomerRow.getLookup().items,
                 x => x.CustomerID == customerID).ID;
         }
 
-        loadEntity(entity: Northwind.OrderRow) {
+        loadEntity(entity: DataShop.OrderRow) {
             super.loadEntity(entity);
 
             Serenity.TabsExtensions.setDisabled(this.tabs, 'Customer',

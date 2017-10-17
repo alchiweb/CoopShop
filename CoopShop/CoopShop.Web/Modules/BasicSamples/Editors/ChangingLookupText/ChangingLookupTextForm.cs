@@ -5,7 +5,7 @@ namespace CoopShop.BasicSamples.Forms
     using System;
 
     [FormScript("BasicSamples.ChangingLookupText")]
-    [BasedOnRow(typeof(Northwind.Entities.OrderDetailRow))]
+    [BasedOnRow(typeof(DataShop.Entities.OrderDetailRow))]
     public class ChangingLookupTextForm
     {
         [ChangingLookupTextEditor]

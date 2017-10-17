@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Supplier/SupplierGrid.ts" />
+﻿/// <reference path="../../../DataShop/Supplier/SupplierGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * A readonly grid that launches ReadOnlyDialog
      */
     @Serenity.Decorators.registerClass()
-    export class ReadOnlyGrid extends Northwind.SupplierGrid {
+    export class ReadOnlyGrid extends DataShop.SupplierGrid {
 
         protected getDialogType() { return ReadOnlyDialog; }
 

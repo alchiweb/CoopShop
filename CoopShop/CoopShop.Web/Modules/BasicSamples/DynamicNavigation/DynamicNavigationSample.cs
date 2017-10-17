@@ -1,4 +1,4 @@
-﻿using CoopShop.Northwind.Entities;
+﻿using CoopShop.DataShop.Entities;
 using Serenity.Data;
 using Serenity.Navigation;
 using System.Collections.Generic;
@@ -15,14 +15,14 @@ namespace CoopShop.BasicSamples
             };
 
             // Add product categories as dynamic navigation items for demo purpose
-            using (var connection = SqlConnections.NewByKey("Northwind"))
+            using (var connection = SqlConnections.NewByKey("DataShop"))
             {
                 var categories = connection.List<CategoryRow>();
                 foreach (var category in categories)
                     items.Add(new NavigationLinkAttribute(7970,
                         path: "Basic Samples/Dynamic Navigation/" + category.CategoryName.Replace("/", "//"),
-                        url: "~/Northwind/Product?cat=" + category.CategoryID,
-                        permission: Northwind.PermissionKeys.General,
+                        url: "~/DataShop/Product?cat=" + category.CategoryID,
+                        permission: DataShop.PermissionKeys.General,
                         icon: "icon-folder-alt"));
             }
 

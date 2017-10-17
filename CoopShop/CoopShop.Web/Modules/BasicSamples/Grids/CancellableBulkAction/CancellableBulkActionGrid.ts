@@ -1,10 +1,10 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 /// <reference path="OrderBulkAction.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class CancellableBulkActionGrid extends Northwind.OrderGrid {
+    export class CancellableBulkActionGrid extends DataShop.OrderGrid {
         private rowSelection: Serenity.GridRowSelectionMixin;
 
         constructor(container: JQuery) {

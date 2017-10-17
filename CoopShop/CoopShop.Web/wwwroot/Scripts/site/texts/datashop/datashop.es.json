@@ -1,0 +1,10 @@
+{
+    "Forms.DataShop.Order.Categories.Order": "Orden",
+    "Forms.DataShop.Order.Categories.Order Details": "Detalles de la orden",
+    "Forms.DataShop.Order.Categories.Ship To": "Envie a",
+    "Forms.DataShop.Order.Categories.Shipping": "Envío.",
+    "Permission.DataShop:Customer": "Clientes",
+    "Permission.DataShop:Customer:Delete": "Eliminar",
+    "Permission.DataShop:Customer:Modify": "Crear/Actualizar",
+    "Permission.DataShop:Customer:View": "Vista"
+}

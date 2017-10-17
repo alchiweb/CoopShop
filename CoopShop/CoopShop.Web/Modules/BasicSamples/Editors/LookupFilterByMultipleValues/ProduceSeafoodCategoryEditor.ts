@@ -11,7 +11,7 @@
      */
     @Serenity.Decorators.registerEditor()
     export class ProduceSeafoodCategoryEditor extends
-        Serenity.LookupEditorBase<Serenity.LookupEditorOptions, Northwind.CategoryRow> {
+        Serenity.LookupEditorBase<Serenity.LookupEditorOptions, DataShop.CategoryRow> {
 
         constructor(container: JQuery, opt: Serenity.LookupEditorOptions) {
             super(container, opt);
@@ -23,7 +23,7 @@
          * data, we lock it to category lookup key.
          */
         protected getLookupKey() {
-            return Northwind.CategoryRow.lookupKey;
+            return DataShop.CategoryRow.lookupKey;
         }
 
         /**
@@ -32,7 +32,7 @@
          * otherwise their value will be null in client side as they are not sent back
          * from server in lookup script.
          */
-        protected getItems(lookup: Q.Lookup<Northwind.CategoryRow>) {
+        protected getItems(lookup: Q.Lookup<DataShop.CategoryRow>) {
             return super.getItems(lookup).filter(x =>
                 x.CategoryName === 'Produce' || x.CategoryName === 'Seafood');
         }

@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Customer/CustomerDialog.ts" />
+﻿/// <reference path="../../../DataShop/Customer/CustomerDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class SerialAutoNumberDialog extends Northwind.CustomerDialog {
+    export class SerialAutoNumberDialog extends DataShop.CustomerDialog {
 
         constructor() {
             super();
@@ -34,7 +34,7 @@ namespace CoopShop.BasicSamples {
                 var prefix = (val || 'C').toUpperCase();
 
                 // call our service, see CustomerEndpoint.cs and CustomerRepository.cs
-                CoopShop.Northwind.CustomerService.GetNextNumber({
+                CoopShop.DataShop.CustomerService.GetNextNumber({
                     Prefix: prefix,
                     Length: 5 // we want service to search for and return serials of 5 in length
                 }, response => {

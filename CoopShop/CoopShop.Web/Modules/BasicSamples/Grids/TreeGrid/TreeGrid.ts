@@ -1,11 +1,11 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class TreeGrid extends Northwind.OrderGrid {
+    export class TreeGrid extends DataShop.OrderGrid {
 
-        private treeMixin: Serenity.TreeGridMixin<Northwind.OrderRow>;
+        private treeMixin: Serenity.TreeGridMixin<DataShop.OrderRow>;
 
         constructor(container: JQuery) {
             super(container);
@@ -15,7 +15,7 @@ namespace CoopShop.BasicSamples {
                 // bring tree items initially collapsed
                 initialCollapse: () => true,
                 // which column to place tree toggle / expand/collapse button
-                toggleField: Northwind.OrderRow.Fields.CustomerCompanyName,
+                toggleField: DataShop.OrderRow.Fields.CustomerCompanyName,
                 getParentId: x => {
                     // as we don't have parentId column here, we are cheating by using modulus 10 and 50
                     // e.g. order with ID 1605 will have parent 1600, order with ID 1613 will have parent 1610

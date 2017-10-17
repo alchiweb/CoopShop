@@ -187,20 +187,20 @@ var CoopShop;
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var TerritoryDialog = /** @class */ (function (_super) {
             __extends(TerritoryDialog, _super);
             function TerritoryDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Northwind.TerritoryForm(_this.idPrefix);
+                _this.form = new DataShop.TerritoryForm(_this.idPrefix);
                 return _this;
             }
-            TerritoryDialog.prototype.getFormKey = function () { return Northwind.TerritoryForm.formKey; };
-            TerritoryDialog.prototype.getIdProperty = function () { return Northwind.TerritoryRow.idProperty; };
-            TerritoryDialog.prototype.getLocalTextPrefix = function () { return Northwind.TerritoryRow.localTextPrefix; };
-            TerritoryDialog.prototype.getNameProperty = function () { return Northwind.TerritoryRow.nameProperty; };
-            TerritoryDialog.prototype.getService = function () { return Northwind.TerritoryService.baseUrl; };
+            TerritoryDialog.prototype.getFormKey = function () { return DataShop.TerritoryForm.formKey; };
+            TerritoryDialog.prototype.getIdProperty = function () { return DataShop.TerritoryRow.idProperty; };
+            TerritoryDialog.prototype.getLocalTextPrefix = function () { return DataShop.TerritoryRow.localTextPrefix; };
+            TerritoryDialog.prototype.getNameProperty = function () { return DataShop.TerritoryRow.nameProperty; };
+            TerritoryDialog.prototype.getService = function () { return DataShop.TerritoryService.baseUrl; };
             TerritoryDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
@@ -209,47 +209,47 @@ var CoopShop;
             ], TerritoryDialog);
             return TerritoryDialog;
         }(Serenity.EntityDialog));
-        Northwind.TerritoryDialog = TerritoryDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.TerritoryDialog = TerritoryDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var TerritoryGrid = /** @class */ (function (_super) {
             __extends(TerritoryGrid, _super);
             function TerritoryGrid(container) {
                 return _super.call(this, container) || this;
             }
-            TerritoryGrid.prototype.getColumnsKey = function () { return "Northwind.Territory"; };
-            TerritoryGrid.prototype.getDialogType = function () { return Northwind.TerritoryDialog; };
-            TerritoryGrid.prototype.getIdProperty = function () { return Northwind.TerritoryRow.idProperty; };
-            TerritoryGrid.prototype.getLocalTextPrefix = function () { return Northwind.TerritoryRow.localTextPrefix; };
-            TerritoryGrid.prototype.getService = function () { return Northwind.TerritoryService.baseUrl; };
+            TerritoryGrid.prototype.getColumnsKey = function () { return "DataShop.Territory"; };
+            TerritoryGrid.prototype.getDialogType = function () { return DataShop.TerritoryDialog; };
+            TerritoryGrid.prototype.getIdProperty = function () { return DataShop.TerritoryRow.idProperty; };
+            TerritoryGrid.prototype.getLocalTextPrefix = function () { return DataShop.TerritoryRow.localTextPrefix; };
+            TerritoryGrid.prototype.getService = function () { return DataShop.TerritoryService.baseUrl; };
             TerritoryGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], TerritoryGrid);
             return TerritoryGrid;
         }(Serenity.EntityGrid));
-        Northwind.TerritoryGrid = TerritoryGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.TerritoryGrid = TerritoryGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SupplierDialog = /** @class */ (function (_super) {
             __extends(SupplierDialog, _super);
             function SupplierDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Northwind.SupplierForm(_this.idPrefix);
+                _this.form = new DataShop.SupplierForm(_this.idPrefix);
                 return _this;
             }
-            SupplierDialog.prototype.getFormKey = function () { return Northwind.SupplierForm.formKey; };
-            SupplierDialog.prototype.getIdProperty = function () { return Northwind.SupplierRow.idProperty; };
-            SupplierDialog.prototype.getLocalTextPrefix = function () { return Northwind.SupplierRow.localTextPrefix; };
-            SupplierDialog.prototype.getNameProperty = function () { return Northwind.SupplierRow.nameProperty; };
-            SupplierDialog.prototype.getService = function () { return Northwind.SupplierService.baseUrl; };
+            SupplierDialog.prototype.getFormKey = function () { return DataShop.SupplierForm.formKey; };
+            SupplierDialog.prototype.getIdProperty = function () { return DataShop.SupplierRow.idProperty; };
+            SupplierDialog.prototype.getLocalTextPrefix = function () { return DataShop.SupplierRow.localTextPrefix; };
+            SupplierDialog.prototype.getNameProperty = function () { return DataShop.SupplierRow.nameProperty; };
+            SupplierDialog.prototype.getService = function () { return DataShop.SupplierService.baseUrl; };
             SupplierDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
@@ -258,47 +258,47 @@ var CoopShop;
             ], SupplierDialog);
             return SupplierDialog;
         }(Serenity.EntityDialog));
-        Northwind.SupplierDialog = SupplierDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.SupplierDialog = SupplierDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SupplierGrid = /** @class */ (function (_super) {
             __extends(SupplierGrid, _super);
             function SupplierGrid(container) {
                 return _super.call(this, container) || this;
             }
-            SupplierGrid.prototype.getColumnsKey = function () { return "Northwind.Supplier"; };
-            SupplierGrid.prototype.getDialogType = function () { return Northwind.SupplierDialog; };
-            SupplierGrid.prototype.getIdProperty = function () { return Northwind.SupplierRow.idProperty; };
-            SupplierGrid.prototype.getLocalTextPrefix = function () { return Northwind.SupplierRow.localTextPrefix; };
-            SupplierGrid.prototype.getService = function () { return Northwind.SupplierService.baseUrl; };
+            SupplierGrid.prototype.getColumnsKey = function () { return "DataShop.Supplier"; };
+            SupplierGrid.prototype.getDialogType = function () { return DataShop.SupplierDialog; };
+            SupplierGrid.prototype.getIdProperty = function () { return DataShop.SupplierRow.idProperty; };
+            SupplierGrid.prototype.getLocalTextPrefix = function () { return DataShop.SupplierRow.localTextPrefix; };
+            SupplierGrid.prototype.getService = function () { return DataShop.SupplierService.baseUrl; };
             SupplierGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], SupplierGrid);
             return SupplierGrid;
         }(Serenity.EntityGrid));
-        Northwind.SupplierGrid = SupplierGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.SupplierGrid = SupplierGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ShipperDialog = /** @class */ (function (_super) {
             __extends(ShipperDialog, _super);
             function ShipperDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Northwind.ShipperForm(_this.idPrefix);
+                _this.form = new DataShop.ShipperForm(_this.idPrefix);
                 return _this;
             }
-            ShipperDialog.prototype.getFormKey = function () { return Northwind.ShipperForm.formKey; };
-            ShipperDialog.prototype.getIdProperty = function () { return Northwind.ShipperRow.idProperty; };
-            ShipperDialog.prototype.getLocalTextPrefix = function () { return Northwind.ShipperRow.localTextPrefix; };
-            ShipperDialog.prototype.getNameProperty = function () { return Northwind.ShipperRow.nameProperty; };
-            ShipperDialog.prototype.getService = function () { return Northwind.ShipperService.baseUrl; };
+            ShipperDialog.prototype.getFormKey = function () { return DataShop.ShipperForm.formKey; };
+            ShipperDialog.prototype.getIdProperty = function () { return DataShop.ShipperRow.idProperty; };
+            ShipperDialog.prototype.getLocalTextPrefix = function () { return DataShop.ShipperRow.localTextPrefix; };
+            ShipperDialog.prototype.getNameProperty = function () { return DataShop.ShipperRow.nameProperty; };
+            ShipperDialog.prototype.getService = function () { return DataShop.ShipperService.baseUrl; };
             ShipperDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
@@ -307,13 +307,13 @@ var CoopShop;
             ], ShipperDialog);
             return ShipperDialog;
         }(Serenity.EntityDialog));
-        Northwind.ShipperDialog = ShipperDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.ShipperDialog = ShipperDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ShipperFormatter = /** @class */ (function () {
             function ShipperFormatter() {
             }
@@ -327,35 +327,35 @@ var CoopShop;
             ], ShipperFormatter);
             return ShipperFormatter;
         }());
-        Northwind.ShipperFormatter = ShipperFormatter;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.ShipperFormatter = ShipperFormatter;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ShipperGrid = /** @class */ (function (_super) {
             __extends(ShipperGrid, _super);
             function ShipperGrid(container) {
                 return _super.call(this, container) || this;
             }
-            ShipperGrid.prototype.getColumnsKey = function () { return "Northwind.Shipper"; };
-            ShipperGrid.prototype.getDialogType = function () { return Northwind.ShipperDialog; };
-            ShipperGrid.prototype.getIdProperty = function () { return Northwind.ShipperRow.idProperty; };
-            ShipperGrid.prototype.getLocalTextPrefix = function () { return Northwind.ShipperRow.localTextPrefix; };
-            ShipperGrid.prototype.getService = function () { return Northwind.ShipperService.baseUrl; };
+            ShipperGrid.prototype.getColumnsKey = function () { return "DataShop.Shipper"; };
+            ShipperGrid.prototype.getDialogType = function () { return DataShop.ShipperDialog; };
+            ShipperGrid.prototype.getIdProperty = function () { return DataShop.ShipperRow.idProperty; };
+            ShipperGrid.prototype.getLocalTextPrefix = function () { return DataShop.ShipperRow.localTextPrefix; };
+            ShipperGrid.prototype.getService = function () { return DataShop.ShipperService.baseUrl; };
             ShipperGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], ShipperGrid);
             return ShipperGrid;
         }(Serenity.EntityGrid));
-        Northwind.ShipperGrid = ShipperGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.ShipperGrid = ShipperGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var PhoneEditor = /** @class */ (function (_super) {
             __extends(PhoneEditor, _super);
             function PhoneEditor(input) {
@@ -402,7 +402,7 @@ var CoopShop;
                 if (valid) {
                     return null;
                 }
-                return Q.text((isMultiple ? 'Validation.NorthwindPhoneMultiple' : 'Validation.NorthwindPhone'));
+                return Q.text((isMultiple ? 'Validation.DataShopPhoneMultiple' : 'Validation.DataShopPhone'));
             };
             PhoneEditor.isValidPhone = function (phone) {
                 if (Q.isEmptyOrNull(phone)) {
@@ -490,25 +490,25 @@ var CoopShop;
             return PhoneEditor;
             var PhoneEditor_1;
         }(Serenity.StringEditor));
-        Northwind.PhoneEditor = PhoneEditor;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.PhoneEditor = PhoneEditor;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var RegionDialog = /** @class */ (function (_super) {
             __extends(RegionDialog, _super);
             function RegionDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Northwind.RegionForm(_this.idPrefix);
+                _this.form = new DataShop.RegionForm(_this.idPrefix);
                 return _this;
             }
-            RegionDialog.prototype.getFormKey = function () { return Northwind.RegionForm.formKey; };
-            RegionDialog.prototype.getIdProperty = function () { return Northwind.RegionRow.idProperty; };
-            RegionDialog.prototype.getLocalTextPrefix = function () { return Northwind.RegionRow.localTextPrefix; };
-            RegionDialog.prototype.getNameProperty = function () { return Northwind.RegionRow.nameProperty; };
-            RegionDialog.prototype.getService = function () { return Northwind.RegionService.baseUrl; };
+            RegionDialog.prototype.getFormKey = function () { return DataShop.RegionForm.formKey; };
+            RegionDialog.prototype.getIdProperty = function () { return DataShop.RegionRow.idProperty; };
+            RegionDialog.prototype.getLocalTextPrefix = function () { return DataShop.RegionRow.localTextPrefix; };
+            RegionDialog.prototype.getNameProperty = function () { return DataShop.RegionRow.nameProperty; };
+            RegionDialog.prototype.getService = function () { return DataShop.RegionService.baseUrl; };
             RegionDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
@@ -517,60 +517,60 @@ var CoopShop;
             ], RegionDialog);
             return RegionDialog;
         }(Serenity.EntityDialog));
-        Northwind.RegionDialog = RegionDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.RegionDialog = RegionDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var RegionGrid = /** @class */ (function (_super) {
             __extends(RegionGrid, _super);
             function RegionGrid(container) {
                 return _super.call(this, container) || this;
             }
-            RegionGrid.prototype.getColumnsKey = function () { return "Northwind.Region"; };
-            RegionGrid.prototype.getDialogType = function () { return Northwind.RegionDialog; };
-            RegionGrid.prototype.getIdProperty = function () { return Northwind.RegionRow.idProperty; };
-            RegionGrid.prototype.getLocalTextPrefix = function () { return Northwind.RegionRow.localTextPrefix; };
-            RegionGrid.prototype.getService = function () { return Northwind.RegionService.baseUrl; };
+            RegionGrid.prototype.getColumnsKey = function () { return "DataShop.Region"; };
+            RegionGrid.prototype.getDialogType = function () { return DataShop.RegionDialog; };
+            RegionGrid.prototype.getIdProperty = function () { return DataShop.RegionRow.idProperty; };
+            RegionGrid.prototype.getLocalTextPrefix = function () { return DataShop.RegionRow.localTextPrefix; };
+            RegionGrid.prototype.getService = function () { return DataShop.RegionService.baseUrl; };
             RegionGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], RegionGrid);
             return RegionGrid;
         }(Serenity.EntityGrid));
-        Northwind.RegionGrid = RegionGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.RegionGrid = RegionGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductDialog = /** @class */ (function (_super) {
             __extends(ProductDialog, _super);
             function ProductDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Northwind.ProductForm(_this.idPrefix);
+                _this.form = new DataShop.ProductForm(_this.idPrefix);
                 return _this;
             }
-            ProductDialog.prototype.getFormKey = function () { return Northwind.ProductForm.formKey; };
-            ProductDialog.prototype.getIdProperty = function () { return Northwind.ProductRow.idProperty; };
-            ProductDialog.prototype.getLocalTextPrefix = function () { return Northwind.ProductRow.localTextPrefix; };
-            ProductDialog.prototype.getNameProperty = function () { return Northwind.ProductRow.nameProperty; };
-            ProductDialog.prototype.getService = function () { return Northwind.ProductService.baseUrl; };
+            ProductDialog.prototype.getFormKey = function () { return DataShop.ProductForm.formKey; };
+            ProductDialog.prototype.getIdProperty = function () { return DataShop.ProductRow.idProperty; };
+            ProductDialog.prototype.getLocalTextPrefix = function () { return DataShop.ProductRow.localTextPrefix; };
+            ProductDialog.prototype.getNameProperty = function () { return DataShop.ProductRow.nameProperty; };
+            ProductDialog.prototype.getService = function () { return DataShop.ProductService.baseUrl; };
             ProductDialog = __decorate([
                 Serenity.Decorators.registerClass(),
                 Serenity.Decorators.maximizable()
             ], ProductDialog);
             return ProductDialog;
         }(Serenity.EntityDialog));
-        Northwind.ProductDialog = ProductDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.ProductDialog = ProductDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductGrid = /** @class */ (function (_super) {
             __extends(ProductGrid, _super);
             function ProductGrid(container) {
@@ -579,17 +579,17 @@ var CoopShop;
                 _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
                 return _this;
             }
-            ProductGrid.prototype.getColumnsKey = function () { return "Northwind.Product"; };
-            ProductGrid.prototype.getDialogType = function () { return Northwind.ProductDialog; };
-            ProductGrid.prototype.getIdProperty = function () { return Northwind.ProductRow.idProperty; };
-            ProductGrid.prototype.getLocalTextPrefix = function () { return Northwind.ProductRow.localTextPrefix; };
-            ProductGrid.prototype.getService = function () { return Northwind.ProductService.baseUrl; };
+            ProductGrid.prototype.getColumnsKey = function () { return "DataShop.Product"; };
+            ProductGrid.prototype.getDialogType = function () { return DataShop.ProductDialog; };
+            ProductGrid.prototype.getIdProperty = function () { return DataShop.ProductRow.idProperty; };
+            ProductGrid.prototype.getLocalTextPrefix = function () { return DataShop.ProductRow.localTextPrefix; };
+            ProductGrid.prototype.getService = function () { return DataShop.ProductService.baseUrl; };
             ProductGrid.prototype.getButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
                 buttons.push(CoopShop.Common.ExcelExportHelper.createToolButton({
                     grid: this,
-                    service: Northwind.ProductService.baseUrl + '/ListExcel',
+                    service: DataShop.ProductService.baseUrl + '/ListExcel',
                     onViewSubmit: function () { return _this.onViewSubmit(); },
                     separator: true
                 }));
@@ -666,7 +666,7 @@ var CoopShop;
              * Sorry but you cannot use LookupEditor, e.g. Select2 here, only possible is a SELECT element
              */
             ProductGrid.prototype.selectFormatter = function (ctx, idField, lookup) {
-                var fld = Northwind.ProductRow.Fields;
+                var fld = DataShop.ProductRow.Fields;
                 var klass = 'edit';
                 var item = ctx.item;
                 var pending = this.pendingChanges[item.ProductID];
@@ -701,14 +701,14 @@ var CoopShop;
                 var columns = _super.prototype.getColumns.call(this);
                 var num = function (ctx) { return _this.numericInputFormatter(ctx); };
                 var str = function (ctx) { return _this.stringInputFormatter(ctx); };
-                var fld = Northwind.ProductRow.Fields;
+                var fld = DataShop.ProductRow.Fields;
                 Q.first(columns, function (x) { return x.field === 'QuantityPerUnit'; }).format = str;
                 var category = Q.first(columns, function (x) { return x.field === fld.CategoryName; });
                 category.referencedFields = [fld.CategoryID];
-                category.format = function (ctx) { return _this.selectFormatter(ctx, fld.CategoryID, Northwind.CategoryRow.getLookup()); };
+                category.format = function (ctx) { return _this.selectFormatter(ctx, fld.CategoryID, DataShop.CategoryRow.getLookup()); };
                 var supplier = Q.first(columns, function (x) { return x.field === fld.SupplierCompanyName; });
                 supplier.referencedFields = [fld.SupplierID];
-                supplier.format = function (ctx) { return _this.selectFormatter(ctx, fld.SupplierID, Northwind.SupplierRow.getLookup()); };
+                supplier.format = function (ctx) { return _this.selectFormatter(ctx, fld.SupplierID, DataShop.SupplierRow.getLookup()); };
                 Q.first(columns, function (x) { return x.field === fld.UnitPrice; }).format = num;
                 Q.first(columns, function (x) { return x.field === fld.UnitsInStock; }).format = num;
                 Q.first(columns, function (x) { return x.field === fld.UnitsOnOrder; }).format = num;
@@ -781,7 +781,7 @@ var CoopShop;
                     var key = keys[current];
                     var entity = Q.deepClone(self.pendingChanges[key]);
                     entity.ProductID = key;
-                    Q.serviceRequest('Northwind/Product/Update', {
+                    Q.serviceRequest('DataShop/Product/Update', {
                         EntityId: key,
                         Entity: entity
                     }, function (response) {
@@ -807,8 +807,8 @@ var CoopShop;
             ], ProductGrid);
             return ProductGrid;
         }(Serenity.EntityGrid));
-        Northwind.ProductGrid = ProductGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.ProductGrid = ProductGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
@@ -849,17 +849,17 @@ var CoopShop;
 /// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderDetailDialog = /** @class */ (function (_super) {
             __extends(OrderDetailDialog, _super);
             function OrderDetailDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new Northwind.OrderDetailForm(_this.idPrefix);
+                _this.form = new DataShop.OrderDetailForm(_this.idPrefix);
                 _this.form.ProductID.changeSelect2(function (e) {
                     var productID = Q.toId(_this.form.ProductID.value);
                     if (productID != null) {
-                        _this.form.UnitPrice.value = Northwind.ProductRow.getLookup().itemById[productID].UnitPrice;
+                        _this.form.UnitPrice.value = DataShop.ProductRow.getLookup().itemById[productID].UnitPrice;
                     }
                 });
                 _this.form.Discount.addValidationRule(_this.uniqueName, function (e) {
@@ -873,15 +873,15 @@ var CoopShop;
                 });
                 return _this;
             }
-            OrderDetailDialog.prototype.getFormKey = function () { return Northwind.OrderDetailForm.formKey; };
-            OrderDetailDialog.prototype.getLocalTextPrefix = function () { return Northwind.OrderDetailRow.localTextPrefix; };
+            OrderDetailDialog.prototype.getFormKey = function () { return DataShop.OrderDetailForm.formKey; };
+            OrderDetailDialog.prototype.getLocalTextPrefix = function () { return DataShop.OrderDetailRow.localTextPrefix; };
             OrderDetailDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], OrderDetailDialog);
             return OrderDetailDialog;
         }(CoopShop.Common.GridEditorDialog));
-        Northwind.OrderDetailDialog = OrderDetailDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.OrderDetailDialog = OrderDetailDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
@@ -1024,16 +1024,16 @@ var CoopShop;
 /// <reference path="../../Common/Helpers/GridEditorBase.ts" />
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderDetailsEditor = /** @class */ (function (_super) {
             __extends(OrderDetailsEditor, _super);
             function OrderDetailsEditor(container) {
                 return _super.call(this, container) || this;
             }
-            OrderDetailsEditor.prototype.getColumnsKey = function () { return "Northwind.OrderDetail"; };
-            OrderDetailsEditor.prototype.getDialogType = function () { return Northwind.OrderDetailDialog; };
-            OrderDetailsEditor.prototype.getLocalTextPrefix = function () { return Northwind.OrderDetailRow.localTextPrefix; };
+            OrderDetailsEditor.prototype.getColumnsKey = function () { return "DataShop.OrderDetail"; };
+            OrderDetailsEditor.prototype.getDialogType = function () { return DataShop.OrderDetailDialog; };
+            OrderDetailsEditor.prototype.getLocalTextPrefix = function () { return DataShop.OrderDetailRow.localTextPrefix; };
             OrderDetailsEditor.prototype.validateEntity = function (row, id) {
                 row.ProductID = Q.toId(row.ProductID);
                 var sameProduct = Q.tryFirst(this.view.getItems(), function (x) { return x.ProductID === row.ProductID; });
@@ -1041,7 +1041,7 @@ var CoopShop;
                     Q.alert('This product is already in order details!');
                     return false;
                 }
-                row.ProductName = Northwind.ProductRow.getLookup().itemById[row.ProductID].ProductName;
+                row.ProductName = DataShop.ProductRow.getLookup().itemById[row.ProductID].ProductName;
                 row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
                 return true;
             };
@@ -1050,13 +1050,13 @@ var CoopShop;
             ], OrderDetailsEditor);
             return OrderDetailsEditor;
         }(CoopShop.Common.GridEditorBase));
-        Northwind.OrderDetailsEditor = OrderDetailsEditor;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.OrderDetailsEditor = OrderDetailsEditor;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var FreightFormatter = /** @class */ (function () {
             function FreightFormatter() {
             }
@@ -1068,32 +1068,32 @@ var CoopShop;
             ], FreightFormatter);
             return FreightFormatter;
         }());
-        Northwind.FreightFormatter = FreightFormatter;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.FreightFormatter = FreightFormatter;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderDialog = /** @class */ (function (_super) {
             __extends(OrderDialog, _super);
             function OrderDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new Northwind.OrderForm(_this.idPrefix);
+                _this.form = new DataShop.OrderForm(_this.idPrefix);
                 return _this;
             }
-            OrderDialog.prototype.getFormKey = function () { return Northwind.OrderForm.formKey; };
-            OrderDialog.prototype.getIdProperty = function () { return Northwind.OrderRow.idProperty; };
-            OrderDialog.prototype.getLocalTextPrefix = function () { return Northwind.OrderRow.localTextPrefix; };
-            OrderDialog.prototype.getNameProperty = function () { return Northwind.OrderRow.nameProperty; };
-            OrderDialog.prototype.getService = function () { return Northwind.OrderService.baseUrl; };
+            OrderDialog.prototype.getFormKey = function () { return DataShop.OrderForm.formKey; };
+            OrderDialog.prototype.getIdProperty = function () { return DataShop.OrderRow.idProperty; };
+            OrderDialog.prototype.getLocalTextPrefix = function () { return DataShop.OrderRow.localTextPrefix; };
+            OrderDialog.prototype.getNameProperty = function () { return DataShop.OrderRow.nameProperty; };
+            OrderDialog.prototype.getService = function () { return DataShop.OrderService.baseUrl; };
             OrderDialog.prototype.getToolbarButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getToolbarButtons.call(this);
                 buttons.push(CoopShop.Common.ReportHelper.createToolButton({
                     title: 'Invoice',
                     cssClass: 'export-pdf-button',
-                    reportKey: 'Northwind.OrderDetail',
+                    reportKey: 'DataShop.OrderDetail',
                     getParams: function () { return ({
                         OrderID: _this.get_entityId()
                     }); }
@@ -1109,30 +1109,30 @@ var CoopShop;
             ], OrderDialog);
             return OrderDialog;
         }(Serenity.EntityDialog));
-        Northwind.OrderDialog = OrderDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.OrderDialog = OrderDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderGrid = /** @class */ (function (_super) {
             __extends(OrderGrid, _super);
             function OrderGrid(container) {
                 return _super.call(this, container) || this;
             }
-            OrderGrid.prototype.getColumnsKey = function () { return "Northwind.Order"; };
-            OrderGrid.prototype.getDialogType = function () { return Northwind.OrderDialog; };
-            OrderGrid.prototype.getIdProperty = function () { return Northwind.OrderRow.idProperty; };
-            OrderGrid.prototype.getLocalTextPrefix = function () { return Northwind.OrderRow.localTextPrefix; };
-            OrderGrid.prototype.getService = function () { return Northwind.OrderService.baseUrl; };
+            OrderGrid.prototype.getColumnsKey = function () { return "DataShop.Order"; };
+            OrderGrid.prototype.getDialogType = function () { return DataShop.OrderDialog; };
+            OrderGrid.prototype.getIdProperty = function () { return DataShop.OrderRow.idProperty; };
+            OrderGrid.prototype.getLocalTextPrefix = function () { return DataShop.OrderRow.localTextPrefix; };
+            OrderGrid.prototype.getService = function () { return DataShop.OrderService.baseUrl; };
             OrderGrid.prototype.getQuickFilters = function () {
                 var _this = this;
                 var filters = _super.prototype.getQuickFilters.call(this);
                 filters.push({
                     type: Serenity.LookupEditor,
                     options: {
-                        lookupKey: Northwind.ProductRow.lookupKey
+                        lookupKey: DataShop.ProductRow.lookupKey
                     },
                     field: 'ProductID',
                     title: 'Contains Product in Details',
@@ -1144,7 +1144,7 @@ var CoopShop;
             };
             OrderGrid.prototype.createQuickFilters = function () {
                 _super.prototype.createQuickFilters.call(this);
-                var fld = Northwind.OrderRow.Fields;
+                var fld = DataShop.OrderRow.Fields;
                 this.shippingStateFilter = this.findQuickFilter(Serenity.EnumEditor, fld.ShippingState);
             };
             OrderGrid.prototype.getButtons = function () {
@@ -1152,7 +1152,7 @@ var CoopShop;
                 var buttons = _super.prototype.getButtons.call(this);
                 buttons.push(CoopShop.Common.ExcelExportHelper.createToolButton({
                     grid: this,
-                    service: Northwind.OrderService.baseUrl + '/ListExcel',
+                    service: DataShop.OrderService.baseUrl + '/ListExcel',
                     onViewSubmit: function () { return _this.onViewSubmit(); },
                     separator: true
                 }));
@@ -1188,7 +1188,7 @@ var CoopShop;
                     e.preventDefault();
                     if (target.hasClass('print-invoice')) {
                         CoopShop.Common.ReportHelper.execute({
-                            reportKey: 'Northwind.OrderDetail',
+                            reportKey: 'DataShop.OrderDetail',
                             params: {
                                 OrderID: item.OrderID
                             }
@@ -1205,13 +1205,13 @@ var CoopShop;
             ], OrderGrid);
             return OrderGrid;
         }(Serenity.EntityGrid));
-        Northwind.OrderGrid = OrderGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.OrderGrid = OrderGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var NoteDialog = /** @class */ (function (_super) {
             __extends(NoteDialog, _super);
             function NoteDialog() {
@@ -1257,13 +1257,13 @@ var CoopShop;
             ], NoteDialog);
             return NoteDialog;
         }(Serenity.TemplatedDialog));
-        Northwind.NoteDialog = NoteDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.NoteDialog = NoteDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var NotesEditor = /** @class */ (function (_super) {
             __extends(NotesEditor, _super);
             function NotesEditor(div) {
@@ -1307,7 +1307,7 @@ var CoopShop;
             };
             NotesEditor.prototype.addClick = function () {
                 var _this = this;
-                var dlg = new Northwind.NoteDialog();
+                var dlg = new DataShop.NoteDialog();
                 dlg.dialogTitle = 'Add Note';
                 dlg.okClick = function () {
                     var text = Q.trimToNull(dlg.text);
@@ -1332,7 +1332,7 @@ var CoopShop;
                 e.preventDefault();
                 var index = $(e.target).data('index');
                 var old = this.items[index];
-                var dlg = new Northwind.NoteDialog();
+                var dlg = new DataShop.NoteDialog();
                 dlg.dialogTitle = 'Edit Note';
                 dlg.text = old.Text;
                 dlg.okClick = function () {
@@ -1389,13 +1389,13 @@ var CoopShop;
             ], NotesEditor);
             return NotesEditor;
         }(Serenity.TemplatedWidget));
-        Northwind.NotesEditor = NotesEditor;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.NotesEditor = NotesEditor;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var EmployeeFormatter = /** @class */ (function () {
             function EmployeeFormatter() {
             }
@@ -1405,7 +1405,7 @@ var CoopShop;
                     return text;
                 }
                 var gender = ctx.item[this.genderProperty];
-                return "<span class='" + ((gender === Northwind.Gender.Female) ?
+                return "<span class='" + ((gender === DataShop.Gender.Female) ?
                     'employee-symbol female' : 'employee-symbol male') +
                     "'>" + text + '</span>';
             };
@@ -1422,29 +1422,29 @@ var CoopShop;
             ], EmployeeFormatter);
             return EmployeeFormatter;
         }());
-        Northwind.EmployeeFormatter = EmployeeFormatter;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.EmployeeFormatter = EmployeeFormatter;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerDialog = /** @class */ (function (_super) {
             __extends(CustomerDialog, _super);
             function CustomerDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new Northwind.CustomerForm(_this.idPrefix);
-                _this.ordersGrid = new Northwind.CustomerOrdersGrid(_this.byId('OrdersGrid'));
+                _this.form = new DataShop.CustomerForm(_this.idPrefix);
+                _this.ordersGrid = new DataShop.CustomerOrdersGrid(_this.byId('OrdersGrid'));
                 _this.ordersGrid.element.flexHeightOnly(1);
                 _this.byId('NoteList').closest('.field').hide().end().appendTo(_this.byId('TabNotes'));
                 CoopShop.DialogUtils.pendingChangesConfirmation(_this.element, function () { return _this.getSaveState() != _this.loadedState; });
                 return _this;
             }
-            CustomerDialog.prototype.getFormKey = function () { return Northwind.CustomerForm.formKey; };
-            CustomerDialog.prototype.getIdProperty = function () { return Northwind.CustomerRow.idProperty; };
-            CustomerDialog.prototype.getLocalTextPrefix = function () { return Northwind.CustomerRow.localTextPrefix; };
-            CustomerDialog.prototype.getNameProperty = function () { return Northwind.CustomerRow.nameProperty; };
-            CustomerDialog.prototype.getService = function () { return Northwind.CustomerService.baseUrl; };
+            CustomerDialog.prototype.getFormKey = function () { return DataShop.CustomerForm.formKey; };
+            CustomerDialog.prototype.getIdProperty = function () { return DataShop.CustomerRow.idProperty; };
+            CustomerDialog.prototype.getLocalTextPrefix = function () { return DataShop.CustomerRow.localTextPrefix; };
+            CustomerDialog.prototype.getNameProperty = function () { return DataShop.CustomerRow.nameProperty; };
+            CustomerDialog.prototype.getService = function () { return DataShop.CustomerService.baseUrl; };
             CustomerDialog.prototype.getSaveState = function () {
                 try {
                     return $.toJSON(this.getSaveEntity());
@@ -1464,27 +1464,27 @@ var CoopShop;
             };
             CustomerDialog.prototype.onSaveSuccess = function (response) {
                 _super.prototype.onSaveSuccess.call(this, response);
-                Q.reloadLookup('Northwind.Customer');
+                Q.reloadLookup('DataShop.Customer');
             };
             CustomerDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], CustomerDialog);
             return CustomerDialog;
         }(Serenity.EntityDialog));
-        Northwind.CustomerDialog = CustomerDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.CustomerDialog = CustomerDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerEditor = /** @class */ (function (_super) {
             __extends(CustomerEditor, _super);
             function CustomerEditor(hidden) {
                 return _super.call(this, hidden) || this;
             }
             CustomerEditor.prototype.getLookupKey = function () {
-                return 'Northwind.Customer';
+                return 'DataShop.Customer';
             };
             CustomerEditor.prototype.getItemText = function (item, lookup) {
                 return _super.prototype.getItemText.call(this, item, lookup) + ' [' + item.CustomerID + ']';
@@ -1494,30 +1494,30 @@ var CoopShop;
             ], CustomerEditor);
             return CustomerEditor;
         }(Serenity.LookupEditorBase));
-        Northwind.CustomerEditor = CustomerEditor;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.CustomerEditor = CustomerEditor;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerGrid = /** @class */ (function (_super) {
             __extends(CustomerGrid, _super);
             function CustomerGrid(container) {
                 return _super.call(this, container) || this;
             }
-            CustomerGrid.prototype.getColumnsKey = function () { return "Northwind.Customer"; };
-            CustomerGrid.prototype.getDialogType = function () { return Northwind.CustomerDialog; };
-            CustomerGrid.prototype.getIdProperty = function () { return Northwind.CustomerRow.idProperty; };
-            CustomerGrid.prototype.getLocalTextPrefix = function () { return Northwind.CustomerRow.localTextPrefix; };
-            CustomerGrid.prototype.getService = function () { return Northwind.CustomerService.baseUrl; };
+            CustomerGrid.prototype.getColumnsKey = function () { return "DataShop.Customer"; };
+            CustomerGrid.prototype.getDialogType = function () { return DataShop.CustomerDialog; };
+            CustomerGrid.prototype.getIdProperty = function () { return DataShop.CustomerRow.idProperty; };
+            CustomerGrid.prototype.getLocalTextPrefix = function () { return DataShop.CustomerRow.localTextPrefix; };
+            CustomerGrid.prototype.getService = function () { return DataShop.CustomerService.baseUrl; };
             CustomerGrid.prototype.getButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
                 buttons.push(CoopShop.Common.ExcelExportHelper.createToolButton({
                     grid: this,
                     onViewSubmit: function () { return _this.onViewSubmit(); },
-                    service: 'Northwind/Customer/ListExcel',
+                    service: 'DataShop/Customer/ListExcel',
                     separator: true
                 }));
                 buttons.push(CoopShop.Common.PdfExportHelper.createToolButton({
@@ -1532,14 +1532,14 @@ var CoopShop;
             ], CustomerGrid);
             return CustomerGrid;
         }(Serenity.EntityGrid));
-        Northwind.CustomerGrid = CustomerGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.CustomerGrid = CustomerGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 /// <reference path="../Order/OrderDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerOrderDialog = /** @class */ (function (_super) {
             __extends(CustomerOrderDialog, _super);
             function CustomerOrderDialog() {
@@ -1553,23 +1553,23 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], CustomerOrderDialog);
             return CustomerOrderDialog;
-        }(Northwind.OrderDialog));
-        Northwind.CustomerOrderDialog = CustomerOrderDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        }(DataShop.OrderDialog));
+        DataShop.CustomerOrderDialog = CustomerOrderDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 /// <reference path="../Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerOrdersGrid = /** @class */ (function (_super) {
             __extends(CustomerOrdersGrid, _super);
             function CustomerOrdersGrid(container) {
                 return _super.call(this, container) || this;
             }
-            CustomerOrdersGrid.prototype.getDialogType = function () { return Northwind.CustomerOrderDialog; };
+            CustomerOrdersGrid.prototype.getDialogType = function () { return DataShop.CustomerOrderDialog; };
             CustomerOrdersGrid.prototype.getColumns = function () {
-                var fld = Northwind.OrderRow.Fields;
+                var fld = DataShop.OrderRow.Fields;
                 return _super.prototype.getColumns.call(this).filter(function (x) { return x.field !== fld.CustomerCompanyName; });
             };
             CustomerOrdersGrid.prototype.initEntityDialog = function (itemType, dialog) {
@@ -1603,14 +1603,14 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], CustomerOrdersGrid);
             return CustomerOrdersGrid;
-        }(Northwind.OrderGrid));
-        Northwind.CustomerOrdersGrid = CustomerOrdersGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        }(DataShop.OrderGrid));
+        DataShop.CustomerOrdersGrid = CustomerOrdersGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var EmployeeListFormatter = /** @class */ (function () {
             function EmployeeListFormatter() {
             }
@@ -1618,7 +1618,7 @@ var CoopShop;
                 var idList = ctx.value;
                 if (!idList || !idList.length)
                     return "";
-                var byId = Northwind.EmployeeRow.getLookup().itemById;
+                var byId = DataShop.EmployeeRow.getLookup().itemById;
                 var z;
                 return idList.map(function (x) { return ((z = byId[x]) ? z.FullName : x); }).join(", ");
             };
@@ -1627,54 +1627,54 @@ var CoopShop;
             ], EmployeeListFormatter);
             return EmployeeListFormatter;
         }());
-        Northwind.EmployeeListFormatter = EmployeeListFormatter;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.EmployeeListFormatter = EmployeeListFormatter;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryDialog = /** @class */ (function (_super) {
             __extends(CategoryDialog, _super);
             function CategoryDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new Northwind.CategoryForm(_this.idPrefix);
+                _this.form = new DataShop.CategoryForm(_this.idPrefix);
                 return _this;
             }
-            CategoryDialog.prototype.getFormKey = function () { return Northwind.CategoryForm.formKey; };
-            CategoryDialog.prototype.getIdProperty = function () { return Northwind.CategoryRow.idProperty; };
-            CategoryDialog.prototype.getLocalTextPrefix = function () { return Northwind.CategoryRow.localTextPrefix; };
-            CategoryDialog.prototype.getNameProperty = function () { return Northwind.CategoryRow.nameProperty; };
-            CategoryDialog.prototype.getService = function () { return Northwind.CategoryService.baseUrl; };
+            CategoryDialog.prototype.getFormKey = function () { return DataShop.CategoryForm.formKey; };
+            CategoryDialog.prototype.getIdProperty = function () { return DataShop.CategoryRow.idProperty; };
+            CategoryDialog.prototype.getLocalTextPrefix = function () { return DataShop.CategoryRow.localTextPrefix; };
+            CategoryDialog.prototype.getNameProperty = function () { return DataShop.CategoryRow.nameProperty; };
+            CategoryDialog.prototype.getService = function () { return DataShop.CategoryService.baseUrl; };
             CategoryDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], CategoryDialog);
             return CategoryDialog;
         }(Serenity.EntityDialog));
-        Northwind.CategoryDialog = CategoryDialog;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.CategoryDialog = CategoryDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryGrid = /** @class */ (function (_super) {
             __extends(CategoryGrid, _super);
             function CategoryGrid(container) {
                 return _super.call(this, container) || this;
             }
-            CategoryGrid.prototype.getColumnsKey = function () { return "Northwind.Category"; };
-            CategoryGrid.prototype.getDialogType = function () { return Northwind.CategoryDialog; };
-            CategoryGrid.prototype.getIdProperty = function () { return Northwind.CategoryRow.idProperty; };
-            CategoryGrid.prototype.getLocalTextPrefix = function () { return Northwind.CategoryRow.localTextPrefix; };
-            CategoryGrid.prototype.getService = function () { return Northwind.CategoryService.baseUrl; };
+            CategoryGrid.prototype.getColumnsKey = function () { return "DataShop.Category"; };
+            CategoryGrid.prototype.getDialogType = function () { return DataShop.CategoryDialog; };
+            CategoryGrid.prototype.getIdProperty = function () { return DataShop.CategoryRow.idProperty; };
+            CategoryGrid.prototype.getLocalTextPrefix = function () { return DataShop.CategoryRow.localTextPrefix; };
+            CategoryGrid.prototype.getService = function () { return DataShop.CategoryService.baseUrl; };
             CategoryGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], CategoryGrid);
             return CategoryGrid;
         }(Serenity.EntityGrid));
-        Northwind.CategoryGrid = CategoryGrid;
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.CategoryGrid = CategoryGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
@@ -3397,7 +3397,7 @@ var CoopShop;
         })(ExcelExportHelper = Common.ExcelExportHelper || (Common.ExcelExportHelper = {}));
     })(Common = CoopShop.Common || (CoopShop.Common = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3411,7 +3411,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], WrappedHeadersGrid);
             return WrappedHeadersGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.WrappedHeadersGrid = WrappedHeadersGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3427,11 +3427,11 @@ var CoopShop;
                 _this.nextId = 1;
                 return _this;
             }
-            ViewWithoutIDGrid.prototype.getColumnsKey = function () { return "Northwind.SalesByCategory"; };
+            ViewWithoutIDGrid.prototype.getColumnsKey = function () { return "DataShop.SalesByCategory"; };
             ViewWithoutIDGrid.prototype.getIdProperty = function () { return "__id"; };
-            ViewWithoutIDGrid.prototype.getNameProperty = function () { return CoopShop.Northwind.SalesByCategoryRow.nameProperty; };
-            ViewWithoutIDGrid.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.SalesByCategoryRow.localTextPrefix; };
-            ViewWithoutIDGrid.prototype.getService = function () { return CoopShop.Northwind.SalesByCategoryService.baseUrl; };
+            ViewWithoutIDGrid.prototype.getNameProperty = function () { return CoopShop.DataShop.SalesByCategoryRow.nameProperty; };
+            ViewWithoutIDGrid.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.SalesByCategoryRow.localTextPrefix; };
+            ViewWithoutIDGrid.prototype.getService = function () { return CoopShop.DataShop.SalesByCategoryService.baseUrl; };
             /**
              * This method is called to preprocess data returned from the list service
              */
@@ -3456,7 +3456,7 @@ var CoopShop;
         BasicSamples.ViewWithoutIDGrid = ViewWithoutIDGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3470,7 +3470,7 @@ var CoopShop;
                     // bring tree items initially collapsed
                     initialCollapse: function () { return true; },
                     // which column to place tree toggle / expand/collapse button
-                    toggleField: CoopShop.Northwind.OrderRow.Fields.CustomerCompanyName,
+                    toggleField: CoopShop.DataShop.OrderRow.Fields.CustomerCompanyName,
                     getParentId: function (x) {
                         // as we don't have parentId column here, we are cheating by using modulus 10 and 50
                         // e.g. order with ID 1605 will have parent 1600, order with ID 1613 will have parent 1610
@@ -3494,7 +3494,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], TreeGrid);
             return TreeGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.TreeGrid = TreeGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3511,8 +3511,8 @@ var CoopShop;
             }
             CustomerGrossSalesGrid.prototype.getColumnsKey = function () { return "BasicSamples.CustomerGrossSales"; };
             CustomerGrossSalesGrid.prototype.getIdProperty = function () { return "__id"; };
-            CustomerGrossSalesGrid.prototype.getNameProperty = function () { return CoopShop.Northwind.CustomerGrossSalesRow.nameProperty; };
-            CustomerGrossSalesGrid.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.CustomerGrossSalesRow.localTextPrefix; };
+            CustomerGrossSalesGrid.prototype.getNameProperty = function () { return CoopShop.DataShop.CustomerGrossSalesRow.nameProperty; };
+            CustomerGrossSalesGrid.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.CustomerGrossSalesRow.localTextPrefix; };
             CustomerGrossSalesGrid.prototype.getService = function () { return BasicSamples.CustomerGrossSalesService.baseUrl; };
             /**
              * This method is called to preprocess data returned from the list service
@@ -3593,7 +3593,7 @@ var CoopShop;
         BasicSamples.CustomerGrossSalesGrid = CustomerGrossSalesGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Supplier/SupplierGrid.ts" />
+/// <reference path="../../../DataShop/Supplier/SupplierGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3631,11 +3631,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], RemovingAddButton);
             return RemovingAddButton;
-        }(CoopShop.Northwind.SupplierGrid));
+        }(CoopShop.DataShop.SupplierGrid));
         BasicSamples.RemovingAddButton = RemovingAddButton;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3645,11 +3645,11 @@ var CoopShop;
             function QuickFilterCustomization(container) {
                 return _super.call(this, container) || this;
             }
-            QuickFilterCustomization.prototype.getColumnsKey = function () { return "Northwind.Order"; };
-            QuickFilterCustomization.prototype.getDialogType = function () { return CoopShop.Northwind.OrderDialog; };
-            QuickFilterCustomization.prototype.getIdProperty = function () { return CoopShop.Northwind.OrderRow.idProperty; };
-            QuickFilterCustomization.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.OrderRow.localTextPrefix; };
-            QuickFilterCustomization.prototype.getService = function () { return CoopShop.Northwind.OrderService.baseUrl; };
+            QuickFilterCustomization.prototype.getColumnsKey = function () { return "DataShop.Order"; };
+            QuickFilterCustomization.prototype.getDialogType = function () { return CoopShop.DataShop.OrderDialog; };
+            QuickFilterCustomization.prototype.getIdProperty = function () { return CoopShop.DataShop.OrderRow.idProperty; };
+            QuickFilterCustomization.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderRow.localTextPrefix; };
+            QuickFilterCustomization.prototype.getService = function () { return CoopShop.DataShop.OrderService.baseUrl; };
             /**
              * This method is called to get list of quick filters to be created for this grid.
              * By default, it returns quick filter objects corresponding to properties that
@@ -3659,7 +3659,7 @@ var CoopShop;
                 // get quick filter list from base class, e.g. columns
                 var filters = _super.prototype.getQuickFilters.call(this);
                 // get a reference to order row field names
-                var fld = CoopShop.Northwind.OrderRow.Fields;
+                var fld = CoopShop.DataShop.OrderRow.Fields;
                 // we start by turning CustomerID filter to a Not Equal one
                 var filter = Q.first(filters, function (x) { return x.field == fld.CustomerID; });
                 filter.title = "Customer Not Equal To";
@@ -3816,7 +3816,7 @@ var CoopShop;
         BasicSamples.ProductExcelImportDialog = ProductExcelImportDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3853,7 +3853,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], ProductExcelImportGrid);
             return ProductExcelImportGrid;
-        }(CoopShop.Northwind.ProductGrid));
+        }(CoopShop.DataShop.ProductGrid));
         BasicSamples.ProductExcelImportGrid = ProductExcelImportGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3897,7 +3897,7 @@ var CoopShop;
         BasicSamples.InlineImageFormatter = InlineImageFormatter;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3908,10 +3908,10 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             InlineImageInGrid.prototype.getColumnsKey = function () { return "BasicSamples.InlineImageInGrid"; };
-            InlineImageInGrid.prototype.getDialogType = function () { return CoopShop.Northwind.ProductDialog; };
-            InlineImageInGrid.prototype.getIdProperty = function () { return CoopShop.Northwind.ProductRow.idProperty; };
-            InlineImageInGrid.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.ProductRow.localTextPrefix; };
-            InlineImageInGrid.prototype.getService = function () { return CoopShop.Northwind.ProductService.baseUrl; };
+            InlineImageInGrid.prototype.getDialogType = function () { return CoopShop.DataShop.ProductDialog; };
+            InlineImageInGrid.prototype.getIdProperty = function () { return CoopShop.DataShop.ProductRow.idProperty; };
+            InlineImageInGrid.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.ProductRow.localTextPrefix; };
+            InlineImageInGrid.prototype.getService = function () { return CoopShop.DataShop.ProductService.baseUrl; };
             InlineImageInGrid.prototype.getSlickOptions = function () {
                 var opt = _super.prototype.getSlickOptions.call(this);
                 opt.rowHeight = 150;
@@ -3925,7 +3925,7 @@ var CoopShop;
         BasicSamples.InlineImageInGrid = InlineImageInGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Customer/CustomerGrid.ts" />
+/// <reference path="../../../DataShop/Customer/CustomerGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -3978,7 +3978,7 @@ var CoopShop;
                     e.preventDefault();
                     if (target.hasClass('delete-row')) {
                         Q.confirm('Delete record?', function () {
-                            CoopShop.Northwind.CustomerService.Delete({
+                            CoopShop.DataShop.CustomerService.Delete({
                                 EntityId: item.ID,
                             }, function (response) {
                                 _this.refresh();
@@ -3989,7 +3989,7 @@ var CoopShop;
                         this.editItem(item.ID);
                     }
                     else if (target.hasClass('new-order')) {
-                        var dlg = new CoopShop.Northwind.OrderDialog();
+                        var dlg = new CoopShop.DataShop.OrderDialog();
                         this.initDialog(dlg);
                         dlg.loadEntityAndOpenDialog({
                             CustomerID: item.CustomerID
@@ -4001,11 +4001,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], InlineActionGrid);
             return InlineActionGrid;
-        }(CoopShop.Northwind.CustomerGrid));
+        }(CoopShop.DataShop.CustomerGrid));
         BasicSamples.InlineActionGrid = InlineActionGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4024,7 +4024,7 @@ var CoopShop;
                 // get quick filter list from base class
                 var filters = _super.prototype.getQuickFilters.call(this);
                 // get a reference to order row field names
-                var fld = CoopShop.Northwind.OrderRow.Fields;
+                var fld = CoopShop.DataShop.OrderRow.Fields;
                 // quick filter init method is a good place to set initial
                 // value for a quick filter editor, just after it is created
                 Q.first(filters, function (x) { return x.field == fld.OrderDate; }).init = function (w) {
@@ -4041,7 +4041,7 @@ var CoopShop;
                 };
                 Q.first(filters, function (x) { return x.field == fld.ShippingState; }).init = function (w) {
                     // enum editor has a string value, so need to call toString()
-                    w.value = CoopShop.Northwind.OrderShippingState.NotShipped.toString();
+                    w.value = CoopShop.DataShop.OrderShippingState.NotShipped.toString();
                 };
                 return filters;
             };
@@ -4059,7 +4059,7 @@ var CoopShop;
                 // let base class to create quick filters first
                 _super.prototype.createQuickFilters.call(this);
                 // get a reference to order row field names
-                var fld = CoopShop.Northwind.OrderRow.Fields;
+                var fld = CoopShop.DataShop.OrderRow.Fields;
                 // find a quick filter widget by its field name
                 this.findQuickFilter(Serenity.LookupEditor, fld.ShipVia).values = ["1", "2"];
             };
@@ -4067,11 +4067,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], InitialValuesForQuickFilters);
             return InitialValuesForQuickFilters;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.InitialValuesForQuickFilters = InitialValuesForQuickFilters;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4144,11 +4144,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], GroupingAndSummariesInGrid);
             return GroupingAndSummariesInGrid;
-        }(CoopShop.Northwind.ProductGrid));
+        }(CoopShop.DataShop.ProductGrid));
         BasicSamples.GroupingAndSummariesInGrid = GroupingAndSummariesInGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4183,7 +4183,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], GridFilteredByCriteria);
             return GridFilteredByCriteria;
-        }(CoopShop.Northwind.ProductGrid));
+        }(CoopShop.DataShop.ProductGrid));
         BasicSamples.GridFilteredByCriteria = GridFilteredByCriteria;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4223,11 +4223,11 @@ var CoopShop;
             function RowSelectionGrid(container) {
                 return _super.call(this, container) || this;
             }
-            RowSelectionGrid.prototype.getColumnsKey = function () { return "Northwind.Supplier"; };
-            RowSelectionGrid.prototype.getDialogType = function () { return CoopShop.Northwind.SupplierDialog; };
-            RowSelectionGrid.prototype.getIdProperty = function () { return CoopShop.Northwind.SupplierRow.idProperty; };
-            RowSelectionGrid.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.SupplierRow.localTextPrefix; };
-            RowSelectionGrid.prototype.getService = function () { return CoopShop.Northwind.SupplierService.baseUrl; };
+            RowSelectionGrid.prototype.getColumnsKey = function () { return "DataShop.Supplier"; };
+            RowSelectionGrid.prototype.getDialogType = function () { return CoopShop.DataShop.SupplierDialog; };
+            RowSelectionGrid.prototype.getIdProperty = function () { return CoopShop.DataShop.SupplierRow.idProperty; };
+            RowSelectionGrid.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.SupplierRow.localTextPrefix; };
+            RowSelectionGrid.prototype.getService = function () { return CoopShop.DataShop.SupplierService.baseUrl; };
             RowSelectionGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], RowSelectionGrid);
@@ -4456,7 +4456,7 @@ var CoopShop;
         BasicSamples.DragDropSampleGrid = DragDropSampleGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4472,7 +4472,7 @@ var CoopShop;
              */
             CustomLinksInGrid.prototype.getColumns = function () {
                 var columns = _super.prototype.getColumns.call(this);
-                var fld = CoopShop.Northwind.OrderRow.Fields;
+                var fld = CoopShop.DataShop.OrderRow.Fields;
                 Q.first(columns, function (x) { return x.field == fld.CustomerCompanyName; }).format =
                     function (ctx) { return "<a href=\"javascript:;\" class=\"customer-link\">" + Q.htmlEncode(ctx.value) + "</a>"; };
                 Q.first(columns, function (x) { return x.field == fld.OrderDate; }).format =
@@ -4502,12 +4502,12 @@ var CoopShop;
                     Q.confirm(message, function () {
                         // CustomerDialog doesn't use CustomerID but ID (identity)
                         // so need to find customer to get its actual ID
-                        var customer = Q.first(CoopShop.Northwind.CustomerRow.getLookup().items, function (x) { return x.CustomerID == item.CustomerID; });
-                        new CoopShop.Northwind.CustomerDialog().loadByIdAndOpenDialog(customer.ID);
+                        var customer = Q.first(CoopShop.DataShop.CustomerRow.getLookup().items, function (x) { return x.CustomerID == item.CustomerID; });
+                        new CoopShop.DataShop.CustomerDialog().loadByIdAndOpenDialog(customer.ID);
                     }, {
                         htmlEncode: false,
                         onNo: function () {
-                            new CoopShop.Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
+                            new CoopShop.DataShop.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
                         }
                     });
                 }
@@ -4523,7 +4523,7 @@ var CoopShop;
                     Q.notifySuccess("You clicked an employee name, " +
                         "so i've opened a new Order Dialog from same customer " +
                         "with that employee prepopulated!");
-                    new CoopShop.Northwind.OrderDialog().loadEntityAndOpenDialog({
+                    new CoopShop.DataShop.OrderDialog().loadEntityAndOpenDialog({
                         CustomerID: item.CustomerID,
                         EmployeeID: item.EmployeeID
                     });
@@ -4531,7 +4531,7 @@ var CoopShop;
                 else if (target.hasClass("ship-country-link")) {
                     e.preventDefault();
                     Q.notifySuccess("Let's filter the grid to orders from " + item.ShipCountry);
-                    var countryFilter = this.findQuickFilter(Serenity.LookupEditor, CoopShop.Northwind.OrderRow.Fields.ShipCountry);
+                    var countryFilter = this.findQuickFilter(Serenity.LookupEditor, CoopShop.DataShop.OrderRow.Fields.ShipCountry);
                     countryFilter.value = item.ShipCountry;
                     this.refresh();
                 }
@@ -4555,7 +4555,7 @@ var CoopShop;
                     var date = Q.formatDate(item.OrderDate);
                     // ask for confirmation
                     Q.confirm(Q.format("You clicked edit link for order with ID: {0} and Date: {1}. Should i open that order?", item.OrderID, date), function () {
-                        new CoopShop.Northwind.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
+                        new CoopShop.DataShop.OrderDialog().loadByIdAndOpenDialog(item.OrderID);
                     });
                 }
                 else {
@@ -4566,7 +4566,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], CustomLinksInGrid);
             return CustomLinksInGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.CustomLinksInGrid = CustomLinksInGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4579,11 +4579,11 @@ var CoopShop;
             function ConditionalFormattingGrid(container) {
                 return _super.call(this, container) || this;
             }
-            ConditionalFormattingGrid.prototype.getColumnsKey = function () { return "Northwind.Product"; };
-            ConditionalFormattingGrid.prototype.getDialogType = function () { return CoopShop.Northwind.ProductDialog; };
-            ConditionalFormattingGrid.prototype.getIdProperty = function () { return CoopShop.Northwind.ProductRow.idProperty; };
-            ConditionalFormattingGrid.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.ProductRow.localTextPrefix; };
-            ConditionalFormattingGrid.prototype.getService = function () { return CoopShop.Northwind.ProductService.baseUrl; };
+            ConditionalFormattingGrid.prototype.getColumnsKey = function () { return "DataShop.Product"; };
+            ConditionalFormattingGrid.prototype.getDialogType = function () { return CoopShop.DataShop.ProductDialog; };
+            ConditionalFormattingGrid.prototype.getIdProperty = function () { return CoopShop.DataShop.ProductRow.idProperty; };
+            ConditionalFormattingGrid.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.ProductRow.localTextPrefix; };
+            ConditionalFormattingGrid.prototype.getService = function () { return CoopShop.DataShop.ProductService.baseUrl; };
             /**
              * We override getColumns() to be able to add a custom CSS class to UnitPrice
              * We could also add this class in ProductColumns.cs but didn't want to modify
@@ -4591,7 +4591,7 @@ var CoopShop;
              */
             ConditionalFormattingGrid.prototype.getColumns = function () {
                 var columns = _super.prototype.getColumns.call(this);
-                var fld = CoopShop.Northwind.ProductRow.Fields;
+                var fld = CoopShop.DataShop.ProductRow.Fields;
                 // adding a specific css class to UnitPrice column, 
                 // to be able to format cell with a different background
                 Q.first(columns, function (x) { return x.field == fld.UnitPrice; }).cssClass += " col-unit-price";
@@ -4675,7 +4675,7 @@ var CoopShop;
         BasicSamples.OrderBulkAction = OrderBulkAction;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 /// <reference path="OrderBulkAction.ts" />
 var CoopShop;
 (function (CoopShop) {
@@ -4720,7 +4720,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], CancellableBulkActionGrid);
             return CancellableBulkActionGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.CancellableBulkActionGrid = CancellableBulkActionGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4867,7 +4867,7 @@ var CoopShop;
         BasicSamples.HardcodedValuesEditor = HardcodedValuesEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductDialog.ts" />
+/// <reference path="../../../DataShop/Product/ProductDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4886,11 +4886,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], LookupFilterByMultipleDialog);
             return LookupFilterByMultipleDialog;
-        }(CoopShop.Northwind.ProductDialog));
+        }(CoopShop.DataShop.ProductDialog));
         BasicSamples.LookupFilterByMultipleDialog = LookupFilterByMultipleDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4925,7 +4925,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], LookupFilterByMultipleGrid);
             return LookupFilterByMultipleGrid;
-        }(CoopShop.Northwind.ProductGrid));
+        }(CoopShop.DataShop.ProductGrid));
         BasicSamples.LookupFilterByMultipleGrid = LookupFilterByMultipleGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4953,7 +4953,7 @@ var CoopShop;
              * data, we lock it to category lookup key.
              */
             ProduceSeafoodCategoryEditor.prototype.getLookupKey = function () {
-                return CoopShop.Northwind.CategoryRow.lookupKey;
+                return CoopShop.DataShop.CategoryRow.lookupKey;
             };
             /**
              * Here we are filtering by category name but you could filter by any field.
@@ -4974,7 +4974,7 @@ var CoopShop;
         BasicSamples.ProduceSeafoodCategoryEditor = ProduceSeafoodCategoryEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/OrderDetail/OrderDetailDialog.ts" />
+/// <reference path="../../../DataShop/OrderDetail/OrderDetailDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -4987,11 +4987,11 @@ var CoopShop;
             __extends(FilteredLookupOrderDetailDialog, _super);
             function FilteredLookupOrderDetailDialog() {
                 var _this = _super.call(this) || this;
-                _this.form = new CoopShop.Northwind.OrderDetailForm(_this.idPrefix);
+                _this.form = new CoopShop.DataShop.OrderDetailForm(_this.idPrefix);
                 // we can set cascade field in constructor
                 // we could also use FilterField but in this case, when CategoryID is null
                 // lookup editor would show all products in any category
-                _this.form.ProductID.cascadeField = CoopShop.Northwind.ProductRow.Fields.CategoryID;
+                _this.form.ProductID.cascadeField = CoopShop.DataShop.ProductRow.Fields.CategoryID;
                 return _this;
                 // but CategoryID value is not yet available here as detail editor will set it 
                 // after calling constructor (creating a detail dialog) so we'll use BeforeLoadEntity
@@ -5012,11 +5012,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], FilteredLookupOrderDetailDialog);
             return FilteredLookupOrderDetailDialog;
-        }(CoopShop.Northwind.OrderDetailDialog));
+        }(CoopShop.DataShop.OrderDetailDialog));
         BasicSamples.FilteredLookupOrderDetailDialog = FilteredLookupOrderDetailDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/OrderDetail/OrderDetailsEditor.ts" />
+/// <reference path="../../../DataShop/OrderDetail/OrderDetailsEditor.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5044,7 +5044,7 @@ var CoopShop;
                 Serenity.Decorators.registerEditor()
             ], FilteredLookupDetailEditor);
             return FilteredLookupDetailEditor;
-        }(CoopShop.Northwind.OrderDetailsEditor));
+        }(CoopShop.DataShop.OrderDetailsEditor));
         BasicSamples.FilteredLookupDetailEditor = FilteredLookupDetailEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5066,10 +5066,10 @@ var CoopShop;
                 return _this;
             }
             FilteredLookupInDetailDialog.prototype.getFormKey = function () { return BasicSamples.FilteredLookupInDetailForm.formKey; };
-            FilteredLookupInDetailDialog.prototype.getIdProperty = function () { return CoopShop.Northwind.OrderRow.idProperty; };
-            FilteredLookupInDetailDialog.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.OrderRow.localTextPrefix; };
-            FilteredLookupInDetailDialog.prototype.getNameProperty = function () { return CoopShop.Northwind.OrderRow.nameProperty; };
-            FilteredLookupInDetailDialog.prototype.getService = function () { return CoopShop.Northwind.OrderService.baseUrl; };
+            FilteredLookupInDetailDialog.prototype.getIdProperty = function () { return CoopShop.DataShop.OrderRow.idProperty; };
+            FilteredLookupInDetailDialog.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderRow.localTextPrefix; };
+            FilteredLookupInDetailDialog.prototype.getNameProperty = function () { return CoopShop.DataShop.OrderRow.nameProperty; };
+            FilteredLookupInDetailDialog.prototype.getService = function () { return CoopShop.DataShop.OrderService.baseUrl; };
             FilteredLookupInDetailDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], FilteredLookupInDetailDialog);
@@ -5078,7 +5078,7 @@ var CoopShop;
         BasicSamples.FilteredLookupInDetailDialog = FilteredLookupInDetailDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5096,7 +5096,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], FilteredLookupInDetailGrid);
             return FilteredLookupInDetailGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.FilteredLookupInDetailGrid = FilteredLookupInDetailGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5113,7 +5113,7 @@ var CoopShop;
                 _this.form.ProductID.changeSelect2(function (e) {
                     var productID = Q.toId(_this.form.ProductID.value);
                     if (productID != null) {
-                        _this.form.UnitPrice.value = CoopShop.Northwind.ProductRow.getLookup().itemById[productID].UnitPrice;
+                        _this.form.UnitPrice.value = CoopShop.DataShop.ProductRow.getLookup().itemById[productID].UnitPrice;
                     }
                 });
                 _this.form.Discount.addValidationRule(_this.uniqueName, function (e) {
@@ -5128,7 +5128,7 @@ var CoopShop;
                 return _this;
             }
             ChangingLookupTextDialog.prototype.getFormKey = function () { return BasicSamples.ChangingLookupTextForm.formKey; };
-            ChangingLookupTextDialog.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.OrderDetailRow.localTextPrefix; };
+            ChangingLookupTextDialog.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderDetailRow.localTextPrefix; };
             ChangingLookupTextDialog.prototype.updateInterface = function () {
                 _super.prototype.updateInterface.call(this);
                 this.toolbar.findButton('apply-changes-button').hide();
@@ -5155,7 +5155,7 @@ var CoopShop;
                 return _super.call(this, container, options) || this;
             }
             ChangingLookupTextEditor.prototype.getLookupKey = function () {
-                return CoopShop.Northwind.ProductRow.lookupKey;
+                return CoopShop.DataShop.ProductRow.lookupKey;
             };
             ChangingLookupTextEditor.prototype.getItemText = function (item, lookup) {
                 return _super.prototype.getItemText.call(this, item, lookup) +
@@ -5173,7 +5173,7 @@ var CoopShop;
         BasicSamples.ChangingLookupTextEditor = ChangingLookupTextEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Customer/CustomerDialog.ts" />
+/// <reference path="../../../DataShop/Customer/CustomerDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5203,7 +5203,7 @@ var CoopShop;
                     // if no customer ID yet (new record mode probably) use 'C' as a prefix
                     var prefix = (val || 'C').toUpperCase();
                     // call our service, see CustomerEndpoint.cs and CustomerRepository.cs
-                    CoopShop.Northwind.CustomerService.GetNextNumber({
+                    CoopShop.DataShop.CustomerService.GetNextNumber({
                         Prefix: prefix,
                         Length: 5 // we want service to search for and return serials of 5 in length
                     }, function (response) {
@@ -5217,11 +5217,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], SerialAutoNumberDialog);
             return SerialAutoNumberDialog;
-        }(CoopShop.Northwind.CustomerDialog));
+        }(CoopShop.DataShop.CustomerDialog));
         BasicSamples.SerialAutoNumberDialog = SerialAutoNumberDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Customer/CustomerGrid.ts" />
+/// <reference path="../../../DataShop/Customer/CustomerGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5239,7 +5239,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], SerialAutoNumberGrid);
             return SerialAutoNumberGrid;
-        }(CoopShop.Northwind.CustomerGrid));
+        }(CoopShop.DataShop.CustomerGrid));
         BasicSamples.SerialAutoNumberGrid = SerialAutoNumberGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5255,11 +5255,11 @@ var CoopShop;
             function ResponsiveDialog() {
                 return _super.call(this) || this;
             }
-            ResponsiveDialog.prototype.getFormKey = function () { return CoopShop.Northwind.OrderForm.formKey; };
-            ResponsiveDialog.prototype.getIdProperty = function () { return CoopShop.Northwind.OrderRow.idProperty; };
-            ResponsiveDialog.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.OrderRow.localTextPrefix; };
-            ResponsiveDialog.prototype.getNameProperty = function () { return CoopShop.Northwind.OrderRow.nameProperty; };
-            ResponsiveDialog.prototype.getService = function () { return CoopShop.Northwind.OrderService.baseUrl; };
+            ResponsiveDialog.prototype.getFormKey = function () { return CoopShop.DataShop.OrderForm.formKey; };
+            ResponsiveDialog.prototype.getIdProperty = function () { return CoopShop.DataShop.OrderRow.idProperty; };
+            ResponsiveDialog.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderRow.localTextPrefix; };
+            ResponsiveDialog.prototype.getNameProperty = function () { return CoopShop.DataShop.OrderRow.nameProperty; };
+            ResponsiveDialog.prototype.getService = function () { return CoopShop.DataShop.OrderService.baseUrl; };
             ResponsiveDialog = __decorate([
                 Serenity.Decorators.registerClass(),
                 Serenity.Decorators.responsive(),
@@ -5270,7 +5270,7 @@ var CoopShop;
         BasicSamples.ResponsiveDialog = ResponsiveDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5288,11 +5288,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], ResponsiveGrid);
             return ResponsiveGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.ResponsiveGrid = ResponsiveGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Supplier/SupplierDialog.ts" />
+/// <reference path="../../../DataShop/Supplier/SupplierDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5388,11 +5388,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], ReadOnlyDialog);
             return ReadOnlyDialog;
-        }(CoopShop.Northwind.SupplierDialog));
+        }(CoopShop.DataShop.SupplierDialog));
         BasicSamples.ReadOnlyDialog = ReadOnlyDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Supplier/SupplierGrid.ts" />
+/// <reference path="../../../DataShop/Supplier/SupplierGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5418,7 +5418,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], ReadOnlyGrid);
             return ReadOnlyGrid;
-        }(CoopShop.Northwind.SupplierGrid));
+        }(CoopShop.DataShop.SupplierGrid));
         BasicSamples.ReadOnlyGrid = ReadOnlyGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5441,12 +5441,12 @@ var CoopShop;
                         _this.setCustomerDetails({});
                         return;
                     }
-                    // in northwind CustomerID is a string like "ALFKI", 
+                    // in datashop CustomerID is a string like "ALFKI", 
                     // while its actual integer ID value is 1.
                     // so we need to convert customer ID to ID.
                     // you won't have to do this conversion with your tables
-                    var id = Q.first(CoopShop.Northwind.CustomerRow.getLookup().items, function (x) { return x.CustomerID == customerID; }).ID;
-                    CoopShop.Northwind.CustomerService.Retrieve({
+                    var id = Q.first(CoopShop.DataShop.CustomerRow.getLookup().items, function (x) { return x.CustomerID == customerID; }).ID;
+                    CoopShop.DataShop.CustomerService.Retrieve({
                         EntityId: id
                     }, function (response) {
                         _this.setCustomerDetails(response.Entity);
@@ -5455,10 +5455,10 @@ var CoopShop;
                 return _this;
             }
             PopulateLinkedDataDialog.prototype.getFormKey = function () { return BasicSamples.PopulateLinkedDataForm.formKey; };
-            PopulateLinkedDataDialog.prototype.getIdProperty = function () { return CoopShop.Northwind.OrderRow.idProperty; };
-            PopulateLinkedDataDialog.prototype.getLocalTextPrefix = function () { return CoopShop.Northwind.OrderRow.localTextPrefix; };
-            PopulateLinkedDataDialog.prototype.getNameProperty = function () { return CoopShop.Northwind.OrderRow.nameProperty; };
-            PopulateLinkedDataDialog.prototype.getService = function () { return CoopShop.Northwind.OrderService.baseUrl; };
+            PopulateLinkedDataDialog.prototype.getIdProperty = function () { return CoopShop.DataShop.OrderRow.idProperty; };
+            PopulateLinkedDataDialog.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderRow.localTextPrefix; };
+            PopulateLinkedDataDialog.prototype.getNameProperty = function () { return CoopShop.DataShop.OrderRow.nameProperty; };
+            PopulateLinkedDataDialog.prototype.getService = function () { return CoopShop.DataShop.OrderService.baseUrl; };
             PopulateLinkedDataDialog.prototype.setCustomerDetails = function (details) {
                 this.form.CustomerCity.value = details.City;
                 this.form.CustomerContactName.value = details.ContactName;
@@ -5474,7 +5474,7 @@ var CoopShop;
              * This has no effect other than looks on populate linked data demonstration
              */
             PopulateLinkedDataDialog.prototype.getCssClass = function () {
-                return _super.prototype.getCssClass.call(this) + " s-OrderDialog s-Northwind-OrderDialog";
+                return _super.prototype.getCssClass.call(this) + " s-OrderDialog s-DataShop-OrderDialog";
             };
             PopulateLinkedDataDialog = __decorate([
                 Serenity.Decorators.registerClass()
@@ -5484,7 +5484,7 @@ var CoopShop;
         BasicSamples.PopulateLinkedDataDialog = PopulateLinkedDataDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5502,11 +5502,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], PopulateLinkedDataGrid);
             return PopulateLinkedDataGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.PopulateLinkedDataGrid = PopulateLinkedDataGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderDialog.ts" />
+/// <reference path="../../../DataShop/Order/OrderDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5523,11 +5523,11 @@ var CoopShop;
                 // entity dialogs by default creates a property grid on element with ID "PropertyGrid".
                 // here we explicitly create another, the customer property grid (vertical form) on element with ID "CustomerPropertyGrid".
                 _this.customerPropertyGrid = new Serenity.PropertyGrid(_this.byId("CustomerPropertyGrid"), {
-                    items: Q.getForm(CoopShop.Northwind.CustomerForm.formKey).filter(function (x) { return x.name != 'CustomerID'; }),
+                    items: Q.getForm(CoopShop.DataShop.CustomerForm.formKey).filter(function (x) { return x.name != 'CustomerID'; }),
                     useCategories: true
                 });
                 // this is just a helper to access editors if needed
-                _this.customerForm = new CoopShop.Northwind.CustomerForm(_this.customerPropertyGrid.idPrefix);
+                _this.customerForm = new CoopShop.DataShop.CustomerForm(_this.customerPropertyGrid.idPrefix);
                 // initialize validator for customer form
                 _this.customerValidator = _this.byId("CustomerForm").validate(Q.validateOptions({}));
                 _this.form.CustomerID.change(function (e) {
@@ -5541,7 +5541,7 @@ var CoopShop;
                         return;
                     }
                     // load selected customer into customer form by calling CustomerService
-                    CoopShop.Northwind.CustomerService.Retrieve({
+                    CoopShop.DataShop.CustomerService.Retrieve({
                         EntityId: customerID
                     }, function (response) {
                         _this.customerPropertyGrid.load(response.Entity);
@@ -5557,7 +5557,7 @@ var CoopShop;
                 // the ID (auto increment ID) are different, so we need to 
                 // find numeric ID from customer lookups. 
                 // you'll probably won't need this step.
-                return Q.first(CoopShop.Northwind.CustomerRow.getLookup().items, function (x) { return x.CustomerID == customerID; }).ID;
+                return Q.first(CoopShop.DataShop.CustomerRow.getLookup().items, function (x) { return x.CustomerID == customerID; }).ID;
             };
             OtherFormOneBarDialog.prototype.loadEntity = function (entity) {
                 _super.prototype.loadEntity.call(this, entity);
@@ -5584,12 +5584,12 @@ var CoopShop;
                     // prepare an empty entity to serialize customer details into
                     var c = {};
                     this.customerPropertyGrid.save(c);
-                    CoopShop.Northwind.CustomerService.Update({
+                    CoopShop.DataShop.CustomerService.Update({
                         EntityId: id,
                         Entity: c
                     }, function (response) {
                         // reload customer list just in case
-                        Q.reloadLookup(CoopShop.Northwind.CustomerRow.lookupKey);
+                        Q.reloadLookup(CoopShop.DataShop.CustomerRow.lookupKey);
                         // set flag that we are triggering customer select change event
                         // otherwise active tab will change to first one
                         _this.selfChange++;
@@ -5624,11 +5624,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], OtherFormOneBarDialog);
             return OtherFormOneBarDialog;
-        }(CoopShop.Northwind.OrderDialog));
+        }(CoopShop.DataShop.OrderDialog));
         BasicSamples.OtherFormOneBarDialog = OtherFormOneBarDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5646,11 +5646,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], OtherFormInTabOneBarGrid);
             return OtherFormInTabOneBarGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.OtherFormInTabOneBarGrid = OtherFormInTabOneBarGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderDialog.ts" />
+/// <reference path="../../../DataShop/Order/OrderDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5665,11 +5665,11 @@ var CoopShop;
                 // entity dialogs by default creates a property grid on element with ID "PropertyGrid".
                 // here we explicitly create another, the customer property grid (vertical form) on element with ID "CustomerPropertyGrid".
                 _this.customerPropertyGrid = new Serenity.PropertyGrid(_this.byId("CustomerPropertyGrid"), {
-                    items: Q.getForm(CoopShop.Northwind.CustomerForm.formKey).filter(function (x) { return x.name != 'CustomerID'; }),
+                    items: Q.getForm(CoopShop.DataShop.CustomerForm.formKey).filter(function (x) { return x.name != 'CustomerID'; }),
                     useCategories: true
                 });
                 // this is just a helper to access editors if needed
-                _this.customerForm = new CoopShop.Northwind.CustomerForm(_this.customerPropertyGrid.idPrefix);
+                _this.customerForm = new CoopShop.DataShop.CustomerForm(_this.customerPropertyGrid.idPrefix);
                 // initialize validator for customer form
                 _this.customerValidator = _this.byId("CustomerForm").validate(Q.validateOptions({}));
                 var selfChange = 0;
@@ -5687,12 +5687,12 @@ var CoopShop;
                                 // prepare an empty entity to serialize customer details into
                                 var c = {};
                                 _this.customerPropertyGrid.save(c);
-                                CoopShop.Northwind.CustomerService.Update({
+                                CoopShop.DataShop.CustomerService.Update({
                                     EntityId: id,
                                     Entity: c
                                 }, function (response) {
                                     // reload customer list just in case
-                                    Q.reloadLookup(CoopShop.Northwind.CustomerRow.lookupKey);
+                                    Q.reloadLookup(CoopShop.DataShop.CustomerRow.lookupKey);
                                     // set flag that we are triggering customer select change event
                                     // otherwise active tab will change to first one
                                     selfChange++;
@@ -5720,7 +5720,7 @@ var CoopShop;
                         return;
                     }
                     // load selected customer into customer form by calling CustomerService
-                    CoopShop.Northwind.CustomerService.Retrieve({
+                    CoopShop.DataShop.CustomerService.Retrieve({
                         EntityId: customerID
                     }, function (response) {
                         _this.customerPropertyGrid.load(response.Entity);
@@ -5736,7 +5736,7 @@ var CoopShop;
                 // the ID (auto increment ID) are different, so we need to 
                 // find numeric ID from customer lookups. 
                 // you'll probably won't need this step.
-                return Q.first(CoopShop.Northwind.CustomerRow.getLookup().items, function (x) { return x.CustomerID == customerID; }).ID;
+                return Q.first(CoopShop.DataShop.CustomerRow.getLookup().items, function (x) { return x.CustomerID == customerID; }).ID;
             };
             OtherFormInTabDialog.prototype.loadEntity = function (entity) {
                 _super.prototype.loadEntity.call(this, entity);
@@ -5746,11 +5746,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], OtherFormInTabDialog);
             return OtherFormInTabDialog;
-        }(CoopShop.Northwind.OrderDialog));
+        }(CoopShop.DataShop.OrderDialog));
         BasicSamples.OtherFormInTabDialog = OtherFormInTabDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5768,11 +5768,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], OtherFormInTabGrid);
             return OtherFormInTabGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.OtherFormInTabGrid = OtherFormInTabGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderDialog.ts" />
+/// <reference path="../../../DataShop/Order/OrderDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5791,11 +5791,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], MultiColumnResponsiveDialog);
             return MultiColumnResponsiveDialog;
-        }(CoopShop.Northwind.OrderDialog));
+        }(CoopShop.DataShop.OrderDialog));
         BasicSamples.MultiColumnResponsiveDialog = MultiColumnResponsiveDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5813,11 +5813,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], MultiColumnResponsiveGrid);
             return MultiColumnResponsiveGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.MultiColumnResponsiveGrid = MultiColumnResponsiveGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Category/CategoryDialog.ts" />
+/// <reference path="../../../DataShop/Category/CategoryDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5838,9 +5838,9 @@ var CoopShop;
                 if (this.isNew()) {
                     Q.notifySuccess("Just inserted a category with ID: " + response.EntityId);
                     // you could also open a new dialog
-                    // new Northwind.CategoryDialog().loadByIdAndOpenDialog(response.EntityId);
+                    // new DataShop.CategoryDialog().loadByIdAndOpenDialog(response.EntityId);
                     // but let's better load inserted record using Retrieve service
-                    CoopShop.Northwind.CategoryService.Retrieve({
+                    CoopShop.DataShop.CategoryService.Retrieve({
                         EntityId: response.EntityId
                     }, function (resp) {
                         Q.notifyInfo("Looks like the category you added has name: " + resp.Entity.CategoryName);
@@ -5851,11 +5851,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], GetInsertedRecordIdDialog);
             return GetInsertedRecordIdDialog;
-        }(CoopShop.Northwind.CategoryDialog));
+        }(CoopShop.DataShop.CategoryDialog));
         BasicSamples.GetInsertedRecordIdDialog = GetInsertedRecordIdDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Category/CategoryGrid.ts" />
+/// <reference path="../../../DataShop/Category/CategoryGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5873,11 +5873,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], GetInsertedRecordIdGrid);
             return GetInsertedRecordIdGrid;
-        }(CoopShop.Northwind.CategoryGrid));
+        }(CoopShop.DataShop.CategoryGrid));
         BasicSamples.GetInsertedRecordIdGrid = GetInsertedRecordIdGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderDialog.ts" />
+/// <reference path="../../../DataShop/Order/OrderDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5896,7 +5896,7 @@ var CoopShop;
                 Serenity.Decorators.panel()
             ], EntityDialogAsPanel);
             return EntityDialogAsPanel;
-        }(CoopShop.Northwind.OrderDialog));
+        }(CoopShop.DataShop.OrderDialog));
         BasicSamples.EntityDialogAsPanel = EntityDialogAsPanel;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5970,7 +5970,7 @@ var CoopShop;
         })(DialogBoxes = BasicSamples.DialogBoxes || (BasicSamples.DialogBoxes = {}));
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -5989,9 +5989,9 @@ var CoopShop;
                 this.editItem({
                     CustomerID: 'ANTON',
                     RequiredDate: Q.formatDate(new Date(), 'yyyy-MM-dd'),
-                    EmployeeID: CoopShop.Northwind.EmployeeRow.getLookup().items
+                    EmployeeID: CoopShop.DataShop.EmployeeRow.getLookup().items
                         .filter(function (x) { return x.FullName === 'Robert King'; })[0].EmployeeID,
-                    ShipVia: CoopShop.Northwind.ShipperRow.getLookup().items
+                    ShipVia: CoopShop.DataShop.ShipperRow.getLookup().items
                         .filter(function (x) { return x.CompanyName === 'Speedy Express'; })[0].ShipperID
                 });
             };
@@ -6007,9 +6007,9 @@ var CoopShop;
                         // bind to its events, load our order row, and open dialog
                         _this.editItem({
                             CustomerID: 'QUEEN',
-                            EmployeeID: CoopShop.Northwind.EmployeeRow.getLookup().items
+                            EmployeeID: CoopShop.DataShop.EmployeeRow.getLookup().items
                                 .filter(function (x) { return x.FullName === 'Nancy Davolio'; })[0].EmployeeID,
-                            ShipVia: CoopShop.Northwind.ShipperRow.getLookup().items
+                            ShipVia: CoopShop.DataShop.ShipperRow.getLookup().items
                                 .filter(function (x) { return x.CompanyName === 'United Package'; })[0].ShipperID
                         });
                     }
@@ -6019,16 +6019,16 @@ var CoopShop;
                     onClick: function () {
                         // we could use EditItem here too, but for demonstration
                         // purposes we are manually creating dialog this time
-                        var dlg = new CoopShop.Northwind.OrderDialog();
+                        var dlg = new CoopShop.DataShop.OrderDialog();
                         // let grid watch for changes to manually created dialog, 
                         // so when a new item is saved, grid can refresh itself
                         _this.initDialog(dlg);
                         // get a reference to product Chai
-                        var chai = CoopShop.Northwind.ProductRow.getLookup().items
+                        var chai = CoopShop.DataShop.ProductRow.getLookup().items
                             .filter(function (x) { return x.ProductName === 'Chai'; })[0];
                         // LoadEntityAndOpenDialog, loads an OrderRow 
                         // to dialog and opens it
-                        var lauraCallahanID = CoopShop.Northwind.EmployeeRow.getLookup().items
+                        var lauraCallahanID = CoopShop.DataShop.EmployeeRow.getLookup().items
                             .filter(function (x) { return x.FullName === 'Laura Callahan'; })[0].EmployeeID;
                         dlg.loadEntityAndOpenDialog({
                             CustomerID: 'GOURL',
@@ -6049,11 +6049,11 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], DefaultValuesInNewGrid);
             return DefaultValuesInNewGrid;
-        }(CoopShop.Northwind.OrderGrid));
+        }(CoopShop.DataShop.OrderGrid));
         BasicSamples.DefaultValuesInNewGrid = DefaultValuesInNewGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductDialog.ts" />
+/// <reference path="../../../DataShop/Product/ProductDialog.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -6093,11 +6093,11 @@ var CoopShop;
                 Serenity.Decorators.maximizable()
             ], CloneableEntityDialog);
             return CloneableEntityDialog;
-        }(CoopShop.Northwind.ProductDialog));
+        }(CoopShop.DataShop.ProductDialog));
         BasicSamples.CloneableEntityDialog = CloneableEntityDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
-/// <reference path="../../../Northwind/Product/ProductGrid.ts" />
+/// <reference path="../../../DataShop/Product/ProductGrid.ts" />
 var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
@@ -6115,7 +6115,7 @@ var CoopShop;
                 Serenity.Decorators.registerClass()
             ], CloneableEntityGrid);
             return CloneableEntityGrid;
-        }(CoopShop.Northwind.ProductGrid));
+        }(CoopShop.DataShop.ProductGrid));
         BasicSamples.CloneableEntityGrid = CloneableEntityGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7714,7 +7714,7 @@ var CoopShop;
             return FilteredLookupInDetailForm;
         }(Serenity.PrefixedContext));
         BasicSamples.FilteredLookupInDetailForm = FilteredLookupInDetailForm;
-        [['CustomerID', function () { return CoopShop.Northwind.CustomerEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return BasicSamples.FilteredLookupDetailEditor; }]].forEach(function (x) { return Object.defineProperty(FilteredLookupInDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['CustomerID', function () { return CoopShop.DataShop.CustomerEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return BasicSamples.FilteredLookupDetailEditor; }]].forEach(function (x) { return Object.defineProperty(FilteredLookupInDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -7762,7 +7762,7 @@ var CoopShop;
             return PopulateLinkedDataForm;
         }(Serenity.PrefixedContext));
         BasicSamples.PopulateLinkedDataForm = PopulateLinkedDataForm;
-        [['CustomerID', function () { return CoopShop.Northwind.CustomerEditor; }], ['CustomerContactName', function () { return Serenity.StringEditor; }], ['CustomerContactTitle', function () { return Serenity.StringEditor; }], ['CustomerCity', function () { return Serenity.StringEditor; }], ['CustomerRegion', function () { return Serenity.StringEditor; }], ['CustomerCountry', function () { return Serenity.StringEditor; }], ['CustomerPhone', function () { return Serenity.StringEditor; }], ['CustomerFax', function () { return Serenity.StringEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['RequiredDate', function () { return Serenity.DateEditor; }], ['EmployeeID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return CoopShop.Northwind.OrderDetailsEditor; }]].forEach(function (x) { return Object.defineProperty(PopulateLinkedDataForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['CustomerID', function () { return CoopShop.DataShop.CustomerEditor; }], ['CustomerContactName', function () { return Serenity.StringEditor; }], ['CustomerContactTitle', function () { return Serenity.StringEditor; }], ['CustomerCity', function () { return Serenity.StringEditor; }], ['CustomerRegion', function () { return Serenity.StringEditor; }], ['CustomerCountry', function () { return Serenity.StringEditor; }], ['CustomerPhone', function () { return Serenity.StringEditor; }], ['CustomerFax', function () { return Serenity.StringEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['RequiredDate', function () { return Serenity.DateEditor; }], ['EmployeeID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return CoopShop.DataShop.OrderDetailsEditor; }]].forEach(function (x) { return Object.defineProperty(PopulateLinkedDataForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -8654,29 +8654,29 @@ var CoopShop;
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryForm = /** @class */ (function (_super) {
             __extends(CategoryForm, _super);
             function CategoryForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            CategoryForm.formKey = 'Northwind.Category';
+            CategoryForm.formKey = 'DataShop.Category';
             return CategoryForm;
         }(Serenity.PrefixedContext));
-        Northwind.CategoryForm = CategoryForm;
+        DataShop.CategoryForm = CategoryForm;
         [['CategoryName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(CategoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryLangRow;
         (function (CategoryLangRow) {
             CategoryLangRow.idProperty = 'Id';
             CategoryLangRow.nameProperty = 'CategoryName';
-            CategoryLangRow.localTextPrefix = 'Northwind.CategoryLang';
+            CategoryLangRow.localTextPrefix = 'DataShop.CategoryLang';
             var Fields;
             (function (Fields) {
             })(Fields = CategoryLangRow.Fields || (CategoryLangRow.Fields = {}));
@@ -8687,16 +8687,16 @@ var CoopShop;
                 'CategoryName',
                 'Description'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CategoryLangRow = Northwind.CategoryLangRow || (Northwind.CategoryLangRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CategoryLangRow = DataShop.CategoryLangRow || (DataShop.CategoryLangRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryLangService;
         (function (CategoryLangService) {
-            CategoryLangService.baseUrl = 'Northwind/CategoryLang';
+            CategoryLangService.baseUrl = 'DataShop/CategoryLang';
             var Methods;
             (function (Methods) {
             })(Methods = CategoryLangService.Methods || (CategoryLangService.Methods = {}));
@@ -8712,21 +8712,21 @@ var CoopShop;
                 };
                 Methods[x] = CategoryLangService.baseUrl + '/' + x;
             });
-        })(CategoryLangService = Northwind.CategoryLangService || (Northwind.CategoryLangService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CategoryLangService = DataShop.CategoryLangService || (DataShop.CategoryLangService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryRow;
         (function (CategoryRow) {
             CategoryRow.idProperty = 'CategoryID';
             CategoryRow.nameProperty = 'CategoryName';
-            CategoryRow.localTextPrefix = 'Northwind.Category';
-            CategoryRow.lookupKey = 'Northwind.Category';
+            CategoryRow.localTextPrefix = 'DataShop.Category';
+            CategoryRow.lookupKey = 'DataShop.Category';
             function getLookup() {
-                return Q.getLookup('Northwind.Category');
+                return Q.getLookup('DataShop.Category');
             }
             CategoryRow.getLookup = getLookup;
             var Fields;
@@ -8738,16 +8738,16 @@ var CoopShop;
                 'Description',
                 'Picture'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CategoryRow = Northwind.CategoryRow || (Northwind.CategoryRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CategoryRow = DataShop.CategoryRow || (DataShop.CategoryRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CategoryService;
         (function (CategoryService) {
-            CategoryService.baseUrl = 'Northwind/Category';
+            CategoryService.baseUrl = 'DataShop/Category';
             var Methods;
             (function (Methods) {
             })(Methods = CategoryService.Methods || (CategoryService.Methods = {}));
@@ -8763,18 +8763,18 @@ var CoopShop;
                 };
                 Methods[x] = CategoryService.baseUrl + '/' + x;
             });
-        })(CategoryService = Northwind.CategoryService || (Northwind.CategoryService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CategoryService = DataShop.CategoryService || (DataShop.CategoryService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerCustomerDemoRow;
         (function (CustomerCustomerDemoRow) {
             CustomerCustomerDemoRow.idProperty = 'ID';
             CustomerCustomerDemoRow.nameProperty = 'CustomerID';
-            CustomerCustomerDemoRow.localTextPrefix = 'Northwind.CustomerCustomerDemo';
+            CustomerCustomerDemoRow.localTextPrefix = 'DataShop.CustomerCustomerDemo';
             var Fields;
             (function (Fields) {
             })(Fields = CustomerCustomerDemoRow.Fields || (CustomerCustomerDemoRow.Fields = {}));
@@ -8794,18 +8794,18 @@ var CoopShop;
                 'CustomerFax',
                 'CustomerTypeCustomerDesc'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerCustomerDemoRow = Northwind.CustomerCustomerDemoRow || (Northwind.CustomerCustomerDemoRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerCustomerDemoRow = DataShop.CustomerCustomerDemoRow || (DataShop.CustomerCustomerDemoRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerDemographicRow;
         (function (CustomerDemographicRow) {
             CustomerDemographicRow.idProperty = 'ID';
             CustomerDemographicRow.nameProperty = 'CustomerTypeID';
-            CustomerDemographicRow.localTextPrefix = 'Northwind.CustomerDemographic';
+            CustomerDemographicRow.localTextPrefix = 'DataShop.CustomerDemographic';
             var Fields;
             (function (Fields) {
             })(Fields = CustomerDemographicRow.Fields || (CustomerDemographicRow.Fields = {}));
@@ -8814,18 +8814,18 @@ var CoopShop;
                 'CustomerTypeID',
                 'CustomerDesc'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerDemographicRow = Northwind.CustomerDemographicRow || (Northwind.CustomerDemographicRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerDemographicRow = DataShop.CustomerDemographicRow || (DataShop.CustomerDemographicRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerDetailsRow;
         (function (CustomerDetailsRow) {
             CustomerDetailsRow.idProperty = 'Id';
             CustomerDetailsRow.nameProperty = 'Email';
-            CustomerDetailsRow.localTextPrefix = 'Northwind.CustomerDetails';
+            CustomerDetailsRow.localTextPrefix = 'DataShop.CustomerDetails';
             var Fields;
             (function (Fields) {
             })(Fields = CustomerDetailsRow.Fields || (CustomerDetailsRow.Fields = {}));
@@ -8853,29 +8853,29 @@ var CoopShop;
                 'LastContactedByReportsTo',
                 'LastContactedByPhotoPath'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerDetailsRow = Northwind.CustomerDetailsRow || (Northwind.CustomerDetailsRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerDetailsRow = DataShop.CustomerDetailsRow || (DataShop.CustomerDetailsRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerForm = /** @class */ (function (_super) {
             __extends(CustomerForm, _super);
             function CustomerForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            CustomerForm.formKey = 'Northwind.Customer';
+            CustomerForm.formKey = 'DataShop.Customer';
             return CustomerForm;
         }(Serenity.PrefixedContext));
-        Northwind.CustomerForm = CustomerForm;
-        [['CustomerID', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['Representatives', function () { return Serenity.LookupEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.LookupEditor; }], ['City', function () { return Serenity.LookupEditor; }], ['Region', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return Northwind.NotesEditor; }], ['LastContactDate', function () { return Serenity.DateEditor; }], ['LastContactedBy', function () { return Serenity.LookupEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.CustomerForm = CustomerForm;
+        [['CustomerID', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['Representatives', function () { return Serenity.LookupEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.LookupEditor; }], ['City', function () { return Serenity.LookupEditor; }], ['Region', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return DataShop.NotesEditor; }], ['LastContactDate', function () { return Serenity.DateEditor; }], ['LastContactedBy', function () { return Serenity.LookupEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerGrossSalesRow;
         (function (CustomerGrossSalesRow) {
             CustomerGrossSalesRow.nameProperty = 'ContactName';
@@ -8890,13 +8890,13 @@ var CoopShop;
                 'ProductName',
                 'GrossAmount'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerGrossSalesRow = Northwind.CustomerGrossSalesRow || (Northwind.CustomerGrossSalesRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerGrossSalesRow = DataShop.CustomerGrossSalesRow || (DataShop.CustomerGrossSalesRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerRepresentativesRow;
         (function (CustomerRepresentativesRow) {
             CustomerRepresentativesRow.idProperty = 'RepresentativeId';
@@ -8909,21 +8909,21 @@ var CoopShop;
                 'CustomerId',
                 'EmployeeId'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerRepresentativesRow = Northwind.CustomerRepresentativesRow || (Northwind.CustomerRepresentativesRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerRepresentativesRow = DataShop.CustomerRepresentativesRow || (DataShop.CustomerRepresentativesRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerRow;
         (function (CustomerRow) {
             CustomerRow.idProperty = 'ID';
             CustomerRow.nameProperty = 'CompanyName';
-            CustomerRow.localTextPrefix = 'Northwind.Customer';
-            CustomerRow.lookupKey = 'Northwind.Customer';
+            CustomerRow.localTextPrefix = 'DataShop.Customer';
+            CustomerRow.lookupKey = 'DataShop.Customer';
             function getLookup() {
-                return Q.getLookup('Northwind.Customer');
+                return Q.getLookup('DataShop.Customer');
             }
             CustomerRow.getLookup = getLookup;
             var Fields;
@@ -8949,16 +8949,16 @@ var CoopShop;
                 'Email',
                 'SendBulletin'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(CustomerRow = Northwind.CustomerRow || (Northwind.CustomerRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerRow = DataShop.CustomerRow || (DataShop.CustomerRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerService;
         (function (CustomerService) {
-            CustomerService.baseUrl = 'Northwind/Customer';
+            CustomerService.baseUrl = 'DataShop/Customer';
             var Methods;
             (function (Methods) {
             })(Methods = CustomerService.Methods || (CustomerService.Methods = {}));
@@ -8975,21 +8975,21 @@ var CoopShop;
                 };
                 Methods[x] = CustomerService.baseUrl + '/' + x;
             });
-        })(CustomerService = Northwind.CustomerService || (Northwind.CustomerService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(CustomerService = DataShop.CustomerService || (DataShop.CustomerService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var EmployeeRow;
         (function (EmployeeRow) {
             EmployeeRow.idProperty = 'EmployeeID';
             EmployeeRow.nameProperty = 'FullName';
-            EmployeeRow.localTextPrefix = 'Northwind.Employee';
-            EmployeeRow.lookupKey = 'Northwind.Employee';
+            EmployeeRow.localTextPrefix = 'DataShop.Employee';
+            EmployeeRow.lookupKey = 'DataShop.Employee';
             function getLookup() {
-                return Q.getLookup('Northwind.Employee');
+                return Q.getLookup('DataShop.Employee');
             }
             EmployeeRow.getLookup = getLookup;
             var Fields;
@@ -9035,18 +9035,18 @@ var CoopShop;
                 'ReportsToPhotoPath',
                 'Gender'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(EmployeeRow = Northwind.EmployeeRow || (Northwind.EmployeeRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(EmployeeRow = DataShop.EmployeeRow || (DataShop.EmployeeRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var EmployeeTerritoryRow;
         (function (EmployeeTerritoryRow) {
             EmployeeTerritoryRow.idProperty = 'EmployeeID';
             EmployeeTerritoryRow.nameProperty = 'TerritoryID';
-            EmployeeTerritoryRow.localTextPrefix = 'Northwind.EmployeeTerritory';
+            EmployeeTerritoryRow.localTextPrefix = 'DataShop.EmployeeTerritory';
             var Fields;
             (function (Fields) {
             })(Fields = EmployeeTerritoryRow.Fields || (EmployeeTerritoryRow.Fields = {}));
@@ -9073,30 +9073,30 @@ var CoopShop;
                 'TerritoryTerritoryDescription',
                 'TerritoryRegionID'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(EmployeeTerritoryRow = Northwind.EmployeeTerritoryRow || (Northwind.EmployeeTerritoryRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(EmployeeTerritoryRow = DataShop.EmployeeTerritoryRow || (DataShop.EmployeeTerritoryRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var Gender;
         (function (Gender) {
             Gender[Gender["Male"] = 1] = "Male";
             Gender[Gender["Female"] = 2] = "Female";
-        })(Gender = Northwind.Gender || (Northwind.Gender = {}));
-        Serenity.Decorators.registerEnum(Gender, 'CoopShop.Northwind.Entities.Gender');
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(Gender = DataShop.Gender || (DataShop.Gender = {}));
+        Serenity.Decorators.registerEnum(Gender, 'CoopShop.DataShop.Entities.Gender');
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var NoteRow;
         (function (NoteRow) {
             NoteRow.idProperty = 'NoteId';
             NoteRow.nameProperty = 'EntityType';
-            NoteRow.localTextPrefix = 'Northwind.Note';
+            NoteRow.localTextPrefix = 'DataShop.Note';
             var Fields;
             (function (Fields) {
             })(Fields = NoteRow.Fields || (NoteRow.Fields = {}));
@@ -9109,33 +9109,33 @@ var CoopShop;
                 'InsertDate',
                 'InsertUserDisplayName'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(NoteRow = Northwind.NoteRow || (Northwind.NoteRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(NoteRow = DataShop.NoteRow || (DataShop.NoteRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderDetailForm = /** @class */ (function (_super) {
             __extends(OrderDetailForm, _super);
             function OrderDetailForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            OrderDetailForm.formKey = 'Northwind.OrderDetail';
+            OrderDetailForm.formKey = 'DataShop.OrderDetail';
             return OrderDetailForm;
         }(Serenity.PrefixedContext));
-        Northwind.OrderDetailForm = OrderDetailForm;
+        DataShop.OrderDetailForm = OrderDetailForm;
         [['ProductID', function () { return Serenity.LookupEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(OrderDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderDetailRow;
         (function (OrderDetailRow) {
             OrderDetailRow.idProperty = 'DetailID';
-            OrderDetailRow.localTextPrefix = 'Northwind.OrderDetail';
+            OrderDetailRow.localTextPrefix = 'DataShop.OrderDetail';
             var Fields;
             (function (Fields) {
             })(Fields = OrderDetailRow.Fields || (OrderDetailRow.Fields = {}));
@@ -9160,16 +9160,16 @@ var CoopShop;
                 'ProductUnitPrice',
                 'LineTotal'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(OrderDetailRow = Northwind.OrderDetailRow || (Northwind.OrderDetailRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(OrderDetailRow = DataShop.OrderDetailRow || (DataShop.OrderDetailRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderDetailService;
         (function (OrderDetailService) {
-            OrderDetailService.baseUrl = 'Northwind/OrderDetail';
+            OrderDetailService.baseUrl = 'DataShop/OrderDetail';
             var Methods;
             (function (Methods) {
             })(Methods = OrderDetailService.Methods || (OrderDetailService.Methods = {}));
@@ -9182,37 +9182,37 @@ var CoopShop;
                 };
                 Methods[x] = OrderDetailService.baseUrl + '/' + x;
             });
-        })(OrderDetailService = Northwind.OrderDetailService || (Northwind.OrderDetailService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(OrderDetailService = DataShop.OrderDetailService || (DataShop.OrderDetailService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderForm = /** @class */ (function (_super) {
             __extends(OrderForm, _super);
             function OrderForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            OrderForm.formKey = 'Northwind.Order';
+            OrderForm.formKey = 'DataShop.Order';
             return OrderForm;
         }(Serenity.PrefixedContext));
-        Northwind.OrderForm = OrderForm;
-        [['CustomerID', function () { return Northwind.CustomerEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['RequiredDate', function () { return Serenity.DateEditor; }], ['EmployeeID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return Northwind.OrderDetailsEditor; }], ['ShippedDate', function () { return Serenity.DateEditor; }], ['ShipVia', function () { return Serenity.LookupEditor; }], ['Freight', function () { return Serenity.DecimalEditor; }], ['ShipName', function () { return Serenity.StringEditor; }], ['ShipAddress', function () { return Serenity.StringEditor; }], ['ShipCity', function () { return Serenity.StringEditor; }], ['ShipRegion', function () { return Serenity.StringEditor; }], ['ShipPostalCode', function () { return Serenity.StringEditor; }], ['ShipCountry', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(OrderForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.OrderForm = OrderForm;
+        [['CustomerID', function () { return DataShop.CustomerEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['RequiredDate', function () { return Serenity.DateEditor; }], ['EmployeeID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return DataShop.OrderDetailsEditor; }], ['ShippedDate', function () { return Serenity.DateEditor; }], ['ShipVia', function () { return Serenity.LookupEditor; }], ['Freight', function () { return Serenity.DecimalEditor; }], ['ShipName', function () { return Serenity.StringEditor; }], ['ShipAddress', function () { return Serenity.StringEditor; }], ['ShipCity', function () { return Serenity.StringEditor; }], ['ShipRegion', function () { return Serenity.StringEditor; }], ['ShipPostalCode', function () { return Serenity.StringEditor; }], ['ShipCountry', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(OrderForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderRow;
         (function (OrderRow) {
             OrderRow.idProperty = 'OrderID';
             OrderRow.nameProperty = 'CustomerID';
-            OrderRow.localTextPrefix = 'Northwind.Order';
-            OrderRow.lookupKey = 'Northwind.OrderShipCity';
+            OrderRow.localTextPrefix = 'DataShop.Order';
+            OrderRow.lookupKey = 'DataShop.OrderShipCity';
             function getLookup() {
-                return Q.getLookup('Northwind.OrderShipCity');
+                return Q.getLookup('DataShop.OrderShipCity');
             }
             OrderRow.getLookup = getLookup;
             var Fields;
@@ -9249,16 +9249,16 @@ var CoopShop;
                 'ShippingState',
                 'DetailList'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(OrderRow = Northwind.OrderRow || (Northwind.OrderRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(OrderRow = DataShop.OrderRow || (DataShop.OrderRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderService;
         (function (OrderService) {
-            OrderService.baseUrl = 'Northwind/Order';
+            OrderService.baseUrl = 'DataShop/Order';
             var Methods;
             (function (Methods) {
             })(Methods = OrderService.Methods || (OrderService.Methods = {}));
@@ -9274,46 +9274,46 @@ var CoopShop;
                 };
                 Methods[x] = OrderService.baseUrl + '/' + x;
             });
-        })(OrderService = Northwind.OrderService || (Northwind.OrderService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(OrderService = DataShop.OrderService || (DataShop.OrderService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var OrderShippingState;
         (function (OrderShippingState) {
             OrderShippingState[OrderShippingState["NotShipped"] = 0] = "NotShipped";
             OrderShippingState[OrderShippingState["Shipped"] = 1] = "Shipped";
-        })(OrderShippingState = Northwind.OrderShippingState || (Northwind.OrderShippingState = {}));
-        Serenity.Decorators.registerEnum(OrderShippingState, 'Northwind.OrderShippingState');
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(OrderShippingState = DataShop.OrderShippingState || (DataShop.OrderShippingState = {}));
+        Serenity.Decorators.registerEnum(OrderShippingState, 'DataShop.OrderShippingState');
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductForm = /** @class */ (function (_super) {
             __extends(ProductForm, _super);
             function ProductForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            ProductForm.formKey = 'Northwind.Product';
+            ProductForm.formKey = 'DataShop.Product';
             return ProductForm;
         }(Serenity.PrefixedContext));
-        Northwind.ProductForm = ProductForm;
+        DataShop.ProductForm = ProductForm;
         [['ProductName', function () { return Serenity.StringEditor; }], ['ProductImage', function () { return Serenity.ImageUploadEditor; }], ['Discontinued', function () { return Serenity.BooleanEditor; }], ['SupplierID', function () { return Serenity.LookupEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['QuantityPerUnit', function () { return Serenity.StringEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['UnitsInStock', function () { return Serenity.IntegerEditor; }], ['UnitsOnOrder', function () { return Serenity.IntegerEditor; }], ['ReorderLevel', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(ProductForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductLangRow;
         (function (ProductLangRow) {
             ProductLangRow.idProperty = 'Id';
             ProductLangRow.nameProperty = 'ProductName';
-            ProductLangRow.localTextPrefix = 'Northwind.ProductLang';
+            ProductLangRow.localTextPrefix = 'DataShop.ProductLang';
             var Fields;
             (function (Fields) {
             })(Fields = ProductLangRow.Fields || (ProductLangRow.Fields = {}));
@@ -9323,16 +9323,16 @@ var CoopShop;
                 'LanguageId',
                 'ProductName'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(ProductLangRow = Northwind.ProductLangRow || (Northwind.ProductLangRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ProductLangRow = DataShop.ProductLangRow || (DataShop.ProductLangRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductLangService;
         (function (ProductLangService) {
-            ProductLangService.baseUrl = 'Northwind/ProductLang';
+            ProductLangService.baseUrl = 'DataShop/ProductLang';
             var Methods;
             (function (Methods) {
             })(Methods = ProductLangService.Methods || (ProductLangService.Methods = {}));
@@ -9348,17 +9348,17 @@ var CoopShop;
                 };
                 Methods[x] = ProductLangService.baseUrl + '/' + x;
             });
-        })(ProductLangService = Northwind.ProductLangService || (Northwind.ProductLangService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ProductLangService = DataShop.ProductLangService || (DataShop.ProductLangService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductLogRow;
         (function (ProductLogRow) {
             ProductLogRow.idProperty = 'ProductLogID';
-            ProductLogRow.localTextPrefix = 'Northwind.ProductLog';
+            ProductLogRow.localTextPrefix = 'DataShop.ProductLog';
             var Fields;
             (function (Fields) {
             })(Fields = ProductLogRow.Fields || (ProductLogRow.Fields = {}));
@@ -9380,21 +9380,21 @@ var CoopShop;
                 'UnitsOnOrder',
                 'ReorderLevel'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(ProductLogRow = Northwind.ProductLogRow || (Northwind.ProductLogRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ProductLogRow = DataShop.ProductLogRow || (DataShop.ProductLogRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductRow;
         (function (ProductRow) {
             ProductRow.idProperty = 'ProductID';
             ProductRow.nameProperty = 'ProductName';
-            ProductRow.localTextPrefix = 'Northwind.Product';
-            ProductRow.lookupKey = 'Northwind.Product';
+            ProductRow.localTextPrefix = 'DataShop.Product';
+            ProductRow.lookupKey = 'DataShop.Product';
             function getLookup() {
-                return Q.getLookup('Northwind.Product');
+                return Q.getLookup('DataShop.Product');
             }
             ProductRow.getLookup = getLookup;
             var Fields;
@@ -9427,16 +9427,16 @@ var CoopShop;
                 'CategoryDescription',
                 'CategoryPicture'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(ProductRow = Northwind.ProductRow || (Northwind.ProductRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ProductRow = DataShop.ProductRow || (DataShop.ProductRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ProductService;
         (function (ProductService) {
-            ProductService.baseUrl = 'Northwind/Product';
+            ProductService.baseUrl = 'DataShop/Product';
             var Methods;
             (function (Methods) {
             })(Methods = ProductService.Methods || (ProductService.Methods = {}));
@@ -9452,37 +9452,37 @@ var CoopShop;
                 };
                 Methods[x] = ProductService.baseUrl + '/' + x;
             });
-        })(ProductService = Northwind.ProductService || (Northwind.ProductService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ProductService = DataShop.ProductService || (DataShop.ProductService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var RegionForm = /** @class */ (function (_super) {
             __extends(RegionForm, _super);
             function RegionForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            RegionForm.formKey = 'Northwind.Region';
+            RegionForm.formKey = 'DataShop.Region';
             return RegionForm;
         }(Serenity.PrefixedContext));
-        Northwind.RegionForm = RegionForm;
+        DataShop.RegionForm = RegionForm;
         [['RegionID', function () { return Serenity.IntegerEditor; }], ['RegionDescription', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RegionForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var RegionRow;
         (function (RegionRow) {
             RegionRow.idProperty = 'RegionID';
             RegionRow.nameProperty = 'RegionDescription';
-            RegionRow.localTextPrefix = 'Northwind.Region';
-            RegionRow.lookupKey = 'Northwind.Region';
+            RegionRow.localTextPrefix = 'DataShop.Region';
+            RegionRow.lookupKey = 'DataShop.Region';
             function getLookup() {
-                return Q.getLookup('Northwind.Region');
+                return Q.getLookup('DataShop.Region');
             }
             RegionRow.getLookup = getLookup;
             var Fields;
@@ -9492,16 +9492,16 @@ var CoopShop;
                 'RegionID',
                 'RegionDescription'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(RegionRow = Northwind.RegionRow || (Northwind.RegionRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(RegionRow = DataShop.RegionRow || (DataShop.RegionRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var RegionService;
         (function (RegionService) {
-            RegionService.baseUrl = 'Northwind/Region';
+            RegionService.baseUrl = 'DataShop/Region';
             var Methods;
             (function (Methods) {
             })(Methods = RegionService.Methods || (RegionService.Methods = {}));
@@ -9517,17 +9517,17 @@ var CoopShop;
                 };
                 Methods[x] = RegionService.baseUrl + '/' + x;
             });
-        })(RegionService = Northwind.RegionService || (Northwind.RegionService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(RegionService = DataShop.RegionService || (DataShop.RegionService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SalesByCategoryRow;
         (function (SalesByCategoryRow) {
             SalesByCategoryRow.nameProperty = 'CategoryName';
-            SalesByCategoryRow.localTextPrefix = 'Northwind.SalesByCategory';
+            SalesByCategoryRow.localTextPrefix = 'DataShop.SalesByCategory';
             var Fields;
             (function (Fields) {
             })(Fields = SalesByCategoryRow.Fields || (SalesByCategoryRow.Fields = {}));
@@ -9537,16 +9537,16 @@ var CoopShop;
                 'ProductName',
                 'ProductSales'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(SalesByCategoryRow = Northwind.SalesByCategoryRow || (Northwind.SalesByCategoryRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(SalesByCategoryRow = DataShop.SalesByCategoryRow || (DataShop.SalesByCategoryRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SalesByCategoryService;
         (function (SalesByCategoryService) {
-            SalesByCategoryService.baseUrl = 'Northwind/SalesByCategory';
+            SalesByCategoryService.baseUrl = 'DataShop/SalesByCategory';
             var Methods;
             (function (Methods) {
             })(Methods = SalesByCategoryService.Methods || (SalesByCategoryService.Methods = {}));
@@ -9558,37 +9558,37 @@ var CoopShop;
                 };
                 Methods[x] = SalesByCategoryService.baseUrl + '/' + x;
             });
-        })(SalesByCategoryService = Northwind.SalesByCategoryService || (Northwind.SalesByCategoryService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(SalesByCategoryService = DataShop.SalesByCategoryService || (DataShop.SalesByCategoryService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ShipperForm = /** @class */ (function (_super) {
             __extends(ShipperForm, _super);
             function ShipperForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            ShipperForm.formKey = 'Northwind.Shipper';
+            ShipperForm.formKey = 'DataShop.Shipper';
             return ShipperForm;
         }(Serenity.PrefixedContext));
-        Northwind.ShipperForm = ShipperForm;
-        [['CompanyName', function () { return Serenity.StringEditor; }], ['Phone', function () { return Northwind.PhoneEditor; }]].forEach(function (x) { return Object.defineProperty(ShipperForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        DataShop.ShipperForm = ShipperForm;
+        [['CompanyName', function () { return Serenity.StringEditor; }], ['Phone', function () { return DataShop.PhoneEditor; }]].forEach(function (x) { return Object.defineProperty(ShipperForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ShipperRow;
         (function (ShipperRow) {
             ShipperRow.idProperty = 'ShipperID';
             ShipperRow.nameProperty = 'CompanyName';
-            ShipperRow.localTextPrefix = 'Northwind.Shipper';
-            ShipperRow.lookupKey = 'Northwind.Shipper';
+            ShipperRow.localTextPrefix = 'DataShop.Shipper';
+            ShipperRow.lookupKey = 'DataShop.Shipper';
             function getLookup() {
-                return Q.getLookup('Northwind.Shipper');
+                return Q.getLookup('DataShop.Shipper');
             }
             ShipperRow.getLookup = getLookup;
             var Fields;
@@ -9599,16 +9599,16 @@ var CoopShop;
                 'CompanyName',
                 'Phone'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(ShipperRow = Northwind.ShipperRow || (Northwind.ShipperRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ShipperRow = DataShop.ShipperRow || (DataShop.ShipperRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var ShipperService;
         (function (ShipperService) {
-            ShipperService.baseUrl = 'Northwind/Shipper';
+            ShipperService.baseUrl = 'DataShop/Shipper';
             var Methods;
             (function (Methods) {
             })(Methods = ShipperService.Methods || (ShipperService.Methods = {}));
@@ -9624,37 +9624,37 @@ var CoopShop;
                 };
                 Methods[x] = ShipperService.baseUrl + '/' + x;
             });
-        })(ShipperService = Northwind.ShipperService || (Northwind.ShipperService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(ShipperService = DataShop.ShipperService || (DataShop.ShipperService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SupplierForm = /** @class */ (function (_super) {
             __extends(SupplierForm, _super);
             function SupplierForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            SupplierForm.formKey = 'Northwind.Supplier';
+            SupplierForm.formKey = 'DataShop.Supplier';
             return SupplierForm;
         }(Serenity.PrefixedContext));
-        Northwind.SupplierForm = SupplierForm;
+        DataShop.SupplierForm = SupplierForm;
         [['CompanyName', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['Region', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['HomePage', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(SupplierForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SupplierRow;
         (function (SupplierRow) {
             SupplierRow.idProperty = 'SupplierID';
             SupplierRow.nameProperty = 'CompanyName';
-            SupplierRow.localTextPrefix = 'Northwind.Supplier';
-            SupplierRow.lookupKey = 'Northwind.Supplier';
+            SupplierRow.localTextPrefix = 'DataShop.Supplier';
+            SupplierRow.lookupKey = 'DataShop.Supplier';
             function getLookup() {
-                return Q.getLookup('Northwind.Supplier');
+                return Q.getLookup('DataShop.Supplier');
             }
             SupplierRow.getLookup = getLookup;
             var Fields;
@@ -9674,16 +9674,16 @@ var CoopShop;
                 'Fax',
                 'HomePage'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(SupplierRow = Northwind.SupplierRow || (Northwind.SupplierRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(SupplierRow = DataShop.SupplierRow || (DataShop.SupplierRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var SupplierService;
         (function (SupplierService) {
-            SupplierService.baseUrl = 'Northwind/Supplier';
+            SupplierService.baseUrl = 'DataShop/Supplier';
             var Methods;
             (function (Methods) {
             })(Methods = SupplierService.Methods || (SupplierService.Methods = {}));
@@ -9699,37 +9699,37 @@ var CoopShop;
                 };
                 Methods[x] = SupplierService.baseUrl + '/' + x;
             });
-        })(SupplierService = Northwind.SupplierService || (Northwind.SupplierService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(SupplierService = DataShop.SupplierService || (DataShop.SupplierService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var TerritoryForm = /** @class */ (function (_super) {
             __extends(TerritoryForm, _super);
             function TerritoryForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
-            TerritoryForm.formKey = 'Northwind.Territory';
+            TerritoryForm.formKey = 'DataShop.Territory';
             return TerritoryForm;
         }(Serenity.PrefixedContext));
-        Northwind.TerritoryForm = TerritoryForm;
+        DataShop.TerritoryForm = TerritoryForm;
         [['TerritoryID', function () { return Serenity.StringEditor; }], ['TerritoryDescription', function () { return Serenity.StringEditor; }], ['RegionID', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(TerritoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var TerritoryRow;
         (function (TerritoryRow) {
             TerritoryRow.idProperty = 'ID';
             TerritoryRow.nameProperty = 'TerritoryID';
-            TerritoryRow.localTextPrefix = 'Northwind.Territory';
-            TerritoryRow.lookupKey = 'Northwind.Territory';
+            TerritoryRow.localTextPrefix = 'DataShop.Territory';
+            TerritoryRow.lookupKey = 'DataShop.Territory';
             function getLookup() {
-                return Q.getLookup('Northwind.Territory');
+                return Q.getLookup('DataShop.Territory');
             }
             TerritoryRow.getLookup = getLookup;
             var Fields;
@@ -9742,16 +9742,16 @@ var CoopShop;
                 'RegionID',
                 'RegionDescription'
             ].forEach(function (x) { return Fields[x] = x; });
-        })(TerritoryRow = Northwind.TerritoryRow || (Northwind.TerritoryRow = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(TerritoryRow = DataShop.TerritoryRow || (DataShop.TerritoryRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var Northwind;
-    (function (Northwind) {
+    var DataShop;
+    (function (DataShop) {
         var TerritoryService;
         (function (TerritoryService) {
-            TerritoryService.baseUrl = 'Northwind/Territory';
+            TerritoryService.baseUrl = 'DataShop/Territory';
             var Methods;
             (function (Methods) {
             })(Methods = TerritoryService.Methods || (TerritoryService.Methods = {}));
@@ -9767,8 +9767,8 @@ var CoopShop;
                 };
                 Methods[x] = TerritoryService.baseUrl + '/' + x;
             });
-        })(TerritoryService = Northwind.TerritoryService || (Northwind.TerritoryService = {}));
-    })(Northwind = CoopShop.Northwind || (CoopShop.Northwind = {}));
+        })(TerritoryService = DataShop.TerritoryService || (DataShop.TerritoryService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {

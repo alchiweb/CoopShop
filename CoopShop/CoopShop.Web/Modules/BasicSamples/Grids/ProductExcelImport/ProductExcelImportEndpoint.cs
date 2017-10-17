@@ -1,8 +1,8 @@
 ﻿
 namespace CoopShop.BasicSamples.Endpoints
 {
-    using Northwind.Entities;
-    using Northwind.Repositories;
+    using DataShop.Entities;
+    using DataShop.Repositories;
     using OfficeOpenXml;
     using Serenity;
     using Serenity.Data;
@@ -13,7 +13,7 @@ namespace CoopShop.BasicSamples.Endpoints
     using System.Data;
     using System.IO;
     using Microsoft.AspNetCore.Mvc;
-    using MyRow = Northwind.Entities.ProductRow;
+    using MyRow = DataShop.Entities.ProductRow;
 
     [Route("Services/BasicSamples/ProductExcelImport/[action]")]
     [ConnectionKey(typeof(MyRow)), ServiceAuthorize]

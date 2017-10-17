@@ -6,12 +6,12 @@
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.responsive()
     @Serenity.Decorators.maximizable()
-    export class ResponsiveDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
-        protected getFormKey() { return Northwind.OrderForm.formKey; }
-        protected getIdProperty() { return Northwind.OrderRow.idProperty; }
-        protected getLocalTextPrefix() { return Northwind.OrderRow.localTextPrefix; }
-        protected getNameProperty() { return Northwind.OrderRow.nameProperty; }
-        protected getService() { return Northwind.OrderService.baseUrl; }
+    export class ResponsiveDialog extends Serenity.EntityDialog<DataShop.OrderRow, any> {
+        protected getFormKey() { return DataShop.OrderForm.formKey; }
+        protected getIdProperty() { return DataShop.OrderRow.idProperty; }
+        protected getLocalTextPrefix() { return DataShop.OrderRow.localTextPrefix; }
+        protected getNameProperty() { return DataShop.OrderRow.nameProperty; }
+        protected getService() { return DataShop.OrderService.baseUrl; }
 
         constructor() {
             super();

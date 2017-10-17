@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class DefaultValuesInNewGrid extends Northwind.OrderGrid {
+    export class DefaultValuesInNewGrid extends DataShop.OrderGrid {
 
         constructor(container: JQuery) {
             super(container);
@@ -15,12 +15,12 @@ namespace CoopShop.BasicSamples {
          * This is a good place to fill in default values for New Item button.
          */
         protected addButtonClick() {
-            this.editItem(<Northwind.OrderRow>{
+            this.editItem(<DataShop.OrderRow>{
                 CustomerID: 'ANTON',
                 RequiredDate: Q.formatDate(new Date(), 'yyyy-MM-dd'),
-                EmployeeID: Northwind.EmployeeRow.getLookup().items
+                EmployeeID: DataShop.EmployeeRow.getLookup().items
                     .filter(x => x.FullName === 'Robert King')[0].EmployeeID,
-                ShipVia: Northwind.ShipperRow.getLookup().items
+                ShipVia: DataShop.ShipperRow.getLookup().items
                     .filter(x => x.CompanyName === 'Speedy Express')[0].ShipperID
             });
         }
@@ -35,11 +35,11 @@ namespace CoopShop.BasicSamples {
                 onClick: () => {
                     // using EditItem method as a shortcut to create a new Order dialog,
                     // bind to its events, load our order row, and open dialog
-                    this.editItem(<Northwind.OrderRow>{
+                    this.editItem(<DataShop.OrderRow>{
                         CustomerID: 'QUEEN',
-                        EmployeeID: Northwind.EmployeeRow.getLookup().items
+                        EmployeeID: DataShop.EmployeeRow.getLookup().items
                             .filter(x => x.FullName === 'Nancy Davolio')[0].EmployeeID,
-                        ShipVia: Northwind.ShipperRow.getLookup().items
+                        ShipVia: DataShop.ShipperRow.getLookup().items
                             .filter(x => x.CompanyName === 'United Package')[0].ShipperID
                     });
                 }
@@ -50,22 +50,22 @@ namespace CoopShop.BasicSamples {
                 onClick: () => {
                     // we could use EditItem here too, but for demonstration
                     // purposes we are manually creating dialog this time
-                    var dlg = new Northwind.OrderDialog();
+                    var dlg = new DataShop.OrderDialog();
 
                     // let grid watch for changes to manually created dialog, 
                     // so when a new item is saved, grid can refresh itself
                     this.initDialog(dlg);
 
                     // get a reference to product Chai
-                    var chai = Northwind.ProductRow.getLookup().items
+                    var chai = DataShop.ProductRow.getLookup().items
                         .filter(x => x.ProductName === 'Chai')[0];
 
                     // LoadEntityAndOpenDialog, loads an OrderRow 
                     // to dialog and opens it
-                    var lauraCallahanID = Northwind.EmployeeRow.getLookup().items
+                    var lauraCallahanID = DataShop.EmployeeRow.getLookup().items
                         .filter(x => x.FullName === 'Laura Callahan')[0].EmployeeID;
 
-                    dlg.loadEntityAndOpenDialog(<Northwind.OrderRow>{
+                    dlg.loadEntityAndOpenDialog(<DataShop.OrderRow>{
                         CustomerID: 'GOURL',
                         EmployeeID: lauraCallahanID,
                         DetailList: [{

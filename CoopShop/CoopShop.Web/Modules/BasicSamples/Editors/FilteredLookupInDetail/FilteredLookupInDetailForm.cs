@@ -1,7 +1,7 @@
 ﻿
 namespace CoopShop.BasicSamples.Forms
 {
-    using Northwind.Entities;
+    using DataShop.Entities;
     using Serenity.ComponentModel;
     using System;
     using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace CoopShop.BasicSamples.Forms
     /// This is a basic Order form for FilteredLookupInDetailDialog sample.
     /// </summary>
     [FormScript("BasicSamples.FilteredLookupInDetail")]
-    [BasedOnRow(typeof(Northwind.Entities.OrderRow))]
+    [BasedOnRow(typeof(DataShop.Entities.OrderRow))]
     public class FilteredLookupInDetailForm
     {
         public String CustomerID { get; set; }

@@ -1,10 +1,10 @@
-﻿/// <reference path="../../../Northwind/Product/ProductDialog.ts" />
+﻿/// <reference path="../../../DataShop/Product/ProductDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.maximizable()
-    export class CloneableEntityDialog extends Northwind.ProductDialog {
+    export class CloneableEntityDialog extends DataShop.ProductDialog {
         protected updateInterface() {
 
             // by default cloneButton is hidden in base UpdateInterface method

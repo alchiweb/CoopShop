@@ -4,13 +4,13 @@
      * Basic order dialog with a category selection
      */
     @Serenity.Decorators.registerClass()
-    export class FilteredLookupInDetailDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
+    export class FilteredLookupInDetailDialog extends Serenity.EntityDialog<DataShop.OrderRow, any> {
 
         protected getFormKey() { return FilteredLookupInDetailForm.formKey; }
-        protected getIdProperty() { return Northwind.OrderRow.idProperty; }
-        protected getLocalTextPrefix() { return Northwind.OrderRow.localTextPrefix; }
-        protected getNameProperty() { return Northwind.OrderRow.nameProperty; }
-        protected getService() { return Northwind.OrderService.baseUrl; }
+        protected getIdProperty() { return DataShop.OrderRow.idProperty; }
+        protected getLocalTextPrefix() { return DataShop.OrderRow.localTextPrefix; }
+        protected getNameProperty() { return DataShop.OrderRow.nameProperty; }
+        protected getService() { return DataShop.OrderService.baseUrl; }
 
         private form: FilteredLookupInDetailForm;
 

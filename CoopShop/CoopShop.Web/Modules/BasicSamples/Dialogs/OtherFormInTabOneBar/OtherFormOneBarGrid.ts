@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../Northwind/Order/OrderGrid.ts" />
+﻿/// <reference path="../../../DataShop/Order/OrderGrid.ts" />
 
 namespace CoopShop.BasicSamples {
 
@@ -6,7 +6,7 @@ namespace CoopShop.BasicSamples {
      * Subclass of OrderGrid to override dialog type to OtherFormInTabOneBarDialog
      */
     @Serenity.Decorators.registerClass()
-    export class OtherFormInTabOneBarGrid extends Northwind.OrderGrid {
+    export class OtherFormInTabOneBarGrid extends DataShop.OrderGrid {
 
         protected getDialogType() { return OtherFormOneBarDialog; }
 

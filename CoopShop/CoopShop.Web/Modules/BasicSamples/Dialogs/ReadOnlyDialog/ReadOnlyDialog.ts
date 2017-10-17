@@ -1,9 +1,9 @@
-﻿/// <reference path="../../../Northwind/Supplier/SupplierDialog.ts" />
+﻿/// <reference path="../../../DataShop/Supplier/SupplierDialog.ts" />
 
 namespace CoopShop.BasicSamples {
 
     @Serenity.Decorators.registerClass()
-    export class ReadOnlyDialog extends Northwind.SupplierDialog {
+    export class ReadOnlyDialog extends DataShop.SupplierDialog {
 
         /**
          * This is the method that gets list of tool 

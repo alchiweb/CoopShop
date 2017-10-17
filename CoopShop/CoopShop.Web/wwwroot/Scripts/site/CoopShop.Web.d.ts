@@ -51,7 +51,7 @@ declare namespace CoopShop.Organization {
         protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class TerritoryDialog extends Serenity.EntityDialog<TerritoryRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -62,7 +62,7 @@ declare namespace CoopShop.Northwind {
         protected getLanguages(): string[][];
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class TerritoryGrid extends Serenity.EntityGrid<TerritoryRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -72,7 +72,7 @@ declare namespace CoopShop.Northwind {
         constructor(container: JQuery);
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class SupplierDialog extends Serenity.EntityDialog<SupplierRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -83,7 +83,7 @@ declare namespace CoopShop.Northwind {
         protected getLanguages(): string[][];
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class SupplierGrid extends Serenity.EntityGrid<SupplierRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -93,7 +93,7 @@ declare namespace CoopShop.Northwind {
         constructor(container: JQuery);
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ShipperDialog extends Serenity.EntityDialog<ShipperRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -104,12 +104,12 @@ declare namespace CoopShop.Northwind {
         protected getLanguages(): string[][];
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ShipperFormatter implements Slick.Formatter {
         format(ctx: Slick.FormatterContext): string;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ShipperGrid extends Serenity.EntityGrid<ShipperRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -119,7 +119,7 @@ declare namespace CoopShop.Northwind {
         constructor(container: JQuery);
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class PhoneEditor extends Serenity.StringEditor {
         constructor(input: JQuery);
         protected formatValue(): void;
@@ -134,7 +134,7 @@ declare namespace CoopShop.Northwind {
         static isValidMulti(phone: string, check: (s: string) => boolean): boolean;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class RegionDialog extends Serenity.EntityDialog<RegionRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -145,7 +145,7 @@ declare namespace CoopShop.Northwind {
         protected getLanguages(): string[][];
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -155,7 +155,7 @@ declare namespace CoopShop.Northwind {
         constructor(container: JQuery);
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ProductDialog extends Serenity.EntityDialog<ProductRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -165,7 +165,7 @@ declare namespace CoopShop.Northwind {
         protected form: ProductForm;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ProductGrid extends Serenity.EntityGrid<ProductRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -206,7 +206,7 @@ declare namespace CoopShop.Common {
         protected deleteHandler(options: Serenity.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class OrderDetailDialog extends Common.GridEditorDialog<OrderDetailRow> {
         protected getFormKey(): string;
         protected getLocalTextPrefix(): string;
@@ -238,7 +238,7 @@ declare namespace CoopShop.Common {
         protected createQuickSearchInput(): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class OrderDetailsEditor extends Common.GridEditorBase<OrderDetailRow> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof OrderDetailDialog;
@@ -247,12 +247,12 @@ declare namespace CoopShop.Northwind {
         validateEntity(row: any, id: any): boolean;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class FreightFormatter implements Slick.Formatter {
         format(ctx: Slick.FormatterContext): string;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class OrderDialog extends Serenity.EntityDialog<OrderRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -265,7 +265,7 @@ declare namespace CoopShop.Northwind {
         protected updateInterface(): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class OrderGrid extends Serenity.EntityGrid<OrderRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -282,7 +282,7 @@ declare namespace CoopShop.Northwind {
         set_shippingState(value: number): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class NoteDialog extends Serenity.TemplatedDialog<any> {
         private textEditor;
         constructor();
@@ -292,7 +292,7 @@ declare namespace CoopShop.Northwind {
         okClick: () => void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class NotesEditor extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
         private isDirty;
         private items;
@@ -310,14 +310,14 @@ declare namespace CoopShop.Northwind {
         onChange: () => void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class EmployeeFormatter implements Slick.Formatter {
         format(ctx: Slick.FormatterContext): string;
         genderProperty: string;
         initializeColumn(column: Slick.Column): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CustomerDialog extends Serenity.EntityDialog<CustomerRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -334,14 +334,14 @@ declare namespace CoopShop.Northwind {
         onSaveSuccess(response: any): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CustomerEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, CustomerRow> {
         constructor(hidden: JQuery);
         protected getLookupKey(): string;
         protected getItemText(item: any, lookup: any): string;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CustomerGrid extends Serenity.EntityGrid<CustomerRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -352,13 +352,13 @@ declare namespace CoopShop.Northwind {
         getButtons(): Serenity.ToolButton[];
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CustomerOrderDialog extends OrderDialog {
         constructor();
         updateInterface(): void;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CustomerOrdersGrid extends OrderGrid {
         protected getDialogType(): typeof CustomerOrderDialog;
         constructor(container: JQuery);
@@ -371,12 +371,12 @@ declare namespace CoopShop.Northwind {
         customerID: string;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class EmployeeListFormatter implements Slick.Formatter {
         format(ctx: Slick.FormatterContext): string;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CategoryDialog extends Serenity.EntityDialog<CategoryRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -386,7 +386,7 @@ declare namespace CoopShop.Northwind {
         protected form: CategoryForm;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CategoryGrid extends Serenity.EntityGrid<CategoryRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
@@ -810,12 +810,12 @@ declare namespace CoopShop.Common {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class WrappedHeadersGrid extends Northwind.OrderGrid {
+    class WrappedHeadersGrid extends DataShop.OrderGrid {
         constructor(container: JQuery);
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class ViewWithoutIDGrid extends Serenity.EntityGrid<Northwind.SalesByCategoryRow, any> {
+    class ViewWithoutIDGrid extends Serenity.EntityGrid<DataShop.SalesByCategoryRow, any> {
         protected getColumnsKey(): string;
         protected getIdProperty(): string;
         protected getNameProperty(): string;
@@ -826,19 +826,19 @@ declare namespace CoopShop.BasicSamples {
         /**
          * This method is called to preprocess data returned from the list service
          */
-        protected onViewProcessData(response: Serenity.ListResponse<Northwind.SalesByCategoryRow>): Serenity.ListResponse<Northwind.SalesByCategoryRow>;
+        protected onViewProcessData(response: Serenity.ListResponse<DataShop.SalesByCategoryRow>): Serenity.ListResponse<DataShop.SalesByCategoryRow>;
         protected getButtons(): any[];
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class TreeGrid extends Northwind.OrderGrid {
+    class TreeGrid extends DataShop.OrderGrid {
         private treeMixin;
         constructor(container: JQuery);
         protected usePager(): boolean;
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class CustomerGrossSalesGrid extends Serenity.EntityGrid<Northwind.CustomerGrossSalesRow, any> {
+    class CustomerGrossSalesGrid extends Serenity.EntityGrid<DataShop.CustomerGrossSalesRow, any> {
         protected getColumnsKey(): string;
         protected getIdProperty(): string;
         protected getNameProperty(): string;
@@ -849,7 +849,7 @@ declare namespace CoopShop.BasicSamples {
         /**
          * This method is called to preprocess data returned from the list service
          */
-        protected onViewProcessData(response: Serenity.ListResponse<Northwind.SalesByCategoryRow>): Serenity.ListResponse<Northwind.SalesByCategoryRow>;
+        protected onViewProcessData(response: Serenity.ListResponse<DataShop.SalesByCategoryRow>): Serenity.ListResponse<DataShop.SalesByCategoryRow>;
         protected getButtons(): any[];
         protected createSlickGrid(): Slick.Grid;
         protected getSlickOptions(): Slick.GridOptions;
@@ -858,7 +858,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class RemovingAddButton extends Northwind.SupplierGrid {
+    class RemovingAddButton extends DataShop.SupplierGrid {
         constructor(container: JQuery);
         /**
          * This method is called to get list of buttons to be created.
@@ -867,9 +867,9 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class QuickFilterCustomization extends Serenity.EntityGrid<Northwind.OrderRow, any> {
+    class QuickFilterCustomization extends Serenity.EntityGrid<DataShop.OrderRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): typeof Northwind.OrderDialog;
+        protected getDialogType(): typeof DataShop.OrderDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -891,7 +891,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class ProductExcelImportGrid extends Northwind.ProductGrid {
+    class ProductExcelImportGrid extends DataShop.ProductGrid {
         constructor(container: JQuery);
         /**
          * This method is called to get list of buttons to be created.
@@ -908,7 +908,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class InlineImageInGrid extends Serenity.EntityGrid<Northwind.ProductRow, any> {
+    class InlineImageInGrid extends Serenity.EntityGrid<DataShop.ProductRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
         protected getIdProperty(): string;
@@ -919,14 +919,14 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class InlineActionGrid extends Northwind.CustomerGrid {
+    class InlineActionGrid extends DataShop.CustomerGrid {
         constructor(container: JQuery);
         protected getColumns(): Slick.Column[];
         protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class InitialValuesForQuickFilters extends Northwind.OrderGrid {
+    class InitialValuesForQuickFilters extends DataShop.OrderGrid {
         constructor(container: JQuery);
         /**
          * This method is called to get list of quick filters to be created for this grid.
@@ -948,7 +948,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class GroupingAndSummariesInGrid extends Northwind.ProductGrid {
+    class GroupingAndSummariesInGrid extends DataShop.ProductGrid {
         constructor(container: JQuery);
         protected createSlickGrid(): Slick.Grid;
         protected getColumns(): Slick.Column[];
@@ -962,7 +962,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class GridFilteredByCriteria extends Northwind.ProductGrid {
+    class GridFilteredByCriteria extends DataShop.ProductGrid {
         constructor(container: JQuery);
         protected onViewSubmit(): boolean;
     }
@@ -974,7 +974,7 @@ declare namespace CoopShop {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class RowSelectionGrid extends SelectableEntityGrid<Northwind.SupplierRow, any> {
+    class RowSelectionGrid extends SelectableEntityGrid<DataShop.SupplierRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
         protected getIdProperty(): string;
@@ -1020,7 +1020,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class CustomLinksInGrid extends Northwind.OrderGrid {
+    class CustomLinksInGrid extends DataShop.OrderGrid {
         constructor(container: JQuery);
         /**
          * We override getColumns() to change format functions for some columns.
@@ -1042,7 +1042,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class ConditionalFormattingGrid extends Serenity.EntityGrid<Northwind.ProductRow, any> {
+    class ConditionalFormattingGrid extends Serenity.EntityGrid<DataShop.ProductRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): any;
         protected getIdProperty(): string;
@@ -1060,7 +1060,7 @@ declare namespace CoopShop.BasicSamples {
          * @param item Data item for current row
          * @param index Index of the row in grid
          */
-        protected getItemCssClass(item: Northwind.ProductRow, index: number): string;
+        protected getItemCssClass(item: DataShop.ProductRow, index: number): string;
     }
 }
 declare namespace CoopShop.BasicSamples {
@@ -1087,7 +1087,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class CancellableBulkActionGrid extends Northwind.OrderGrid {
+    class CancellableBulkActionGrid extends DataShop.OrderGrid {
         private rowSelection;
         constructor(container: JQuery);
         protected createToolbarExtensions(): void;
@@ -1159,7 +1159,7 @@ declare namespace CoopShop.BasicSamples {
      * This is our custom product dialog that uses a different product form
      * (LookupFilterByMultipleForm) with our special category editor.
      */
-    class LookupFilterByMultipleDialog extends Northwind.ProductDialog {
+    class LookupFilterByMultipleDialog extends DataShop.ProductDialog {
         protected getFormKey(): string;
     }
 }
@@ -1167,7 +1167,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
      */
-    class LookupFilterByMultipleGrid extends Northwind.ProductGrid {
+    class LookupFilterByMultipleGrid extends DataShop.ProductGrid {
         protected getDialogType(): typeof LookupFilterByMultipleDialog;
         constructor(container: JQuery);
         /**
@@ -1188,7 +1188,7 @@ declare namespace CoopShop.BasicSamples {
      * available in server side to use in our LookupFilterByMultipleForm,
      * which is a version of ProductForm that uses our custom editor.
      */
-    class ProduceSeafoodCategoryEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, Northwind.CategoryRow> {
+    class ProduceSeafoodCategoryEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, DataShop.CategoryRow> {
         constructor(container: JQuery, opt: Serenity.LookupEditorOptions);
         /**
          * Normally LookupEditor requires a lookup key to determine which set of
@@ -1202,7 +1202,7 @@ declare namespace CoopShop.BasicSamples {
          * otherwise their value will be null in client side as they are not sent back
          * from server in lookup script.
          */
-        protected getItems(lookup: Q.Lookup<Northwind.CategoryRow>): Northwind.CategoryRow[];
+        protected getItems(lookup: Q.Lookup<DataShop.CategoryRow>): DataShop.CategoryRow[];
     }
 }
 declare namespace CoopShop.BasicSamples {
@@ -1210,7 +1210,7 @@ declare namespace CoopShop.BasicSamples {
      * Our subclass of order detail dialog with a CategoryID property
      * that will be used to set CascadeValue of product editor
      */
-    class FilteredLookupOrderDetailDialog extends Northwind.OrderDetailDialog {
+    class FilteredLookupOrderDetailDialog extends DataShop.OrderDetailDialog {
         constructor();
         /**
          * This method is called just before an entity is loaded to dialog
@@ -1224,7 +1224,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Our subclass of Order Details editor with a CategoryID property
      */
-    class FilteredLookupDetailEditor extends Northwind.OrderDetailsEditor {
+    class FilteredLookupDetailEditor extends DataShop.OrderDetailsEditor {
         protected getDialogType(): typeof FilteredLookupOrderDetailDialog;
         constructor(container: JQuery);
         categoryID: number;
@@ -1240,7 +1240,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Basic order dialog with a category selection
      */
-    class FilteredLookupInDetailDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
+    class FilteredLookupInDetailDialog extends Serenity.EntityDialog<DataShop.OrderRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
@@ -1254,13 +1254,13 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of OrderGrid to override dialog type to FilteredLookupInDetailDialog
      */
-    class FilteredLookupInDetailGrid extends Northwind.OrderGrid {
+    class FilteredLookupInDetailGrid extends DataShop.OrderGrid {
         protected getDialogType(): typeof FilteredLookupInDetailDialog;
         constructor(container: JQuery);
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class ChangingLookupTextDialog extends Common.GridEditorDialog<Northwind.OrderDetailRow> {
+    class ChangingLookupTextDialog extends Common.GridEditorDialog<DataShop.OrderDetailRow> {
         protected getFormKey(): string;
         protected getLocalTextPrefix(): string;
         protected form: ChangingLookupTextForm;
@@ -1272,14 +1272,14 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Our custom product editor type
      */
-    class ChangingLookupTextEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, Northwind.ProductRow> {
+    class ChangingLookupTextEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, DataShop.ProductRow> {
         constructor(container: JQuery, options: Serenity.LookupEditorOptions);
         protected getLookupKey(): string;
-        protected getItemText(item: Northwind.ProductRow, lookup: Q.Lookup<Northwind.ProductRow>): string;
+        protected getItemText(item: DataShop.ProductRow, lookup: Q.Lookup<DataShop.ProductRow>): string;
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class SerialAutoNumberDialog extends Northwind.CustomerDialog {
+    class SerialAutoNumberDialog extends DataShop.CustomerDialog {
         constructor();
         protected afterLoadEntity(): void;
         private getNextNumber();
@@ -1289,7 +1289,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of CustomerGrid to override dialog type to SerialAutoNumberDialog
      */
-    class SerialAutoNumberGrid extends Northwind.CustomerGrid {
+    class SerialAutoNumberGrid extends DataShop.CustomerGrid {
         protected getDialogType(): typeof SerialAutoNumberDialog;
         constructor(container: JQuery);
     }
@@ -1298,7 +1298,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Adding Responsive attribute makes this dialog use full screen in mobile devices.
      */
-    class ResponsiveDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
+    class ResponsiveDialog extends Serenity.EntityDialog<DataShop.OrderRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
@@ -1311,13 +1311,13 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of OrderGrid to override dialog type to ResponsiveDialog
      */
-    class ResponsiveGrid extends Northwind.OrderGrid {
+    class ResponsiveGrid extends DataShop.OrderGrid {
         protected getDialogType(): typeof ResponsiveDialog;
         constructor(container: JQuery);
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class ReadOnlyDialog extends Northwind.SupplierDialog {
+    class ReadOnlyDialog extends DataShop.SupplierDialog {
         /**
          * This is the method that gets list of tool
          * buttons to be created in a dialog.
@@ -1352,7 +1352,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * A readonly grid that launches ReadOnlyDialog
      */
-    class ReadOnlyGrid extends Northwind.SupplierGrid {
+    class ReadOnlyGrid extends DataShop.SupplierGrid {
         protected getDialogType(): typeof ReadOnlyDialog;
         constructor(container: JQuery);
         /**
@@ -1362,7 +1362,7 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class PopulateLinkedDataDialog extends Serenity.EntityDialog<Northwind.OrderRow, any> {
+    class PopulateLinkedDataDialog extends Serenity.EntityDialog<DataShop.OrderRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
@@ -1383,7 +1383,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * A subclass of OrderGrid that launches PopulateLinkedDataDialog
      */
-    class PopulateLinkedDataGrid extends Northwind.OrderGrid {
+    class PopulateLinkedDataGrid extends DataShop.OrderGrid {
         protected getDialogType(): typeof PopulateLinkedDataDialog;
         constructor(container: JQuery);
     }
@@ -1393,14 +1393,14 @@ declare namespace CoopShop.BasicSamples {
      * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
      * With single toolbar for all forms
      */
-    class OtherFormOneBarDialog extends Northwind.OrderDialog {
+    class OtherFormOneBarDialog extends DataShop.OrderDialog {
         private customerPropertyGrid;
         private customerForm;
         private customerValidator;
         private selfChange;
         constructor();
         getCustomerID(): number;
-        loadEntity(entity: Northwind.OrderRow): void;
+        loadEntity(entity: DataShop.OrderRow): void;
         protected saveCustomer(callback: (response: Serenity.SaveResponse) => void, onSuccess?: (response: Serenity.SaveResponse) => void): boolean;
         protected saveOrder(callback: (response: Serenity.SaveResponse) => void): void;
         protected saveAll(callback: (response: Serenity.SaveResponse) => void): void;
@@ -1411,7 +1411,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of OrderGrid to override dialog type to OtherFormInTabOneBarDialog
      */
-    class OtherFormInTabOneBarGrid extends Northwind.OrderGrid {
+    class OtherFormInTabOneBarGrid extends DataShop.OrderGrid {
         protected getDialogType(): typeof OtherFormOneBarDialog;
         constructor(container: JQuery);
     }
@@ -1420,20 +1420,20 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
      */
-    class OtherFormInTabDialog extends Northwind.OrderDialog {
+    class OtherFormInTabDialog extends DataShop.OrderDialog {
         private customerPropertyGrid;
         private customerForm;
         private customerValidator;
         constructor();
         getCustomerID(): number;
-        loadEntity(entity: Northwind.OrderRow): void;
+        loadEntity(entity: DataShop.OrderRow): void;
     }
 }
 declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of OrderGrid to override dialog type to OtherFormInTabDialog
      */
-    class OtherFormInTabGrid extends Northwind.OrderGrid {
+    class OtherFormInTabGrid extends DataShop.OrderGrid {
         protected getDialogType(): typeof OtherFormInTabDialog;
         constructor(container: JQuery);
     }
@@ -1444,7 +1444,7 @@ declare namespace CoopShop.BasicSamples {
      * When comparing this to MultiColumnDialog sample, you may notice that
      * this version requires much less JS and CSS code.
      */
-    class MultiColumnResponsiveDialog extends Northwind.OrderDialog {
+    class MultiColumnResponsiveDialog extends DataShop.OrderDialog {
         constructor();
     }
 }
@@ -1452,13 +1452,13 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of OrderGrid to override dialog type to MultiColumnResponsiveDialog
      */
-    class MultiColumnResponsiveGrid extends Northwind.OrderGrid {
+    class MultiColumnResponsiveGrid extends DataShop.OrderGrid {
         protected getDialogType(): typeof MultiColumnResponsiveDialog;
         constructor(container: JQuery);
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class GetInsertedRecordIdDialog extends Northwind.CategoryDialog {
+    class GetInsertedRecordIdDialog extends DataShop.CategoryDialog {
         /**
          * This method is called after the save request to service
          * is completed succesfully. This can be an insert or update.
@@ -1472,7 +1472,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of CategoryGrid to override dialog type to GetInsertedRecordIdDialog
      */
-    class GetInsertedRecordIdGrid extends Northwind.CategoryGrid {
+    class GetInsertedRecordIdGrid extends DataShop.CategoryGrid {
         protected getDialogType(): typeof GetInsertedRecordIdDialog;
         constructor(container: JQuery);
     }
@@ -1481,7 +1481,7 @@ declare namespace CoopShop.BasicSamples {
     /**
      * A version of order dialog converted to a panel by adding Serenity.Decorators.panel decorator.
      */
-    class EntityDialogAsPanel extends Northwind.OrderDialog {
+    class EntityDialogAsPanel extends DataShop.OrderDialog {
         constructor();
     }
 }
@@ -1489,7 +1489,7 @@ declare namespace CoopShop.BasicSamples.DialogBoxes {
     function initializePage(): void;
 }
 declare namespace CoopShop.BasicSamples {
-    class DefaultValuesInNewGrid extends Northwind.OrderGrid {
+    class DefaultValuesInNewGrid extends DataShop.OrderGrid {
         constructor(container: JQuery);
         /**
          * This method is called when New Item button is clicked.
@@ -1501,19 +1501,19 @@ declare namespace CoopShop.BasicSamples {
     }
 }
 declare namespace CoopShop.BasicSamples {
-    class CloneableEntityDialog extends Northwind.ProductDialog {
+    class CloneableEntityDialog extends DataShop.ProductDialog {
         protected updateInterface(): void;
         /**
          * Overriding this method is optional to customize cloned entity
          */
-        protected getCloningEntity(): Northwind.ProductRow;
+        protected getCloningEntity(): DataShop.ProductRow;
     }
 }
 declare namespace CoopShop.BasicSamples {
     /**
      * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
      */
-    class CloneableEntityGrid extends Northwind.ProductGrid {
+    class CloneableEntityGrid extends DataShop.ProductGrid {
         protected getDialogType(): typeof CloneableEntityDialog;
         constructor(container: JQuery);
     }
@@ -2146,7 +2146,7 @@ declare namespace CoopShop.BasicSamples {
 declare namespace CoopShop.BasicSamples {
     namespace CustomerGrossSalesService {
         const baseUrl = "BasicSamples/CustomerGrossSales";
-        function List(request: CustomerGrossSalesListRequest, onSuccess?: (response: Serenity.ListResponse<Northwind.CustomerGrossSalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: CustomerGrossSalesListRequest, onSuccess?: (response: Serenity.ListResponse<DataShop.CustomerGrossSalesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const List: string;
         }
@@ -2201,7 +2201,7 @@ declare namespace CoopShop.BasicSamples {
         static formKey: string;
     }
     interface FilteredLookupInDetailForm {
-        CustomerID: Northwind.CustomerEditor;
+        CustomerID: DataShop.CustomerEditor;
         OrderDate: Serenity.DateEditor;
         CategoryID: Serenity.LookupEditor;
         DetailList: FilteredLookupDetailEditor;
@@ -2257,7 +2257,7 @@ declare namespace CoopShop.BasicSamples {
         static formKey: string;
     }
     interface PopulateLinkedDataForm {
-        CustomerID: Northwind.CustomerEditor;
+        CustomerID: DataShop.CustomerEditor;
         CustomerContactName: Serenity.StringEditor;
         CustomerContactTitle: Serenity.StringEditor;
         CustomerCity: Serenity.StringEditor;
@@ -2268,7 +2268,7 @@ declare namespace CoopShop.BasicSamples {
         OrderDate: Serenity.DateEditor;
         RequiredDate: Serenity.DateEditor;
         EmployeeID: Serenity.LookupEditor;
-        DetailList: Northwind.OrderDetailsEditor;
+        DetailList: DataShop.OrderDetailsEditor;
     }
 }
 declare namespace CoopShop.BasicSamples {
@@ -3187,9 +3187,9 @@ declare namespace CoopShop.Membership {
         Password?: string;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CategoryForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3198,7 +3198,7 @@ declare namespace CoopShop.Northwind {
         Description: Serenity.StringEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CategoryLangRow {
         Id?: number;
         CategoryId?: number;
@@ -3209,7 +3209,7 @@ declare namespace CoopShop.Northwind {
     namespace CategoryLangRow {
         const idProperty = "Id";
         const nameProperty = "CategoryName";
-        const localTextPrefix = "Northwind.CategoryLang";
+        const localTextPrefix = "DataShop.CategoryLang";
         namespace Fields {
             const Id: string;
             const CategoryId: string;
@@ -3219,9 +3219,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace CategoryLangService {
-        const baseUrl = "Northwind/CategoryLang";
+        const baseUrl = "DataShop/CategoryLang";
         function Create(request: Serenity.SaveRequest<CategoryLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<CategoryLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3236,7 +3236,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CategoryRow {
         CategoryID?: number;
         CategoryName?: string;
@@ -3246,8 +3246,8 @@ declare namespace CoopShop.Northwind {
     namespace CategoryRow {
         const idProperty = "CategoryID";
         const nameProperty = "CategoryName";
-        const localTextPrefix = "Northwind.Category";
-        const lookupKey = "Northwind.Category";
+        const localTextPrefix = "DataShop.Category";
+        const lookupKey = "DataShop.Category";
         function getLookup(): Q.Lookup<CategoryRow>;
         namespace Fields {
             const CategoryID: string;
@@ -3257,9 +3257,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace CategoryService {
-        const baseUrl = "Northwind/Category";
+        const baseUrl = "DataShop/Category";
         function Create(request: Serenity.SaveRequest<CategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<CategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3274,9 +3274,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CustomerCustomerDemoRow {
         ID?: number;
         CustomerID?: string;
@@ -3296,7 +3296,7 @@ declare namespace CoopShop.Northwind {
     namespace CustomerCustomerDemoRow {
         const idProperty = "ID";
         const nameProperty = "CustomerID";
-        const localTextPrefix = "Northwind.CustomerCustomerDemo";
+        const localTextPrefix = "DataShop.CustomerCustomerDemo";
         namespace Fields {
             const ID: string;
             const CustomerID: string;
@@ -3315,7 +3315,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CustomerDemographicRow {
         ID?: number;
         CustomerTypeID?: string;
@@ -3324,7 +3324,7 @@ declare namespace CoopShop.Northwind {
     namespace CustomerDemographicRow {
         const idProperty = "ID";
         const nameProperty = "CustomerTypeID";
-        const localTextPrefix = "Northwind.CustomerDemographic";
+        const localTextPrefix = "DataShop.CustomerDemographic";
         namespace Fields {
             const ID: string;
             const CustomerTypeID: string;
@@ -3332,7 +3332,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CustomerDetailsRow {
         Id?: number;
         LastContactDate?: string;
@@ -3360,7 +3360,7 @@ declare namespace CoopShop.Northwind {
     namespace CustomerDetailsRow {
         const idProperty = "Id";
         const nameProperty = "Email";
-        const localTextPrefix = "Northwind.CustomerDetails";
+        const localTextPrefix = "DataShop.CustomerDetails";
         namespace Fields {
             const Id: string;
             const LastContactDate: string;
@@ -3387,7 +3387,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class CustomerForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3411,7 +3411,7 @@ declare namespace CoopShop.Northwind {
         SendBulletin: Serenity.BooleanEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CustomerGrossSalesRow {
         CustomerId?: string;
         ContactName?: string;
@@ -3431,7 +3431,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CustomerRepresentativesRow {
         RepresentativeId?: number;
         CustomerId?: number;
@@ -3447,7 +3447,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface CustomerRow {
         ID?: number;
         CustomerID?: string;
@@ -3471,8 +3471,8 @@ declare namespace CoopShop.Northwind {
     namespace CustomerRow {
         const idProperty = "ID";
         const nameProperty = "CompanyName";
-        const localTextPrefix = "Northwind.Customer";
-        const lookupKey = "Northwind.Customer";
+        const localTextPrefix = "DataShop.Customer";
+        const lookupKey = "DataShop.Customer";
         function getLookup(): Q.Lookup<CustomerRow>;
         namespace Fields {
             const ID: string;
@@ -3496,9 +3496,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace CustomerService {
-        const baseUrl = "Northwind/Customer";
+        const baseUrl = "DataShop/Customer";
         function Create(request: Serenity.SaveRequest<CustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<CustomerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3515,7 +3515,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface EmployeeRow {
         EmployeeID?: number;
         LastName?: string;
@@ -3559,8 +3559,8 @@ declare namespace CoopShop.Northwind {
     namespace EmployeeRow {
         const idProperty = "EmployeeID";
         const nameProperty = "FullName";
-        const localTextPrefix = "Northwind.Employee";
-        const lookupKey = "Northwind.Employee";
+        const localTextPrefix = "DataShop.Employee";
+        const lookupKey = "DataShop.Employee";
         function getLookup(): Q.Lookup<EmployeeRow>;
         namespace Fields {
             const EmployeeID: string;
@@ -3604,7 +3604,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface EmployeeTerritoryRow {
         EmployeeID?: number;
         TerritoryID?: string;
@@ -3631,7 +3631,7 @@ declare namespace CoopShop.Northwind {
     namespace EmployeeTerritoryRow {
         const idProperty = "EmployeeID";
         const nameProperty = "TerritoryID";
-        const localTextPrefix = "Northwind.EmployeeTerritory";
+        const localTextPrefix = "DataShop.EmployeeTerritory";
         namespace Fields {
             const EmployeeID: string;
             const TerritoryID: string;
@@ -3657,13 +3657,13 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     enum Gender {
         Male = 1,
         Female = 2,
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface NoteRow {
         NoteId?: number;
         EntityType?: string;
@@ -3676,7 +3676,7 @@ declare namespace CoopShop.Northwind {
     namespace NoteRow {
         const idProperty = "NoteId";
         const nameProperty = "EntityType";
-        const localTextPrefix = "Northwind.Note";
+        const localTextPrefix = "DataShop.Note";
         namespace Fields {
             const NoteId: string;
             const EntityType: string;
@@ -3688,11 +3688,11 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class OrderDetailForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3703,7 +3703,7 @@ declare namespace CoopShop.Northwind {
         Discount: Serenity.DecimalEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface OrderDetailRow {
         DetailID?: number;
         OrderID?: number;
@@ -3727,7 +3727,7 @@ declare namespace CoopShop.Northwind {
     }
     namespace OrderDetailRow {
         const idProperty = "DetailID";
-        const localTextPrefix = "Northwind.OrderDetail";
+        const localTextPrefix = "DataShop.OrderDetail";
         namespace Fields {
             const DetailID: string;
             const OrderID: string;
@@ -3751,9 +3751,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace OrderDetailService {
-        const baseUrl = "Northwind/OrderDetail";
+        const baseUrl = "DataShop/OrderDetail";
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OrderDetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
@@ -3762,7 +3762,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class OrderForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3783,12 +3783,12 @@ declare namespace CoopShop.Northwind {
         ShipCountry: Serenity.StringEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface OrderListRequest extends Serenity.ListRequest {
         ProductID?: number;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface OrderRow {
         OrderID?: number;
         CustomerID?: string;
@@ -3823,8 +3823,8 @@ declare namespace CoopShop.Northwind {
     namespace OrderRow {
         const idProperty = "OrderID";
         const nameProperty = "CustomerID";
-        const localTextPrefix = "Northwind.Order";
-        const lookupKey = "Northwind.OrderShipCity";
+        const localTextPrefix = "DataShop.Order";
+        const lookupKey = "DataShop.OrderShipCity";
         function getLookup(): Q.Lookup<OrderRow>;
         namespace Fields {
             const OrderID: string;
@@ -3859,9 +3859,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace OrderService {
-        const baseUrl = "Northwind/Order";
+        const baseUrl = "DataShop/Order";
         function Create(request: Serenity.SaveRequest<OrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<OrderRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3876,15 +3876,15 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     enum OrderShippingState {
         NotShipped = 0,
         Shipped = 1,
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ProductForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -3901,7 +3901,7 @@ declare namespace CoopShop.Northwind {
         ReorderLevel: Serenity.IntegerEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface ProductLangRow {
         Id?: number;
         ProductId?: number;
@@ -3911,7 +3911,7 @@ declare namespace CoopShop.Northwind {
     namespace ProductLangRow {
         const idProperty = "Id";
         const nameProperty = "ProductName";
-        const localTextPrefix = "Northwind.ProductLang";
+        const localTextPrefix = "DataShop.ProductLang";
         namespace Fields {
             const Id: string;
             const ProductId: string;
@@ -3920,9 +3920,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace ProductLangService {
-        const baseUrl = "Northwind/ProductLang";
+        const baseUrl = "DataShop/ProductLang";
         function Create(request: Serenity.SaveRequest<ProductLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<ProductLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3937,7 +3937,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface ProductLogRow {
         ProductLogID?: number;
         OperationType?: Serenity.CaptureOperationType;
@@ -3958,7 +3958,7 @@ declare namespace CoopShop.Northwind {
     }
     namespace ProductLogRow {
         const idProperty = "ProductLogID";
-        const localTextPrefix = "Northwind.ProductLog";
+        const localTextPrefix = "DataShop.ProductLog";
         namespace Fields {
             const ProductLogID: string;
             const OperationType: string;
@@ -3979,7 +3979,7 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface ProductRow {
         ProductID?: number;
         ProductName?: string;
@@ -4010,8 +4010,8 @@ declare namespace CoopShop.Northwind {
     namespace ProductRow {
         const idProperty = "ProductID";
         const nameProperty = "ProductName";
-        const localTextPrefix = "Northwind.Product";
-        const lookupKey = "Northwind.Product";
+        const localTextPrefix = "DataShop.Product";
+        const lookupKey = "DataShop.Product";
         function getLookup(): Q.Lookup<ProductRow>;
         namespace Fields {
             const ProductID: string;
@@ -4042,9 +4042,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace ProductService {
-        const baseUrl = "Northwind/Product";
+        const baseUrl = "DataShop/Product";
         function Create(request: Serenity.SaveRequest<ProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<ProductRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -4059,9 +4059,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class RegionForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -4070,7 +4070,7 @@ declare namespace CoopShop.Northwind {
         RegionDescription: Serenity.StringEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface RegionRow {
         RegionID?: number;
         RegionDescription?: string;
@@ -4078,8 +4078,8 @@ declare namespace CoopShop.Northwind {
     namespace RegionRow {
         const idProperty = "RegionID";
         const nameProperty = "RegionDescription";
-        const localTextPrefix = "Northwind.Region";
-        const lookupKey = "Northwind.Region";
+        const localTextPrefix = "DataShop.Region";
+        const lookupKey = "DataShop.Region";
         function getLookup(): Q.Lookup<RegionRow>;
         namespace Fields {
             const RegionID: string;
@@ -4087,9 +4087,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace RegionService {
-        const baseUrl = "Northwind/Region";
+        const baseUrl = "DataShop/Region";
         function Create(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -4104,9 +4104,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface SalesByCategoryRow {
         CategoryId?: number;
         CategoryName?: string;
@@ -4115,7 +4115,7 @@ declare namespace CoopShop.Northwind {
     }
     namespace SalesByCategoryRow {
         const nameProperty = "CategoryName";
-        const localTextPrefix = "Northwind.SalesByCategory";
+        const localTextPrefix = "DataShop.SalesByCategory";
         namespace Fields {
             const CategoryId: string;
             const CategoryName: string;
@@ -4124,18 +4124,18 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace SalesByCategoryService {
-        const baseUrl = "Northwind/SalesByCategory";
+        const baseUrl = "DataShop/SalesByCategory";
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SalesByCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         namespace Methods {
             const List: string;
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class ShipperForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -4144,7 +4144,7 @@ declare namespace CoopShop.Northwind {
         Phone: PhoneEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface ShipperRow {
         ShipperID?: number;
         CompanyName?: string;
@@ -4153,8 +4153,8 @@ declare namespace CoopShop.Northwind {
     namespace ShipperRow {
         const idProperty = "ShipperID";
         const nameProperty = "CompanyName";
-        const localTextPrefix = "Northwind.Shipper";
-        const lookupKey = "Northwind.Shipper";
+        const localTextPrefix = "DataShop.Shipper";
+        const lookupKey = "DataShop.Shipper";
         function getLookup(): Q.Lookup<ShipperRow>;
         namespace Fields {
             const ShipperID: string;
@@ -4163,9 +4163,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace ShipperService {
-        const baseUrl = "Northwind/Shipper";
+        const baseUrl = "DataShop/Shipper";
         function Create(request: Serenity.SaveRequest<ShipperRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<ShipperRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -4180,9 +4180,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class SupplierForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -4200,7 +4200,7 @@ declare namespace CoopShop.Northwind {
         HomePage: Serenity.StringEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface SupplierRow {
         SupplierID?: number;
         CompanyName?: string;
@@ -4218,8 +4218,8 @@ declare namespace CoopShop.Northwind {
     namespace SupplierRow {
         const idProperty = "SupplierID";
         const nameProperty = "CompanyName";
-        const localTextPrefix = "Northwind.Supplier";
-        const lookupKey = "Northwind.Supplier";
+        const localTextPrefix = "DataShop.Supplier";
+        const lookupKey = "DataShop.Supplier";
         function getLookup(): Q.Lookup<SupplierRow>;
         namespace Fields {
             const SupplierID: string;
@@ -4237,9 +4237,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace SupplierService {
-        const baseUrl = "Northwind/Supplier";
+        const baseUrl = "DataShop/Supplier";
         function Create(request: Serenity.SaveRequest<SupplierRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<SupplierRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -4254,9 +4254,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     class TerritoryForm extends Serenity.PrefixedContext {
         static formKey: string;
     }
@@ -4266,7 +4266,7 @@ declare namespace CoopShop.Northwind {
         RegionID: Serenity.LookupEditor;
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     interface TerritoryRow {
         ID?: number;
         TerritoryID?: string;
@@ -4277,8 +4277,8 @@ declare namespace CoopShop.Northwind {
     namespace TerritoryRow {
         const idProperty = "ID";
         const nameProperty = "TerritoryID";
-        const localTextPrefix = "Northwind.Territory";
-        const lookupKey = "Northwind.Territory";
+        const localTextPrefix = "DataShop.Territory";
+        const lookupKey = "DataShop.Territory";
         function getLookup(): Q.Lookup<TerritoryRow>;
         namespace Fields {
             const ID: string;
@@ -4289,9 +4289,9 @@ declare namespace CoopShop.Northwind {
         }
     }
 }
-declare namespace CoopShop.Northwind {
+declare namespace CoopShop.DataShop {
     namespace TerritoryService {
-        const baseUrl = "Northwind/Territory";
+        const baseUrl = "DataShop/Territory";
         function Create(request: Serenity.SaveRequest<TerritoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<TerritoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
