@@ -1,9 +1,9 @@
 ﻿
 namespace CoopShop.DataShop.Columns
 {
+    using Common;
     using Serenity.ComponentModel;
     using System;
-    using Common;
 
     [ColumnsScript("DataShop.Order")]
     [BasedOnRow(typeof(Entities.OrderRow))]
@@ -18,7 +18,9 @@ namespace CoopShop.DataShop.Columns
         [EditLink, QuickFilter]
         public DateTime? OrderDate { get; set; }
 
-        [Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), QuickFilter]
+        //achiweb
+        //[Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), QuickFilter]
+        [Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), Hidden]
         public String EmployeeFullName { get; set; }
 
         [Hidden] //alchiweb

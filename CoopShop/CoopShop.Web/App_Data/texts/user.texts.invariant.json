@@ -1,0 +1,8 @@
+{
+  "Db.DataShop.Brand.EntitySingular": "AAAA",
+  "Db.DataShop.Product.BrandID": "BBBB",
+  "Db.DataShop.Product.BrandName": "CCCCC",
+  "Forms.Membership.Login.Password_Placeholder": "Par défaut : coopshop",
+  "Forms.Membership.Login.Username_Placeholder": "Par défaut : admin",
+  "Validation.UniqueViolation": "Un utilisateur avec le même nom existe !"
+}

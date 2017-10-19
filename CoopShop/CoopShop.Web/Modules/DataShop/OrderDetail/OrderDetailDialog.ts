@@ -1,6 +1,7 @@
 ﻿/// <reference path="../../Common/Helpers/GridEditorDialog.ts" />
 
 namespace CoopShop.DataShop {
+    //import Select2Extensions = Serenity.Select2Extensions;
 
     @Serenity.Decorators.registerClass()
     export class OrderDetailDialog extends Common.GridEditorDialog<OrderDetailRow> {
@@ -9,17 +10,39 @@ namespace CoopShop.DataShop {
 
         protected form: OrderDetailForm;
 
+        afterLoadEntity(): void {
+            this.updateProduct();
+            //this.changePrice();
+        }
+
         constructor() {
             super();
-
             this.form = new OrderDetailForm(this.idPrefix);
-
             this.form.ProductID.changeSelect2(e => {
-                var productID = Q.toId(this.form.ProductID.value);
-                if (productID != null) {
-                    this.form.UnitPrice.value = ProductRow.getLookup().itemById[productID].UnitPrice;
-                }
+                this.updateProduct();
+
+
             });
+
+            //alchiweb
+            this.form.InternalRef.changeSelect2(e => {
+                var tabItems: Array<ProductRow> = ProductRow.getLookup().items
+                    .filter(e => e.InternalRef === this.form.InternalRef.value);
+                if (tabItems.length >= 1) {
+                    this.form.ProductID.value = tabItems[0].ProductID.toString();
+                    this.form.UnitPrice.value = tabItems[0].UnitPrice;
+                    this.form.QuantitySymbol.value = tabItems[0].QuantitySymbol.toString();
+
+                    this.changePrice();
+                }
+
+            });
+
+            this.form.UnitPrice.changeSelect2(e => {
+                this.changePrice();
+            });
+
+
 
             this.form.Discount.addValidationRule(this.uniqueName, e => {
                 var price = this.form.UnitPrice.value;
@@ -30,6 +53,34 @@ namespace CoopShop.DataShop {
                     return "Discount can't be higher than total price!";
                 }
             });
+
+        }
+
+        updateProduct() {
+            var productID = Q.toId(this.form.ProductID.value);
+            if (productID != null) {
+                //alchiweb
+                //this.form.UnitPrice.value = ProductRow.getLookup().itemById[productID].UnitPrice;
+                var currentProduct: ProductRow = ProductRow.getLookup().itemById[productID];
+                this.form.UnitPrice.value = currentProduct.UnitPrice;
+                this.form.InternalRef.value = currentProduct.InternalRef;
+                this.form.QuantitySymbol.value = currentProduct.QuantitySymbol.toString();
+                this.changePrice();
+            }
+            else //alchiweb
+            if (this.form.InternalRef.value !== "")
+                this.form.InternalRef.value = "";
+        }
+        changePrice() {
+            if (this.form != null) {
+                var productID = Q.toId(this.form.ProductID.value);
+                if (productID != null) {
+                    var productRow = ProductRow.getLookup().itemById[productID];
+                    this.form.QuantityPerUnitPrice.value = this.form.UnitPrice.value / productRow.QuantityPerUnit;
+                    this.form.QuantityPerUnitPrice.element.parent().children("label")
+                        .text("Prix / " + QuantitySymbolType[productRow.QuantitySymbol]);
+                }
+            }
         }
     }
 }

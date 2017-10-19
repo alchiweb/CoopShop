@@ -439,7 +439,7 @@ var CoopShop;
             return ChangingLookupTextForm;
         }(Serenity.PrefixedContext));
         BasicSamples.ChangingLookupTextForm = ChangingLookupTextForm;
-        [['ProductID', function () { return BasicSamples.ChangingLookupTextEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(ChangingLookupTextForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['ProductID', function () { return BasicSamples.ChangingLookupTextEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.DecimalEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(ChangingLookupTextForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -684,6 +684,120 @@ var CoopShop;
             });
         })(UserPreferenceService = Common.UserPreferenceService || (Common.UserPreferenceService = {}));
     })(Common = CoopShop.Common || (CoopShop.Common = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var BrandForm = (function (_super) {
+            __extends(BrandForm, _super);
+            function BrandForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            BrandForm.formKey = 'DataShop.Brand';
+            return BrandForm;
+        }(Serenity.PrefixedContext));
+        DataShop.BrandForm = BrandForm;
+        [['BrandName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(BrandForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var BrandLangRow;
+        (function (BrandLangRow) {
+            BrandLangRow.idProperty = 'Id';
+            BrandLangRow.nameProperty = 'BrandName';
+            BrandLangRow.localTextPrefix = 'DataShop.BrandLang';
+            var Fields;
+            (function (Fields) {
+            })(Fields = BrandLangRow.Fields || (BrandLangRow.Fields = {}));
+            [
+                'Id',
+                'BrandId',
+                'LanguageId',
+                'BrandName',
+                'Description'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(BrandLangRow = DataShop.BrandLangRow || (DataShop.BrandLangRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var BrandLangService;
+        (function (BrandLangService) {
+            BrandLangService.baseUrl = 'DataShop/BrandLang';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BrandLangService.Methods || (BrandLangService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                BrandLangService[x] = function (r, s, o) {
+                    return Q.serviceRequest(BrandLangService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = BrandLangService.baseUrl + '/' + x;
+            });
+        })(BrandLangService = DataShop.BrandLangService || (DataShop.BrandLangService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var BrandRow;
+        (function (BrandRow) {
+            BrandRow.idProperty = 'BrandID';
+            BrandRow.nameProperty = 'BrandName';
+            BrandRow.localTextPrefix = 'DataShop.Brand';
+            BrandRow.lookupKey = 'DataShop.Brand';
+            function getLookup() {
+                return Q.getLookup('DataShop.Brand');
+            }
+            BrandRow.getLookup = getLookup;
+            var Fields;
+            (function (Fields) {
+            })(Fields = BrandRow.Fields || (BrandRow.Fields = {}));
+            [
+                'BrandID',
+                'BrandName',
+                'Description',
+                'Picture'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(BrandRow = DataShop.BrandRow || (DataShop.BrandRow = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var BrandService;
+        (function (BrandService) {
+            BrandService.baseUrl = 'DataShop/Brand';
+            var Methods;
+            (function (Methods) {
+            })(Methods = BrandService.Methods || (BrandService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                BrandService[x] = function (r, s, o) {
+                    return Q.serviceRequest(BrandService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = BrandService.baseUrl + '/' + x;
+            });
+        })(BrandService = DataShop.BrandService || (DataShop.BrandService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
@@ -1159,7 +1273,7 @@ var CoopShop;
             return OrderDetailForm;
         }(Serenity.PrefixedContext));
         DataShop.OrderDetailForm = OrderDetailForm;
-        [['ProductID', function () { return Serenity.LookupEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.IntegerEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(OrderDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['InternalRef', function () { return Serenity.StringEditor; }], ['ProductID', function () { return DataShop.ProductEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.DecimalEditor; }], ['QuantitySymbol', function () { return Serenity.EnumEditor; }], ['QuantityPerUnitPrice', function () { return Serenity.DecimalEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(OrderDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -1180,19 +1294,15 @@ var CoopShop;
                 'UnitPrice',
                 'Quantity',
                 'Discount',
-                'OrderCustomerID',
-                'OrderEmployeeID',
-                'OrderDate',
-                'OrderShippedDate',
-                'OrderShipVia',
-                'OrderShipCity',
-                'OrderShipCountry',
                 'ProductName',
-                'ProductDiscontinued',
-                'ProductSupplierID',
-                'ProductQuantityPerUnit',
-                'ProductUnitPrice',
-                'LineTotal'
+                'QuantityPerUnit',
+                'LineTotal',
+                'QuantityPerUnitPrice',
+                'QuantitySymbol',
+                'CategoryID',
+                'BrandID',
+                'CategoryName',
+                'BrandName'
             ].forEach(function (x) { return Fields[x] = x; });
         })(OrderDetailRow = DataShop.OrderDetailRow || (DataShop.OrderDetailRow = {}));
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1323,6 +1433,20 @@ var CoopShop;
             OrderShippingState[OrderShippingState["Shipped"] = 1] = "Shipped";
         })(OrderShippingState = DataShop.OrderShippingState || (DataShop.OrderShippingState = {}));
         Serenity.Decorators.registerEnum(OrderShippingState, 'DataShop.OrderShippingState');
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var PaymentMethodType;
+        (function (PaymentMethodType) {
+            PaymentMethodType[PaymentMethodType["NotPayed"] = 0] = "NotPayed";
+            PaymentMethodType[PaymentMethodType["Cash"] = 1] = "Cash";
+            PaymentMethodType[PaymentMethodType["Check"] = 2] = "Check";
+            PaymentMethodType[PaymentMethodType["Other"] = 3] = "Other";
+        })(PaymentMethodType = DataShop.PaymentMethodType || (DataShop.PaymentMethodType = {}));
+        Serenity.Decorators.registerEnum(PaymentMethodType, 'DataShop.PaymentMethodType');
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -1504,6 +1628,20 @@ var CoopShop;
                 Methods[x] = ProductService.baseUrl + '/' + x;
             });
         })(ProductService = DataShop.ProductService || (DataShop.ProductService = {}));
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var QuantitySymbolType;
+        (function (QuantitySymbolType) {
+            QuantitySymbolType[QuantitySymbolType["Ind\u00E9fini"] = 0] = "Ind\u00E9fini";
+            QuantitySymbolType[QuantitySymbolType["Kilo"] = 1] = "Kilo";
+            QuantitySymbolType[QuantitySymbolType["Litre"] = 2] = "Litre";
+            QuantitySymbolType[QuantitySymbolType["Pi\u00E8ce"] = 3] = "Pi\u00E8ce";
+        })(QuantitySymbolType = DataShop.QuantitySymbolType || (DataShop.QuantitySymbolType = {}));
+        Serenity.Decorators.registerEnum(QuantitySymbolType, 'DataShop.QuantitySymbolType');
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -3987,7 +4125,6 @@ var CoopShop;
                 //alchiweb
                 _this.numericPrecision = '0.##';
                 _this.numeric2Precision = '0.###';
-                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
                 //alchiweb
                 _this.slickContainer.on('change', 'select', function (e) {
                     if (!e.target.classList.contains('edit')) {
@@ -4004,6 +4141,7 @@ var CoopShop;
                             e.target.classList.add('dirty');
                     }
                 });
+                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
                 return _this;
             }
             ProductGrid.prototype.getColumnsKey = function () { return "DataShop.Product"; };
@@ -4075,7 +4213,8 @@ var CoopShop;
                 var value = this.getEffectiveValue(item, ctx.column.field);
                 return "<input type='text' class='" + klass +
                     "' data-field='" + ctx.column.field +
-                    "' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                    //"' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                    "' value='" + Q.formatNumber(value, numericClass == 'numeric' ? this.numericPrecision : this.numeric2Precision) + "'/>";
             };
             ProductGrid.prototype.stringInputFormatter = function (ctx) {
                 var klass = 'edit string';
@@ -4136,17 +4275,17 @@ var CoopShop;
                 var fld = DataShop.ProductRow.Fields;
                 //alchiweb
                 //Q.first(columns, x => x.field === 'QuantityPerUnit').format = str;
-                Q.first(columns, function (x) { return x.field === fld.QuantityPerUnit; }).format = numMorePrecise;
                 var category = Q.first(columns, function (x) { return x.field === fld.CategoryName; });
                 category.referencedFields = [fld.CategoryID];
                 category.format = function (ctx) { return _this.selectFormatter(ctx, fld.CategoryID, DataShop.CategoryRow.getLookup()); };
-                var supplier = Q.first(columns, function (x) { return x.field === fld.SupplierCompanyName; });
-                supplier.referencedFields = [fld.SupplierID];
-                supplier.format = function (ctx) { return _this.selectFormatter(ctx, fld.SupplierID, DataShop.SupplierRow.getLookup()); };
                 //alchiweb
                 var brand = Q.first(columns, function (x) { return x.field === fld.BrandName; });
                 brand.referencedFields = [fld.BrandID];
                 brand.format = function (ctx) { return _this.selectFormatter(ctx, fld.BrandID, DataShop.BrandRow.getLookup()); };
+                var supplier = Q.first(columns, function (x) { return x.field === fld.SupplierCompanyName; });
+                supplier.referencedFields = [fld.SupplierID];
+                supplier.format = function (ctx) { return _this.selectFormatter(ctx, fld.SupplierID, DataShop.SupplierRow.getLookup()); };
+                Q.first(columns, function (x) { return x.field === fld.QuantityPerUnit; }).format = numMorePrecise;
                 Q.first(columns, function (x) { return x.field === fld.UnitPrice; }).format = num;
                 Q.first(columns, function (x) { return x.field === fld.UnitsInStock; }).format = num;
                 Q.first(columns, function (x) { return x.field === fld.UnitsOnOrder; }).format = num;
@@ -4172,6 +4311,9 @@ var CoopShop;
                     oldText = Q.formatNumber(effective, input.hasClass("numeric") ? this.numericPrecision : this.numeric2Precision);
                 else
                     oldText = effective;
+                if (!pending) {
+                    this.pendingChanges[item.ProductID] = pending = {};
+                }
                 var value;
                 if (field === 'BuyingPrice' || field === 'UnitPrice' || field === 'QuantityPerUnit') {
                     value = Q.parseDecimal(text);
@@ -4206,9 +4348,6 @@ var CoopShop;
                     inputBuyingPrice.parent().next().text(sup.toString().replace(".", ","));
                     this.updatePrice(inputBuyingPrice, pending, item);
                     item['SupplierCommissionPercentage'] = sup;
-                }
-                if (!pending) {
-                    this.pendingChanges[item.ProductID] = pending = {};
                 }
                 pending[field] = value;
                 item[field] = value;
@@ -5720,16 +5859,28 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
+        //import Select2Extensions = Serenity.Select2Extensions;
         var OrderDetailDialog = (function (_super) {
             __extends(OrderDetailDialog, _super);
             function OrderDetailDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new DataShop.OrderDetailForm(_this.idPrefix);
                 _this.form.ProductID.changeSelect2(function (e) {
-                    var productID = Q.toId(_this.form.ProductID.value);
-                    if (productID != null) {
-                        _this.form.UnitPrice.value = DataShop.ProductRow.getLookup().itemById[productID].UnitPrice;
+                    _this.updateProduct();
+                });
+                //alchiweb
+                _this.form.InternalRef.changeSelect2(function (e) {
+                    var tabItems = DataShop.ProductRow.getLookup().items
+                        .filter(function (e) { return e.InternalRef === _this.form.InternalRef.value; });
+                    if (tabItems.length >= 1) {
+                        _this.form.ProductID.value = tabItems[0].ProductID.toString();
+                        _this.form.UnitPrice.value = tabItems[0].UnitPrice;
+                        _this.form.QuantitySymbol.value = tabItems[0].QuantitySymbol.toString();
+                        _this.changePrice();
                     }
+                });
+                _this.form.UnitPrice.changeSelect2(function (e) {
+                    _this.changePrice();
                 });
                 _this.form.Discount.addValidationRule(_this.uniqueName, function (e) {
                     var price = _this.form.UnitPrice.value;
@@ -5744,6 +5895,35 @@ var CoopShop;
             }
             OrderDetailDialog.prototype.getFormKey = function () { return DataShop.OrderDetailForm.formKey; };
             OrderDetailDialog.prototype.getLocalTextPrefix = function () { return DataShop.OrderDetailRow.localTextPrefix; };
+            OrderDetailDialog.prototype.afterLoadEntity = function () {
+                this.updateProduct();
+                //this.changePrice();
+            };
+            OrderDetailDialog.prototype.updateProduct = function () {
+                var productID = Q.toId(this.form.ProductID.value);
+                if (productID != null) {
+                    //alchiweb
+                    //this.form.UnitPrice.value = ProductRow.getLookup().itemById[productID].UnitPrice;
+                    var currentProduct = DataShop.ProductRow.getLookup().itemById[productID];
+                    this.form.UnitPrice.value = currentProduct.UnitPrice;
+                    this.form.InternalRef.value = currentProduct.InternalRef;
+                    this.form.QuantitySymbol.value = currentProduct.QuantitySymbol.toString();
+                    this.changePrice();
+                }
+                else if (this.form.InternalRef.value !== "")
+                    this.form.InternalRef.value = "";
+            };
+            OrderDetailDialog.prototype.changePrice = function () {
+                if (this.form != null) {
+                    var productID = Q.toId(this.form.ProductID.value);
+                    if (productID != null) {
+                        var productRow = DataShop.ProductRow.getLookup().itemById[productID];
+                        this.form.QuantityPerUnitPrice.value = this.form.UnitPrice.value / productRow.QuantityPerUnit;
+                        this.form.QuantityPerUnitPrice.element.parent().children("label")
+                            .text("Prix / " + DataShop.QuantitySymbolType[productRow.QuantitySymbol]);
+                    }
+                }
+            };
             OrderDetailDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], OrderDetailDialog);
@@ -5940,20 +6120,62 @@ var CoopShop;
         var OrderDetailsEditor = (function (_super) {
             __extends(OrderDetailsEditor, _super);
             function OrderDetailsEditor(container) {
-                return _super.call(this, container) || this;
+                var _this = _super.call(this, container) || this;
+                //alchiweb
+                _this.parentContainer = container;
+                _this.getItems().forEach(function (x) { x.QuantitySymbol = DataShop.QuantitySymbolType.Litre; });
+                return _this;
             }
             OrderDetailsEditor.prototype.getColumnsKey = function () { return "DataShop.OrderDetail"; };
             OrderDetailsEditor.prototype.getDialogType = function () { return DataShop.OrderDetailDialog; };
             OrderDetailsEditor.prototype.getLocalTextPrefix = function () { return DataShop.OrderDetailRow.localTextPrefix; };
+            OrderDetailsEditor.prototype.editItem = function (entityOrId) {
+                if (!$("input[name='PaymentTotal']").prop('disabled'))
+                    _super.prototype.editItem.call(this, entityOrId);
+            };
+            OrderDetailsEditor.prototype.deleteEntity = function (id) {
+                var result = _super.prototype.deleteEntity.call(this, id);
+                this.setPaymentTotal(this.view.getItems());
+                return result;
+            };
+            OrderDetailsEditor.prototype.setEntities = function (items) {
+                _super.prototype.setEntities.call(this, items);
+                this.setPaymentTotal(items);
+            };
+            OrderDetailsEditor.prototype.setPaymentTotal = function (items) {
+                if (!$("input[name='PaymentTotal']").prop('disabled')) {
+                    var currentLanguage = Q.coalesce($.cookie("LanguagePreference"), 'en');
+                    var newTotal = 0;
+                    items.forEach(function (orderDetailRow) {
+                        newTotal += orderDetailRow.LineTotal;
+                    });
+                    $("input[name='PaymentTotal']").val(newTotal.toLocaleString(currentLanguage)).focus().off("focus");
+                }
+            };
             OrderDetailsEditor.prototype.validateEntity = function (row, id) {
+                //alchiweb
+                //row.ProductID = Q.toId(row.ProductID);
+                //var sameProduct = Q.tryFirst(this.view.getItems(), x => x.ProductID === row.ProductID);
+                //if (sameProduct && this.id(sameProduct) !== id) {
+                //    Q.alert('This product is already in order details!');
+                //    return false;
+                //}
+                //row.ProductName = ProductRow.getLookup().itemById[row.ProductID].ProductName;
+                //row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
+                var allDetailItems = this.view.getItems();
                 row.ProductID = Q.toId(row.ProductID);
-                var sameProduct = Q.tryFirst(this.view.getItems(), function (x) { return x.ProductID === row.ProductID; });
+                //            row.getLookup.ProductName;
+                var sameProduct = Q.tryFirst(allDetailItems, function (x) { return x.ProductID === row.ProductID; });
                 if (sameProduct && this.id(sameProduct) !== id) {
                     Q.alert('This product is already in order details!');
                     return false;
                 }
-                row.ProductName = DataShop.ProductRow.getLookup().itemById[row.ProductID].ProductName;
+                var currentProduct = DataShop.ProductRow.getLookup().itemById[row.ProductID];
+                row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' (' + currentProduct.BrandName + ')';
                 row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
+                row.LineTotal = Math.ceil(row.LineTotal * 10) / 10;
+                //            row.QuantityPerUnit = 1;
+                row.QuantitySymbol = DataShop.ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
                 return true;
             };
             OrderDetailsEditor = __decorate([
@@ -8551,6 +8773,52 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
+        var BrandDialog = (function (_super) {
+            __extends(BrandDialog, _super);
+            function BrandDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DataShop.BrandForm(_this.idPrefix);
+                return _this;
+            }
+            BrandDialog.prototype.getFormKey = function () { return DataShop.BrandForm.formKey; };
+            BrandDialog.prototype.getIdProperty = function () { return DataShop.BrandRow.idProperty; };
+            BrandDialog.prototype.getLocalTextPrefix = function () { return DataShop.BrandRow.localTextPrefix; };
+            BrandDialog.prototype.getNameProperty = function () { return DataShop.BrandRow.nameProperty; };
+            BrandDialog.prototype.getService = function () { return DataShop.BrandService.baseUrl; };
+            BrandDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], BrandDialog);
+            return BrandDialog;
+        }(Serenity.EntityDialog));
+        DataShop.BrandDialog = BrandDialog;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var BrandGrid = (function (_super) {
+            __extends(BrandGrid, _super);
+            function BrandGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            BrandGrid.prototype.getColumnsKey = function () { return "DataShop.Brand"; };
+            BrandGrid.prototype.getDialogType = function () { return DataShop.BrandDialog; };
+            BrandGrid.prototype.getIdProperty = function () { return DataShop.BrandRow.idProperty; };
+            BrandGrid.prototype.getLocalTextPrefix = function () { return DataShop.BrandRow.localTextPrefix; };
+            BrandGrid.prototype.getService = function () { return DataShop.BrandService.baseUrl; };
+            BrandGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], BrandGrid);
+            return BrandGrid;
+        }(Serenity.EntityGrid));
+        DataShop.BrandGrid = BrandGrid;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
         var CustomerEditor = (function (_super) {
             __extends(CustomerEditor, _super);
             function CustomerEditor(hidden) {
@@ -8898,6 +9166,66 @@ var CoopShop;
             return FreightFormatter;
         }());
         DataShop.FreightFormatter = FreightFormatter;
+    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
+})(CoopShop || (CoopShop = {}));
+var CoopShop;
+(function (CoopShop) {
+    var DataShop;
+    (function (DataShop) {
+        var ProductEditor = (function (_super) {
+            __extends(ProductEditor, _super);
+            function ProductEditor(hidden, opt) {
+                var _this = 
+                //$Serenity_Select2Editor.call(this, hidden, opt);
+                //            hidden.add("div").addClass("widget");
+                //            var pdiv = hidden.add("div");
+                //            opt.inplaceAdd = true;
+                _super.call(this, hidden, opt) || this;
+                //            this.options.openOnEnter = true;
+                //            this.addOption('open', 'true');
+                //            hidden.click();
+                hidden.on('change', 'input', function (e) { return _this.inputsChange(e); });
+                return _this;
+            }
+            ProductEditor.prototype.inputsChange = function (e) {
+            };
+            ProductEditor.prototype.getLookupKey = function () {
+                return 'DataShop.Product';
+            };
+            /*
+            protected getTemplate() {
+                return (
+                    "<form id='~_Form' class='s-Form'>" +
+                    "<textarea id='~_Text' class='required'></textarea>" +
+                    "</form>");
+            }
+    
+            */
+            ProductEditor.prototype.getItems = function (lookup) {
+                var txt_lookup = "";
+                for (var $t1 = 0; $t1 < lookup.items.length; $t1++) {
+                    var item = lookup.items[$t1];
+                    var textValue = item[lookup.textField];
+                    txt_lookup = textValue;
+                    //                    console.log("-:" + this.filterValue + "|");
+                }
+                //            console.log(lookup.te + "/" + lookup.idField);
+                return lookup.items.filter(function (x, index) {
+                    return x.Discontinued !== true && x.ProductID !== index;
+                });
+            };
+            ProductEditor.prototype.getItemText = function (item, lookup) {
+                return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + _super.prototype.getItemText.call(this, item, lookup) + ((item.BrandName === undefined || item.BrandID === 2094) ? "" : (' (' + item.BrandName + ')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
+            };
+            ProductEditor.prototype.getItemDisabled = function (item, lookup) {
+                return item.Discontinued;
+            };
+            ProductEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], ProductEditor);
+            return ProductEditor;
+        }(Serenity.LookupEditorBase));
+        DataShop.ProductEditor = ProductEditor;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -10177,253 +10505,5 @@ var CoopShop;
         }(Serenity.EntityGrid));
         Organization.ContactGrid = ContactGrid;
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandDialog = (function (_super) {
-            __extends(BrandDialog, _super);
-            function BrandDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DataShop.BrandForm(_this.idPrefix);
-                return _this;
-            }
-            BrandDialog.prototype.getFormKey = function () { return DataShop.BrandForm.formKey; };
-            BrandDialog.prototype.getIdProperty = function () { return DataShop.BrandRow.idProperty; };
-            BrandDialog.prototype.getLocalTextPrefix = function () { return DataShop.BrandRow.localTextPrefix; };
-            BrandDialog.prototype.getNameProperty = function () { return DataShop.BrandRow.nameProperty; };
-            BrandDialog.prototype.getService = function () { return DataShop.BrandService.baseUrl; };
-            BrandDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], BrandDialog);
-            return BrandDialog;
-        }(Serenity.EntityDialog));
-        DataShop.BrandDialog = BrandDialog;
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandGrid = (function (_super) {
-            __extends(BrandGrid, _super);
-            function BrandGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            BrandGrid.prototype.getColumnsKey = function () { return "DataShop.Brand"; };
-            BrandGrid.prototype.getDialogType = function () { return DataShop.BrandDialog; };
-            BrandGrid.prototype.getIdProperty = function () { return DataShop.BrandRow.idProperty; };
-            BrandGrid.prototype.getLocalTextPrefix = function () { return DataShop.BrandRow.localTextPrefix; };
-            BrandGrid.prototype.getService = function () { return DataShop.BrandService.baseUrl; };
-            BrandGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], BrandGrid);
-            return BrandGrid;
-        }(Serenity.EntityGrid));
-        DataShop.BrandGrid = BrandGrid;
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandForm = (function (_super) {
-            __extends(BrandForm, _super);
-            function BrandForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            BrandForm.formKey = 'DataShop.Brand';
-            return BrandForm;
-        }(Serenity.PrefixedContext));
-        DataShop.BrandForm = BrandForm;
-        [['BrandName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(BrandForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandLangRow;
-        (function (BrandLangRow) {
-            BrandLangRow.idProperty = 'Id';
-            BrandLangRow.nameProperty = 'BrandName';
-            BrandLangRow.localTextPrefix = 'DataShop.BrandLang';
-            var Fields;
-            (function (Fields) {
-            })(Fields = BrandLangRow.Fields || (BrandLangRow.Fields = {}));
-            [
-                'Id',
-                'BrandId',
-                'LanguageId',
-                'BrandName',
-                'Description'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(BrandLangRow = DataShop.BrandLangRow || (DataShop.BrandLangRow = {}));
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandLangService;
-        (function (BrandLangService) {
-            BrandLangService.baseUrl = 'DataShop/BrandLang';
-            var Methods;
-            (function (Methods) {
-            })(Methods = BrandLangService.Methods || (BrandLangService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                BrandLangService[x] = function (r, s, o) {
-                    return Q.serviceRequest(BrandLangService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = BrandLangService.baseUrl + '/' + x;
-            });
-        })(BrandLangService = DataShop.BrandLangService || (DataShop.BrandLangService = {}));
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandRow;
-        (function (BrandRow) {
-            BrandRow.idProperty = 'BrandID';
-            BrandRow.nameProperty = 'BrandName';
-            BrandRow.localTextPrefix = 'DataShop.Brand';
-            BrandRow.lookupKey = 'DataShop.Brand';
-            function getLookup() {
-                return Q.getLookup('DataShop.Brand');
-            }
-            BrandRow.getLookup = getLookup;
-            var Fields;
-            (function (Fields) {
-            })(Fields = BrandRow.Fields || (BrandRow.Fields = {}));
-            [
-                'BrandID',
-                'BrandName',
-                'Description',
-                'Picture'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(BrandRow = DataShop.BrandRow || (DataShop.BrandRow = {}));
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var BrandService;
-        (function (BrandService) {
-            BrandService.baseUrl = 'DataShop/Brand';
-            var Methods;
-            (function (Methods) {
-            })(Methods = BrandService.Methods || (BrandService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                BrandService[x] = function (r, s, o) {
-                    return Q.serviceRequest(BrandService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = BrandService.baseUrl + '/' + x;
-            });
-        })(BrandService = DataShop.BrandService || (DataShop.BrandService = {}));
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var ProductEditor = (function (_super) {
-            __extends(ProductEditor, _super);
-            function ProductEditor(hidden, opt) {
-                var _this = 
-                //$Serenity_Select2Editor.call(this, hidden, opt);
-                //            hidden.add("div").addClass("widget");
-                //            var pdiv = hidden.add("div");
-                //            opt.inplaceAdd = true;
-                _super.call(this, hidden, opt) || this;
-                //            this.options.openOnEnter = true;
-                //            this.addOption('open', 'true');
-                //            hidden.click();
-                hidden.on('change', 'input', function (e) { return _this.inputsChange(e); });
-                return _this;
-            }
-            ProductEditor.prototype.inputsChange = function (e) {
-            };
-            ProductEditor.prototype.getLookupKey = function () {
-                return 'DataShop.Product';
-            };
-            /*
-            protected getTemplate() {
-                return (
-                    "<form id='~_Form' class='s-Form'>" +
-                    "<textarea id='~_Text' class='required'></textarea>" +
-                    "</form>");
-            }
-    
-            */
-            ProductEditor.prototype.getItems = function (lookup) {
-                var txt_lookup = "";
-                for (var $t1 = 0; $t1 < lookup.items.length; $t1++) {
-                    var item = lookup.items[$t1];
-                    var textValue = item[lookup.textField];
-                    txt_lookup = textValue;
-                    //                    console.log("-:" + this.filterValue + "|");
-                }
-                //            console.log(lookup.te + "/" + lookup.idField);
-                return lookup.items.filter(function (x, index) {
-                    return x.Discontinued !== true && x.ProductID !== index;
-                });
-            };
-            ProductEditor.prototype.getItemText = function (item, lookup) {
-                return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + _super.prototype.getItemText.call(this, item, lookup) + ((item.BrandName === undefined || item.BrandID === 2094) ? "" : (' (' + item.BrandName + ')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
-            };
-            ProductEditor.prototype.getItemDisabled = function (item, lookup) {
-                return item.Discontinued;
-            };
-            ProductEditor = __decorate([
-                Serenity.Decorators.registerEditor()
-            ], ProductEditor);
-            return ProductEditor;
-        }(Serenity.LookupEditorBase));
-        DataShop.ProductEditor = ProductEditor;
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var PaymentMethodType;
-        (function (PaymentMethodType) {
-            PaymentMethodType[PaymentMethodType["NotPayed"] = 0] = "NotPayed";
-            PaymentMethodType[PaymentMethodType["Cash"] = 1] = "Cash";
-            PaymentMethodType[PaymentMethodType["Check"] = 2] = "Check";
-            PaymentMethodType[PaymentMethodType["Other"] = 3] = "Other";
-        })(PaymentMethodType = DataShop.PaymentMethodType || (DataShop.PaymentMethodType = {}));
-        Serenity.Decorators.registerEnum(PaymentMethodType, 'DataShop.PaymentMethodType');
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var DataShop;
-    (function (DataShop) {
-        var QuantitySymbolType;
-        (function (QuantitySymbolType) {
-            QuantitySymbolType[QuantitySymbolType["Ind\u00E9fini"] = 0] = "Ind\u00E9fini";
-            QuantitySymbolType[QuantitySymbolType["Kilo"] = 1] = "Kilo";
-            QuantitySymbolType[QuantitySymbolType["Litre"] = 2] = "Litre";
-            QuantitySymbolType[QuantitySymbolType["Pi\u00E8ce"] = 3] = "Pi\u00E8ce";
-        })(QuantitySymbolType = DataShop.QuantitySymbolType || (DataShop.QuantitySymbolType = {}));
-        Serenity.Decorators.registerEnum(QuantitySymbolType, 'DataShop.QuantitySymbolType');
-    })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 //# sourceMappingURL=CoopShop.Web.js.map

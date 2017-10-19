@@ -416,7 +416,7 @@ declare namespace CoopShop.BasicSamples {
     interface ChangingLookupTextForm {
         ProductID: ChangingLookupTextEditor;
         UnitPrice: Serenity.DecimalEditor;
-        Quantity: Serenity.IntegerEditor;
+        Quantity: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
     }
 }
@@ -642,6 +642,93 @@ declare namespace CoopShop.Common {
         PreferenceType?: string;
         Name?: string;
         Value?: string;
+    }
+}
+declare namespace CoopShop.DataShop {
+}
+declare namespace CoopShop.DataShop {
+    class BrandForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface BrandForm {
+        BrandName: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+    }
+}
+declare namespace CoopShop.DataShop {
+    interface BrandLangRow {
+        Id?: number;
+        BrandId?: number;
+        LanguageId?: number;
+        BrandName?: string;
+        Description?: string;
+    }
+    namespace BrandLangRow {
+        const idProperty = "Id";
+        const nameProperty = "BrandName";
+        const localTextPrefix = "DataShop.BrandLang";
+        namespace Fields {
+            const Id: string;
+            const BrandId: string;
+            const LanguageId: string;
+            const BrandName: string;
+            const Description: string;
+        }
+    }
+}
+declare namespace CoopShop.DataShop {
+    namespace BrandLangService {
+        const baseUrl = "DataShop/BrandLang";
+        function Create(request: Serenity.SaveRequest<BrandLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BrandLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace CoopShop.DataShop {
+    interface BrandRow {
+        BrandID?: number;
+        BrandName?: string;
+        Description?: string;
+        Picture?: number[];
+    }
+    namespace BrandRow {
+        const idProperty = "BrandID";
+        const nameProperty = "BrandName";
+        const localTextPrefix = "DataShop.Brand";
+        const lookupKey = "DataShop.Brand";
+        function getLookup(): Q.Lookup<BrandRow>;
+        namespace Fields {
+            const BrandID: string;
+            const BrandName: string;
+            const Description: string;
+            const Picture: string;
+        }
+    }
+}
+declare namespace CoopShop.DataShop {
+    namespace BrandService {
+        const baseUrl = "DataShop/Brand";
+        function Create(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
     }
 }
 declare namespace CoopShop.DataShop {
@@ -1153,9 +1240,12 @@ declare namespace CoopShop.DataShop {
         static formKey: string;
     }
     interface OrderDetailForm {
-        ProductID: Serenity.LookupEditor;
+        InternalRef: Serenity.StringEditor;
+        ProductID: ProductEditor;
         UnitPrice: Serenity.DecimalEditor;
-        Quantity: Serenity.IntegerEditor;
+        Quantity: Serenity.DecimalEditor;
+        QuantitySymbol: Serenity.EnumEditor;
+        QuantityPerUnitPrice: Serenity.DecimalEditor;
         Discount: Serenity.DecimalEditor;
     }
 }
@@ -1167,19 +1257,15 @@ declare namespace CoopShop.DataShop {
         UnitPrice?: number;
         Quantity?: number;
         Discount?: number;
-        OrderCustomerID?: string;
-        OrderEmployeeID?: number;
-        OrderDate?: string;
-        OrderShippedDate?: string;
-        OrderShipVia?: number;
-        OrderShipCity?: string;
-        OrderShipCountry?: string;
         ProductName?: string;
-        ProductDiscontinued?: boolean;
-        ProductSupplierID?: number;
-        ProductQuantityPerUnit?: string;
-        ProductUnitPrice?: number;
+        QuantityPerUnit?: number;
         LineTotal?: number;
+        QuantityPerUnitPrice?: number;
+        QuantitySymbol?: QuantitySymbolType;
+        CategoryID?: number;
+        BrandID?: number;
+        CategoryName?: string;
+        BrandName?: string;
     }
     namespace OrderDetailRow {
         const idProperty = "DetailID";
@@ -1191,19 +1277,15 @@ declare namespace CoopShop.DataShop {
             const UnitPrice: string;
             const Quantity: string;
             const Discount: string;
-            const OrderCustomerID: string;
-            const OrderEmployeeID: string;
-            const OrderDate: string;
-            const OrderShippedDate: string;
-            const OrderShipVia: string;
-            const OrderShipCity: string;
-            const OrderShipCountry: string;
             const ProductName: string;
-            const ProductDiscontinued: string;
-            const ProductSupplierID: string;
-            const ProductQuantityPerUnit: string;
-            const ProductUnitPrice: string;
+            const QuantityPerUnit: string;
             const LineTotal: string;
+            const QuantityPerUnitPrice: string;
+            const QuantitySymbol: string;
+            const CategoryID: string;
+            const BrandID: string;
+            const CategoryName: string;
+            const BrandName: string;
         }
     }
 }
@@ -1331,6 +1413,14 @@ declare namespace CoopShop.DataShop {
     enum OrderShippingState {
         NotShipped = 0,
         Shipped = 1,
+    }
+}
+declare namespace CoopShop.DataShop {
+    enum PaymentMethodType {
+        NotPayed = 0,
+        Cash = 1,
+        Check = 2,
+        Other = 3,
     }
 }
 declare namespace CoopShop.DataShop {
@@ -1544,6 +1634,14 @@ declare namespace CoopShop.DataShop {
             const Retrieve: string;
             const List: string;
         }
+    }
+}
+declare namespace CoopShop.DataShop {
+    enum QuantitySymbolType {
+        Indéfini = 0,
+        Kilo = 1,
+        Litre = 2,
+        Pièce = 3,
     }
 }
 declare namespace CoopShop.DataShop {
@@ -3400,7 +3498,10 @@ declare namespace CoopShop.DataShop {
         protected getFormKey(): string;
         protected getLocalTextPrefix(): string;
         protected form: OrderDetailForm;
+        afterLoadEntity(): void;
         constructor();
+        updateProduct(): void;
+        changePrice(): void;
     }
 }
 declare namespace CoopShop.BasicSamples {
@@ -3447,7 +3548,12 @@ declare namespace CoopShop.DataShop {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof OrderDetailDialog;
         protected getLocalTextPrefix(): string;
+        parentContainer: any;
         constructor(container: JQuery);
+        protected editItem(entityOrId: any): void;
+        protected deleteEntity(id: any): boolean;
+        protected setEntities(items: any): void;
+        private setPaymentTotal(items);
         validateEntity(row: any, id: any): boolean;
     }
 }
@@ -4072,6 +4178,26 @@ declare namespace CoopShop.Common {
     }
 }
 declare namespace CoopShop.DataShop {
+    class BrandDialog extends Serenity.EntityDialog<BrandRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: BrandForm;
+    }
+}
+declare namespace CoopShop.DataShop {
+    class BrandGrid extends Serenity.EntityGrid<BrandRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): any;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace CoopShop.DataShop {
     class CustomerEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, CustomerRow> {
         constructor(hidden: JQuery);
         protected getLookupKey(): string;
@@ -4140,6 +4266,18 @@ declare namespace CoopShop.DataShop {
 declare namespace CoopShop.DataShop {
     class FreightFormatter implements Slick.Formatter {
         format(ctx: Slick.FormatterContext): string;
+    }
+}
+declare namespace CoopShop.DataShop {
+    interface Select2LookupEditorOptions extends Serenity.LookupEditorOptions {
+    }
+    class ProductEditor extends Serenity.LookupEditorBase<Select2LookupEditorOptions, ProductRow> {
+        constructor(hidden: JQuery, opt: Select2LookupEditorOptions);
+        private inputsChange(e);
+        protected getLookupKey(): string;
+        protected getItems(lookup: Q.Lookup<ProductRow>): ProductRow[];
+        protected getItemText(item: any, lookup: any): string;
+        protected getItemDisabled(item: any, lookup: any): any;
     }
 }
 declare namespace CoopShop.DataShop {
@@ -4502,140 +4640,5 @@ declare namespace CoopShop.Organization {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-    }
-}
-declare namespace CoopShop.DataShop {
-    class BrandDialog extends Serenity.EntityDialog<BrandRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: BrandForm;
-    }
-}
-declare namespace CoopShop.DataShop {
-    class BrandGrid extends Serenity.EntityGrid<BrandRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): any;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace CoopShop.DataShop {
-}
-declare namespace CoopShop.DataShop {
-    class BrandForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
-    interface BrandForm {
-        BrandName: Serenity.StringEditor;
-        Description: Serenity.StringEditor;
-    }
-}
-declare namespace CoopShop.DataShop {
-    interface BrandLangRow {
-        Id?: number;
-        BrandId?: number;
-        LanguageId?: number;
-        BrandName?: string;
-        Description?: string;
-    }
-    namespace BrandLangRow {
-        const idProperty = "Id";
-        const nameProperty = "BrandName";
-        const localTextPrefix = "DataShop.BrandLang";
-        namespace Fields {
-            const Id: string;
-            const BrandId: string;
-            const LanguageId: string;
-            const BrandName: string;
-            const Description: string;
-        }
-    }
-}
-declare namespace CoopShop.DataShop {
-    namespace BrandLangService {
-        const baseUrl = "DataShop/BrandLang";
-        function Create(request: Serenity.SaveRequest<BrandLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<BrandLangRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandLangRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
-        }
-    }
-}
-declare namespace CoopShop.DataShop {
-    interface BrandRow {
-        BrandID?: number;
-        BrandName?: string;
-        Description?: string;
-        Picture?: number[];
-    }
-    namespace BrandRow {
-        const idProperty = "BrandID";
-        const nameProperty = "BrandName";
-        const localTextPrefix = "DataShop.Brand";
-        const lookupKey = "DataShop.Brand";
-        function getLookup(): Q.Lookup<BrandRow>;
-        namespace Fields {
-            const BrandID: string;
-            const BrandName: string;
-            const Description: string;
-            const Picture: string;
-        }
-    }
-}
-declare namespace CoopShop.DataShop {
-    namespace BrandService {
-        const baseUrl = "DataShop/Brand";
-        function Create(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
-        }
-    }
-}
-declare namespace CoopShop.DataShop {
-    interface Select2LookupEditorOptions extends Serenity.LookupEditorOptions {
-    }
-    class ProductEditor extends Serenity.LookupEditorBase<Select2LookupEditorOptions, ProductRow> {
-        constructor(hidden: JQuery, opt: Select2LookupEditorOptions);
-        private inputsChange(e);
-        protected getLookupKey(): string;
-        protected getItems(lookup: Q.Lookup<ProductRow>): ProductRow[];
-        protected getItemText(item: any, lookup: any): string;
-        protected getItemDisabled(item: any, lookup: any): any;
-    }
-}
-declare namespace CoopShop.DataShop {
-    enum PaymentMethodType {
-        NotPayed = 0,
-        Cash = 1,
-        Check = 2,
-        Other = 3,
-    }
-}
-declare namespace CoopShop.DataShop {
-    enum QuantitySymbolType {
-        Indéfini = 0,
-        Kilo = 1,
-        Litre = 2,
-        Pièce = 3,
     }
 }

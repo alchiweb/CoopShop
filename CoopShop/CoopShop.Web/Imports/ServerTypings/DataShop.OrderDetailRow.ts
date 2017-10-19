@@ -6,19 +6,15 @@
         UnitPrice?: number;
         Quantity?: number;
         Discount?: number;
-        OrderCustomerID?: string;
-        OrderEmployeeID?: number;
-        OrderDate?: string;
-        OrderShippedDate?: string;
-        OrderShipVia?: number;
-        OrderShipCity?: string;
-        OrderShipCountry?: string;
         ProductName?: string;
-        ProductDiscontinued?: boolean;
-        ProductSupplierID?: number;
-        ProductQuantityPerUnit?: string;
-        ProductUnitPrice?: number;
+        QuantityPerUnit?: number;
         LineTotal?: number;
+        QuantityPerUnitPrice?: number;
+        QuantitySymbol?: QuantitySymbolType;
+        CategoryID?: number;
+        BrandID?: number;
+        CategoryName?: string;
+        BrandName?: string;
     }
 
     export namespace OrderDetailRow {
@@ -32,19 +28,15 @@
             export declare const UnitPrice: string;
             export declare const Quantity: string;
             export declare const Discount: string;
-            export declare const OrderCustomerID: string;
-            export declare const OrderEmployeeID: string;
-            export declare const OrderDate: string;
-            export declare const OrderShippedDate: string;
-            export declare const OrderShipVia: string;
-            export declare const OrderShipCity: string;
-            export declare const OrderShipCountry: string;
             export declare const ProductName: string;
-            export declare const ProductDiscontinued: string;
-            export declare const ProductSupplierID: string;
-            export declare const ProductQuantityPerUnit: string;
-            export declare const ProductUnitPrice: string;
+            export declare const QuantityPerUnit: string;
             export declare const LineTotal: string;
+            export declare const QuantityPerUnitPrice: string;
+            export declare const QuantitySymbol: string;
+            export declare const CategoryID: string;
+            export declare const BrandID: string;
+            export declare const CategoryName: string;
+            export declare const BrandName: string;
         }
 
         [
@@ -54,19 +46,15 @@
             'UnitPrice', 
             'Quantity', 
             'Discount', 
-            'OrderCustomerID', 
-            'OrderEmployeeID', 
-            'OrderDate', 
-            'OrderShippedDate', 
-            'OrderShipVia', 
-            'OrderShipCity', 
-            'OrderShipCountry', 
             'ProductName', 
-            'ProductDiscontinued', 
-            'ProductSupplierID', 
-            'ProductQuantityPerUnit', 
-            'ProductUnitPrice', 
-            'LineTotal'
+            'QuantityPerUnit', 
+            'LineTotal', 
+            'QuantityPerUnitPrice', 
+            'QuantitySymbol', 
+            'CategoryID', 
+            'BrandID', 
+            'CategoryName', 
+            'BrandName'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

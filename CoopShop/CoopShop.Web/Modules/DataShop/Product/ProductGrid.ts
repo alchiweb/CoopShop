@@ -24,8 +24,6 @@
         constructor(container: JQuery) {
             super(container);
 
-            this.slickContainer.on('change', '.edit:input', (e) => this.inputsChange(e));
-
             //alchiweb
             this.slickContainer.on('change', 'select', e => {
                 if (!e.target.classList.contains('edit')) {
@@ -46,6 +44,9 @@
 
                 }
             });
+
+            this.slickContainer.on('change', '.edit:input', (e) => this.inputsChange(e));
+
         }
 
         protected getButtons()
@@ -121,7 +122,10 @@
 
             return "<input type='text' class='" + klass + 
                 "' data-field='" + ctx.column.field + 
-                "' value='" + Q.formatNumber(value, '0.##') + "'/>";
+
+                //"' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                "' value='" + Q.formatNumber(value, numericClass == 'numeric' ? this.numericPrecision : this.numeric2Precision) + "'/>";
+
         }
 
         private stringInputFormatter(ctx) {
@@ -191,20 +195,21 @@
 
             //alchiweb
             //Q.first(columns, x => x.field === 'QuantityPerUnit').format = str;
-            Q.first(columns, x => x.field === fld.QuantityPerUnit).format = numMorePrecise;
 
             var category = Q.first(columns, x => x.field === fld.CategoryName);
             category.referencedFields = [fld.CategoryID];
             category.format = ctx => this.selectFormatter(ctx, fld.CategoryID, CategoryRow.getLookup());
 
-            var supplier = Q.first(columns, x => x.field === fld.SupplierCompanyName);
-            supplier.referencedFields = [fld.SupplierID];
-            supplier.format = ctx => this.selectFormatter(ctx, fld.SupplierID, SupplierRow.getLookup());
-
             //alchiweb
             var brand = Q.first(columns, x => x.field === fld.BrandName);
             brand.referencedFields = [fld.BrandID];
             brand.format = ctx => this.selectFormatter(ctx, fld.BrandID, BrandRow.getLookup());
+
+            var supplier = Q.first(columns, x => x.field === fld.SupplierCompanyName);
+            supplier.referencedFields = [fld.SupplierID];
+            supplier.format = ctx => this.selectFormatter(ctx, fld.SupplierID, SupplierRow.getLookup());
+
+            Q.first(columns, x => x.field === fld.QuantityPerUnit).format = numMorePrecise;
 
             Q.first(columns, x => x.field === fld.UnitPrice).format = num;
             Q.first(columns, x => x.field === fld.UnitsInStock).format = num;
@@ -236,7 +241,9 @@
                 oldText = Q.formatNumber(effective, input.hasClass("numeric") ? this.numericPrecision : this.numeric2Precision);
             else
                 oldText = effective as string;
-
+            if (!pending) {
+                this.pendingChanges[item.ProductID] = pending = {};
+            }
             var value;
             if (field === 'BuyingPrice' || field === 'UnitPrice' || field === 'QuantityPerUnit') {
                 value = Q.parseDecimal(text);
@@ -286,9 +293,6 @@
             }
 
 
-            if (!pending) {
-                this.pendingChanges[item.ProductID] = pending = {};
-            }
 
             pending[field] = value;
             item[field] = value;

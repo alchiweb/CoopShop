@@ -8604,7 +8604,7 @@ section.content > .s-DataGrid {
 }
 .s-DataShop-OrderDialog .s-PropertyGrid .categories,
 .s-CustomerOrderDialog .s-PropertyGrid .categories {
-  height: 450px;
+  height: 500px;
 }
 .s-DataShop-OrderDetailDialog > .size {
   min-width: 450px;

@@ -19,8 +19,9 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.OrderID[this]; }
             set { Fields.OrderID[this] = value; }
         }
-
-        [DisplayName("Customer"), Size(5), NotNull, ForeignKey(typeof(CustomerRow), "CustomerID"), LeftJoin("c"), CustomerEditor]
+        //alchiweb
+        //[DisplayName("Customer"), Size(5), NotNull, ForeignKey(typeof(CustomerRow), "CustomerID"), LeftJoin("c"), CustomerEditor]
+        [DisplayName("Customer"), Size(100), NotNull, ForeignKey(typeof(CustomerRow), "CustomerID"), LeftJoin("c"), CustomerEditor]
         public String CustomerID
         {
             get { return Fields.CustomerID[this]; }

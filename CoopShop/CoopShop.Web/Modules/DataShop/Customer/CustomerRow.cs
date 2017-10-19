@@ -31,8 +31,10 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.ID[this]; }
             set { Fields.ID[this] = value; }
         }
-
-        [DisplayName("Customer Id"), Size(5), PrimaryKey, NotNull, QuickSearch, Updatable(false), LookupInclude]
+        //achiweb
+        //[DisplayName("Customer Id"), Size(5), PrimaryKey, NotNull, QuickSearch, Updatable(false), LookupInclude]
+        [DisplayName("Customer Id"), Size(100), PrimaryKey, NotNull, QuickSearch, Updatable(false), LookupInclude]
+        //[CustomerNameEditor(FirstNameField = "ContactTitle", LastNameField = "ContactName", FullNameField = "CompanyName")]
         public String CustomerID
         {
             get { return Fields.CustomerID[this]; }

@@ -1,4 +1,6 @@
 ﻿
+using System.ComponentModel;
+
 namespace CoopShop.DataShop.Forms
 {
     using Serenity.ComponentModel;
@@ -13,10 +15,17 @@ namespace CoopShop.DataShop.Forms
         [Width(100)]
         public Decimal UnitPrice { get; set; }
         [Width(100)]
-        public Int16 Quantity { get; set; }
+        public Single Quantity { get; set; } //alchiweb
         [Width(100)]
+        //alchiweb
+        [Hidden]
         public Double Discount { get; set; }
         [Width(100)]
         public Decimal LineTotal { get; set; }
+        //alchiweb
+        [Width(80)]
+        public Decimal QuantityPerUnitPrice { get; set; }
+        [Width(50)]
+        public QuantitySymbolType QuantitySymbol { get; set; }
     }
 }

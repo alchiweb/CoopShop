@@ -36,6 +36,8 @@ namespace CoopShop.DataShop.Columns
         [Width(120)]
         public String Fax { get; set; }
         [Width(250), EmployeeListFormatter, CellDecorator(typeof(EmployeeListDecorator))]
+        //achiweb
+        [Hidden]
         public String Representatives { get; set; }
     }
 }
