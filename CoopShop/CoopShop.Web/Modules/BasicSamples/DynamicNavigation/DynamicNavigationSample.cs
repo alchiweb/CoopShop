@@ -22,7 +22,7 @@ namespace CoopShop.BasicSamples
                     items.Add(new NavigationLinkAttribute(7970,
                         path: "Basic Samples/Dynamic Navigation/" + category.CategoryName.Replace("/", "//"),
                         url: "~/DataShop/Product?cat=" + category.CategoryID,
-                        permission: DataShop.PermissionKeys.General,
+                        permission: DataShop.PermissionKeys.Special,
                         icon: "icon-folder-alt"));
             }
 

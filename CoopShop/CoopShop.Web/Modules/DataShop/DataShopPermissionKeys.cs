@@ -20,5 +20,15 @@ namespace CoopShop.DataShop
 
         [Description("[General]")]
         public const string General = "DataShop:General";
+        public const string Special = "DataShop:Special";
+
+        //public class Customer
+        //{
+        //    public const string Delete = "DataShop:Customer:Delete";
+        //    public const string Modify = "DataShop:Customer:Modify";
+        //    public const string View = "DataShop:Customer:View";
+        //}
+        //public const string General = "DataShop:General";
+        //public const string Special = "DataShop:Special";
     }
 }

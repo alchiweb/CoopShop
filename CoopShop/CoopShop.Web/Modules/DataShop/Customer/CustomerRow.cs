@@ -14,7 +14,7 @@ namespace CoopShop.DataShop.Entities
     [DeletePermission(PermissionKeys.Customer.Delete)]
     [LeftJoin("cd", "CustomerDetails", "cd.[ID] = t0.[ID]", RowType = typeof(CustomerDetailsRow), TitlePrefix = "")]
     [UpdatableExtension("cd", typeof(CustomerDetailsRow), CascadeDelete = true)]
-    [LookupScript(typeof(Scripts.CustomerLookup))]
+    //[LookupScript(typeof(Scripts.CustomerLookup))]
     public sealed class CustomerRow : Row, IIdRow, INameRow
     {
         //alchiweb
@@ -69,7 +69,8 @@ namespace CoopShop.DataShop.Entities
             set { Fields.Address[this] = value; }
         }
 
-        [DisplayName("City"), Size(15), LookupEditor(typeof(Scripts.CustomerCityLookup), CascadeFrom = "Country", AutoComplete = true)]
+        [DisplayName("City"), Size(15)]
+        //[LookupEditor(typeof(Scripts.CustomerCityLookup), CascadeFrom = "Country", AutoComplete = true)]
         public String City
         {
             get { return Fields.City[this]; }
@@ -90,7 +91,9 @@ namespace CoopShop.DataShop.Entities
             set { Fields.PostalCode[this] = value; }
         }
 
-        [DisplayName("Country"), Size(15), LookupEditor(typeof(Scripts.CustomerCountryLookup), AutoComplete = true)]
+        [DisplayName("Country"), Size(15)]
+        //[LookupEditor(typeof(Scripts.CustomerCountryLookup), AutoComplete = true)]
+        [LookupFiltering("DataShop.CustomerCountry")]
         public String Country
         {
             get { return Fields.Country[this]; }
@@ -125,7 +128,8 @@ namespace CoopShop.DataShop.Entities
             set { Fields.LastContactedBy[this] = value; }
         }
 
-        [Origin("cd"), EmailEditor]
+        [Origin("cd")]
+        //[EmailEditor]
         public String Email
         {
             get { return Fields.Email[this]; }
