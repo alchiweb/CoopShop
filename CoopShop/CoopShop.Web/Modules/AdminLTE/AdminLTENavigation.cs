@@ -3,7 +3,7 @@ using Serenity.Navigation;
 
 [assembly: NavigationMenu(8000, "Theme Samples", icon: "icon-diamond")]
 
-[assembly: NavigationLink(8100, "Theme Samples/Dashboard v2", url: "~/AdminLTE/DashboardV2", permission: PermissionKeys.General, icon: "icon-speedometer")]
+[assembly: NavigationLink(8100, "Theme Samples/Dashboard v2", url: "~/AdminLTE/DashboardV2", permission: PermissionKeys.General, icon: "fa-tachometer")]
 [assembly: NavigationLink(8200, "Theme Samples/Widgets", url: "~/AdminLTE/Widgets", permission: PermissionKeys.General, icon: "fa-th")]
 
 [assembly: NavigationMenu(8300, "Theme Samples/Charts", icon: "fa-pie-chart")]

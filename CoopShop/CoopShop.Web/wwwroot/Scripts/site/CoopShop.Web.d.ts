@@ -52,13 +52,6 @@ declare namespace CoopShop.Organization {
     }
 }
 declare namespace CoopShop.Membership {
-    class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace CoopShop.Membership {
     class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
         protected getFormKey(): string;
         private form;
@@ -545,6 +538,7 @@ declare namespace CoopShop.DataShop {
         protected onClick(e: JQueryEventObject, row: number, cell: number): void;
         protected getViewOptions(): Slick.RemoteViewOptions;
         set_shippingState(value: number): void;
+        protected addButtonClick(): void;
     }
 }
 declare namespace CoopShop.DataShop {
@@ -1540,6 +1534,8 @@ declare namespace CoopShop.BasicSamples {
      */
     class EntityDialogAsPanel extends DataShop.OrderDialog {
         constructor();
+        protected updateInterface(): void;
+        protected onSaveSuccess(response: any): void;
     }
 }
 declare namespace CoopShop.BasicSamples.DialogBoxes {
@@ -1702,7 +1698,7 @@ declare namespace CoopShop.Administration {
         protected onClick(e: JQueryEventObject, row: number, cell: number): any;
         protected getColumns(): Slick.Column[];
         protected createToolbarExtensions(): void;
-        protected saveChanges(language: string): RSVP.Promise<any>;
+        protected saveChanges(language: string): PromiseLike<any>;
         protected onViewSubmit(): boolean;
         protected getButtons(): Serenity.ToolButton[];
         protected createQuickSearchInput(): void;

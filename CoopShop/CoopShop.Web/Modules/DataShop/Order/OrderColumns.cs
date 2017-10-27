@@ -15,11 +15,11 @@ namespace CoopShop.DataShop.Columns
         [EditLink, Width(200), QuickFilter]
         public String CustomerCompanyName { get; set; }
 
-        [EditLink, QuickFilter]
+        [EditLink, QuickFilter(CssClass = "hidden-xs")]
         public DateTime? OrderDate { get; set; }
 
         //achiweb
-        //[Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), QuickFilter]
+        //[Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), QuickFilter(CssClass = "hidden-xs")]
         [Width(140), EmployeeFormatter(GenderProperty = "EmployeeGender"), Hidden]
         public String EmployeeFullName { get; set; }
 
@@ -35,18 +35,18 @@ namespace CoopShop.DataShop.Columns
         public DateTime? ShippedDate { get; set; }
 
         //alchiweb
-        //[Width(140), ShipperFormatter, QuickFilter, QuickFilterOption("multiple", true)]
+        //[Width(140), ShipperFormatter, QuickFilter(CssClass = "hidden-xs"), QuickFilterOption("multiple", true)]
         [Width(140), ShipperFormatter, QuickFilterOption("multiple", true), Hidden]
         public String ShipViaCompanyName { get; set; }
 
         //alchiweb
-        //[Width(100), QuickFilter, LookupEditor(typeof(Scripts.OrderShipCountryLookup))]
+        //[Width(100), QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Scripts.OrderShipCountryLookup))]
         [Width(100), Hidden]
         public String ShipCountry { get; set; }
 
         //alchiweb
         //[Width(100), LookupEditor(typeof(Scripts.OrderShipCityLookup))]
-        //[QuickFilter, QuickFilterOption("CascadeFrom", "ShipCountry")]
+        //[QuickFilter(CssClass = "hidden-xs"), QuickFilterOption("CascadeFrom", "ShipCountry")]
         [Width(100), Hidden]
         public String ShipCity { get; set; }
 

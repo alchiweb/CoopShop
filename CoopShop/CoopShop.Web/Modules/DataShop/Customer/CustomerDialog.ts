@@ -1,6 +1,7 @@
 ﻿namespace CoopShop.DataShop {
 
     @Serenity.Decorators.registerClass()
+    @Serenity.Decorators.panel()
     export class CustomerDialog extends Serenity.EntityDialog<CustomerRow, any> {
         protected getFormKey() { return CustomerForm.formKey; }
         protected getIdProperty() { return CustomerRow.idProperty; }
@@ -17,7 +18,9 @@
             super();
 
             this.ordersGrid = new CustomerOrdersGrid(this.byId('OrdersGrid'));
-            this.ordersGrid.element.flexHeightOnly(1);
+            // force order dialog to open in Dialog mode instead of Panel mode
+            // which is set as default on OrderDialog with @panelAttribute
+            this.ordersGrid.openDialogsAsPanel = false; 
 
             this.byId('NoteList').closest('.field').hide().end().appendTo(this.byId('TabNotes'));
             DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);

@@ -3,6 +3,10 @@
     ViewData["Title"] = Serenity.LocalText.Get("Db.DataShop.Product.EntityPlural");
 }
 
+@section Head {
+@Html.Script("dynamic://Lookup.DataShop.Category")
+@Html.Script("dynamic://Lookup.DataShop.Supplier")
+}
 <div id="GridDiv"></div>
 
 <script type="text/javascript">

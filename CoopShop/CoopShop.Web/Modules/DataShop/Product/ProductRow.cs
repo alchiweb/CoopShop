@@ -41,8 +41,8 @@ namespace CoopShop.DataShop.Entities
         }
 
         //alchiwed
-        //[DisplayName("Discontinued"), NotNull, LookupInclude]
         [DisplayName("Discontinued"), NotNull]
+        //[LookupInclude] ???
         public Boolean? Discontinued
         {
             get { return Fields.Discontinued[this]; }
@@ -150,6 +150,8 @@ namespace CoopShop.DataShop.Entities
             set { Fields.SupplierRef[this] = value; }
         }
 
+        //alchiweb
+        //[DisplayName("Unit Price"), Scale(4), LookupInclude]
         [DisplayName("Unit Price"), Scale(4), LookupInclude, NotNull, DefaultValue(0)]
         public Decimal? UnitPrice
         {
@@ -162,6 +164,9 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.BuyingPrice[this]; }
             set { Fields.BuyingPrice[this] = value; }
         }
+
+        //alchiweb
+        //[DisplayName("Units In Stock"), NotNull, DefaultValue(0), LookupInclude]
         [DisplayName("Units In Stock"), NotNull, DefaultValue(1), LookupInclude]
         public Single? UnitsInStock
         {

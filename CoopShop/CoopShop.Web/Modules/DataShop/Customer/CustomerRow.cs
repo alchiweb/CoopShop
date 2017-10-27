@@ -153,7 +153,7 @@ namespace CoopShop.DataShop.Entities
         [LookupEditor(typeof(EmployeeRow), Multiple = true), NotMapped]
         //alchiweb[LinkingSetRelation(typeof(CustomerRepresentativesRow), "CustomerId", "EmployeeId")]
         [LinkingSetRelation(typeof(CustomerRepresentativesRow), "CustomerId", "CustomerId")]
-        [MinSelectLevel(SelectLevel.Details), QuickFilter]
+        [MinSelectLevel(SelectLevel.Details), QuickFilter(CssClass = "hidden-xs")]
         public List<Int32> Representatives
         {
             get { return Fields.Representatives[this]; }

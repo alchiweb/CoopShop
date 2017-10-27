@@ -189,61 +189,6 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var LoginPanel = /** @class */ (function (_super) {
-            __extends(LoginPanel, _super);
-            function LoginPanel(container) {
-                var _this = _super.call(this, container) || this;
-                $(function () {
-                    $('body').vegas({
-                        delay: 10000,
-                        cover: true,
-                        overlay: Q.resolveUrl("~/Scripts/vegas/overlays/01.png"),
-                        slides: [
-                            { src: Q.resolveUrl('~/Content/site/slides/slide1.jpg'), transition: 'fade' },
-                            { src: Q.resolveUrl('~/Content/site/slides/slide2.jpg'), transition: 'fade' },
-                            { src: Q.resolveUrl('~/Content/site/slides/slide3.jpg'), transition: 'zoomOut' },
-                            { src: Q.resolveUrl('~/Content/site/slides/slide4.jpg'), transition: 'blur' },
-                            { src: Q.resolveUrl('~/Content/site/slides/slide5.jpg'), transition: 'swirlLeft' }
-                        ]
-                    });
-                });
-                _this.form = new Membership.LoginForm(_this.idPrefix);
-                _this.byId('LoginButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/Login'),
-                        request: request,
-                        onSuccess: function (response) {
-                            var q = Q.parseQueryString();
-                            var returnUrl = q['returnUrl'] || q['ReturnUrl'];
-                            if (returnUrl) {
-                                window.location.href = returnUrl;
-                            }
-                            else {
-                                window.location.href = Q.resolveUrl('~/');
-                            }
-                        }
-                    });
-                });
-                return _this;
-            }
-            LoginPanel.prototype.getFormKey = function () { return Membership.LoginForm.formKey; };
-            LoginPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], LoginPanel);
-            return LoginPanel;
-        }(Serenity.PropertyPanel));
-        Membership.LoginPanel = LoginPanel;
-    })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
-})(CoopShop || (CoopShop = {}));
-var CoopShop;
-(function (CoopShop) {
-    var Membership;
-    (function (Membership) {
         var SignUpPanel = /** @class */ (function (_super) {
             __extends(SignUpPanel, _super);
             function SignUpPanel(container) {
@@ -2250,7 +2195,8 @@ var CoopShop;
                 //this.toolbar.findButton('export-pdf-button').toggle(this.isEditMode());
             };
             OrderDialog = __decorate([
-                Serenity.Decorators.registerClass()
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
             ], OrderDialog);
             return OrderDialog;
         }(Serenity.EntityDialog));
@@ -2311,7 +2257,8 @@ var CoopShop;
                     title: 'Contient le produit...',
                     handler: function (w) {
                         _this.view.params.ProductID = Q.toId(w.value);
-                    }
+                    },
+                    cssClass: 'hidden-xs'
                 });
                 return filters;
             };
@@ -2378,6 +2325,12 @@ var CoopShop;
             };
             OrderGrid.prototype.set_shippingState = function (value) {
                 this.shippingStateFilter.value = value == null ? '' : value.toString();
+            };
+            OrderGrid.prototype.addButtonClick = function () {
+                var eq = this.view.params.EqualityFilter;
+                this.editItem({
+                    CustomerID: eq ? eq.CustomerID : null
+                });
             };
             OrderGrid = __decorate([
                 Serenity.Decorators.registerClass(),
@@ -2615,7 +2568,9 @@ var CoopShop;
                 var _this = _super.call(this) || this;
                 _this.form = new DataShop.CustomerForm(_this.idPrefix);
                 _this.ordersGrid = new DataShop.CustomerOrdersGrid(_this.byId('OrdersGrid'));
-                _this.ordersGrid.element.flexHeightOnly(1);
+                // force order dialog to open in Dialog mode instead of Panel mode
+                // which is set as default on OrderDialog with @panelAttribute
+                _this.ordersGrid.openDialogsAsPanel = false;
                 _this.byId('NoteList').closest('.field').hide().end().appendTo(_this.byId('TabNotes'));
                 CoopShop.DialogUtils.pendingChangesConfirmation(_this.element, function () { return _this.getSaveState() != _this.loadedState; });
                 return _this;
@@ -2647,7 +2602,8 @@ var CoopShop;
                 Q.reloadLookup('DataShop.Customer');
             };
             CustomerDialog = __decorate([
-                Serenity.Decorators.registerClass()
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
             ], CustomerDialog);
             return CustomerDialog;
         }(Serenity.EntityDialog));
@@ -3725,14 +3681,17 @@ var CoopShop;
     var DialogUtils;
     (function (DialogUtils) {
         function pendingChangesConfirmation(element, hasPendingChanges) {
-            element.bind('dialogbeforeclose', function (e) {
+            element.on('dialogbeforeclose panelbeforeclose', function (e) {
                 if (!Serenity.WX.hasOriginalEvent(e) || !hasPendingChanges()) {
                     return;
                 }
                 e.preventDefault();
                 Q.confirm('You have pending changes. Save them?', function () { return element.find('div.save-and-close-button').click(); }, {
                     onNo: function () {
-                        element.dialog().dialog('close');
+                        if (element.hasClass('ui-dialog-content'))
+                            element.dialog('close');
+                        else if (element.hasClass('s-Panel'))
+                            Serenity.TemplatedDialog.closePanel(element);
                     }
                 });
             });
@@ -5951,6 +5910,7 @@ var CoopShop;
                 // here we explicitly create another, the customer property grid (vertical form) on element with ID "CustomerPropertyGrid".
                 _this.customerPropertyGrid = new Serenity.PropertyGrid(_this.byId("CustomerPropertyGrid"), {
                     items: Q.getForm(CoopShop.DataShop.CustomerForm.formKey).filter(function (x) { return x.name != 'CustomerID'; }),
+                    idPrefix: _this.idPrefix + "_Customer_",
                     useCategories: true
                 });
                 // this is just a helper to access editors if needed
@@ -6092,6 +6052,7 @@ var CoopShop;
                 // entity dialogs by default creates a property grid on element with ID "PropertyGrid".
                 // here we explicitly create another, the customer property grid (vertical form) on element with ID "CustomerPropertyGrid".
                 _this.customerPropertyGrid = new Serenity.PropertyGrid(_this.byId("CustomerPropertyGrid"), {
+                    idPrefix: _this.idPrefix + "_Customer_",
                     items: Q.getForm(CoopShop.DataShop.CustomerForm.formKey).filter(function (x) { return x.name != 'CustomerID'; }),
                     useCategories: true
                 });
@@ -6315,10 +6276,16 @@ var CoopShop;
         var EntityDialogAsPanel = /** @class */ (function (_super) {
             __extends(EntityDialogAsPanel, _super);
             function EntityDialogAsPanel() {
-                var _this = _super.call(this) || this;
-                _this.element.addClass('flex-layout');
-                return _this;
+                return _super.call(this) || this;
             }
+            EntityDialogAsPanel.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                this.deleteButton.hide();
+                this.applyChangesButton.hide();
+            };
+            EntityDialogAsPanel.prototype.onSaveSuccess = function (response) {
+                this.showSaveSuccessMessage(response);
+            };
             EntityDialogAsPanel = __decorate([
                 Serenity.Decorators.panel()
             ], EntityDialogAsPanel);
@@ -7322,7 +7289,7 @@ var CoopShop;
                     var item = _a[_i];
                     translations[item.Key] = item.CustomText;
                 }
-                return RSVP.resolve(Administration.TranslationService.Update({
+                return Promise.resolve(Administration.TranslationService.Update({
                     TargetLanguageID: language,
                     Translations: translations
                 })).then(function () {

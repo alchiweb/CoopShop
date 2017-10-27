@@ -58,7 +58,8 @@
                 title: 'Contient le produit...',//'Contains Product in Details',
                 handler: w => {
                     (this.view.params as OrderListRequest).ProductID = Q.toId(w.value);
-                }
+                },
+                cssClass: 'hidden-xs'
             });
 
             return filters;
@@ -143,6 +144,13 @@
 
         public set_shippingState(value: number): void {
             this.shippingStateFilter.value = value == null ? '' : value.toString();
+        }
+
+        protected addButtonClick() {
+            var eq = this.view.params.EqualityFilter;
+            this.editItem(<OrderRow>{
+                CustomerID: eq ? eq.CustomerID : null
+            });
         }
     }
 }

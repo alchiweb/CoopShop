@@ -27,7 +27,7 @@
     <PackageReference Include="EPPlus.Core" Version="1.5.2" />
     <PackageReference Include="FastMember" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
-    <PackageReference Include="Serenity.Web" Version="3.1.1" />
+    <PackageReference Include="Serenity.Web" Version="3.3.5" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <PackageReference Include="EPPlus" Version="4.1.0" />
@@ -45,7 +45,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.0" />
-    <PackageReference Include="Serenity.Web.AspNetCore" Version="3.1.1" />
+    <PackageReference Include="Serenity.Web.AspNetCore" Version="3.3.5" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
     <DefineConstants>$(DefineConstants);COREFX;ASPNETCORE</DefineConstants>
@@ -54,11 +54,12 @@
     <PlatformTarget>x64</PlatformTarget>
     <DefineConstants>$(DefineConstants);ASPNETCORE</DefineConstants>
   </PropertyGroup>
+  <Import Project="$(SolutionDir)Serenity\tools\Submodule\Serenity.Submodule.AspNetCore.targets" Condition="Exists('$(SolutionDir)Serenity\tools\Submodule\Serenity.Submodule.AspNetCore.targets')" />
   <Target Name="CreateInputsOutputs" BeforeTargets="BeforeBuild">
     <CreateItem Include="Modules\**\*.ts;Imports\**\*.ts">
       <Output TaskParameter="Include" ItemName="CompileTSCInputs" />
     </CreateItem>
-    <CreateItem Include="wwwroot\Content\**\*.less">
+    <CreateItem Include="wwwroot\Content\site\**\*.less">
       <Output TaskParameter="Include" ItemName="CompileSiteLessInputs" />
     </CreateItem>
   </Target>
@@ -69,7 +70,7 @@
   <Target Name="TransformMvcClientTypes" BeforeTargets="BeforeBuild">
     <Exec Command="$(DotNetSergen) mvct" ContinueOnError="true" />
   </Target>
-  <Target Name="CompileSiteLess" AfterTargets="AfterBuild" Inputs="@(CompileSiteLessInputs)" Outputs="wwwroot\content\site\site.css">
+  <Target Name="CompileSiteLess" AfterTargets="AfterBuild" Inputs="@(CompileSiteLessInputs)" Outputs="wwwroot\Content\site\site.css">
     <Message Text="Compiling site.less..." Importance="high"></Message>
     <Exec Command="node_modules/.bin/lessc ./wwwroot/Content/site/site.less ./wwwroot/content/site/site.css" ContinueOnError="true" />
   </Target>
@@ -78,9 +79,9 @@
   </Target>
   <Target Name="CompileTSC" AfterTargets="AfterBuild" Inputs="@(CompileTSCInputs)" Outputs="wwwroot\Scripts\site\CoopShop.Web.js">
     <Message Text="Executing TypeScript compiler..." Importance="high"></Message>
-    <Exec Command="$(TscToolPath.Replace('build\\..\tools\', 'tools\'))\tsc -p ./tsconfig.json" ContinueOnError="true" />
+    <Exec Command="&quot;$(TscToolPath.Replace('build\\..\tools\', 'tools\'))\tsc&quot; -p ./tsconfig.json" ContinueOnError="true" />
   </Target>
   <ItemGroup>
-    <DotNetCliToolReference Include="Serenity.CodeGenerator" Version="3.1.1" />
+    <DotNetCliToolReference Include="Serenity.CodeGenerator" Version="3.3.5" />
   </ItemGroup>
 </Project>

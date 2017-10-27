@@ -343,6 +343,7 @@
 		this.rows = null;
 		this.$slickGridOnSort = null;
 		this.$slickGridOnClick = null;
+		this.openDialogsAsPanel = null;
 		Serenity.Widget.call(this, container, opt);
 		var self = this;
 		this.element.addClass('s-DataGrid').html('');
@@ -1486,7 +1487,7 @@
 			e.preventDefault();
 			var dialog = new $Serenity_FilterDialog();
 			dialog.get_filterPanel().set_store(this.get_store());
-			dialog.dialogOpen();
+			dialog.dialogOpen(null);
 		});
 		this.element.find('.edit').click(openFilterDialog);
 		this.element.find('.txt').click(openFilterDialog);
@@ -1890,8 +1891,12 @@
 		}));
 	};
 	$Serenity_GridSelectAllButtonHelper.define = function(getGrid, getId, getSelected, setSelected, text, onClick) {
+		var $t1 = text;
+		if (ss.isNullOrUndefined($t1)) {
+			$t1 = ss.coalesce(Q.tryGetText('Controls.CheckTreeEditor.SelectAll'), 'Select All');
+		}
 		return {
-			title: ss.coalesce(text, 'Tümünü Seç'),
+			title: $t1,
 			cssClass: 'select-all-button',
 			onClick: function() {
 				var grid = getGrid();
@@ -1900,9 +1905,9 @@
 				var makeSelected = !btn.hasClass('checked');
 				view.beginUpdate();
 				try {
-					var $t1 = view.getItems();
-					for (var $t2 = 0; $t2 < $t1.length; $t2++) {
-						var item = $t1[$t2];
+					var $t2 = view.getItems();
+					for (var $t3 = 0; $t3 < $t2.length; $t3++) {
+						var item = $t2[$t3];
 						setSelected(item, makeSelected);
 						view.updateItem(getId(item), item);
 					}
@@ -2380,6 +2385,7 @@
 	var $Serenity_LookupEditorBase = function(hidden, opt) {
 		this.$cascadeLink = null;
 		this.onInitNewEntity = null;
+		this.$5$OpenDialogAsPanelField = null;
 		$Serenity_Select2Editor.call(this, hidden, opt);
 		this.$setCascadeFrom(this.options.cascadeFrom);
 		var self = this;
@@ -3992,7 +3998,9 @@
 		}, useTimeout);
 	};
 	$Serenity_SubDialogHelper.cascade = function(cascadedDialog, ofElement) {
-		cascadedDialog.element.dialog().dialog('option', 'position', $Serenity_SubDialogHelper.cascadedDialogOffset(ofElement));
+		cascadedDialog.element.one('dialogopen', function(e) {
+			cascadedDialog.element.dialog().dialog('option', 'position', $Serenity_SubDialogHelper.cascadedDialogOffset(ofElement));
+		});
 		return cascadedDialog;
 	};
 	$Serenity_SubDialogHelper.cascadedDialogOffset = function(element) {
@@ -4048,6 +4056,7 @@
 	////////////////////////////////////////////////////////////////////////////////
 	// Serenity.Toolbar
 	var $Serenity_Toolbar = function(div, options) {
+		this.$mouseTrap = null;
 		Serenity.Widget.call(this, div, options);
 		this.element.addClass('s-Toolbar clearfix').html('<div class="tool-buttons"><div class="buttons-outer"><div class="buttons-inner"></div></div></div>');
 		var container = $('div.buttons-inner', this.element);
@@ -4112,11 +4121,11 @@
 			return false;
 		}
 		if (opt.minSize > 0 && file.Size < opt.minSize) {
-			Q.alert(ss.formatString(Q.text('Controls.ImageUpload.UploadFileTooSmall'), opt.minSize));
+			Q.alert(ss.formatString(Q.text('Controls.ImageUpload.UploadFileTooSmall'), $Serenity_UploadHelper.fileSizeDisplay(opt.minSize)));
 			return false;
 		}
 		if (opt.maxSize > 0 && file.Size > opt.maxSize) {
-			Q.alert(ss.formatString(Q.text('Controls.ImageUpload.UploadFileTooBig'), opt.maxSize));
+			Q.alert(ss.formatString(Q.text('Controls.ImageUpload.UploadFileTooBig'), $Serenity_UploadHelper.fileSizeDisplay(opt.maxSize)));
 			return false;
 		}
 		if (!file.IsImage) {
@@ -4422,6 +4431,12 @@
 	ss.initInterface($Serenity_IStringValue, $asm, { get_value: null, set_value: null });
 	ss.initInterface($Serenity_IReadOnly, $asm, { get_readOnly: null, set_readOnly: null });
 	ss.initClass($Serenity_Select2Editor, $asm, {
+		destroy: function() {
+			if (ss.isValue(this.element)) {
+				this.element.select2('destroy');
+			}
+			Serenity.Widget.prototype.destroy.call(this);
+		},
 		emptyItemText: function() {
 			var $t1 = this.element.attr('placeholder');
 			if (ss.isNullOrUndefined($t1)) {
@@ -4645,8 +4660,7 @@
 		},
 		destroy: function() {
 			Q.ScriptData.unbindFromChange(this.uniqueName);
-			this.element.select2('destroy');
-			Serenity.Widget.prototype.destroy.call(this);
+			$Serenity_Select2Editor.prototype.destroy.call(this);
 		},
 		getLookupKey: function() {
 			if (ss.isValue(this.options.lookupKey)) {
@@ -4666,7 +4680,7 @@
 			return Q.getLookup(this.getLookupKey());
 		},
 		getLookupAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var key = this.getLookupKey();
 				return Q.getLookupAsync(key);
 			}), null);
@@ -4755,14 +4769,14 @@
 					var entity = new Object();
 					entity[this.getLookup().textField] = Q.trimToEmpty(this.lastCreateTerm);
 					this.initNewEntity(entity);
-					dialog.load(entity, function() {
-						dialog.dialogOpen();
-					}, null);
+					dialog.load(entity, ss.mkdel(this, function() {
+						dialog.dialogOpen(this.get_openDialogAsPanel());
+					}), null);
 				}
 				else {
-					dialog.load(this.get_value(), function() {
-						dialog.dialogOpen();
-					}, null);
+					dialog.load(this.get_value(), ss.mkdel(this, function() {
+						dialog.dialogOpen(this.get_openDialogAsPanel());
+					}), null);
 				}
 			}));
 		},
@@ -4876,6 +4890,12 @@
 				this.set_value(null);
 				this.updateItems();
 			}
+		},
+		get_openDialogAsPanel: function() {
+			return this.$5$OpenDialogAsPanelField;
+		},
+		set_openDialogAsPanel: function(value) {
+			this.$5$OpenDialogAsPanelField = value;
 		}
 	}, $Serenity_Select2Editor, [$Serenity_ISetEditValue, $Serenity_IGetEditValue, $Serenity_IStringValue, $Serenity_IReadOnly]);
 	ss.initInterface($Serenity_IAsyncInit, $asm, {});
@@ -5391,11 +5411,11 @@
 				Serenity.LazyLoadHelper.executeEverytimeWhenShown(this.element, function() {
 					self.$refreshIfNeeded();
 				}, false);
-				if (this.element.is(':visible')) {
+				if (this.element.is(':visible') && ss.isValue(this.view)) {
 					this.view.populate();
 				}
 			}
-			else {
+			else if (ss.isValue(this.view)) {
 				this.view.populate();
 			}
 		},
@@ -5763,12 +5783,12 @@
 			return null;
 		},
 		getPropertyItemsAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var columnsKey = this.getColumnsKey();
 				if (!ss.isNullOrEmptyString(columnsKey)) {
 					return Q.getColumnsAsync(columnsKey);
 				}
-				return RSVP.resolve([]);
+				return Promise['Promise.resolve({value})']([]);
 			}), null);
 		},
 		getPropertyItems: function() {
@@ -6445,7 +6465,7 @@
 		itemSelectedChanged: function(item) {
 		},
 		getSelectAllText: function() {
-			return 'Tümünü Seç';
+			return ss.coalesce(Q.tryGetText('Controls.CheckTreeEditor.SelectAll'), 'Select All');
 		},
 		isThreeStateHierarchy: function() {
 			return false;
@@ -7292,9 +7312,7 @@
 			}
 		},
 		updateTitle: function() {
-			if (!this.isPanel) {
-				this.element.dialog().dialog('option', 'title', this.getEntityTitle());
-			}
+			this.dialogTitle = this.getEntityTitle();
 		},
 		isCloneMode: function() {
 			return false;
@@ -7499,17 +7517,13 @@
 				fail(ex);
 			}
 		},
-		loadNewAndOpenDialog: function() {
+		loadNewAndOpenDialog: function(asPanel) {
 			this.loadResponse({});
-			if (!this.isPanel) {
-				this.element.dialog().dialog('open');
-			}
+			this.dialogOpen(asPanel);
 		},
-		loadEntityAndOpenDialog: function(entity) {
+		loadEntityAndOpenDialog: function(entity, asPanel) {
 			this.loadResponse({ Entity: entity });
-			if (!this.isPanel) {
-				this.element.dialog().dialog('open');
-			}
+			this.dialogOpen(asPanel);
 		},
 		loadResponse: function(data) {
 			data = data || {};
@@ -7539,19 +7553,17 @@
 			this.updateInterface();
 			this.updateTitle();
 		},
-		loadByIdAndOpenDialog: function(entityId) {
+		loadByIdAndOpenDialog: function(entityId, asPanel) {
 			var self = this;
 			this.loadById(entityId, ss.mkdel(this, function(response) {
 				window.setTimeout(ss.mkdel(this, function() {
-					if (!this.isPanel) {
-						self.element.dialog().dialog('open');
-					}
+					this.dialogOpen(asPanel);
 				}), 0);
-			}), ss.mkdel(this, function() {
-				if (!this.isPanel && !self.element.is(':visible')) {
+			}), function() {
+				if (!self.element.is(':visible')) {
 					self.element.remove();
 				}
-			}));
+			});
 		},
 		onLoadingData: function(data) {
 		},
@@ -7602,10 +7614,10 @@
 			this.$initLocalizationGridCommon(pgOptions);
 		},
 		$initLocalizationGridAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var pgDiv = this.byId('PropertyGrid');
 				if (pgDiv.length <= 0) {
-					return RSVP.resolve();
+					return Promise.resolve();
 				}
 				return this.getPropertyGridOptionsAsync().then(ss.mkdel(this, function(pgOptions) {
 					this.$initLocalizationGridCommon(pgOptions);
@@ -7831,10 +7843,10 @@
 			}
 		},
 		$initPropertyGridAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var pgDiv = this.byId('PropertyGrid');
 				if (pgDiv.length <= 0) {
-					return RSVP.resolve();
+					return Promise.resolve();
 				}
 				return this.getPropertyGridOptionsAsync().then(ss.mkdel(this, function(pgOptions) {
 					this.propertyGrid = new $Serenity_PropertyGrid(pgDiv, pgOptions);
@@ -7868,7 +7880,7 @@
 			}), null);
 		},
 		getPropertyItemsAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var formKey = this.getFormKey();
 				return Q.getFormAsync(formKey);
 			}), null);
@@ -7976,19 +7988,17 @@
 		getToolbarButtons: function() {
 			var list = [];
 			var self = this;
-			if (!this.isPanel) {
-				list.push({
-					title: Q.text('Controls.EntityDialog.SaveButton'),
-					cssClass: 'save-and-close-button',
-					hotkey: 'alt+s',
-					onClick: function() {
-						self.save(function(response) {
-							self.element.dialog().dialog('close');
-						});
-					}
-				});
-			}
-			list.push({ title: (this.isPanel ? Q.text('Controls.EntityDialog.SaveButton') : ''), hint: (this.isPanel ? Q.text('Controls.EntityDialog.SaveButton') : Q.text('Controls.EntityDialog.ApplyChangesButton')), cssClass: 'apply-changes-button', hotkey: 'alt+a', onClick: ss.mkdel(this, function() {
+			list.push({
+				title: Q.text('Controls.EntityDialog.SaveButton'),
+				cssClass: 'save-and-close-button',
+				hotkey: 'alt+s',
+				onClick: function() {
+					self.save(function(response) {
+						self.dialogClose();
+					});
+				}
+			});
+			list.push({ title: '', hint: Q.text('Controls.EntityDialog.ApplyChangesButton'), cssClass: 'apply-changes-button', hotkey: 'alt+a', onClick: ss.mkdel(this, function() {
 				self.save(ss.mkdel(this, function(response1) {
 					if (self.isEditMode()) {
 						var $t1 = response1.EntityId;
@@ -8003,45 +8013,43 @@
 					this.showSaveSuccessMessage(response1);
 				}));
 			}) });
-			if (!this.isPanel) {
-				list.push({
-					title: Q.text('Controls.EntityDialog.DeleteButton'),
-					cssClass: 'delete-button',
-					hotkey: 'alt+x',
-					onClick: function() {
-						Q.confirm(Q.text('Controls.EntityDialog.DeleteConfirmation'), function() {
-							self.doDelete(function() {
-								self.element.dialog().dialog('close');
+			list.push({
+				title: Q.text('Controls.EntityDialog.DeleteButton'),
+				cssClass: 'delete-button',
+				hotkey: 'alt+x',
+				onClick: function() {
+					Q.confirm(Q.text('Controls.EntityDialog.DeleteConfirmation'), function() {
+						self.doDelete(function() {
+							self.dialogClose();
+						});
+					});
+				}
+			});
+			list.push({
+				title: Q.text('Controls.EntityDialog.UndeleteButton'),
+				cssClass: 'undo-delete-button',
+				onClick: function() {
+					if (self.isDeleted()) {
+						Q.confirm(Q.text('Controls.EntityDialog.UndeleteConfirmation'), function() {
+							self.undelete(function() {
+								self.loadById(self.get_entityId(), null, null);
 							});
 						});
 					}
-				});
-				list.push({
-					title: Q.text('Controls.EntityDialog.UndeleteButton'),
-					cssClass: 'undo-delete-button',
-					onClick: function() {
-						if (self.isDeleted()) {
-							Q.confirm(Q.text('Controls.EntityDialog.UndeleteConfirmation'), function() {
-								self.undelete(function() {
-									self.loadById(self.get_entityId(), null, null);
-								});
-							});
-						}
-					}
-				});
-				list.push({ title: Q.text('Controls.EntityDialog.LocalizationButton'), cssClass: 'localization-button', onClick: ss.mkdel(this, function() {
-					this.$localizationButtonClick();
+				}
+			});
+			list.push({ title: Q.text('Controls.EntityDialog.LocalizationButton'), cssClass: 'localization-button', onClick: ss.mkdel(this, function() {
+				this.$localizationButtonClick();
+			}) });
+			list.push({ title: Q.text('Controls.EntityDialog.CloneButton'), cssClass: 'clone-button', onClick: ss.mkdel(this, function() {
+				if (!self.isEditMode()) {
+					return;
+				}
+				var cloneEntity = this.getCloningEntity();
+				Serenity.Widget.create({ type: ss.getInstanceType(this), element: null, options: new Object(), init: ss.mkdel(this, function(w) {
+					$Serenity_SubDialogHelper.bubbleDataChange($Serenity_SubDialogHelper.cascade(w, this.element), this, true).loadEntityAndOpenDialog(cloneEntity, null);
 				}) });
-				list.push({ title: Q.text('Controls.EntityDialog.CloneButton'), cssClass: 'clone-button', onClick: ss.mkdel(this, function() {
-					if (!self.isEditMode()) {
-						return;
-					}
-					var cloneEntity = this.getCloningEntity();
-					Serenity.Widget.create({ type: ss.getInstanceType(this), element: null, options: new Object(), init: ss.mkdel(this, function(w) {
-						$Serenity_SubDialogHelper.bubbleDataChange($Serenity_SubDialogHelper.cascade(w, this.element), this, true).loadEntityAndOpenDialog(cloneEntity);
-					}) });
-				}) });
-			}
+			}) });
 			return list;
 		},
 		getCloningEntity: function() {
@@ -8233,32 +8241,32 @@
 			this.editItem(new Object());
 		},
 		editItem: function(entityOrId) {
-			this.createEntityDialog(this.getItemType(), function(dlg) {
+			this.createEntityDialog(this.getItemType(), ss.mkdel(this, function(dlg) {
 				var dialog = ss.safeCast(dlg, $Serenity_IEditDialog);
 				if (ss.isValue(dialog)) {
-					dialog.load(entityOrId, function() {
-						dialog.dialogOpen();
-					}, null);
+					dialog.load(entityOrId, ss.mkdel(this, function() {
+						dialog.dialogOpen(this.openDialogsAsPanel);
+					}), null);
 					return;
 				}
 				throw new ss.InvalidOperationException(ss.formatString("{0} doesn't implement IEditDialog!", ss.getTypeFullName(ss.getInstanceType(dlg))));
-			});
+			}));
 		},
 		editItemOfType: function(itemType, entityOrId) {
 			if (ss.referenceEquals(itemType, this.getItemType())) {
 				this.editItem(entityOrId);
 				return;
 			}
-			this.createEntityDialog(itemType, function(dlg) {
+			this.createEntityDialog(itemType, ss.mkdel(this, function(dlg) {
 				var dialog = ss.safeCast(dlg, $Serenity_IEditDialog);
 				if (ss.isValue(dialog)) {
-					dialog.load(entityOrId, function() {
-						dialog.dialogOpen();
-					}, null);
+					dialog.load(entityOrId, ss.mkdel(this, function() {
+						dialog.dialogOpen(this.openDialogsAsPanel);
+					}), null);
 					return;
 				}
 				throw new ss.InvalidOperationException(ss.formatString("{0} doesn't implement IEditDialog!", ss.getTypeFullName(ss.getInstanceType(dlg))));
-			});
+			}));
 		},
 		getService: function() {
 			if (ss.isNullOrUndefined(this.$service)) {
@@ -8311,7 +8319,7 @@
 			$Serenity_SubDialogHelper.bindToDataChange(dialog, this, function(e, dci) {
 				self.subDialogDataChange();
 			}, true);
-			this.routeDialog(this.getItemType(), dialog);
+			this.routeDialog(itemType, dialog);
 		},
 		createEntityDialog: function(itemType, callback) {
 			var dialogClass = this.getDialogTypeFor(itemType);
@@ -9632,10 +9640,10 @@
 			}
 		},
 		$initPropertyGridAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var pgDiv = this.byId('PropertyGrid');
 				if (pgDiv.length <= 0) {
-					return RSVP.resolve();
+					return Promise.resolve();
 				}
 				return this.getPropertyGridOptionsAsync().then(ss.mkdel(this, function(pgOptions) {
 					this.propertyGrid = new $Serenity_PropertyGrid(pgDiv, pgOptions);
@@ -9671,7 +9679,7 @@
 			return Q.getForm(formKey);
 		},
 		getPropertyItemsAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var formKey = this.getFormKey();
 				return Q.getFormAsync(formKey);
 			}), null);
@@ -10149,10 +10157,10 @@
 			}
 		},
 		$initPropertyGridAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var pgDiv = this.byId('PropertyGrid');
 				if (pgDiv.length <= 0) {
-					return RSVP.resolve();
+					return Promise.resolve();
 				}
 				return this.getPropertyGridOptionsAsync().then(ss.mkdel(this, function(pgOptions) {
 					this.propertyGrid = new $Serenity_PropertyGrid(pgDiv, pgOptions);
@@ -10186,7 +10194,7 @@
 			return Q.getForm(formKey);
 		},
 		getPropertyItemsAsync: function() {
-			return RSVP.resolve().then(ss.mkdel(this, function() {
+			return Promise.resolve().then(ss.mkdel(this, function() {
 				var formKey = this.getFormKey();
 				return Q.getFormAsync(formKey);
 			}), null);
@@ -10497,7 +10505,8 @@
 				btn.find('span').html(text);
 			}
 			if (!!(!ss.isNullOrEmptyString(b.hotkey) && ss.isValue(window.window.Mousetrap))) {
-				Mousetrap(this.options.hotkeyContext || window.document.documentElement).bind(b.hotkey, function(e1, action) {
+				this.$mouseTrap = this.$mouseTrap || Mousetrap(this.options.hotkeyContext || window.document.documentElement);
+				this.$mouseTrap.bind(b.hotkey, function(e1, action) {
 					if (btn.is(':visible')) {
 						btn.triggerHandler('click');
 					}
@@ -10507,6 +10516,15 @@
 		},
 		destroy: function() {
 			this.element.find('div.tool-button').unbind('click');
+			if (ss.isValue(this.$mouseTrap)) {
+				if (!!this.$mouseTrap.destroy) {
+					this.$mouseTrap.destroy();
+				}
+				else {
+					this.$mouseTrap.reset();
+				}
+				this.$mouseTrap = null;
+			}
 			Serenity.Widget.prototype.destroy.call(this);
 		},
 		findButton: function(className) {
@@ -10605,7 +10623,7 @@
 				this.toolbar.findButton('print-preview-button').toggle(!response.IsDataOnlyReport);
 				this.toolbar.findButton('export-pdf-button').toggle(!response.IsDataOnlyReport);
 				this.toolbar.findButton('export-docx-button').toggle(!response.IsDataOnlyReport);
-				this.dialogOpen();
+				this.dialogOpen(null);
 			}) });
 		},
 		executeReport: function(targetFrame, exportType) {
@@ -10721,7 +10739,7 @@
 	ss.setMetadata($Serenity_ImageUploadEditorOptions, { members: [{ attr: [new $System_ComponentModel_DisplayNameAttribute('Allow Non Image Files')], name: 'AllowNonImage', type: 16, returnType: Boolean, getter: { name: 'get_AllowNonImage', type: 8, params: [], returnType: Boolean, fget: 'allowNonImage' }, setter: { name: 'set_AllowNonImage', type: 8, params: [Boolean], returnType: Object, fset: 'allowNonImage' }, fname: 'allowNonImage' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Display File Name')], name: 'DisplayFileName', type: 16, returnType: Boolean, getter: { name: 'get_DisplayFileName', type: 8, params: [], returnType: Boolean, fget: 'displayFileName' }, setter: { name: 'set_DisplayFileName', type: 8, params: [Boolean], returnType: Object, fset: 'displayFileName' }, fname: 'displayFileName' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Max Height')], name: 'MaxHeight', type: 16, returnType: ss.Int32, getter: { name: 'get_MaxHeight', type: 8, params: [], returnType: ss.Int32, fget: 'maxHeight' }, setter: { name: 'set_MaxHeight', type: 8, params: [ss.Int32], returnType: Object, fset: 'maxHeight' }, fname: 'maxHeight' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Max Size')], name: 'MaxSize', type: 16, returnType: ss.Int32, getter: { name: 'get_MaxSize', type: 8, params: [], returnType: ss.Int32, fget: 'maxSize' }, setter: { name: 'set_MaxSize', type: 8, params: [ss.Int32], returnType: Object, fset: 'maxSize' }, fname: 'maxSize' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Min Width')], name: 'MaxWidth', type: 16, returnType: ss.Int32, getter: { name: 'get_MaxWidth', type: 8, params: [], returnType: ss.Int32, fget: 'maxWidth' }, setter: { name: 'set_MaxWidth', type: 8, params: [ss.Int32], returnType: Object, fset: 'maxWidth' }, fname: 'maxWidth' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Max Height')], name: 'MinHeight', type: 16, returnType: ss.Int32, getter: { name: 'get_MinHeight', type: 8, params: [], returnType: ss.Int32, fget: 'minHeight' }, setter: { name: 'set_MinHeight', type: 8, params: [ss.Int32], returnType: Object, fset: 'minHeight' }, fname: 'minHeight' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Min Size')], name: 'MinSize', type: 16, returnType: ss.Int32, getter: { name: 'get_MinSize', type: 8, params: [], returnType: ss.Int32, fget: 'minSize' }, setter: { name: 'set_MinSize', type: 8, params: [ss.Int32], returnType: Object, fset: 'minSize' }, fname: 'minSize' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Min Width')], name: 'MinWidth', type: 16, returnType: ss.Int32, getter: { name: 'get_MinWidth', type: 8, params: [], returnType: ss.Int32, fget: 'minWidth' }, setter: { name: 'set_MinWidth', type: 8, params: [ss.Int32], returnType: Object, fset: 'minWidth' }, fname: 'minWidth' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Original Name Property')], name: 'OriginalNameProperty', type: 16, returnType: String, getter: { name: 'get_OriginalNameProperty', type: 8, params: [], returnType: String, fget: 'originalNameProperty' }, setter: { name: 'set_OriginalNameProperty', type: 8, params: [String], returnType: Object, fset: 'originalNameProperty' }, fname: 'originalNameProperty' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('UrlPrefix')], name: 'UrlPrefix', type: 16, returnType: String, getter: { name: 'get_UrlPrefix', type: 8, params: [], returnType: String, fget: 'urlPrefix' }, setter: { name: 'set_UrlPrefix', type: 8, params: [String], returnType: Object, fset: 'urlPrefix' }, fname: 'urlPrefix' }] });
 	ss.setMetadata($Serenity_IntegerEditor, { attr: [new Serenity.EditorAttribute(), new $System_ComponentModel_DisplayNameAttribute('Tamsayı'), new Serenity.OptionsTypeAttribute($Serenity_IntegerEditorOptions), new Serenity.ElementAttribute('<input type="text"/>')] });
 	ss.setMetadata($Serenity_LookupEditor, { attr: [new Serenity.EditorAttribute(), new Serenity.OptionsTypeAttribute(Object)] });
-	ss.setMetadata($Serenity_LookupEditorBase, { attr: [new Serenity.ElementAttribute('<input type="hidden"/>')], members: [{ attr: [new Serenity.OptionAttribute()], name: 'CascadeField', type: 16, returnType: String, getter: { name: 'get_CascadeField', type: 8, sname: 'get_cascadeField', returnType: String, params: [] }, setter: { name: 'set_CascadeField', type: 8, sname: 'set_cascadeField', returnType: Object, params: [String] } }, { attr: [new Serenity.OptionAttribute()], name: 'CascadeFrom', type: 16, returnType: String, getter: { name: 'get_CascadeFrom', type: 8, sname: 'get_cascadeFrom', returnType: String, params: [] }, setter: { name: 'set_CascadeFrom', type: 8, sname: 'set_cascadeFrom', returnType: Object, params: [String] } }, { attr: [new Serenity.OptionAttribute()], name: 'CascadeValue', type: 16, returnType: Object, getter: { name: 'get_CascadeValue', type: 8, sname: 'get_cascadeValue', returnType: Object, params: [] }, setter: { name: 'set_CascadeValue', type: 8, sname: 'set_cascadeValue', returnType: Object, params: [Object] } }, { attr: [new Serenity.OptionAttribute()], name: 'FilterField', type: 16, returnType: String, getter: { name: 'get_FilterField', type: 8, sname: 'get_filterField', returnType: String, params: [] }, setter: { name: 'set_FilterField', type: 8, sname: 'set_filterField', returnType: Object, params: [String] } }, { attr: [new Serenity.OptionAttribute()], name: 'FilterValue', type: 16, returnType: Object, getter: { name: 'get_FilterValue', type: 8, sname: 'get_filterValue', returnType: Object, params: [] }, setter: { name: 'set_FilterValue', type: 8, sname: 'set_filterValue', returnType: Object, params: [Object] } }] });
+	ss.setMetadata($Serenity_LookupEditorBase, { attr: [new Serenity.ElementAttribute('<input type="hidden"/>')], members: [{ attr: [new Serenity.OptionAttribute()], name: 'CascadeField', type: 16, returnType: String, getter: { name: 'get_CascadeField', type: 8, sname: 'get_cascadeField', returnType: String, params: [] }, setter: { name: 'set_CascadeField', type: 8, sname: 'set_cascadeField', returnType: Object, params: [String] } }, { attr: [new Serenity.OptionAttribute()], name: 'CascadeFrom', type: 16, returnType: String, getter: { name: 'get_CascadeFrom', type: 8, sname: 'get_cascadeFrom', returnType: String, params: [] }, setter: { name: 'set_CascadeFrom', type: 8, sname: 'set_cascadeFrom', returnType: Object, params: [String] } }, { attr: [new Serenity.OptionAttribute()], name: 'CascadeValue', type: 16, returnType: Object, getter: { name: 'get_CascadeValue', type: 8, sname: 'get_cascadeValue', returnType: Object, params: [] }, setter: { name: 'set_CascadeValue', type: 8, sname: 'set_cascadeValue', returnType: Object, params: [Object] } }, { attr: [new Serenity.OptionAttribute()], name: 'FilterField', type: 16, returnType: String, getter: { name: 'get_FilterField', type: 8, sname: 'get_filterField', returnType: String, params: [] }, setter: { name: 'set_FilterField', type: 8, sname: 'set_filterField', returnType: Object, params: [String] } }, { attr: [new Serenity.OptionAttribute()], name: 'FilterValue', type: 16, returnType: Object, getter: { name: 'get_FilterValue', type: 8, sname: 'get_filterValue', returnType: Object, params: [] }, setter: { name: 'set_FilterValue', type: 8, sname: 'set_filterValue', returnType: Object, params: [Object] } }, { attr: [new Serenity.OptionAttribute()], name: 'OpenDialogAsPanel', type: 16, returnType: ss.makeGenericType(ss.Nullable$1, [Boolean]), getter: { name: 'get_OpenDialogAsPanel', type: 8, sname: 'get_openDialogAsPanel', returnType: ss.makeGenericType(ss.Nullable$1, [Boolean]), params: [] }, setter: { name: 'set_OpenDialogAsPanel', type: 8, sname: 'set_openDialogAsPanel', returnType: Object, params: [ss.makeGenericType(ss.Nullable$1, [Boolean])] } }] });
 	ss.setMetadata($Serenity_MaskedEditor, { attr: [new Serenity.EditorAttribute(), new $System_ComponentModel_DisplayNameAttribute('Maskeli Giriş'), new Serenity.OptionsTypeAttribute($Serenity_MaskedEditorOptions), new Serenity.ElementAttribute('<input type="text"/>')] });
 	ss.setMetadata($Serenity_MaskedEditorOptions, { members: [{ attr: [new $System_ComponentModel_DisplayNameAttribute('Giriş Maskesi')], name: 'Mask', type: 16, returnType: String, getter: { name: 'get_Mask', type: 8, params: [], returnType: String, fget: 'mask' }, setter: { name: 'set_Mask', type: 8, params: [String], returnType: Object, fset: 'mask' }, fname: 'mask' }, { attr: [new $System_ComponentModel_DisplayNameAttribute('Yer Tutucu Karakter')], name: 'Placeholder', type: 16, returnType: String, getter: { name: 'get_Placeholder', type: 8, params: [], returnType: String, fget: 'placeholder' }, setter: { name: 'set_Placeholder', type: 8, params: [String], returnType: Object, fset: 'placeholder' }, fname: 'placeholder' }] });
 	ss.setMetadata($Serenity_MultipleImageUploadEditor, { attr: [new Serenity.EditorAttribute(), new $System_ComponentModel_DisplayNameAttribute('MultipleImage Upload'), new Serenity.OptionsTypeAttribute($Serenity_ImageUploadEditorOptions), new Serenity.ElementAttribute('<div/>')], members: [{ attr: [new Serenity.OptionAttribute()], name: 'JsonEncodeValue', type: 16, returnType: Boolean, getter: { name: 'get_JsonEncodeValue', type: 8, sname: 'get_jsonEncodeValue', returnType: Boolean, params: [] }, setter: { name: 'set_JsonEncodeValue', type: 8, sname: 'set_jsonEncodeValue', returnType: Object, params: [Boolean] } }] });
