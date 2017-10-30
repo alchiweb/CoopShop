@@ -17,6 +17,7 @@
         private isInitialized: boolean = false;
         private isOrderClosed: boolean = false;
 
+        
         constructor() {
             super();
             //alchiweb
@@ -30,8 +31,19 @@
                     this.isInitialized = true;
                 }
             });
+            this.form.DetailList.element.change(
+                e => {
+                    this.element.find('.add-button').triggerHandler("click");
+                });
         }
 
+        afterLoadEntity(): void {
+            super.afterLoadEntity();
+            this.form.CustomerID.changeSelect2(e => {
+                this.element.find('.add-button').triggerHandler("click");
+            });
+        }
+        
         getToolbarButtons() {
             var buttons = super.getToolbarButtons();
 
@@ -56,6 +68,7 @@
             Serenity.EditorUtils.setReadonly(this.element.find('.editor'), this.isOrderClosed);
             // remove required asterisk (*)
             this.element.find('sup').hide();
+
 
             // here is a way to locate a button by its css class
             // note that this method is not available in 

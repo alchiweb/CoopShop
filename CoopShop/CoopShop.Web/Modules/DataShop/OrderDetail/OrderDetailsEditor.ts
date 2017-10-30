@@ -37,6 +37,7 @@ namespace CoopShop.DataShop {
 
         }
 
+
         private setPaymentTotal(items) {
             if (!$("input[name='PaymentTotal']").prop('disabled')) {
                 var currentLanguage = Q.coalesce($.cookie("LanguagePreference"), 'en');

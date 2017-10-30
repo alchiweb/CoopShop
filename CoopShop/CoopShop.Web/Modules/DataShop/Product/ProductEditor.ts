@@ -82,7 +82,6 @@
 
         */
 
-
         protected getItems(lookup: Q.Lookup<ProductRow>) {
             var txt_lookup: string = "";
                 for (var $t1 = 0; $t1 < lookup.items.length; $t1++) {
@@ -93,14 +92,16 @@
             }
 //            console.log(lookup.te + "/" + lookup.idField);
                 return lookup.items.filter((x,index) =>
-                    x.Discontinued !== true && x.ProductID !== index);
+                    x.Discontinued !== true /*&& x.UnitsInStock > 0*/ && x.ProductID !== index);
         }
-        
+
         protected getItemText(item, lookup) {
             return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + super.getItemText(item, lookup) + ((item.BrandName === undefined || item.BrandID === 2094) ? "" :  (' (' + item.BrandName+')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
         }
+
+
         protected getItemDisabled(item, lookup) {
-            return item.Discontinued;
+            return item.Discontinued/* || item.UnitsInStock <= 0*/;
         }
     }
 }

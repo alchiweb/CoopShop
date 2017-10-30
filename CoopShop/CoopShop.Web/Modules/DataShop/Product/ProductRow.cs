@@ -40,9 +40,9 @@ namespace CoopShop.DataShop.Entities
             set { Fields.ProductImage[this] = value; }
         }
 
-        //alchiwed
+        //alchiweb
         [DisplayName("Discontinued"), NotNull]
-        //[LookupInclude] ???
+        [LookupInclude] // in order to hide the product in the list of products
         public Boolean? Discontinued
         {
             get { return Fields.Discontinued[this]; }

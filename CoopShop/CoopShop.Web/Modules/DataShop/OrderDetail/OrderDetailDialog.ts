@@ -9,10 +9,22 @@ namespace CoopShop.DataShop {
         protected getLocalTextPrefix() { return OrderDetailRow.localTextPrefix; }
 
         protected form: OrderDetailForm;
+        protected savedItem: boolean;
 
         afterLoadEntity(): void {
+            super.afterLoadEntity();
             this.updateProduct();
+            this.element.bind('dialogclose', () =>  this.savedItem = false );   // before 'click' on saveCloseButton
+            this.saveAndCloseButton.bind("click", () => this.savedItem = true); // after 'dialogClose'
             //this.changePrice();
+        }
+
+
+//note needed        validateBeforeSave(): boolean { return (this.savedItem = this.validateForm()); }
+ 
+        destroy(): void {
+            if (this.savedItem && this.isNew())
+                $(".s-OrderDetailsEditor").change();
         }
 
         constructor() {
@@ -20,8 +32,6 @@ namespace CoopShop.DataShop {
             this.form = new OrderDetailForm(this.idPrefix);
             this.form.ProductID.changeSelect2(e => {
                 this.updateProduct();
-
-
             });
 
             //alchiweb
