@@ -3502,9 +3502,13 @@ declare namespace CoopShop.DataShop {
         protected getFormKey(): string;
         protected getLocalTextPrefix(): string;
         protected form: OrderDetailForm;
+        protected beforeItemDeleted: boolean;
         protected savedItem: boolean;
+        protected savedItemSuccess: boolean;
         afterLoadEntity(): void;
-        destroy(): void;
+        deleteHandler(options: Q.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
+        protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void): void;
+        protected getDialogOptions(): JQueryUI.DialogOptions;
         constructor();
         updateProduct(): void;
         changePrice(): void;

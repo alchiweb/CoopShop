@@ -9,23 +9,75 @@ namespace CoopShop.DataShop {
         protected getLocalTextPrefix() { return OrderDetailRow.localTextPrefix; }
 
         protected form: OrderDetailForm;
-        protected savedItem: boolean;
+        protected beforeItemDeleted: boolean = false;
+        protected savedItem: boolean = false;
+        protected savedItemSuccess: boolean = false;
 
         afterLoadEntity(): void {
             super.afterLoadEntity();
             this.updateProduct();
-            this.element.bind('dialogclose', () =>  this.savedItem = false );   // before 'click' on saveCloseButton
-            this.saveAndCloseButton.bind("click", () => this.savedItem = true); // after 'dialogClose'
+
+            this.saveAndCloseButton.bind("click", () => {
+                console.log("click saveandclose savedItem: " + this.savedItem + " - savedItemSuccess : " + this.savedItemSuccess);
+                if (this.savedItem && this.savedItemSuccess) {
+                    // clear all the fields for the new product
+                    this.form.ProductID.value = "";
+                    this.updateProduct();
+                    this.form.InternalRef.element.focus();
+                }
+
+                this.savedItem = false;
+                this.savedItemSuccess = false;
+            }); // after 'dialogClose'
+
             //this.changePrice();
+        }
+
+        deleteHandler(options: Q.ServiceOptions<Serenity.DeleteResponse>,
+            callback: (response: Serenity.DeleteResponse) => void): void {
+            this.beforeItemDeleted = true;
+            super.deleteHandler(options, callback);
+        }
+
+        protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>,
+            callback: (response: Serenity.SaveResponse) => void): void {
+            console.log("saveHandler");
+            this.savedItem = true;
+            super.saveHandler(options, callback);
+        }
+
+        protected getDialogOptions(): JQueryUI.DialogOptions {
+            var opt: JQueryUI.DialogOptions = super.getDialogOptions();
+
+            opt.beforeClose = (event, ui) => {
+                var itemBeingDeleted: boolean = this.beforeItemDeleted;
+                if (this.beforeItemDeleted)
+                    this.beforeItemDeleted = false;
+
+                if (!this.savedItem) {
+                    if (!itemBeingDeleted && this.form.ProductID.value !== "") {
+                        Q.confirm("Quitter l'ajout d'un produit SANS SAUVEGARDER CE PRODUIT ?", () => { this.onDialogClose(); }, { modal: true });
+                        return false;
+                    }
+                } else {
+                    if (this.isNew()) {
+                        this.savedItemSuccess = true;
+                        return false;
+                    }
+                }
+                return true;
+            };
+            return opt;
         }
 
 
 //note needed        validateBeforeSave(): boolean { return (this.savedItem = this.validateForm()); }
- 
-        destroy(): void {
-            if (this.savedItem && this.isNew())
-                $(".s-OrderDetailsEditor").change();
-        }
+
+// no more needed -> in order to add a new product window...
+        //destroy(): void {
+        //    if (this.savedItem && this.isNew())
+        //        $(".s-OrderDetailsEditor").change();
+        //}
 
         constructor() {
             super();
@@ -76,10 +128,16 @@ namespace CoopShop.DataShop {
                 this.form.InternalRef.value = currentProduct.InternalRef;
                 this.form.QuantitySymbol.value = currentProduct.QuantitySymbol.toString();
                 this.changePrice();
+            } else { //alchiweb
+                if (this.form.InternalRef.value !== "")
+                    this.form.InternalRef.value = "";
+                this.form.ProductID.value = "";
+                this.form.Quantity.value = 1;
+                this.form.QuantitySymbol.value = null;
+                this.form.Discount.value = null;
+                this.form.QuantityPerUnitPrice.value = null;
+                this.form.UnitPrice.value = null;
             }
-            else //alchiweb
-            if (this.form.InternalRef.value !== "")
-                this.form.InternalRef.value = "";
         }
         changePrice() {
             if (this.form != null) {

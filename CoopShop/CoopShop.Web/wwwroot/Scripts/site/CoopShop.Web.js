@@ -23,9 +23,9 @@ var CoopShop;
             function LanguageForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            LanguageForm.formKey = 'Administration.Language';
             return LanguageForm;
         }(Serenity.PrefixedContext));
-        LanguageForm.formKey = 'Administration.Language';
         Administration.LanguageForm = LanguageForm;
         [['LanguageId', function () { return Serenity.StringEditor; }], ['LanguageName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(LanguageForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
@@ -89,9 +89,9 @@ var CoopShop;
             function RoleForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            RoleForm.formKey = 'Administration.Role';
             return RoleForm;
         }(Serenity.PrefixedContext));
-        RoleForm.formKey = 'Administration.Role';
         Administration.RoleForm = RoleForm;
         [['RoleName', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RoleForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
@@ -242,9 +242,9 @@ var CoopShop;
             function UserForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            UserForm.formKey = 'Administration.User';
             return UserForm;
         }(Serenity.PrefixedContext));
-        UserForm.formKey = 'Administration.User';
         Administration.UserForm = UserForm;
         [['Username', function () { return Serenity.StringEditor; }], ['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['UserImage', function () { return Serenity.ImageUploadEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['PasswordConfirm', function () { return Serenity.PasswordEditor; }], ['Source', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(UserForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
@@ -435,9 +435,9 @@ var CoopShop;
             function ChangingLookupTextForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ChangingLookupTextForm.formKey = 'BasicSamples.ChangingLookupText';
             return ChangingLookupTextForm;
         }(Serenity.PrefixedContext));
-        ChangingLookupTextForm.formKey = 'BasicSamples.ChangingLookupText';
         BasicSamples.ChangingLookupTextForm = ChangingLookupTextForm;
         [['ProductID', function () { return BasicSamples.ChangingLookupTextEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.DecimalEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(ChangingLookupTextForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -472,9 +472,9 @@ var CoopShop;
             function DragDropSampleForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            DragDropSampleForm.formKey = 'BasicSamples.DragDropSample';
             return DragDropSampleForm;
         }(Serenity.PrefixedContext));
-        DragDropSampleForm.formKey = 'BasicSamples.DragDropSample';
         BasicSamples.DragDropSampleForm = DragDropSampleForm;
         [['Title', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(DragDropSampleForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -533,9 +533,9 @@ var CoopShop;
             function FilteredLookupInDetailForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            FilteredLookupInDetailForm.formKey = 'BasicSamples.FilteredLookupInDetail';
             return FilteredLookupInDetailForm;
         }(Serenity.PrefixedContext));
-        FilteredLookupInDetailForm.formKey = 'BasicSamples.FilteredLookupInDetail';
         BasicSamples.FilteredLookupInDetailForm = FilteredLookupInDetailForm;
         [['CustomerID', function () { return CoopShop.DataShop.CustomerEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return BasicSamples.FilteredLookupDetailEditor; }]].forEach(function (x) { return Object.defineProperty(FilteredLookupInDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -549,9 +549,9 @@ var CoopShop;
             function HardcodedValuesForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            HardcodedValuesForm.formKey = 'BasicSamples.HarcodedValues';
             return HardcodedValuesForm;
         }(Serenity.PrefixedContext));
-        HardcodedValuesForm.formKey = 'BasicSamples.HarcodedValues';
         BasicSamples.HardcodedValuesForm = HardcodedValuesForm;
         [['SomeValue', function () { return BasicSamples.HardcodedValuesEditor; }]].forEach(function (x) { return Object.defineProperty(HardcodedValuesForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -565,9 +565,9 @@ var CoopShop;
             function LookupFilterByMultipleForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            LookupFilterByMultipleForm.formKey = 'BasicSamples.LookupFilterByMultiple';
             return LookupFilterByMultipleForm;
         }(Serenity.PrefixedContext));
-        LookupFilterByMultipleForm.formKey = 'BasicSamples.LookupFilterByMultiple';
         BasicSamples.LookupFilterByMultipleForm = LookupFilterByMultipleForm;
         [['ProductName', function () { return Serenity.StringEditor; }], ['ProductImage', function () { return Serenity.ImageUploadEditor; }], ['Discontinued', function () { return Serenity.BooleanEditor; }], ['SupplierID', function () { return Serenity.LookupEditor; }], ['CategoryID', function () { return BasicSamples.ProduceSeafoodCategoryEditor; }], ['QuantityPerUnit', function () { return Serenity.DecimalEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['UnitsInStock', function () { return Serenity.IntegerEditor; }], ['UnitsOnOrder', function () { return Serenity.IntegerEditor; }], ['ReorderLevel', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(LookupFilterByMultipleForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -581,9 +581,9 @@ var CoopShop;
             function PopulateLinkedDataForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            PopulateLinkedDataForm.formKey = 'BasicSamples.PopulateLinkedData';
             return PopulateLinkedDataForm;
         }(Serenity.PrefixedContext));
-        PopulateLinkedDataForm.formKey = 'BasicSamples.PopulateLinkedData';
         BasicSamples.PopulateLinkedDataForm = PopulateLinkedDataForm;
         [['CustomerID', function () { return CoopShop.DataShop.CustomerEditor; }], ['CustomerContactName', function () { return Serenity.StringEditor; }], ['CustomerContactTitle', function () { return Serenity.StringEditor; }], ['CustomerCity', function () { return Serenity.StringEditor; }], ['CustomerRegion', function () { return Serenity.StringEditor; }], ['CustomerCountry', function () { return Serenity.StringEditor; }], ['CustomerPhone', function () { return Serenity.StringEditor; }], ['CustomerFax', function () { return Serenity.StringEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['RequiredDate', function () { return Serenity.DateEditor; }], ['EmployeeID', function () { return Serenity.LookupEditor; }], ['DetailList', function () { return CoopShop.DataShop.OrderDetailsEditor; }]].forEach(function (x) { return Object.defineProperty(PopulateLinkedDataForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -597,9 +597,9 @@ var CoopShop;
             function ProductExcelImportForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ProductExcelImportForm.formKey = 'BasicSamples.ProductExcelImport';
             return ProductExcelImportForm;
         }(Serenity.PrefixedContext));
-        ProductExcelImportForm.formKey = 'BasicSamples.ProductExcelImport';
         BasicSamples.ProductExcelImportForm = ProductExcelImportForm;
         [['FileName', function () { return Serenity.ImageUploadEditor; }]].forEach(function (x) { return Object.defineProperty(ProductExcelImportForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -634,9 +634,9 @@ var CoopShop;
             function StaticTextBlockForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            StaticTextBlockForm.formKey = 'BasicSamples.StaticTextBlock';
             return StaticTextBlockForm;
         }(Serenity.PrefixedContext));
-        StaticTextBlockForm.formKey = 'BasicSamples.StaticTextBlock';
         BasicSamples.StaticTextBlockForm = StaticTextBlockForm;
         [['StaticText', function () { return CoopShop.StaticTextBlock; }], ['SomeInput', function () { return Serenity.StringEditor; }], ['HtmlList', function () { return CoopShop.StaticTextBlock; }], ['FromLocalText', function () { return CoopShop.StaticTextBlock; }], ['DisplayFieldValue', function () { return CoopShop.StaticTextBlock; }]].forEach(function (x) { return Object.defineProperty(StaticTextBlockForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
@@ -694,9 +694,9 @@ var CoopShop;
             function BrandForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            BrandForm.formKey = 'DataShop.Brand';
             return BrandForm;
         }(Serenity.PrefixedContext));
-        BrandForm.formKey = 'DataShop.Brand';
         DataShop.BrandForm = BrandForm;
         [['BrandName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(BrandForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -808,9 +808,9 @@ var CoopShop;
             function CategoryForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            CategoryForm.formKey = 'DataShop.Category';
             return CategoryForm;
         }(Serenity.PrefixedContext));
-        CategoryForm.formKey = 'DataShop.Category';
         DataShop.CategoryForm = CategoryForm;
         [['CategoryName', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(CategoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1012,9 +1012,9 @@ var CoopShop;
             function CustomerForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            CustomerForm.formKey = 'DataShop.Customer';
             return CustomerForm;
         }(Serenity.PrefixedContext));
-        CustomerForm.formKey = 'DataShop.Customer';
         DataShop.CustomerForm = CustomerForm;
         [['IsCoop', function () { return Serenity.BooleanEditor; }], ['CustomerID', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.StringEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return DataShop.NotesEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1269,9 +1269,9 @@ var CoopShop;
             function OrderDetailForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            OrderDetailForm.formKey = 'DataShop.OrderDetail';
             return OrderDetailForm;
         }(Serenity.PrefixedContext));
-        OrderDetailForm.formKey = 'DataShop.OrderDetail';
         DataShop.OrderDetailForm = OrderDetailForm;
         [['InternalRef', function () { return Serenity.StringEditor; }], ['ProductID', function () { return DataShop.ProductEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['Quantity', function () { return Serenity.DecimalEditor; }], ['QuantitySymbol', function () { return Serenity.EnumEditor; }], ['QuantityPerUnitPrice', function () { return Serenity.DecimalEditor; }], ['Discount', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(OrderDetailForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1338,9 +1338,9 @@ var CoopShop;
             function OrderForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            OrderForm.formKey = 'DataShop.Order';
             return OrderForm;
         }(Serenity.PrefixedContext));
-        OrderForm.formKey = 'DataShop.Order';
         DataShop.OrderForm = OrderForm;
         [['CustomerID', function () { return DataShop.CustomerEditor; }], ['OrderDate', function () { return Serenity.DateEditor; }], ['DetailList', function () { return DataShop.OrderDetailsEditor; }], ['PaymentTotal', function () { return Serenity.DecimalEditor; }], ['PaymentMethod', function () { return Serenity.EnumEditor; }]].forEach(function (x) { return Object.defineProperty(OrderForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1458,9 +1458,9 @@ var CoopShop;
             function ProductForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ProductForm.formKey = 'DataShop.Product';
             return ProductForm;
         }(Serenity.PrefixedContext));
-        ProductForm.formKey = 'DataShop.Product';
         DataShop.ProductForm = ProductForm;
         [['InternalRef', function () { return Serenity.StringEditor; }], ['ProductName', function () { return Serenity.StringEditor; }], ['SupplierID', function () { return Serenity.LookupEditor; }], ['CategoryID', function () { return Serenity.LookupEditor; }], ['BrandID', function () { return Serenity.LookupEditor; }], ['QuantityPerUnit', function () { return Serenity.DecimalEditor; }], ['QuantitySymbol', function () { return Serenity.EnumEditor; }], ['UnitPrice', function () { return Serenity.DecimalEditor; }], ['BuyingPrice', function () { return Serenity.DecimalEditor; }], ['SupplierCommissionPercentage', function () { return Serenity.DecimalEditor; }], ['UnitsInStock', function () { return Serenity.DecimalEditor; }], ['UnitsOnOrder', function () { return Serenity.DecimalEditor; }], ['ReorderLevel', function () { return Serenity.DecimalEditor; }], ['SupplierRef', function () { return Serenity.StringEditor; }], ['ProductImage', function () { return Serenity.ImageUploadEditor; }], ['Discontinued', function () { return Serenity.BooleanEditor; }]].forEach(function (x) { return Object.defineProperty(ProductForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1653,9 +1653,9 @@ var CoopShop;
             function RegionForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            RegionForm.formKey = 'DataShop.Region';
             return RegionForm;
         }(Serenity.PrefixedContext));
-        RegionForm.formKey = 'DataShop.Region';
         DataShop.RegionForm = RegionForm;
         [['RegionID', function () { return Serenity.IntegerEditor; }], ['RegionDescription', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(RegionForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1759,9 +1759,9 @@ var CoopShop;
             function ShipperForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ShipperForm.formKey = 'DataShop.Shipper';
             return ShipperForm;
         }(Serenity.PrefixedContext));
-        ShipperForm.formKey = 'DataShop.Shipper';
         DataShop.ShipperForm = ShipperForm;
         [['CompanyName', function () { return Serenity.StringEditor; }], ['Phone', function () { return DataShop.PhoneEditor; }]].forEach(function (x) { return Object.defineProperty(ShipperForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1825,9 +1825,9 @@ var CoopShop;
             function SupplierForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            SupplierForm.formKey = 'DataShop.Supplier';
             return SupplierForm;
         }(Serenity.PrefixedContext));
-        SupplierForm.formKey = 'DataShop.Supplier';
         DataShop.SupplierForm = SupplierForm;
         [['CompanyName', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['Region', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['HomePage', function () { return Serenity.StringEditor; }], ['CommissionPercentage', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(SupplierForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1901,9 +1901,9 @@ var CoopShop;
             function TerritoryForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            TerritoryForm.formKey = 'DataShop.Territory';
             return TerritoryForm;
         }(Serenity.PrefixedContext));
-        TerritoryForm.formKey = 'DataShop.Territory';
         DataShop.TerritoryForm = TerritoryForm;
         [['TerritoryID', function () { return Serenity.StringEditor; }], ['TerritoryDescription', function () { return Serenity.StringEditor; }], ['RegionID', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(TerritoryForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
@@ -1969,9 +1969,9 @@ var CoopShop;
             function MeetingAgendaForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingAgendaForm.formKey = 'Meeting.MeetingAgenda';
             return MeetingAgendaForm;
         }(Serenity.PrefixedContext));
-        MeetingAgendaForm.formKey = 'Meeting.MeetingAgenda';
         Meeting.MeetingAgendaForm = MeetingAgendaForm;
         [['MeetingId', function () { return Serenity.IntegerEditor; }], ['AgendaNumber', function () { return Serenity.IntegerEditor; }], ['Title', function () { return Serenity.StringEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['AgendaTypeId', function () { return Serenity.IntegerEditor; }], ['RequestedByContactId', function () { return Serenity.IntegerEditor; }], ['Images', function () { return Serenity.MultipleImageUploadEditor; }], ['Attachments', function () { return Serenity.MultipleImageUploadEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingAgendaForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -1985,9 +1985,9 @@ var CoopShop;
             function MeetingAgendaRelevantForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingAgendaRelevantForm.formKey = 'Meeting.MeetingAgendaRelevant';
             return MeetingAgendaRelevantForm;
         }(Serenity.PrefixedContext));
-        MeetingAgendaRelevantForm.formKey = 'Meeting.MeetingAgendaRelevant';
         Meeting.MeetingAgendaRelevantForm = MeetingAgendaRelevantForm;
         [['AgendaId', function () { return Serenity.IntegerEditor; }], ['ContactId', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingAgendaRelevantForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2132,9 +2132,9 @@ var CoopShop;
             function MeetingAgendaTypeForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingAgendaTypeForm.formKey = 'Meeting.MeetingAgendaType';
             return MeetingAgendaTypeForm;
         }(Serenity.PrefixedContext));
-        MeetingAgendaTypeForm.formKey = 'Meeting.MeetingAgendaType';
         Meeting.MeetingAgendaTypeForm = MeetingAgendaTypeForm;
         [['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingAgendaTypeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2211,9 +2211,9 @@ var CoopShop;
             function MeetingAttendeeForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingAttendeeForm.formKey = 'Meeting.MeetingAttendee';
             return MeetingAttendeeForm;
         }(Serenity.PrefixedContext));
-        MeetingAttendeeForm.formKey = 'Meeting.MeetingAttendee';
         Meeting.MeetingAttendeeForm = MeetingAttendeeForm;
         [['MeetingId', function () { return Serenity.IntegerEditor; }], ['ContactId', function () { return Serenity.IntegerEditor; }], ['AttendeeType', function () { return Serenity.EnumEditor; }], ['AttendanceStatus', function () { return Serenity.EnumEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingAttendeeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2281,9 +2281,9 @@ var CoopShop;
             function MeetingDecisionForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingDecisionForm.formKey = 'Meeting.MeetingDecision';
             return MeetingDecisionForm;
         }(Serenity.PrefixedContext));
-        MeetingDecisionForm.formKey = 'Meeting.MeetingDecision';
         Meeting.MeetingDecisionForm = MeetingDecisionForm;
         [['MeetingId', function () { return Serenity.IntegerEditor; }], ['AgendaId', function () { return Serenity.IntegerEditor; }], ['Description', function () { return Serenity.StringEditor; }], ['DecisionNumber', function () { return Serenity.IntegerEditor; }], ['ResponsibleContactId', function () { return Serenity.IntegerEditor; }], ['DueDate', function () { return Serenity.DateEditor; }], ['ResolutionStatus', function () { return Serenity.IntegerEditor; }], ['Images', function () { return Serenity.StringEditor; }], ['Attachments', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingDecisionForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2297,9 +2297,9 @@ var CoopShop;
             function MeetingDecisionRelevantForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingDecisionRelevantForm.formKey = 'Meeting.MeetingDecisionRelevant';
             return MeetingDecisionRelevantForm;
         }(Serenity.PrefixedContext));
-        MeetingDecisionRelevantForm.formKey = 'Meeting.MeetingDecisionRelevant';
         Meeting.MeetingDecisionRelevantForm = MeetingDecisionRelevantForm;
         [['DecisionId', function () { return Serenity.IntegerEditor; }], ['ContactId', function () { return Serenity.IntegerEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingDecisionRelevantForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2454,9 +2454,9 @@ var CoopShop;
             function MeetingForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingForm.formKey = 'Meeting.Meeting';
             return MeetingForm;
         }(Serenity.PrefixedContext));
-        MeetingForm.formKey = 'Meeting.Meeting';
         Meeting.MeetingForm = MeetingForm;
         [['MeetingName', function () { return Serenity.StringEditor; }], ['MeetingTypeId', function () { return Serenity.LookupEditor; }], ['MeetingNumber', function () { return Serenity.StringEditor; }], ['StartDate', function () { return Serenity.DateTimeEditor; }], ['EndDate', function () { return Serenity.DateTimeEditor; }], ['LocationId', function () { return Serenity.LookupEditor; }], ['UnitId', function () { return CoopShop.Organization.BusinessUnitEditor; }], ['OrganizerContactId', function () { return Serenity.LookupEditor; }], ['ReporterContactId', function () { return Serenity.LookupEditor; }], ['AttendeeList', function () { return Meeting.MeetingAttendeeEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2470,9 +2470,9 @@ var CoopShop;
             function MeetingLocationForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingLocationForm.formKey = 'Meeting.MeetingLocation';
             return MeetingLocationForm;
         }(Serenity.PrefixedContext));
-        MeetingLocationForm.formKey = 'Meeting.MeetingLocation';
         Meeting.MeetingLocationForm = MeetingLocationForm;
         [['Name', function () { return Serenity.StringEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['Latitude', function () { return Serenity.DecimalEditor; }], ['Longitude', function () { return Serenity.DecimalEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingLocationForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2614,9 +2614,9 @@ var CoopShop;
             function MeetingTypeForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            MeetingTypeForm.formKey = 'Meeting.MeetingType';
             return MeetingTypeForm;
         }(Serenity.PrefixedContext));
-        MeetingTypeForm.formKey = 'Meeting.MeetingType';
         Meeting.MeetingTypeForm = MeetingTypeForm;
         [['Name', function () { return Serenity.StringEditor; }]].forEach(function (x) { return Object.defineProperty(MeetingTypeForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
@@ -2679,9 +2679,9 @@ var CoopShop;
             function ChangePasswordForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ChangePasswordForm.formKey = 'Membership.ChangePassword';
             return ChangePasswordForm;
         }(Serenity.PrefixedContext));
-        ChangePasswordForm.formKey = 'Membership.ChangePassword';
         Membership.ChangePasswordForm = ChangePasswordForm;
         [['OldPassword', function () { return Serenity.PasswordEditor; }], ['NewPassword', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(ChangePasswordForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
@@ -2695,9 +2695,9 @@ var CoopShop;
             function ForgotPasswordForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ForgotPasswordForm.formKey = 'Membership.ForgotPassword';
             return ForgotPasswordForm;
         }(Serenity.PrefixedContext));
-        ForgotPasswordForm.formKey = 'Membership.ForgotPassword';
         Membership.ForgotPasswordForm = ForgotPasswordForm;
         [['Email', function () { return Serenity.EmailEditor; }]].forEach(function (x) { return Object.defineProperty(ForgotPasswordForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
@@ -2711,9 +2711,9 @@ var CoopShop;
             function LoginForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            LoginForm.formKey = 'Membership.Login';
             return LoginForm;
         }(Serenity.PrefixedContext));
-        LoginForm.formKey = 'Membership.Login';
         Membership.LoginForm = LoginForm;
         [['Username', function () { return Serenity.StringEditor; }], ['Password', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(LoginForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
@@ -2727,9 +2727,9 @@ var CoopShop;
             function ResetPasswordForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ResetPasswordForm.formKey = 'Membership.ResetPassword';
             return ResetPasswordForm;
         }(Serenity.PrefixedContext));
-        ResetPasswordForm.formKey = 'Membership.ResetPassword';
         Membership.ResetPasswordForm = ResetPasswordForm;
         [['NewPassword', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(ResetPasswordForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
@@ -2743,9 +2743,9 @@ var CoopShop;
             function SignUpForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            SignUpForm.formKey = 'Membership.SignUp';
             return SignUpForm;
         }(Serenity.PrefixedContext));
-        SignUpForm.formKey = 'Membership.SignUp';
         Membership.SignUpForm = SignUpForm;
         [['DisplayName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['ConfirmEmail', function () { return Serenity.EmailEditor; }], ['Password', function () { return Serenity.PasswordEditor; }], ['ConfirmPassword', function () { return Serenity.PasswordEditor; }]].forEach(function (x) { return Object.defineProperty(SignUpForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
@@ -2759,9 +2759,9 @@ var CoopShop;
             function BusinessUnitForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            BusinessUnitForm.formKey = 'Organization.BusinessUnit';
             return BusinessUnitForm;
         }(Serenity.PrefixedContext));
-        BusinessUnitForm.formKey = 'Organization.BusinessUnit';
         Organization.BusinessUnitForm = BusinessUnitForm;
         [['Name', function () { return Serenity.StringEditor; }], ['ParentUnitId', function () { return Organization.BusinessUnitEditor; }]].forEach(function (x) { return Object.defineProperty(BusinessUnitForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
@@ -2827,9 +2827,9 @@ var CoopShop;
             function ContactForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ContactForm.formKey = 'Organization.Contact';
             return ContactForm;
         }(Serenity.PrefixedContext));
-        ContactForm.formKey = 'Organization.Contact';
         Organization.ContactForm = ContactForm;
         [['Title', function () { return Serenity.StringEditor; }], ['FirstName', function () { return Serenity.StringEditor; }], ['LastName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.EmailEditor; }], ['IdentityNo', function () { return Serenity.StringEditor; }], ['UserId', function () { return Serenity.LookupEditor; }]].forEach(function (x) { return Object.defineProperty(ContactForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
@@ -2918,11 +2918,11 @@ var CoopShop;
             LanguageDialog.prototype.getLocalTextPrefix = function () { return Administration.LanguageRow.localTextPrefix; };
             LanguageDialog.prototype.getNameProperty = function () { return Administration.LanguageRow.nameProperty; };
             LanguageDialog.prototype.getService = function () { return Administration.LanguageService.baseUrl; };
+            LanguageDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], LanguageDialog);
             return LanguageDialog;
         }(Serenity.EntityDialog));
-        LanguageDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], LanguageDialog);
         Administration.LanguageDialog = LanguageDialog;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -2943,11 +2943,11 @@ var CoopShop;
             LanguageGrid.prototype.getDefaultSortBy = function () {
                 return [Administration.LanguageRow.Fields.LanguageName];
             };
+            LanguageGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], LanguageGrid);
             return LanguageGrid;
         }(Serenity.EntityGrid));
-        LanguageGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], LanguageGrid);
         Administration.LanguageGrid = LanguageGrid;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -2987,11 +2987,11 @@ var CoopShop;
                 _super.prototype.updateInterface.call(this);
                 this.toolbar.findButton("edit-permissions-button").toggleClass("disabled", this.isNewOrDeleted());
             };
+            RoleDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RoleDialog);
             return RoleDialog;
         }(Serenity.EntityDialog));
-        RoleDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RoleDialog);
         Administration.RoleDialog = RoleDialog;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3012,11 +3012,11 @@ var CoopShop;
             RoleGrid.prototype.getDefaultSortBy = function () {
                 return [Administration.RoleRow.Fields.RoleName];
             };
+            RoleGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RoleGrid);
             return RoleGrid;
         }(Serenity.EntityGrid));
-        RoleGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RoleGrid);
         Administration.RoleGrid = RoleGrid;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3069,11 +3069,11 @@ var CoopShop;
             RolePermissionDialog.prototype.getTemplate = function () {
                 return '<div id="~_Permissions"></div>';
             };
+            RolePermissionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RolePermissionDialog);
             return RolePermissionDialog;
         }(Serenity.TemplatedDialog));
-        RolePermissionDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RolePermissionDialog);
         Administration.RolePermissionDialog = RolePermissionDialog;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3325,11 +3325,11 @@ var CoopShop;
             TranslationGrid.prototype.usePager = function () {
                 return false;
             };
+            TranslationGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TranslationGrid);
             return TranslationGrid;
         }(Serenity.EntityGrid));
-        TranslationGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TranslationGrid);
         Administration.TranslationGrid = TranslationGrid;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3398,11 +3398,11 @@ var CoopShop;
                 this.form.PasswordConfirm.element.toggleClass('required', this.isNew())
                     .closest('.field').find('sup').toggle(this.isNew());
             };
+            UserDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserDialog);
             return UserDialog;
         }(Serenity.EntityDialog));
-        UserDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserDialog);
         Administration.UserDialog = UserDialog;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3424,11 +3424,11 @@ var CoopShop;
             UserGrid.prototype.getDefaultSortBy = function () {
                 return [Administration.UserRow.Fields.Username];
             };
+            UserGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserGrid);
             return UserGrid;
         }(Serenity.EntityGrid));
-        UserGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserGrid);
         Administration.UserGrid = UserGrid;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3760,11 +3760,11 @@ var CoopShop;
                 enumerable: true,
                 configurable: true
             });
+            PermissionCheckEditor = __decorate([
+                Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue])
+            ], PermissionCheckEditor);
             return PermissionCheckEditor;
         }(Serenity.DataGrid));
-        PermissionCheckEditor = __decorate([
-            Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue])
-        ], PermissionCheckEditor);
         Administration.PermissionCheckEditor = PermissionCheckEditor;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3824,11 +3824,11 @@ var CoopShop;
             UserPermissionDialog.prototype.getTemplate = function () {
                 return '<div id="~_Permissions"></div>';
             };
+            UserPermissionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserPermissionDialog);
             return UserPermissionDialog;
         }(Serenity.TemplatedDialog));
-        UserPermissionDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserPermissionDialog);
         Administration.UserPermissionDialog = UserPermissionDialog;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3864,11 +3864,11 @@ var CoopShop;
                         Select2.util.stripDiacritics(item.text || '')
                             .toUpperCase().indexOf(this.searchText) >= 0);
             };
+            RoleCheckEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], RoleCheckEditor);
             return RoleCheckEditor;
         }(Serenity.CheckTreeEditor));
-        RoleCheckEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], RoleCheckEditor);
         Administration.RoleCheckEditor = RoleCheckEditor;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3912,11 +3912,11 @@ var CoopShop;
             UserRoleDialog.prototype.getTemplate = function () {
                 return "<div id='~_Roles'></div>";
             };
+            UserRoleDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UserRoleDialog);
             return UserRoleDialog;
         }(Serenity.TemplatedDialog));
-        UserRoleDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], UserRoleDialog);
         Administration.UserRoleDialog = UserRoleDialog;
     })(Administration = CoopShop.Administration || (CoopShop.Administration = {}));
 })(CoopShop || (CoopShop = {}));
@@ -3924,11 +3924,12 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ChartInDialog = ChartInDialog_1 = (function (_super) {
+        var ChartInDialog = (function (_super) {
             __extends(ChartInDialog, _super);
             function ChartInDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
             }
+            ChartInDialog_1 = ChartInDialog;
             ChartInDialog.initializePage = function () {
                 $(function () {
                     $('#LaunchDialogButton').click(function (e) {
@@ -3962,15 +3963,15 @@ var CoopShop;
                 opt.title = 'Orders by Shipper';
                 return opt;
             };
+            ChartInDialog = ChartInDialog_1 = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.resizable(),
+                Serenity.Decorators.maximizable()
+            ], ChartInDialog);
             return ChartInDialog;
+            var ChartInDialog_1;
         }(Serenity.TemplatedDialog));
-        ChartInDialog = ChartInDialog_1 = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.resizable(),
-            Serenity.Decorators.maximizable()
-        ], ChartInDialog);
         BasicSamples.ChartInDialog = ChartInDialog;
-        var ChartInDialog_1;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -4054,12 +4055,12 @@ var CoopShop;
                 clone.UnitsOnOrder = 0;
                 return clone;
             };
+            ProductDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.maximizable()
+            ], ProductDialog);
             return ProductDialog;
         }(Serenity.EntityDialog));
-        ProductDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.maximizable()
-        ], ProductDialog);
         DataShop.ProductDialog = ProductDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4098,12 +4099,12 @@ var CoopShop;
                 clone.UnitsOnOrder = 0;
                 return clone;
             };
+            CloneableEntityDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.maximizable()
+            ], CloneableEntityDialog);
             return CloneableEntityDialog;
         }(CoopShop.DataShop.ProductDialog));
-        CloneableEntityDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.maximizable()
-        ], CloneableEntityDialog);
         BasicSamples.CloneableEntityDialog = CloneableEntityDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4430,12 +4431,12 @@ var CoopShop;
                 slickRemoteViewOptions.rowsPerPage = 2500;
                 return slickRemoteViewOptions;
             };
+            ProductGrid = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.filterable()
+            ], ProductGrid);
             return ProductGrid;
         }(Serenity.EntityGrid));
-        ProductGrid = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.filterable()
-        ], ProductGrid);
         DataShop.ProductGrid = ProductGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4453,11 +4454,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             CloneableEntityGrid.prototype.getDialogType = function () { return BasicSamples.CloneableEntityDialog; };
+            CloneableEntityGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CloneableEntityGrid);
             return CloneableEntityGrid;
         }(CoopShop.DataShop.ProductGrid));
-        CloneableEntityGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CloneableEntityGrid);
         BasicSamples.CloneableEntityGrid = CloneableEntityGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4590,12 +4591,12 @@ var CoopShop;
                     CustomerID: eq ? eq.CustomerID : null
                 });
             };
+            OrderGrid = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.filterable()
+            ], OrderGrid);
             return OrderGrid;
         }(Serenity.EntityGrid));
-        OrderGrid = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.filterable()
-        ], OrderGrid);
         DataShop.OrderGrid = OrderGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4674,11 +4675,11 @@ var CoopShop;
                 });
                 return buttons;
             };
+            DefaultValuesInNewGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DefaultValuesInNewGrid);
             return DefaultValuesInNewGrid;
         }(CoopShop.DataShop.OrderGrid));
-        DefaultValuesInNewGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], DefaultValuesInNewGrid);
         BasicSamples.DefaultValuesInNewGrid = DefaultValuesInNewGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4844,12 +4845,12 @@ var CoopShop;
                 this.element.find('.add-button').toggleClass('disabled', this.isOrderClosed);
                 //this.toolbar.findButton('export-pdf-button').toggle(this.isEditMode());
             };
+            OrderDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
+            ], OrderDialog);
             return OrderDialog;
         }(Serenity.EntityDialog));
-        OrderDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.panel()
-        ], OrderDialog);
         DataShop.OrderDialog = OrderDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4874,11 +4875,11 @@ var CoopShop;
             EntityDialogAsPanel.prototype.onSaveSuccess = function (response) {
                 this.showSaveSuccessMessage(response);
             };
+            EntityDialogAsPanel = __decorate([
+                Serenity.Decorators.panel()
+            ], EntityDialogAsPanel);
             return EntityDialogAsPanel;
         }(CoopShop.DataShop.OrderDialog));
-        EntityDialogAsPanel = __decorate([
-            Serenity.Decorators.panel()
-        ], EntityDialogAsPanel);
         BasicSamples.EntityDialogAsPanel = EntityDialogAsPanel;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4898,11 +4899,11 @@ var CoopShop;
             CategoryDialog.prototype.getLocalTextPrefix = function () { return DataShop.CategoryRow.localTextPrefix; };
             CategoryDialog.prototype.getNameProperty = function () { return DataShop.CategoryRow.nameProperty; };
             CategoryDialog.prototype.getService = function () { return DataShop.CategoryService.baseUrl; };
+            CategoryDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CategoryDialog);
             return CategoryDialog;
         }(Serenity.EntityDialog));
-        CategoryDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CategoryDialog);
         DataShop.CategoryDialog = CategoryDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4936,11 +4937,11 @@ var CoopShop;
                     });
                 }
             };
+            GetInsertedRecordIdDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GetInsertedRecordIdDialog);
             return GetInsertedRecordIdDialog;
         }(CoopShop.DataShop.CategoryDialog));
-        GetInsertedRecordIdDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], GetInsertedRecordIdDialog);
         BasicSamples.GetInsertedRecordIdDialog = GetInsertedRecordIdDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4958,11 +4959,11 @@ var CoopShop;
             CategoryGrid.prototype.getIdProperty = function () { return DataShop.CategoryRow.idProperty; };
             CategoryGrid.prototype.getLocalTextPrefix = function () { return DataShop.CategoryRow.localTextPrefix; };
             CategoryGrid.prototype.getService = function () { return DataShop.CategoryService.baseUrl; };
+            CategoryGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CategoryGrid);
             return CategoryGrid;
         }(Serenity.EntityGrid));
-        CategoryGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CategoryGrid);
         DataShop.CategoryGrid = CategoryGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -4980,11 +4981,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             GetInsertedRecordIdGrid.prototype.getDialogType = function () { return BasicSamples.GetInsertedRecordIdDialog; };
+            GetInsertedRecordIdGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GetInsertedRecordIdGrid);
             return GetInsertedRecordIdGrid;
         }(CoopShop.DataShop.CategoryGrid));
-        GetInsertedRecordIdGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], GetInsertedRecordIdGrid);
         BasicSamples.GetInsertedRecordIdGrid = GetInsertedRecordIdGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5003,11 +5004,11 @@ var CoopShop;
             function MultiColumnResponsiveDialog() {
                 return _super.call(this) || this;
             }
+            MultiColumnResponsiveDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MultiColumnResponsiveDialog);
             return MultiColumnResponsiveDialog;
         }(CoopShop.DataShop.OrderDialog));
-        MultiColumnResponsiveDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MultiColumnResponsiveDialog);
         BasicSamples.MultiColumnResponsiveDialog = MultiColumnResponsiveDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5025,11 +5026,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             MultiColumnResponsiveGrid.prototype.getDialogType = function () { return BasicSamples.MultiColumnResponsiveDialog; };
+            MultiColumnResponsiveGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MultiColumnResponsiveGrid);
             return MultiColumnResponsiveGrid;
         }(CoopShop.DataShop.OrderGrid));
-        MultiColumnResponsiveGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MultiColumnResponsiveGrid);
         BasicSamples.MultiColumnResponsiveGrid = MultiColumnResponsiveGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5126,11 +5127,11 @@ var CoopShop;
                 _super.prototype.loadEntity.call(this, entity);
                 Serenity.TabsExtensions.setDisabled(this.tabs, 'Customer', !this.getCustomerID());
             };
+            OtherFormInTabDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OtherFormInTabDialog);
             return OtherFormInTabDialog;
         }(CoopShop.DataShop.OrderDialog));
-        OtherFormInTabDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], OtherFormInTabDialog);
         BasicSamples.OtherFormInTabDialog = OtherFormInTabDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5148,11 +5149,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             OtherFormInTabGrid.prototype.getDialogType = function () { return BasicSamples.OtherFormInTabDialog; };
+            OtherFormInTabGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OtherFormInTabGrid);
             return OtherFormInTabGrid;
         }(CoopShop.DataShop.OrderGrid));
-        OtherFormInTabGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], OtherFormInTabGrid);
         BasicSamples.OtherFormInTabGrid = OtherFormInTabGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5271,11 +5272,11 @@ var CoopShop;
             OtherFormOneBarDialog.prototype.save = function (callback) {
                 this.saveAll(callback);
             };
+            OtherFormOneBarDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OtherFormOneBarDialog);
             return OtherFormOneBarDialog;
         }(CoopShop.DataShop.OrderDialog));
-        OtherFormOneBarDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], OtherFormOneBarDialog);
         BasicSamples.OtherFormOneBarDialog = OtherFormOneBarDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5293,11 +5294,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             OtherFormInTabOneBarGrid.prototype.getDialogType = function () { return BasicSamples.OtherFormOneBarDialog; };
+            OtherFormInTabOneBarGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OtherFormInTabOneBarGrid);
             return OtherFormInTabOneBarGrid;
         }(CoopShop.DataShop.OrderGrid));
-        OtherFormInTabOneBarGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], OtherFormInTabOneBarGrid);
         BasicSamples.OtherFormInTabOneBarGrid = OtherFormInTabOneBarGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5355,11 +5356,11 @@ var CoopShop;
             PopulateLinkedDataDialog.prototype.getCssClass = function () {
                 return _super.prototype.getCssClass.call(this) + " s-OrderDialog s-DataShop-OrderDialog";
             };
+            PopulateLinkedDataDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PopulateLinkedDataDialog);
             return PopulateLinkedDataDialog;
         }(Serenity.EntityDialog));
-        PopulateLinkedDataDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], PopulateLinkedDataDialog);
         BasicSamples.PopulateLinkedDataDialog = PopulateLinkedDataDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5377,11 +5378,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             PopulateLinkedDataGrid.prototype.getDialogType = function () { return BasicSamples.PopulateLinkedDataDialog; };
+            PopulateLinkedDataGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PopulateLinkedDataGrid);
             return PopulateLinkedDataGrid;
         }(CoopShop.DataShop.OrderGrid));
-        PopulateLinkedDataGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], PopulateLinkedDataGrid);
         BasicSamples.PopulateLinkedDataGrid = PopulateLinkedDataGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5404,11 +5405,11 @@ var CoopShop;
             SupplierDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
+            SupplierDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SupplierDialog);
             return SupplierDialog;
         }(Serenity.EntityDialog));
-        SupplierDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], SupplierDialog);
         DataShop.SupplierDialog = SupplierDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5504,11 +5505,11 @@ var CoopShop;
                 // 
                 // this.dialogTitle = 'View Supplier (' + this.getEntityNameFieldValue() + ')';
             };
+            ReadOnlyDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ReadOnlyDialog);
             return ReadOnlyDialog;
         }(CoopShop.DataShop.SupplierDialog));
-        ReadOnlyDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ReadOnlyDialog);
         BasicSamples.ReadOnlyDialog = ReadOnlyDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5526,11 +5527,11 @@ var CoopShop;
             SupplierGrid.prototype.getIdProperty = function () { return DataShop.SupplierRow.idProperty; };
             SupplierGrid.prototype.getLocalTextPrefix = function () { return DataShop.SupplierRow.localTextPrefix; };
             SupplierGrid.prototype.getService = function () { return DataShop.SupplierService.baseUrl; };
+            SupplierGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SupplierGrid);
             return SupplierGrid;
         }(Serenity.EntityGrid));
-        SupplierGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], SupplierGrid);
         DataShop.SupplierGrid = SupplierGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5556,11 +5557,11 @@ var CoopShop;
                 buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
                 return buttons;
             };
+            ReadOnlyGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ReadOnlyGrid);
             return ReadOnlyGrid;
         }(CoopShop.DataShop.SupplierGrid));
-        ReadOnlyGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ReadOnlyGrid);
         BasicSamples.ReadOnlyGrid = ReadOnlyGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5581,13 +5582,13 @@ var CoopShop;
             ResponsiveDialog.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderRow.localTextPrefix; };
             ResponsiveDialog.prototype.getNameProperty = function () { return CoopShop.DataShop.OrderRow.nameProperty; };
             ResponsiveDialog.prototype.getService = function () { return CoopShop.DataShop.OrderService.baseUrl; };
+            ResponsiveDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive(),
+                Serenity.Decorators.maximizable()
+            ], ResponsiveDialog);
             return ResponsiveDialog;
         }(Serenity.EntityDialog));
-        ResponsiveDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive(),
-            Serenity.Decorators.maximizable()
-        ], ResponsiveDialog);
         BasicSamples.ResponsiveDialog = ResponsiveDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5605,11 +5606,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             ResponsiveGrid.prototype.getDialogType = function () { return BasicSamples.ResponsiveDialog; };
+            ResponsiveGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResponsiveGrid);
             return ResponsiveGrid;
         }(CoopShop.DataShop.OrderGrid));
-        ResponsiveGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ResponsiveGrid);
         BasicSamples.ResponsiveGrid = ResponsiveGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5656,12 +5657,12 @@ var CoopShop;
                 _super.prototype.onSaveSuccess.call(this, response);
                 Q.reloadLookup('DataShop.Customer');
             };
+            CustomerDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
+            ], CustomerDialog);
             return CustomerDialog;
         }(Serenity.EntityDialog));
-        CustomerDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.panel()
-        ], CustomerDialog);
         DataShop.CustomerDialog = CustomerDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5705,11 +5706,11 @@ var CoopShop;
                     });
                 }
             };
+            SerialAutoNumberDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SerialAutoNumberDialog);
             return SerialAutoNumberDialog;
         }(CoopShop.DataShop.CustomerDialog));
-        SerialAutoNumberDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], SerialAutoNumberDialog);
         BasicSamples.SerialAutoNumberDialog = SerialAutoNumberDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5742,12 +5743,12 @@ var CoopShop;
                 }));
                 return buttons;
             };
+            CustomerGrid = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.filterable()
+            ], CustomerGrid);
             return CustomerGrid;
         }(Serenity.EntityGrid));
-        CustomerGrid = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.filterable()
-        ], CustomerGrid);
         DataShop.CustomerGrid = CustomerGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5765,11 +5766,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             SerialAutoNumberGrid.prototype.getDialogType = function () { return BasicSamples.SerialAutoNumberDialog; };
+            SerialAutoNumberGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SerialAutoNumberGrid);
             return SerialAutoNumberGrid;
         }(CoopShop.DataShop.CustomerGrid));
-        SerialAutoNumberGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], SerialAutoNumberGrid);
         BasicSamples.SerialAutoNumberGrid = SerialAutoNumberGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5801,11 +5802,11 @@ var CoopShop;
             GridEditorDialog.prototype.deleteHandler = function (options, callback) {
                 this.onDelete && this.onDelete(options, callback);
             };
+            GridEditorDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GridEditorDialog);
             return GridEditorDialog;
         }(Serenity.EntityDialog));
-        GridEditorDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], GridEditorDialog);
         Common.GridEditorDialog = GridEditorDialog;
     })(Common = CoopShop.Common || (CoopShop.Common = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5843,11 +5844,11 @@ var CoopShop;
                 this.toolbar.findButton('apply-changes-button').hide();
                 this.toolbar.findButton('save-and-close-button').hide();
             };
+            ChangingLookupTextDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ChangingLookupTextDialog);
             return ChangingLookupTextDialog;
         }(CoopShop.Common.GridEditorDialog));
-        ChangingLookupTextDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ChangingLookupTextDialog);
         BasicSamples.ChangingLookupTextDialog = ChangingLookupTextDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5874,11 +5875,11 @@ var CoopShop;
                     ', ' + (item.SupplierCompanyName || 'Unknown') +
                     ')';
             };
+            ChangingLookupTextEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], ChangingLookupTextEditor);
             return ChangingLookupTextEditor;
         }(Serenity.LookupEditorBase));
-        ChangingLookupTextEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], ChangingLookupTextEditor);
         BasicSamples.ChangingLookupTextEditor = ChangingLookupTextEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -5890,8 +5891,17 @@ var CoopShop;
         //import Select2Extensions = Serenity.Select2Extensions;
         var OrderDetailDialog = (function (_super) {
             __extends(OrderDetailDialog, _super);
+            //note needed        validateBeforeSave(): boolean { return (this.savedItem = this.validateForm()); }
+            // no more needed -> in order to add a new product window...
+            //destroy(): void {
+            //    if (this.savedItem && this.isNew())
+            //        $(".s-OrderDetailsEditor").change();
+            //}
             function OrderDetailDialog() {
                 var _this = _super.call(this) || this;
+                _this.beforeItemDeleted = false;
+                _this.savedItem = false;
+                _this.savedItemSuccess = false;
                 _this.form = new DataShop.OrderDetailForm(_this.idPrefix);
                 _this.form.ProductID.changeSelect2(function (e) {
                     _this.updateProduct();
@@ -5927,14 +5937,50 @@ var CoopShop;
                 var _this = this;
                 _super.prototype.afterLoadEntity.call(this);
                 this.updateProduct();
-                this.element.bind('dialogclose', function () { return _this.savedItem = false; }); // before 'click' on saveCloseButton
-                this.saveAndCloseButton.bind("click", function () { return _this.savedItem = true; }); // after 'dialogClose'
+                this.saveAndCloseButton.bind("click", function () {
+                    console.log("click saveandclose savedItem: " + _this.savedItem + " - savedItemSuccess : " + _this.savedItemSuccess);
+                    if (_this.savedItem && _this.savedItemSuccess) {
+                        // clear all the fields for the new product
+                        _this.form.ProductID.value = "";
+                        _this.updateProduct();
+                        _this.form.InternalRef.element.focus();
+                    }
+                    _this.savedItem = false;
+                    _this.savedItemSuccess = false;
+                }); // after 'dialogClose'
                 //this.changePrice();
             };
-            //note needed        validateBeforeSave(): boolean { return (this.savedItem = this.validateForm()); }
-            OrderDetailDialog.prototype.destroy = function () {
-                if (this.savedItem && this.isNew())
-                    $(".s-OrderDetailsEditor").change();
+            OrderDetailDialog.prototype.deleteHandler = function (options, callback) {
+                this.beforeItemDeleted = true;
+                _super.prototype.deleteHandler.call(this, options, callback);
+            };
+            OrderDetailDialog.prototype.saveHandler = function (options, callback) {
+                console.log("saveHandler");
+                this.savedItem = true;
+                _super.prototype.saveHandler.call(this, options, callback);
+            };
+            OrderDetailDialog.prototype.getDialogOptions = function () {
+                var _this = this;
+                var opt = _super.prototype.getDialogOptions.call(this);
+                opt.beforeClose = function (event, ui) {
+                    var itemBeingDeleted = _this.beforeItemDeleted;
+                    if (_this.beforeItemDeleted)
+                        _this.beforeItemDeleted = false;
+                    if (!_this.savedItem) {
+                        if (!itemBeingDeleted && _this.form.ProductID.value !== "") {
+                            Q.confirm("Quitter l'ajout d'un produit SANS SAUVEGARDER CE PRODUIT ?", function () { _this.onDialogClose(); }, { modal: true });
+                            return false;
+                        }
+                    }
+                    else {
+                        if (_this.isNew()) {
+                            _this.savedItemSuccess = true;
+                            return false;
+                        }
+                    }
+                    return true;
+                };
+                return opt;
             };
             OrderDetailDialog.prototype.updateProduct = function () {
                 var productID = Q.toId(this.form.ProductID.value);
@@ -5947,8 +5993,16 @@ var CoopShop;
                     this.form.QuantitySymbol.value = currentProduct.QuantitySymbol.toString();
                     this.changePrice();
                 }
-                else if (this.form.InternalRef.value !== "")
-                    this.form.InternalRef.value = "";
+                else {
+                    if (this.form.InternalRef.value !== "")
+                        this.form.InternalRef.value = "";
+                    this.form.ProductID.value = "";
+                    this.form.Quantity.value = 1;
+                    this.form.QuantitySymbol.value = null;
+                    this.form.Discount.value = null;
+                    this.form.QuantityPerUnitPrice.value = null;
+                    this.form.UnitPrice.value = null;
+                }
             };
             OrderDetailDialog.prototype.changePrice = function () {
                 if (this.form != null) {
@@ -5961,11 +6015,11 @@ var CoopShop;
                     }
                 }
             };
+            OrderDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrderDetailDialog);
             return OrderDetailDialog;
         }(CoopShop.Common.GridEditorDialog));
-        OrderDetailDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], OrderDetailDialog);
         DataShop.OrderDetailDialog = OrderDetailDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6003,11 +6057,11 @@ var CoopShop;
                 // so can't be filtered and you'll end up with an empty product list.
                 this.form.ProductID.cascadeValue = this.categoryID;
             };
+            FilteredLookupOrderDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], FilteredLookupOrderDetailDialog);
             return FilteredLookupOrderDetailDialog;
         }(CoopShop.DataShop.OrderDetailDialog));
-        FilteredLookupOrderDetailDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], FilteredLookupOrderDetailDialog);
         BasicSamples.FilteredLookupOrderDetailDialog = FilteredLookupOrderDetailDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6139,13 +6193,13 @@ var CoopShop;
             };
             GridEditorBase.prototype.createQuickSearchInput = function () {
             };
+            GridEditorBase = __decorate([
+                Serenity.Decorators.registerClass([Serenity.IGetEditValue, Serenity.ISetEditValue]),
+                Serenity.Decorators.editor(),
+                Serenity.Decorators.element("<div/>")
+            ], GridEditorBase);
             return GridEditorBase;
         }(Serenity.EntityGrid));
-        GridEditorBase = __decorate([
-            Serenity.Decorators.registerClass([Serenity.IGetEditValue, Serenity.ISetEditValue]),
-            Serenity.Decorators.editor(),
-            Serenity.Decorators.element("<div/>")
-        ], GridEditorBase);
         Common.GridEditorBase = GridEditorBase;
     })(Common = CoopShop.Common || (CoopShop.Common = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6215,11 +6269,11 @@ var CoopShop;
                 row.QuantitySymbol = DataShop.ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
                 return true;
             };
+            OrderDetailsEditor = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OrderDetailsEditor);
             return OrderDetailsEditor;
         }(CoopShop.Common.GridEditorBase));
-        OrderDetailsEditor = __decorate([
-            Serenity.Decorators.registerClass()
-        ], OrderDetailsEditor);
         DataShop.OrderDetailsEditor = OrderDetailsEditor;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6247,11 +6301,11 @@ var CoopShop;
                 // passing category ID from grid editor to detail dialog
                 dialog.categoryID = this.categoryID;
             };
+            FilteredLookupDetailEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], FilteredLookupDetailEditor);
             return FilteredLookupDetailEditor;
         }(CoopShop.DataShop.OrderDetailsEditor));
-        FilteredLookupDetailEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], FilteredLookupDetailEditor);
         BasicSamples.FilteredLookupDetailEditor = FilteredLookupDetailEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6277,11 +6331,11 @@ var CoopShop;
             FilteredLookupInDetailDialog.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.OrderRow.localTextPrefix; };
             FilteredLookupInDetailDialog.prototype.getNameProperty = function () { return CoopShop.DataShop.OrderRow.nameProperty; };
             FilteredLookupInDetailDialog.prototype.getService = function () { return CoopShop.DataShop.OrderService.baseUrl; };
+            FilteredLookupInDetailDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], FilteredLookupInDetailDialog);
             return FilteredLookupInDetailDialog;
         }(Serenity.EntityDialog));
-        FilteredLookupInDetailDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], FilteredLookupInDetailDialog);
         BasicSamples.FilteredLookupInDetailDialog = FilteredLookupInDetailDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6299,11 +6353,11 @@ var CoopShop;
                 return _super.call(this, container) || this;
             }
             FilteredLookupInDetailGrid.prototype.getDialogType = function () { return BasicSamples.FilteredLookupInDetailDialog; };
+            FilteredLookupInDetailGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], FilteredLookupInDetailGrid);
             return FilteredLookupInDetailGrid;
         }(CoopShop.DataShop.OrderGrid));
-        FilteredLookupInDetailGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], FilteredLookupInDetailGrid);
         BasicSamples.FilteredLookupInDetailGrid = FilteredLookupInDetailGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6322,11 +6376,11 @@ var CoopShop;
                 return _super !== null && _super.apply(this, arguments) || this;
             }
             LookupFilterByMultipleDialog.prototype.getFormKey = function () { return BasicSamples.LookupFilterByMultipleForm.formKey; };
+            LookupFilterByMultipleDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], LookupFilterByMultipleDialog);
             return LookupFilterByMultipleDialog;
         }(CoopShop.DataShop.ProductDialog));
-        LookupFilterByMultipleDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], LookupFilterByMultipleDialog);
         BasicSamples.LookupFilterByMultipleDialog = LookupFilterByMultipleDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6361,11 +6415,11 @@ var CoopShop;
                 // brackets used are important above, NOT ['CategoryName', 'in', ['Produce', 'Seafood']]
                 return true;
             };
+            LookupFilterByMultipleGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], LookupFilterByMultipleGrid);
             return LookupFilterByMultipleGrid;
         }(CoopShop.DataShop.ProductGrid));
-        LookupFilterByMultipleGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], LookupFilterByMultipleGrid);
         BasicSamples.LookupFilterByMultipleGrid = LookupFilterByMultipleGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6406,11 +6460,11 @@ var CoopShop;
                     return x.CategoryName === 'Produce' || x.CategoryName === 'Seafood';
                 });
             };
+            ProduceSeafoodCategoryEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], ProduceSeafoodCategoryEditor);
             return ProduceSeafoodCategoryEditor;
         }(Serenity.LookupEditorBase));
-        ProduceSeafoodCategoryEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], ProduceSeafoodCategoryEditor);
         BasicSamples.ProduceSeafoodCategoryEditor = ProduceSeafoodCategoryEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6430,11 +6484,11 @@ var CoopShop;
                 return _this;
             }
             HardcodedValuesDialog.prototype.getFormKey = function () { return BasicSamples.HardcodedValuesForm.formKey; };
+            HardcodedValuesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], HardcodedValuesDialog);
             return HardcodedValuesDialog;
         }(Serenity.PropertyDialog));
-        HardcodedValuesDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], HardcodedValuesDialog);
         BasicSamples.HardcodedValuesDialog = HardcodedValuesDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6469,11 +6523,11 @@ var CoopShop;
                 });
                 return _this;
             }
+            HardcodedValuesEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], HardcodedValuesEditor);
             return HardcodedValuesEditor;
         }(Serenity.Select2Editor));
-        HardcodedValuesEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], HardcodedValuesEditor);
         BasicSamples.HardcodedValuesEditor = HardcodedValuesEditor;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6514,12 +6568,12 @@ var CoopShop;
                 this.updateElementContent();
             }
         };
+        StaticTextBlock = __decorate([
+            Serenity.Decorators.element("<div/>"),
+            Serenity.Decorators.registerEditor([Serenity.ISetEditValue])
+        ], StaticTextBlock);
         return StaticTextBlock;
     }(Serenity.Widget));
-    StaticTextBlock = __decorate([
-        Serenity.Decorators.element("<div/>"),
-        Serenity.Decorators.registerEditor([Serenity.ISetEditValue])
-    ], StaticTextBlock);
     CoopShop.StaticTextBlock = StaticTextBlock;
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -6549,11 +6603,11 @@ var CoopShop;
                 opt.width = 650;
                 return opt;
             };
+            StaticTextBlockDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StaticTextBlockDialog);
             return StaticTextBlockDialog;
         }(Serenity.PropertyDialog));
-        StaticTextBlockDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], StaticTextBlockDialog);
         BasicSamples.StaticTextBlockDialog = StaticTextBlockDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6801,11 +6855,11 @@ var CoopShop;
                 opt.rowsPerPage = 2500;
                 return opt;
             };
+            CancellableBulkActionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CancellableBulkActionGrid);
             return CancellableBulkActionGrid;
         }(CoopShop.DataShop.OrderGrid));
-        CancellableBulkActionGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CancellableBulkActionGrid);
         BasicSamples.CancellableBulkActionGrid = CancellableBulkActionGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6859,11 +6913,11 @@ var CoopShop;
                     klass += " low-price";
                 return Q.trimToNull(klass);
             };
+            ConditionalFormattingGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ConditionalFormattingGrid);
             return ConditionalFormattingGrid;
         }(Serenity.EntityGrid));
-        ConditionalFormattingGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ConditionalFormattingGrid);
         BasicSamples.ConditionalFormattingGrid = ConditionalFormattingGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6973,11 +7027,11 @@ var CoopShop;
                     _super.prototype.editItem.call(this, entityOrId);
                 }
             };
+            CustomLinksInGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CustomLinksInGrid);
             return CustomLinksInGrid;
         }(CoopShop.DataShop.OrderGrid));
-        CustomLinksInGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CustomLinksInGrid);
         BasicSamples.CustomLinksInGrid = CustomLinksInGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -6997,12 +7051,12 @@ var CoopShop;
             DragDropSampleDialog.prototype.getLocalTextPrefix = function () { return BasicSamples.DragDropSampleRow.localTextPrefix; };
             DragDropSampleDialog.prototype.getNameProperty = function () { return BasicSamples.DragDropSampleRow.nameProperty; };
             DragDropSampleDialog.prototype.getService = function () { return BasicSamples.DragDropSampleService.baseUrl; };
+            DragDropSampleDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], DragDropSampleDialog);
             return DragDropSampleDialog;
         }(Serenity.EntityDialog));
-        DragDropSampleDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], DragDropSampleDialog);
         BasicSamples.DragDropSampleDialog = DragDropSampleDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7193,11 +7247,11 @@ var CoopShop;
             DragDropSampleGrid.prototype.usePager = function () {
                 return false;
             };
+            DragDropSampleGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DragDropSampleGrid);
             return DragDropSampleGrid;
         }(Serenity.EntityGrid));
-        DragDropSampleGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], DragDropSampleGrid);
         BasicSamples.DragDropSampleGrid = DragDropSampleGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7220,11 +7274,11 @@ var CoopShop;
             grid.setSelectionModel(new Slick.RowSelectionModel());
             return grid;
         };
+        SelectableEntityGrid = __decorate([
+            Serenity.Decorators.registerClass()
+        ], SelectableEntityGrid);
         return SelectableEntityGrid;
     }(Serenity.EntityGrid));
-    SelectableEntityGrid = __decorate([
-        Serenity.Decorators.registerClass()
-    ], SelectableEntityGrid);
     CoopShop.SelectableEntityGrid = SelectableEntityGrid;
 })(CoopShop || (CoopShop = {}));
 /// <reference path="SelectableEntityGrid.ts" />
@@ -7242,11 +7296,11 @@ var CoopShop;
             RowSelectionGrid.prototype.getIdProperty = function () { return CoopShop.DataShop.SupplierRow.idProperty; };
             RowSelectionGrid.prototype.getLocalTextPrefix = function () { return CoopShop.DataShop.SupplierRow.localTextPrefix; };
             RowSelectionGrid.prototype.getService = function () { return CoopShop.DataShop.SupplierService.baseUrl; };
+            RowSelectionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RowSelectionGrid);
             return RowSelectionGrid;
         }(CoopShop.SelectableEntityGrid));
-        RowSelectionGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RowSelectionGrid);
         BasicSamples.RowSelectionGrid = RowSelectionGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7281,11 +7335,11 @@ var CoopShop;
                 // ['A', '>', 10] (which means string 'A' is greater than 10
                 return true;
             };
+            GridFilteredByCriteria = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GridFilteredByCriteria);
             return GridFilteredByCriteria;
         }(CoopShop.DataShop.ProductGrid));
-        GridFilteredByCriteria = __decorate([
-            Serenity.Decorators.registerClass()
-        ], GridFilteredByCriteria);
         BasicSamples.GridFilteredByCriteria = GridFilteredByCriteria;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7358,11 +7412,11 @@ var CoopShop;
                         onClick: function () { return _this.view.setGrouping([]); }
                     }];
             };
+            GroupingAndSummariesInGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GroupingAndSummariesInGrid);
             return GroupingAndSummariesInGrid;
         }(CoopShop.DataShop.ProductGrid));
-        GroupingAndSummariesInGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], GroupingAndSummariesInGrid);
         BasicSamples.GroupingAndSummariesInGrid = GroupingAndSummariesInGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7424,11 +7478,11 @@ var CoopShop;
                 // find a quick filter widget by its field name
                 this.findQuickFilter(Serenity.LookupEditor, fld.ShipVia).values = ["1", "2"];
             };
+            InitialValuesForQuickFilters = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InitialValuesForQuickFilters);
             return InitialValuesForQuickFilters;
         }(CoopShop.DataShop.OrderGrid));
-        InitialValuesForQuickFilters = __decorate([
-            Serenity.Decorators.registerClass()
-        ], InitialValuesForQuickFilters);
         BasicSamples.InitialValuesForQuickFilters = InitialValuesForQuickFilters;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7504,11 +7558,11 @@ var CoopShop;
                     }
                 }
             };
+            InlineActionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InlineActionGrid);
             return InlineActionGrid;
         }(CoopShop.DataShop.CustomerGrid));
-        InlineActionGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], InlineActionGrid);
         BasicSamples.InlineActionGrid = InlineActionGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7538,17 +7592,17 @@ var CoopShop;
                     column.referencedFields.push(this.fileProperty);
                 }
             };
+            __decorate([
+                Serenity.Decorators.option()
+            ], InlineImageFormatter.prototype, "fileProperty", void 0);
+            __decorate([
+                Serenity.Decorators.option()
+            ], InlineImageFormatter.prototype, "thumb", void 0);
+            InlineImageFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], InlineImageFormatter);
             return InlineImageFormatter;
         }());
-        __decorate([
-            Serenity.Decorators.option()
-        ], InlineImageFormatter.prototype, "fileProperty", void 0);
-        __decorate([
-            Serenity.Decorators.option()
-        ], InlineImageFormatter.prototype, "thumb", void 0);
-        InlineImageFormatter = __decorate([
-            Serenity.Decorators.registerFormatter()
-        ], InlineImageFormatter);
         BasicSamples.InlineImageFormatter = InlineImageFormatter;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7572,11 +7626,11 @@ var CoopShop;
                 opt.rowHeight = 150;
                 return opt;
             };
+            InlineImageInGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InlineImageInGrid);
             return InlineImageInGrid;
         }(Serenity.EntityGrid));
-        InlineImageInGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], InlineImageInGrid);
         BasicSamples.InlineImageInGrid = InlineImageInGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7625,11 +7679,11 @@ var CoopShop;
                     }
                 ];
             };
+            ProductExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductExcelImportDialog);
             return ProductExcelImportDialog;
         }(Serenity.PropertyDialog));
-        ProductExcelImportDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ProductExcelImportDialog);
         BasicSamples.ProductExcelImportDialog = ProductExcelImportDialog;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7666,11 +7720,11 @@ var CoopShop;
                 });
                 return buttons;
             };
+            ProductExcelImportGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductExcelImportGrid);
             return ProductExcelImportGrid;
         }(CoopShop.DataShop.ProductGrid));
-        ProductExcelImportGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ProductExcelImportGrid);
         BasicSamples.ProductExcelImportGrid = ProductExcelImportGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7794,11 +7848,11 @@ var CoopShop;
                 });
                 return filters;
             };
+            QuickFilterCustomization = __decorate([
+                Serenity.Decorators.registerClass()
+            ], QuickFilterCustomization);
             return QuickFilterCustomization;
         }(Serenity.EntityGrid));
-        QuickFilterCustomization = __decorate([
-            Serenity.Decorators.registerClass()
-        ], QuickFilterCustomization);
         BasicSamples.QuickFilterCustomization = QuickFilterCustomization;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7836,11 +7890,11 @@ var CoopShop;
                 buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
                 return buttons;
             };
+            RemovingAddButton = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RemovingAddButton);
             return RemovingAddButton;
         }(CoopShop.DataShop.SupplierGrid));
-        RemovingAddButton = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RemovingAddButton);
         BasicSamples.RemovingAddButton = RemovingAddButton;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7931,11 +7985,11 @@ var CoopShop;
                 filters.push(orderDate);
                 return filters;
             };
+            CustomerGrossSalesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CustomerGrossSalesGrid);
             return CustomerGrossSalesGrid;
         }(Serenity.EntityGrid));
-        CustomerGrossSalesGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CustomerGrossSalesGrid);
         BasicSamples.CustomerGrossSalesGrid = CustomerGrossSalesGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -7973,11 +8027,11 @@ var CoopShop;
             TreeGrid.prototype.usePager = function () {
                 return false;
             };
+            TreeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TreeGrid);
             return TreeGrid;
         }(CoopShop.DataShop.OrderGrid));
-        TreeGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TreeGrid);
         BasicSamples.TreeGrid = TreeGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8014,11 +8068,11 @@ var CoopShop;
             ViewWithoutIDGrid.prototype.getButtons = function () {
                 return [];
             };
+            ViewWithoutIDGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ViewWithoutIDGrid);
             return ViewWithoutIDGrid;
         }(Serenity.EntityGrid));
-        ViewWithoutIDGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ViewWithoutIDGrid);
         BasicSamples.ViewWithoutIDGrid = ViewWithoutIDGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8032,11 +8086,11 @@ var CoopShop;
             function WrappedHeadersGrid(container) {
                 return _super.call(this, container) || this;
             }
+            WrappedHeadersGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], WrappedHeadersGrid);
             return WrappedHeadersGrid;
         }(CoopShop.DataShop.OrderGrid));
-        WrappedHeadersGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], WrappedHeadersGrid);
         BasicSamples.WrappedHeadersGrid = WrappedHeadersGrid;
     })(BasicSamples = CoopShop.BasicSamples || (CoopShop.BasicSamples = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8199,20 +8253,20 @@ var CoopShop;
                 sb += "</select>";
                 return sb;
             };
+            __decorate([
+                Serenity.Decorators.option()
+            ], EnumSelectFormatter.prototype, "enumKey", void 0);
+            __decorate([
+                Serenity.Decorators.option()
+            ], EnumSelectFormatter.prototype, "allowClear", void 0);
+            __decorate([
+                Serenity.Decorators.option()
+            ], EnumSelectFormatter.prototype, "emptyItemText", void 0);
+            EnumSelectFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], EnumSelectFormatter);
             return EnumSelectFormatter;
         }());
-        __decorate([
-            Serenity.Decorators.option()
-        ], EnumSelectFormatter.prototype, "enumKey", void 0);
-        __decorate([
-            Serenity.Decorators.option()
-        ], EnumSelectFormatter.prototype, "allowClear", void 0);
-        __decorate([
-            Serenity.Decorators.option()
-        ], EnumSelectFormatter.prototype, "emptyItemText", void 0);
-        EnumSelectFormatter = __decorate([
-            Serenity.Decorators.registerFormatter()
-        ], EnumSelectFormatter);
         Common.EnumSelectFormatter = EnumSelectFormatter;
     })(Common = CoopShop.Common || (CoopShop.Common = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8825,11 +8879,11 @@ var CoopShop;
             BrandDialog.prototype.getLocalTextPrefix = function () { return DataShop.BrandRow.localTextPrefix; };
             BrandDialog.prototype.getNameProperty = function () { return DataShop.BrandRow.nameProperty; };
             BrandDialog.prototype.getService = function () { return DataShop.BrandService.baseUrl; };
+            BrandDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], BrandDialog);
             return BrandDialog;
         }(Serenity.EntityDialog));
-        BrandDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], BrandDialog);
         DataShop.BrandDialog = BrandDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8847,11 +8901,11 @@ var CoopShop;
             BrandGrid.prototype.getIdProperty = function () { return DataShop.BrandRow.idProperty; };
             BrandGrid.prototype.getLocalTextPrefix = function () { return DataShop.BrandRow.localTextPrefix; };
             BrandGrid.prototype.getService = function () { return DataShop.BrandService.baseUrl; };
+            BrandGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], BrandGrid);
             return BrandGrid;
         }(Serenity.EntityGrid));
-        BrandGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], BrandGrid);
         DataShop.BrandGrid = BrandGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8870,11 +8924,11 @@ var CoopShop;
             CustomerEditor.prototype.getItemText = function (item, lookup) {
                 return _super.prototype.getItemText.call(this, item, lookup) + ' [' + item.CustomerID + ']';
             };
+            CustomerEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], CustomerEditor);
             return CustomerEditor;
         }(Serenity.LookupEditorBase));
-        CustomerEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], CustomerEditor);
         DataShop.CustomerEditor = CustomerEditor;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8892,11 +8946,11 @@ var CoopShop;
                 _super.prototype.updateInterface.call(this);
                 Serenity.EditorUtils.setReadOnly(this.form.CustomerID, true);
             };
+            CustomerOrderDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CustomerOrderDialog);
             return CustomerOrderDialog;
         }(DataShop.OrderDialog));
-        CustomerOrderDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CustomerOrderDialog);
         DataShop.CustomerOrderDialog = CustomerOrderDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8942,11 +8996,11 @@ var CoopShop;
                 enumerable: true,
                 configurable: true
             });
+            CustomerOrdersGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CustomerOrdersGrid);
             return CustomerOrdersGrid;
         }(DataShop.OrderGrid));
-        CustomerOrdersGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], CustomerOrdersGrid);
         DataShop.CustomerOrdersGrid = CustomerOrdersGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8965,11 +9019,11 @@ var CoopShop;
                 var z;
                 return idList.map(function (x) { return ((z = byId[x]) ? z.FullName : x); }).join(", ");
             };
+            EmployeeListFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], EmployeeListFormatter);
             return EmployeeListFormatter;
         }());
-        EmployeeListFormatter = __decorate([
-            Serenity.Decorators.registerFormatter()
-        ], EmployeeListFormatter);
         DataShop.EmployeeListFormatter = EmployeeListFormatter;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -8995,14 +9049,14 @@ var CoopShop;
                 if (this.genderProperty)
                     column.referencedFields.push(this.genderProperty);
             };
+            __decorate([
+                Serenity.Decorators.option()
+            ], EmployeeFormatter.prototype, "genderProperty", void 0);
+            EmployeeFormatter = __decorate([
+                Serenity.Decorators.registerFormatter([Serenity.ISlickFormatter, Serenity.IInitializeColumn])
+            ], EmployeeFormatter);
             return EmployeeFormatter;
         }());
-        __decorate([
-            Serenity.Decorators.option()
-        ], EmployeeFormatter.prototype, "genderProperty", void 0);
-        EmployeeFormatter = __decorate([
-            Serenity.Decorators.registerFormatter([Serenity.ISlickFormatter, Serenity.IInitializeColumn])
-        ], EmployeeFormatter);
         DataShop.EmployeeFormatter = EmployeeFormatter;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9050,11 +9104,11 @@ var CoopShop;
                 enumerable: true,
                 configurable: true
             });
+            NoteDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NoteDialog);
             return NoteDialog;
         }(Serenity.TemplatedDialog));
-        NoteDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], NoteDialog);
         DataShop.NoteDialog = NoteDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9181,12 +9235,12 @@ var CoopShop;
             NotesEditor.prototype.set_isDirty = function (value) {
                 this.isDirty = value;
             };
+            NotesEditor = __decorate([
+                Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue]),
+                Serenity.Decorators.element("<div/>")
+            ], NotesEditor);
             return NotesEditor;
         }(Serenity.TemplatedWidget));
-        NotesEditor = __decorate([
-            Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue]),
-            Serenity.Decorators.element("<div/>")
-        ], NotesEditor);
         DataShop.NotesEditor = NotesEditor;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9200,11 +9254,11 @@ var CoopShop;
             FreightFormatter.prototype.format = function (ctx) {
                 return "<span class='freight-symbol'>" + Q.htmlEncode(ctx.value) + '</span>';
             };
+            FreightFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], FreightFormatter);
             return FreightFormatter;
         }());
-        FreightFormatter = __decorate([
-            Serenity.Decorators.registerFormatter()
-        ], FreightFormatter);
         DataShop.FreightFormatter = FreightFormatter;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9260,11 +9314,11 @@ var CoopShop;
             ProductEditor.prototype.getItemDisabled = function (item, lookup) {
                 return item.Discontinued /* || item.UnitsInStock <= 0*/;
             };
+            ProductEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], ProductEditor);
             return ProductEditor;
         }(Serenity.LookupEditorBase));
-        ProductEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], ProductEditor);
         DataShop.ProductEditor = ProductEditor;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9287,11 +9341,11 @@ var CoopShop;
             RegionDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
+            RegionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionDialog);
             return RegionDialog;
         }(Serenity.EntityDialog));
-        RegionDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RegionDialog);
         DataShop.RegionDialog = RegionDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9309,11 +9363,11 @@ var CoopShop;
             RegionGrid.prototype.getIdProperty = function () { return DataShop.RegionRow.idProperty; };
             RegionGrid.prototype.getLocalTextPrefix = function () { return DataShop.RegionRow.localTextPrefix; };
             RegionGrid.prototype.getService = function () { return DataShop.RegionService.baseUrl; };
+            RegionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionGrid);
             return RegionGrid;
         }(Serenity.EntityGrid));
-        RegionGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], RegionGrid);
         DataShop.RegionGrid = RegionGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9321,7 +9375,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var PhoneEditor = PhoneEditor_1 = (function (_super) {
+        var PhoneEditor = (function (_super) {
             __extends(PhoneEditor, _super);
             function PhoneEditor(input) {
                 var _this = _super.call(this, input) || this;
@@ -9345,6 +9399,7 @@ var CoopShop;
                 });
                 return _this;
             }
+            PhoneEditor_1 = PhoneEditor;
             PhoneEditor.prototype.formatValue = function () {
                 this.element.val(this.getFormattedValue());
             };
@@ -9445,16 +9500,16 @@ var CoopShop;
                 }
                 return true;
             };
+            __decorate([
+                Serenity.Decorators.option()
+            ], PhoneEditor.prototype, "multiple", void 0);
+            PhoneEditor = PhoneEditor_1 = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], PhoneEditor);
             return PhoneEditor;
+            var PhoneEditor_1;
         }(Serenity.StringEditor));
-        __decorate([
-            Serenity.Decorators.option()
-        ], PhoneEditor.prototype, "multiple", void 0);
-        PhoneEditor = PhoneEditor_1 = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], PhoneEditor);
         DataShop.PhoneEditor = PhoneEditor;
-        var PhoneEditor_1;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -9476,11 +9531,11 @@ var CoopShop;
             ShipperDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
+            ShipperDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ShipperDialog);
             return ShipperDialog;
         }(Serenity.EntityDialog));
-        ShipperDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ShipperDialog);
         DataShop.ShipperDialog = ShipperDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9496,11 +9551,11 @@ var CoopShop;
                     Q.replaceAll((ctx.value || '').toString(), ' ', '') +
                     "'>" + Q.htmlEncode(ctx.value) + '</span>';
             };
+            ShipperFormatter = __decorate([
+                Serenity.Decorators.registerFormatter()
+            ], ShipperFormatter);
             return ShipperFormatter;
         }());
-        ShipperFormatter = __decorate([
-            Serenity.Decorators.registerFormatter()
-        ], ShipperFormatter);
         DataShop.ShipperFormatter = ShipperFormatter;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9518,11 +9573,11 @@ var CoopShop;
             ShipperGrid.prototype.getIdProperty = function () { return DataShop.ShipperRow.idProperty; };
             ShipperGrid.prototype.getLocalTextPrefix = function () { return DataShop.ShipperRow.localTextPrefix; };
             ShipperGrid.prototype.getService = function () { return DataShop.ShipperService.baseUrl; };
+            ShipperGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ShipperGrid);
             return ShipperGrid;
         }(Serenity.EntityGrid));
-        ShipperGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ShipperGrid);
         DataShop.ShipperGrid = ShipperGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9545,11 +9600,11 @@ var CoopShop;
             TerritoryDialog.prototype.getLanguages = function () {
                 return CoopShop.LanguageList.getValue();
             };
+            TerritoryDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TerritoryDialog);
             return TerritoryDialog;
         }(Serenity.EntityDialog));
-        TerritoryDialog = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TerritoryDialog);
         DataShop.TerritoryDialog = TerritoryDialog;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9567,11 +9622,11 @@ var CoopShop;
             TerritoryGrid.prototype.getIdProperty = function () { return DataShop.TerritoryRow.idProperty; };
             TerritoryGrid.prototype.getLocalTextPrefix = function () { return DataShop.TerritoryRow.localTextPrefix; };
             TerritoryGrid.prototype.getService = function () { return DataShop.TerritoryService.baseUrl; };
+            TerritoryGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TerritoryGrid);
             return TerritoryGrid;
         }(Serenity.EntityGrid));
-        TerritoryGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], TerritoryGrid);
         DataShop.TerritoryGrid = TerritoryGrid;
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9614,13 +9669,13 @@ var CoopShop;
                 Serenity.TabsExtensions.setDisabled(this.tabs, 'Decision', this.isNewOrDeleted());
                 //this.agendaGrid.customerID = entity.CustomerID;
             };
+            MeetingDialog = __decorate([
+                Serenity.Decorators.maximizable(),
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingDialog);
             return MeetingDialog;
         }(Serenity.EntityDialog));
-        MeetingDialog = __decorate([
-            Serenity.Decorators.maximizable(),
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingDialog);
         Meeting.MeetingDialog = MeetingDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9638,11 +9693,11 @@ var CoopShop;
             MeetingGrid.prototype.getIdProperty = function () { return Meeting.MeetingRow.idProperty; };
             MeetingGrid.prototype.getLocalTextPrefix = function () { return Meeting.MeetingRow.localTextPrefix; };
             MeetingGrid.prototype.getService = function () { return Meeting.MeetingService.baseUrl; };
+            MeetingGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingGrid);
             return MeetingGrid;
         }(Serenity.EntityGrid));
-        MeetingGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingGrid);
         Meeting.MeetingGrid = MeetingGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9662,12 +9717,12 @@ var CoopShop;
             MeetingAgendaDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingAgendaRow.localTextPrefix; };
             MeetingAgendaDialog.prototype.getNameProperty = function () { return Meeting.MeetingAgendaRow.nameProperty; };
             MeetingAgendaDialog.prototype.getService = function () { return Meeting.MeetingAgendaService.baseUrl; };
+            MeetingAgendaDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingAgendaDialog);
             return MeetingAgendaDialog;
         }(Serenity.EntityDialog));
-        MeetingAgendaDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingAgendaDialog);
         Meeting.MeetingAgendaDialog = MeetingAgendaDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9708,11 +9763,11 @@ var CoopShop;
                 enumerable: true,
                 configurable: true
             });
+            MeetingAgendaGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingAgendaGrid);
             return MeetingAgendaGrid;
         }(Serenity.EntityGrid));
-        MeetingAgendaGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingAgendaGrid);
         Meeting.MeetingAgendaGrid = MeetingAgendaGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9731,12 +9786,12 @@ var CoopShop;
             MeetingAgendaRelevantDialog.prototype.getIdProperty = function () { return Meeting.MeetingAgendaRelevantRow.idProperty; };
             MeetingAgendaRelevantDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingAgendaRelevantRow.localTextPrefix; };
             MeetingAgendaRelevantDialog.prototype.getService = function () { return Meeting.MeetingAgendaRelevantService.baseUrl; };
+            MeetingAgendaRelevantDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingAgendaRelevantDialog);
             return MeetingAgendaRelevantDialog;
         }(Serenity.EntityDialog));
-        MeetingAgendaRelevantDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingAgendaRelevantDialog);
         Meeting.MeetingAgendaRelevantDialog = MeetingAgendaRelevantDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9754,11 +9809,11 @@ var CoopShop;
             MeetingAgendaRelevantGrid.prototype.getIdProperty = function () { return Meeting.MeetingAgendaRelevantRow.idProperty; };
             MeetingAgendaRelevantGrid.prototype.getLocalTextPrefix = function () { return Meeting.MeetingAgendaRelevantRow.localTextPrefix; };
             MeetingAgendaRelevantGrid.prototype.getService = function () { return Meeting.MeetingAgendaRelevantService.baseUrl; };
+            MeetingAgendaRelevantGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingAgendaRelevantGrid);
             return MeetingAgendaRelevantGrid;
         }(Serenity.EntityGrid));
-        MeetingAgendaRelevantGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingAgendaRelevantGrid);
         Meeting.MeetingAgendaRelevantGrid = MeetingAgendaRelevantGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9778,12 +9833,12 @@ var CoopShop;
             MeetingAgendaTypeDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingAgendaTypeRow.localTextPrefix; };
             MeetingAgendaTypeDialog.prototype.getNameProperty = function () { return Meeting.MeetingAgendaTypeRow.nameProperty; };
             MeetingAgendaTypeDialog.prototype.getService = function () { return Meeting.MeetingAgendaTypeService.baseUrl; };
+            MeetingAgendaTypeDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingAgendaTypeDialog);
             return MeetingAgendaTypeDialog;
         }(Serenity.EntityDialog));
-        MeetingAgendaTypeDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingAgendaTypeDialog);
         Meeting.MeetingAgendaTypeDialog = MeetingAgendaTypeDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9801,11 +9856,11 @@ var CoopShop;
             MeetingAgendaTypeGrid.prototype.getIdProperty = function () { return Meeting.MeetingAgendaTypeRow.idProperty; };
             MeetingAgendaTypeGrid.prototype.getLocalTextPrefix = function () { return Meeting.MeetingAgendaTypeRow.localTextPrefix; };
             MeetingAgendaTypeGrid.prototype.getService = function () { return Meeting.MeetingAgendaTypeService.baseUrl; };
+            MeetingAgendaTypeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingAgendaTypeGrid);
             return MeetingAgendaTypeGrid;
         }(Serenity.EntityGrid));
-        MeetingAgendaTypeGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingAgendaTypeGrid);
         Meeting.MeetingAgendaTypeGrid = MeetingAgendaTypeGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9824,12 +9879,12 @@ var CoopShop;
             MeetingAttendeeDialog.prototype.getFormKey = function () { return Meeting.MeetingAttendeeForm.formKey; };
             MeetingAttendeeDialog.prototype.getIdProperty = function () { return Meeting.MeetingAttendeeRow.idProperty; };
             MeetingAttendeeDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingAttendeeRow.localTextPrefix; };
+            MeetingAttendeeDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingAttendeeDialog);
             return MeetingAttendeeDialog;
         }(CoopShop.Common.GridEditorDialog));
-        MeetingAttendeeDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingAttendeeDialog);
         Meeting.MeetingAttendeeDialog = MeetingAttendeeDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9923,11 +9978,11 @@ var CoopShop;
                     }
                 }
             };
+            MeetingAttendeeEditor = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingAttendeeEditor);
             return MeetingAttendeeEditor;
         }(CoopShop.Common.GridEditorBase));
-        MeetingAttendeeEditor = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingAttendeeEditor);
         Meeting.MeetingAttendeeEditor = MeetingAttendeeEditor;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9947,12 +10002,12 @@ var CoopShop;
             MeetingDecisionDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingDecisionRow.localTextPrefix; };
             MeetingDecisionDialog.prototype.getNameProperty = function () { return Meeting.MeetingDecisionRow.nameProperty; };
             MeetingDecisionDialog.prototype.getService = function () { return Meeting.MeetingDecisionService.baseUrl; };
+            MeetingDecisionDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingDecisionDialog);
             return MeetingDecisionDialog;
         }(Serenity.EntityDialog));
-        MeetingDecisionDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingDecisionDialog);
         Meeting.MeetingDecisionDialog = MeetingDecisionDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -9993,11 +10048,11 @@ var CoopShop;
                 enumerable: true,
                 configurable: true
             });
+            MeetingDecisionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingDecisionGrid);
             return MeetingDecisionGrid;
         }(Serenity.EntityGrid));
-        MeetingDecisionGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingDecisionGrid);
         Meeting.MeetingDecisionGrid = MeetingDecisionGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10016,12 +10071,12 @@ var CoopShop;
             MeetingDecisionRelevantDialog.prototype.getIdProperty = function () { return Meeting.MeetingDecisionRelevantRow.idProperty; };
             MeetingDecisionRelevantDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingDecisionRelevantRow.localTextPrefix; };
             MeetingDecisionRelevantDialog.prototype.getService = function () { return Meeting.MeetingDecisionRelevantService.baseUrl; };
+            MeetingDecisionRelevantDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingDecisionRelevantDialog);
             return MeetingDecisionRelevantDialog;
         }(Serenity.EntityDialog));
-        MeetingDecisionRelevantDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingDecisionRelevantDialog);
         Meeting.MeetingDecisionRelevantDialog = MeetingDecisionRelevantDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10039,11 +10094,11 @@ var CoopShop;
             MeetingDecisionRelevantGrid.prototype.getIdProperty = function () { return Meeting.MeetingDecisionRelevantRow.idProperty; };
             MeetingDecisionRelevantGrid.prototype.getLocalTextPrefix = function () { return Meeting.MeetingDecisionRelevantRow.localTextPrefix; };
             MeetingDecisionRelevantGrid.prototype.getService = function () { return Meeting.MeetingDecisionRelevantService.baseUrl; };
+            MeetingDecisionRelevantGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingDecisionRelevantGrid);
             return MeetingDecisionRelevantGrid;
         }(Serenity.EntityGrid));
-        MeetingDecisionRelevantGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingDecisionRelevantGrid);
         Meeting.MeetingDecisionRelevantGrid = MeetingDecisionRelevantGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10063,12 +10118,12 @@ var CoopShop;
             MeetingLocationDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingLocationRow.localTextPrefix; };
             MeetingLocationDialog.prototype.getNameProperty = function () { return Meeting.MeetingLocationRow.nameProperty; };
             MeetingLocationDialog.prototype.getService = function () { return Meeting.MeetingLocationService.baseUrl; };
+            MeetingLocationDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingLocationDialog);
             return MeetingLocationDialog;
         }(Serenity.EntityDialog));
-        MeetingLocationDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingLocationDialog);
         Meeting.MeetingLocationDialog = MeetingLocationDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10086,11 +10141,11 @@ var CoopShop;
             MeetingLocationGrid.prototype.getIdProperty = function () { return Meeting.MeetingLocationRow.idProperty; };
             MeetingLocationGrid.prototype.getLocalTextPrefix = function () { return Meeting.MeetingLocationRow.localTextPrefix; };
             MeetingLocationGrid.prototype.getService = function () { return Meeting.MeetingLocationService.baseUrl; };
+            MeetingLocationGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingLocationGrid);
             return MeetingLocationGrid;
         }(Serenity.EntityGrid));
-        MeetingLocationGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingLocationGrid);
         Meeting.MeetingLocationGrid = MeetingLocationGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10110,12 +10165,12 @@ var CoopShop;
             MeetingTypeDialog.prototype.getLocalTextPrefix = function () { return Meeting.MeetingTypeRow.localTextPrefix; };
             MeetingTypeDialog.prototype.getNameProperty = function () { return Meeting.MeetingTypeRow.nameProperty; };
             MeetingTypeDialog.prototype.getService = function () { return Meeting.MeetingTypeService.baseUrl; };
+            MeetingTypeDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], MeetingTypeDialog);
             return MeetingTypeDialog;
         }(Serenity.EntityDialog));
-        MeetingTypeDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], MeetingTypeDialog);
         Meeting.MeetingTypeDialog = MeetingTypeDialog;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10133,11 +10188,11 @@ var CoopShop;
             MeetingTypeGrid.prototype.getIdProperty = function () { return Meeting.MeetingTypeRow.idProperty; };
             MeetingTypeGrid.prototype.getLocalTextPrefix = function () { return Meeting.MeetingTypeRow.localTextPrefix; };
             MeetingTypeGrid.prototype.getService = function () { return Meeting.MeetingTypeService.baseUrl; };
+            MeetingTypeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MeetingTypeGrid);
             return MeetingTypeGrid;
         }(Serenity.EntityGrid));
-        MeetingTypeGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], MeetingTypeGrid);
         Meeting.MeetingTypeGrid = MeetingTypeGrid;
     })(Meeting = CoopShop.Meeting || (CoopShop.Meeting = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10179,11 +10234,11 @@ var CoopShop;
                 return _this;
             }
             ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
+            ChangePasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ChangePasswordPanel);
             return ChangePasswordPanel;
         }(Serenity.PropertyPanel));
-        ChangePasswordPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ChangePasswordPanel);
         Membership.ChangePasswordPanel = ChangePasswordPanel;
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10215,11 +10270,11 @@ var CoopShop;
                 return _this;
             }
             ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
+            ForgotPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ForgotPasswordPanel);
             return ForgotPasswordPanel;
         }(Serenity.PropertyPanel));
-        ForgotPasswordPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ForgotPasswordPanel);
         Membership.ForgotPasswordPanel = ForgotPasswordPanel;
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10262,11 +10317,11 @@ var CoopShop;
                 return _this;
             }
             ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
+            ResetPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResetPasswordPanel);
             return ResetPasswordPanel;
         }(Serenity.PropertyPanel));
-        ResetPasswordPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ResetPasswordPanel);
         Membership.ResetPasswordPanel = ResetPasswordPanel;
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10311,11 +10366,11 @@ var CoopShop;
                 return _this;
             }
             SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
+            SignUpPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SignUpPanel);
             return SignUpPanel;
         }(Serenity.PropertyPanel));
-        SignUpPanel = __decorate([
-            Serenity.Decorators.registerClass()
-        ], SignUpPanel);
         Membership.SignUpPanel = SignUpPanel;
     })(Membership = CoopShop.Membership || (CoopShop.Membership = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10335,12 +10390,12 @@ var CoopShop;
             BusinessUnitDialog.prototype.getLocalTextPrefix = function () { return Organization.BusinessUnitRow.localTextPrefix; };
             BusinessUnitDialog.prototype.getNameProperty = function () { return Organization.BusinessUnitRow.nameProperty; };
             BusinessUnitDialog.prototype.getService = function () { return Organization.BusinessUnitService.baseUrl; };
+            BusinessUnitDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], BusinessUnitDialog);
             return BusinessUnitDialog;
         }(Serenity.EntityDialog));
-        BusinessUnitDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], BusinessUnitDialog);
         Organization.BusinessUnitDialog = BusinessUnitDialog;
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10368,11 +10423,11 @@ var CoopShop;
                 }
                 return text;
             };
+            BusinessUnitEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], BusinessUnitEditor);
             return BusinessUnitEditor;
         }(Serenity.LookupEditorBase));
-        BusinessUnitEditor = __decorate([
-            Serenity.Decorators.registerEditor()
-        ], BusinessUnitEditor);
         Organization.BusinessUnitEditor = BusinessUnitEditor;
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10435,11 +10490,11 @@ var CoopShop;
                     }
                 }
             };
+            BusinessUnitGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], BusinessUnitGrid);
             return BusinessUnitGrid;
         }(Serenity.EntityGrid));
-        BusinessUnitGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], BusinessUnitGrid);
         Organization.BusinessUnitGrid = BusinessUnitGrid;
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10459,12 +10514,12 @@ var CoopShop;
             ContactDialog.prototype.getLocalTextPrefix = function () { return Organization.ContactRow.localTextPrefix; };
             ContactDialog.prototype.getNameProperty = function () { return Organization.ContactRow.nameProperty; };
             ContactDialog.prototype.getService = function () { return Organization.ContactService.baseUrl; };
+            ContactDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.responsive()
+            ], ContactDialog);
             return ContactDialog;
         }(Serenity.EntityDialog));
-        ContactDialog = __decorate([
-            Serenity.Decorators.registerClass(),
-            Serenity.Decorators.responsive()
-        ], ContactDialog);
         Organization.ContactDialog = ContactDialog;
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
 })(CoopShop || (CoopShop = {}));
@@ -10482,11 +10537,11 @@ var CoopShop;
             ContactGrid.prototype.getIdProperty = function () { return Organization.ContactRow.idProperty; };
             ContactGrid.prototype.getLocalTextPrefix = function () { return Organization.ContactRow.localTextPrefix; };
             ContactGrid.prototype.getService = function () { return Organization.ContactService.baseUrl; };
+            ContactGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ContactGrid);
             return ContactGrid;
         }(Serenity.EntityGrid));
-        ContactGrid = __decorate([
-            Serenity.Decorators.registerClass()
-        ], ContactGrid);
         Organization.ContactGrid = ContactGrid;
     })(Organization = CoopShop.Organization || (CoopShop.Organization = {}));
 })(CoopShop || (CoopShop = {}));
