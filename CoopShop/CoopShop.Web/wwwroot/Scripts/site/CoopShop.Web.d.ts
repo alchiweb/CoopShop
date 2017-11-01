@@ -3183,10 +3183,15 @@ declare namespace CoopShop.DataShop {
         protected form: OrderForm;
         private isInitialized;
         private isOrderClosed;
+        protected beforeItemDeleted: boolean;
+        protected beforeItemSaved: boolean;
         constructor();
         afterLoadEntity(): void;
         getToolbarButtons(): Serenity.ToolButton[];
         protected updateInterface(): void;
+        deleteHandler(options: Q.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
+        protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void): void;
+        protected getDialogOptions(): JQueryUI.DialogOptions;
     }
 }
 declare namespace CoopShop.BasicSamples {
@@ -3505,10 +3510,12 @@ declare namespace CoopShop.DataShop {
         protected beforeItemDeleted: boolean;
         protected savedItem: boolean;
         protected savedItemSuccess: boolean;
+        protected isReadOnly: boolean;
         afterLoadEntity(): void;
         deleteHandler(options: Q.ServiceOptions<Serenity.DeleteResponse>, callback: (response: Serenity.DeleteResponse) => void): void;
         protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>, callback: (response: Serenity.SaveResponse) => void): void;
         protected getDialogOptions(): JQueryUI.DialogOptions;
+        makeReadOnly(): void;
         constructor();
         updateProduct(): void;
         changePrice(): void;

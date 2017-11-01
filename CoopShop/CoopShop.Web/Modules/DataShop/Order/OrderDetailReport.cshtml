@@ -1,11 +1,16 @@
-﻿@model CoopShop.DataShop.OrderDetailReportData
+﻿@using System.Globalization
+@using CoopShop.DataShop
+@model CoopShop.DataShop.OrderDetailReportData
 
 @if ((bool?)ViewData["Printing"] == true)
 {
     Layout = MVC.Views.Shared._LayoutNoNavigation;
 }
 
+
 @{
+    CultureInfo frFR = new CultureInfo("fr-FR");
+
     var tel = Model.Customer.Fax ?? Model.Customer.Phone;
 }
 <section class="invoice">
@@ -13,7 +18,7 @@
         <div class="col-xs-12">
             <h2 class="page-header">
                 Facture
-                <small class="pull-right">Date: @DateTime.Now.ToShortDateString()</small>
+                <small class="pull-right">Date: @DateTime.Now.ToString("dd/MM/yyyy")</small>
             </h2>
         </div>
     </div>
@@ -52,7 +57,7 @@
                 <thead>
                     <tr>
                         <th>Produit</th>
-                        <th>Prix</th>
+                        <th>Prix unitaire</th>
                         <th>Quantité</th>
                         <th>Total</th>
                     </tr>
@@ -62,9 +67,9 @@
                     {
                         <tr>
                             <td>@d.ProductName</td>
-                            <td>@(d.UnitPrice.ToStringDefault("#,##0.00"))</td>
-                            <td>@(d.Quantity.ToStringDefault())</td>
-                            <td>@(d.LineTotal.ToStringDefault("#,##0.00"))</td>
+                            <td>@(d.UnitPrice.ToStringDefault("#,##0.00", frFR)) / @(d.QuantitySymbol.Value.ToString())</td>
+                            <td>@(d.Quantity.ToStringDefault("#,##0.###", frFR))</td>
+                            <td>@(d.LineTotal.ToStringDefault("#,##0.00", frFR))</td>
                         </tr>
                     }
                 </tbody>
@@ -79,19 +84,36 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-6">
-            <p class="lead">Amount Due @(Model.Order.OrderDate.Value.AddDays(10).ToShortDateString())</p>
-
             @{
                 var subTotal = Model.Details.Sum(x => x.LineTotal ?? 0);
-            }
+                string paymentMethod = "";
+                switch(Model.Order.PaymentMethod)
+                {
+                    case PaymentMethodType.Cash:
+                        paymentMethod = "espèces";
+                        break;
+                    case PaymentMethodType.Check:
+                        paymentMethod = "chèque";
+                        break;
+                    case PaymentMethodType.NotPayed:
+                        paymentMethod = "non payé";
+                        break;
+                    case PaymentMethodType.Other:
+                        paymentMethod = "moyen de payment inconnu";
+                        break;
+                }
+                ;
 
+                }
+            <p class="lead">Montant (@paymentMethod) : @((Model.Order.PaymentTotal.Value).ToString("#,##0.00", frFR))</p>
+
+            <!--
             <div class="table-responsive">
                 <table class="table">
-                    <tr>
+                                       <tr>
                         <th style="width:50%">Sous-total:</th>
                         <td>$@subTotal.ToString("#,##0.00")</td>
                     </tr>
-                <!--
                 <tr>
                     <th>Tax (9.3%)</th>
                     <td>$@((subTotal * 0.093m).ToString("#,##0.00"))</td>
@@ -104,9 +126,10 @@
                     <th>Total:</th>
                     <td>$@((subTotal * 1.093m).ToString("#,##0.00"))</td>
                 </tr>
-                -->
                 </table>
-            </div>
-        </div>
+                </div>
+                -->
+
+                </div>
     </div>
 </section>

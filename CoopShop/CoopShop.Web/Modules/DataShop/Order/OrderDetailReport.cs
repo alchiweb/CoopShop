@@ -37,6 +37,9 @@ namespace CoopShop.DataShop
                     .Select(od.LineTotal)
                     .Where(od.OrderID == this.OrderID));
 
+                var p = ProductRow.Fields;
+
+                data.Details.ForEach(row => row.QuantitySymbol = connection.First<ProductRow>(q => q.Select(p.QuantitySymbol).Where(new Criteria(p.ProductID) == row.ProductID.Value)).QuantitySymbol);
                 var c = CustomerRow.Fields;
                 data.Customer = connection.TryFirst<CustomerRow>(c.CustomerID == data.Order.CustomerID)
                     ?? new CustomerRow();

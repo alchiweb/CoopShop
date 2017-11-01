@@ -16,13 +16,37 @@ namespace CoopShop.DataShop {
             //alchiweb
             this.parentContainer = container;
 //            this.getItems().forEach(x => { x.QuantitySymbol = QuantitySymbolType.Litre; });
-
         }
 
         protected editItem(entityOrId: any): void {
-            if (!$("input[name='PaymentTotal']").prop('disabled'))
+
+            var readonly: boolean = $("input[name='PaymentTotal']").prop('disabled');
+
+            if (readonly) {
+                var id = entityOrId;
+                var item = this.view.getItemById(id);
+                this.createEntityDialog(this.getItemType(),
+                    dlg => {
+                        var dialog = dlg as OrderDetailDialog; //Common.GridEditorDialog<OrderDetailRow>;
+                        //dialog.onDelete = (opt, callback) => {
+                        //    if (!this.deleteEntity(id)) {
+                        //        return;
+                        //    }
+                        //    callback({});
+                        //};
+
+                        //dialog.onSave = (opt, callback) => this.save(opt, callback);
+                        dialog.loadEntityAndOpenDialog(item);
+                        dialog.makeReadOnly();
+//                Serenity.EditorUtils.setReadonly(dialog.element, true);
+
+                    });
+            }
+            else
                 super.editItem(entityOrId);
         }
+
+
 
 
         protected deleteEntity(id) {
@@ -79,7 +103,7 @@ namespace CoopShop.DataShop {
 
             row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' ('+ currentProduct.BrandName + ')';
             row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
-            row.LineTotal = Math.ceil(row.LineTotal * 10) / 10;
+            row.LineTotal = Math.ceil(row.LineTotal * 100) / 100;
 //            row.QuantityPerUnit = 1;
             row.QuantitySymbol = ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
 

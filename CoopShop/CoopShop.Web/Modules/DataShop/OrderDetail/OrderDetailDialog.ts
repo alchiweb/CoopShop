@@ -12,6 +12,7 @@ namespace CoopShop.DataShop {
         protected beforeItemDeleted: boolean = false;
         protected savedItem: boolean = false;
         protected savedItemSuccess: boolean = false;
+        protected isReadOnly: boolean = false;
 
         afterLoadEntity(): void {
             super.afterLoadEntity();
@@ -55,8 +56,8 @@ namespace CoopShop.DataShop {
                     this.beforeItemDeleted = false;
 
                 if (!this.savedItem) {
-                    if (!itemBeingDeleted && this.form.ProductID.value !== "") {
-                        Q.confirm("Quitter l'ajout d'un produit SANS SAUVEGARDER CE PRODUIT ?", () => { this.onDialogClose(); }, { modal: true });
+                    if (!this.isReadOnly && !itemBeingDeleted && this.form.ProductID.value !== "") {
+                        Q.confirm("Quitter ce produit SANS LE SAUVEGARDER ?", () => { this.onDialogClose(); }, { modal: true });
                         return false;
                     }
                 } else {
@@ -70,14 +71,21 @@ namespace CoopShop.DataShop {
             return opt;
         }
 
-
-//note needed        validateBeforeSave(): boolean { return (this.savedItem = this.validateForm()); }
-
-// no more needed -> in order to add a new product window...
+// no more needed (cf OrderDialo) -> in order to add a new product window...
         //destroy(): void {
         //    if (this.savedItem && this.isNew())
         //        $(".s-OrderDetailsEditor").change();
         //}
+
+        public makeReadOnly() {
+            this.isReadOnly = true;
+            Serenity.EditorUtils.setReadonly(this.element.find('.editor'), true);////////////
+            this.saveAndCloseButton.hide();
+            this.deleteButton.hide();
+            this.toolbar.element.hide();
+            this.element.find('.inplace-button').hide();
+            this.dialogTitle = "Produit acheté";
+        }
 
         constructor() {
             super();
@@ -134,9 +142,9 @@ namespace CoopShop.DataShop {
                 this.form.ProductID.value = "";
                 this.form.Quantity.value = 1;
                 this.form.QuantitySymbol.value = null;
-                this.form.Discount.value = null;
-                this.form.QuantityPerUnitPrice.value = null;
                 this.form.UnitPrice.value = null;
+                this.form.QuantityPerUnitPrice.value = null;
+//                this.form.Discount.value = null;
             }
         }
         changePrice() {

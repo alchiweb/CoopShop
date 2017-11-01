@@ -1,5 +1,6 @@
 ﻿
 using System.ComponentModel;
+using Serenity.Navigation;
 
 namespace CoopShop.DataShop.Forms
 {

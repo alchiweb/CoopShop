@@ -32,7 +32,7 @@
                     sumtotal += Math.round(resp.PaymentTotal * 100) / 100;
                     salestotal++;
                 }
-                sumtotal = Math.round(sumtotal * 100) / 100;
+                sumtotal = Math.round(sumtotal * 1000) / 1000;
                 var salesaverage: number = Math.round(sumtotal / salestotal * 100) / 100;
                 eltsumtotal.innerHTML =
                     "<font color=\"#0000FF\">Total des ventes affichées (dans la page) : <font color=\"#FF0000\">" +
@@ -72,6 +72,8 @@
             //let fld = OrderRow.Fields;
             //this.shippingStateFilter = this.findQuickFilter(Serenity.EnumEditor, fld.ShippingState);
         }
+
+
 
         protected getButtons()
         {

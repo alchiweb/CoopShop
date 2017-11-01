@@ -14,8 +14,6 @@
         //alchiweb
         constructor() {
             super();
-
-
             //this.form.PaymentMethod.element.change(x => console.log($(x.target).val()));
             this.form.SupplierID.change(e => {
                 if (this.form.SupplierID.value !== "") {
@@ -35,6 +33,8 @@
             // here we show it if it is edit mode (not new)
             this.cloneButton.toggle(this.isEditMode());
             //  console.log(this.idPrefix);
+            this.applyChangesButton.hide();
+            this.toolbar.findButton('localization-button').hide();
 
             //this.byId(this.idPrefix + 'BuyingPrice').on('change', 'input', ((e) => console.log("Change!!!")));
             //this.byId(this.idPrefix + 'ProductName').val('test2');

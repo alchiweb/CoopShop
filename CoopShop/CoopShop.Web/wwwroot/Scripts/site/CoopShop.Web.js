@@ -4009,6 +4009,8 @@ var CoopShop;
                 // here we show it if it is edit mode (not new)
                 this.cloneButton.toggle(this.isEditMode());
                 //  console.log(this.idPrefix);
+                this.applyChangesButton.hide();
+                this.toolbar.findButton('localization-button').hide();
                 //this.byId(this.idPrefix + 'BuyingPrice').on('change', 'input', ((e) => console.log("Change!!!")));
                 //this.byId(this.idPrefix + 'ProductName').val('test2');
                 this.form.BuyingPrice.addValidationRule(this.uniqueName, this.validateBuyingPrice);
@@ -4491,7 +4493,7 @@ var CoopShop;
                         sumtotal += Math.round(resp.PaymentTotal * 100) / 100;
                         salestotal++;
                     }
-                    sumtotal = Math.round(sumtotal * 100) / 100;
+                    sumtotal = Math.round(sumtotal * 1000) / 1000;
                     var salesaverage = Math.round(sumtotal / salestotal * 100) / 100;
                     eltsumtotal.innerHTML =
                         "<font color=\"#0000FF\">Total des ventes affichées (dans la page) : <font color=\"#FF0000\">" +
@@ -4768,21 +4770,28 @@ var CoopShop;
                 //alchiweb
                 _this.isInitialized = false;
                 _this.isOrderClosed = false;
+                _this.beforeItemDeleted = false;
+                _this.beforeItemSaved = false;
                 //alchiweb
                 _this.form.PaymentMethod.change(function (e) {
                     if (!_this.isInitialized) {
+                        ///////MODIFICATION IMPOSSIBLE
+                        //var payment: boolean = $(e.target).val() != 0;
                         ///////MODIFICATION POSSIBLE
-                        var payment = false; ///////////$(e.target).val() != 0;
+                        //var payment: boolean = false; ///////////$(e.target).val() != 0;
+                        var payment = $(e.target).val() != 0;
                         _this.isOrderClosed = payment;
                         $(e.target).prop('disabled', payment);
                         _this.form.PaymentTotal.element.prop('disabled', payment);
                         _this.isInitialized = true;
                     }
                 });
-                _this.form.DetailList.element.change(function (e) {
-                    _this.element.find('.add-button').triggerHandler("click");
-                });
                 return _this;
+                //no more needed (cf OrderDetailDialog)
+                //this.form.DetailList.element.change(
+                //    e => {
+                //        this.element.find('.add-button').triggerHandler("click");
+                //    });
             }
             OrderDialog.prototype.getFormKey = function () { return DataShop.OrderForm.formKey; };
             OrderDialog.prototype.getIdProperty = function () { return DataShop.OrderRow.idProperty; };
@@ -4794,6 +4803,10 @@ var CoopShop;
                 _super.prototype.afterLoadEntity.call(this);
                 this.form.CustomerID.changeSelect2(function (e) {
                     _this.element.find('.add-button').triggerHandler("click");
+                });
+                //bug fix
+                this.form.DetailList.getItems().forEach(function (row) {
+                    row.QuantitySymbol = DataShop.ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
                 });
             };
             OrderDialog.prototype.getToolbarButtons = function () {
@@ -4816,6 +4829,8 @@ var CoopShop;
                 // note that this helper method only works with basic inputs, 
                 // some editors require widget based set readonly overload (setReadOnly)
                 Serenity.EditorUtils.setReadonly(this.element.find('.editor'), this.isOrderClosed);
+                //            Serenity.EditorUtils.setReadonly(this.form.PaymentMethod.element, false);
+                //            this.form.PaymentTotal.element.prop('disabled', false);
                 // remove required asterisk (*)
                 this.element.find('sup').hide();
                 // here is a way to locate a button by its css class
@@ -4831,8 +4846,9 @@ var CoopShop;
                 // but they are null now as we removed them in getToolbarButtons()
                 // if we didn't we could write like this:
                 // 
-                this.applyChangesButton.toggleClass('disabled', this.isOrderClosed);
                 this.saveAndCloseButton.toggleClass('disabled', this.isOrderClosed);
+                //            this.applyChangesButton.toggleClass('disabled', this.isOrderClosed);
+                this.applyChangesButton.hide();
                 //this.toolbar.findButton('save-and-close-button').toggle(!this.isOrderClosed);
                 // instead of hiding, we could disable a button
                 // 
@@ -4845,9 +4861,38 @@ var CoopShop;
                 this.element.find('.add-button').toggleClass('disabled', this.isOrderClosed);
                 //this.toolbar.findButton('export-pdf-button').toggle(this.isEditMode());
             };
+            OrderDialog.prototype.deleteHandler = function (options, callback) {
+                this.beforeItemDeleted = true;
+                _super.prototype.deleteHandler.call(this, options, callback);
+            };
+            OrderDialog.prototype.saveHandler = function (options, callback) {
+                console.log("saveHandler");
+                this.beforeItemSaved = true;
+                _super.prototype.saveHandler.call(this, options, callback);
+            };
+            OrderDialog.prototype.getDialogOptions = function () {
+                var _this = this;
+                var opt = _super.prototype.getDialogOptions.call(this);
+                opt.beforeClose = function (event, ui) {
+                    var itemBeingDeleted = _this.beforeItemDeleted;
+                    if (_this.beforeItemDeleted)
+                        _this.beforeItemDeleted = false;
+                    var itemBeingSaved = _this.beforeItemSaved;
+                    if (_this.beforeItemSaved)
+                        _this.beforeItemSaved = false;
+                    if (!_this.isOrderClosed && !itemBeingDeleted && !itemBeingSaved && _this.form.DetailList.getItems().length > 0) {
+                        Q.confirm("Quitter cette vente SANS LA SAUVEGARDER ?", function () { _this.onDialogClose(); }, { modal: true });
+                        return false;
+                    }
+                    return true;
+                };
+                return opt;
+            };
             OrderDialog = __decorate([
-                Serenity.Decorators.registerClass(),
-                Serenity.Decorators.panel()
+                Serenity.Decorators.registerClass()
+                //@Serenity.Decorators.panel()
+                ,
+                Serenity.Decorators.maximizable(true)
             ], OrderDialog);
             return OrderDialog;
         }(Serenity.EntityDialog));
@@ -5891,17 +5936,12 @@ var CoopShop;
         //import Select2Extensions = Serenity.Select2Extensions;
         var OrderDetailDialog = (function (_super) {
             __extends(OrderDetailDialog, _super);
-            //note needed        validateBeforeSave(): boolean { return (this.savedItem = this.validateForm()); }
-            // no more needed -> in order to add a new product window...
-            //destroy(): void {
-            //    if (this.savedItem && this.isNew())
-            //        $(".s-OrderDetailsEditor").change();
-            //}
             function OrderDetailDialog() {
                 var _this = _super.call(this) || this;
                 _this.beforeItemDeleted = false;
                 _this.savedItem = false;
                 _this.savedItemSuccess = false;
+                _this.isReadOnly = false;
                 _this.form = new DataShop.OrderDetailForm(_this.idPrefix);
                 _this.form.ProductID.changeSelect2(function (e) {
                     _this.updateProduct();
@@ -5967,8 +6007,8 @@ var CoopShop;
                     if (_this.beforeItemDeleted)
                         _this.beforeItemDeleted = false;
                     if (!_this.savedItem) {
-                        if (!itemBeingDeleted && _this.form.ProductID.value !== "") {
-                            Q.confirm("Quitter l'ajout d'un produit SANS SAUVEGARDER CE PRODUIT ?", function () { _this.onDialogClose(); }, { modal: true });
+                        if (!_this.isReadOnly && !itemBeingDeleted && _this.form.ProductID.value !== "") {
+                            Q.confirm("Quitter ce produit SANS LE SAUVEGARDER ?", function () { _this.onDialogClose(); }, { modal: true });
                             return false;
                         }
                     }
@@ -5981,6 +6021,20 @@ var CoopShop;
                     return true;
                 };
                 return opt;
+            };
+            // no more needed (cf OrderDialo) -> in order to add a new product window...
+            //destroy(): void {
+            //    if (this.savedItem && this.isNew())
+            //        $(".s-OrderDetailsEditor").change();
+            //}
+            OrderDetailDialog.prototype.makeReadOnly = function () {
+                this.isReadOnly = true;
+                Serenity.EditorUtils.setReadonly(this.element.find('.editor'), true); ////////////
+                this.saveAndCloseButton.hide();
+                this.deleteButton.hide();
+                this.toolbar.element.hide();
+                this.element.find('.inplace-button').hide();
+                this.dialogTitle = "Produit acheté";
             };
             OrderDetailDialog.prototype.updateProduct = function () {
                 var productID = Q.toId(this.form.ProductID.value);
@@ -5999,9 +6053,9 @@ var CoopShop;
                     this.form.ProductID.value = "";
                     this.form.Quantity.value = 1;
                     this.form.QuantitySymbol.value = null;
-                    this.form.Discount.value = null;
-                    this.form.QuantityPerUnitPrice.value = null;
                     this.form.UnitPrice.value = null;
+                    this.form.QuantityPerUnitPrice.value = null;
+                    //                this.form.Discount.value = null;
                 }
             };
             OrderDetailDialog.prototype.changePrice = function () {
@@ -6221,7 +6275,25 @@ var CoopShop;
             OrderDetailsEditor.prototype.getDialogType = function () { return DataShop.OrderDetailDialog; };
             OrderDetailsEditor.prototype.getLocalTextPrefix = function () { return DataShop.OrderDetailRow.localTextPrefix; };
             OrderDetailsEditor.prototype.editItem = function (entityOrId) {
-                if (!$("input[name='PaymentTotal']").prop('disabled'))
+                var readonly = $("input[name='PaymentTotal']").prop('disabled');
+                if (readonly) {
+                    var id = entityOrId;
+                    var item = this.view.getItemById(id);
+                    this.createEntityDialog(this.getItemType(), function (dlg) {
+                        var dialog = dlg; //Common.GridEditorDialog<OrderDetailRow>;
+                        //dialog.onDelete = (opt, callback) => {
+                        //    if (!this.deleteEntity(id)) {
+                        //        return;
+                        //    }
+                        //    callback({});
+                        //};
+                        //dialog.onSave = (opt, callback) => this.save(opt, callback);
+                        dialog.loadEntityAndOpenDialog(item);
+                        dialog.makeReadOnly();
+                        //                Serenity.EditorUtils.setReadonly(dialog.element, true);
+                    });
+                }
+                else
                     _super.prototype.editItem.call(this, entityOrId);
             };
             OrderDetailsEditor.prototype.deleteEntity = function (id) {
@@ -6264,7 +6336,7 @@ var CoopShop;
                 var currentProduct = DataShop.ProductRow.getLookup().itemById[row.ProductID];
                 row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' (' + currentProduct.BrandName + ')';
                 row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
-                row.LineTotal = Math.ceil(row.LineTotal * 10) / 10;
+                row.LineTotal = Math.ceil(row.LineTotal * 100) / 100;
                 //            row.QuantityPerUnit = 1;
                 row.QuantitySymbol = DataShop.ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
                 return true;
