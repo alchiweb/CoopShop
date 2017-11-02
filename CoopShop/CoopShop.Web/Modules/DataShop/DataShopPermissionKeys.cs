@@ -16,7 +16,9 @@ namespace CoopShop.DataShop
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
             public const string Modify = "DataShop:Customer:Modify";
             public const string View = "DataShop:Customer:View";
+            public const string Admin = "DataShop:Customer:Admin";
         }
+
 
         [Description("[General]")]
         public const string General = "DataShop:General";

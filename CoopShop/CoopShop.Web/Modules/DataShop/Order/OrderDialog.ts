@@ -34,7 +34,7 @@
                     ///////MODIFICATION POSSIBLE
                     //var payment: boolean = false; ///////////$(e.target).val() != 0;
 
-                    var payment: boolean = $(e.target).val() != 0;
+                    var payment: boolean = !Authorization.hasPermission("DataShop:Customer:Admin") && $(e.target).val() != 0;
 
 
                     this.isOrderClosed = payment;
