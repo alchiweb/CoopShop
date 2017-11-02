@@ -52,6 +52,7 @@ namespace CoopShop.DataShop.Columns
         public QuantitySymbolType QuantitySymbol { get; set; }
 
         [Width(80), AlignRight]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal UnitPrice { get; set; }
         [Width(80), AlignRight]
         public Decimal BuyingPrice { get; set; }

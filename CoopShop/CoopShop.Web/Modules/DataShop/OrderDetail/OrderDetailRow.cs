@@ -38,6 +38,7 @@ namespace CoopShop.DataShop.Entities
         }
 
         [DisplayName("Unit Price"), Scale(4), NotNull, AlignRight, DisplayFormat("#,##0.00")]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal? UnitPrice
         {
             get { return Fields.UnitPrice[this]; }
@@ -65,6 +66,7 @@ namespace CoopShop.DataShop.Entities
         //[DisplayName("Line Total"), Expression("(t0.[UnitPrice] * t0.[Quantity] - t0.[Discount])")]
         [DisplayName("Line Total"), Expression("(CEILING((t0.[UnitPrice] * t0.[Quantity] - t0.[Discount])*10)/10)")]
         [AlignRight, DisplayFormat("#,##0.00"), MinSelectLevel(SelectLevel.List)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal? LineTotal
         {
             get { return Fields.LineTotal[this]; }
@@ -74,6 +76,7 @@ namespace CoopShop.DataShop.Entities
         //alchiweb
         [DisplayName("Prix /"), Expression("IsNull(t0.[UnitPrice] / p.[QuantityPerUnit], 0)")]
         [AlignRight, DisplayFormat("#,##0.00 € /"), MinSelectLevel(SelectLevel.List)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal? QuantityPerUnitPrice
         {
             get { return Fields.QuantityPerUnitPrice[this]; }

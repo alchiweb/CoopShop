@@ -20,6 +20,8 @@ namespace CoopShop.DataShop.Forms
         [Category("Pricing"), DisplayFormat("#,##0.###")]
         public Single QuantityPerUnit { get; set; }
         public Int16 QuantitySymbol { get; set; }
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+
         public Decimal UnitPrice { get; set; }
         public Decimal BuyingPrice { get; set; }
         [ReadOnly(true)]

@@ -14,6 +14,7 @@ namespace CoopShop.DataShop.Forms
         [EditLink, Width(200)]
         public String ProductName { get; set; }
         [Width(100)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal UnitPrice { get; set; }
         [Width(100)]
         public Single Quantity { get; set; } //alchiweb
@@ -22,9 +23,11 @@ namespace CoopShop.DataShop.Forms
         [Hidden]
         public Double Discount { get; set; }
         [Width(100)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal LineTotal { get; set; }
         //alchiweb
         [Width(80)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal QuantityPerUnitPrice { get; set; }
         [Width(50)]
         public QuantitySymbolType QuantitySymbol { get; set; }

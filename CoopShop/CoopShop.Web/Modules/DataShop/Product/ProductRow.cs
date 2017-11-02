@@ -153,6 +153,7 @@ namespace CoopShop.DataShop.Entities
         //alchiweb
         //[DisplayName("Unit Price"), Scale(4), LookupInclude]
         [DisplayName("Unit Price"), Scale(4), LookupInclude, NotNull, DefaultValue(0)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal? UnitPrice
         {
             get { return Fields.UnitPrice[this]; }
