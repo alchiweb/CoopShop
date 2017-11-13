@@ -27,22 +27,55 @@ namespace CoopShop.DataShop.Repositories
         private static void UpdateStock(IUnitOfWork uow, SaveRequest<MyRow> request)
         {
             var productFields = Entities.ProductRow.Fields;
+            var errorTxt = "";
             foreach (var orderDetail in request.Entity.DetailList)
             {
-                if (!new SqlQuery().From(productFields)
-                    .Select(productFields.ProductID, productFields.UnitsInStock)
-                    .WhereEqual(productFields.ProductID, orderDetail.ProductID)
-                    .Where(new Criteria(productFields.UnitsInStock) >= (Single)orderDetail.Quantity.Value)
-                    .Exists(uow.Connection))
-                    throw (new Exception($"Erreur de stock : le stock du produit {orderDetail.ProductName} est insuffisant."));
+                bool productError = false;
+                try
+                {
+                    productError = !new SqlQuery().From(productFields)
+                        .Select(productFields.ProductID, productFields.UnitsInStock)
+                        .WhereEqual(productFields.ProductID, orderDetail.ProductID)
+                        .Where(new Criteria(productFields.UnitsInStock) >= (Single) orderDetail.Quantity.Value)
+                        .Exists(uow.Connection);
+                }
+                catch (Exception ex)
+                {
+                    errorTxt += $"Erreur produit \"{orderDetail.ProductName}\" : {ex.Message}.\n";
+                }
+                if (productError)
+                    errorTxt += $"Erreur produit \"{orderDetail.ProductName}\" : le stock est insuffisant.\n";
             }
+            if (!string.IsNullOrEmpty(errorTxt))
+                throw (new Exception(errorTxt));
+
+            var updatedProducts = "";
             foreach (var orderDetail in request.Entity.DetailList)
             {
-                new SqlUpdate(productFields.TableName)
-                    .SetTo(productFields.UnitsInStock.Name, productFields.UnitsInStock.Name + (orderDetail.Quantity.Value < 0 ? " + " : " - ") + orderDetail.Quantity.Value.ToString(CultureInfo.InvariantCulture))
-                    //                        .Dec(productFields.UnitsInStock, orderDetail.Quantity.Value)
-                    .WhereEqual(productFields.ProductID, orderDetail.ProductID)
-                    .Execute(uow.Connection, ExpectedRows.One);
+                try {
+                    new SqlUpdate(productFields.TableName)
+                        .SetTo(productFields.UnitsInStock.Name, productFields.UnitsInStock.Name + (orderDetail.Quantity.Value < 0 ? " + " : " - ") + orderDetail.Quantity.Value.ToString(CultureInfo.InvariantCulture))
+                        //                        .Dec(productFields.UnitsInStock, orderDetail.Quantity.Value)
+                        .WhereEqual(productFields.ProductID, orderDetail.ProductID)
+                        .Execute(uow.Connection, ExpectedRows.One);
+                    updatedProducts += "\"{orderDetail.ProductName}\" ";
+                }
+                catch (Exception ex)
+                {
+                    var errorMsg = $"Erreur mise à jour produit \"{orderDetail.ProductName}\" : {ex.Message}.\n";
+                    if (ex.InnerException != null)
+                    {
+                        errorMsg += $"{ex.InnerException.Message}.\n";
+                        if (ex.InnerException.InnerException != null)
+                        {
+                            errorMsg += $"{ex.InnerException.InnerException.Message}.\n";
+                        }
+                    }
+                    if (!string.IsNullOrEmpty(updatedProducts))
+                        errorMsg += $"ATTENTION : le stock des produits {updatedProducts} est déjà calculé !\n";
+                    throw (new Exception(errorMsg, ex));
+                }
+
             }
         }
 

@@ -99,7 +99,6 @@
             return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + super.getItemText(item, lookup) + ((item.BrandName === undefined || item.BrandID === 2094) ? "" :  (' (' + item.BrandName+')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
         }
 
-
         protected getItemDisabled(item, lookup) {
             return item.Discontinued/* || item.UnitsInStock <= 0*/;
         }

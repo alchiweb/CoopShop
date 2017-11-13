@@ -111,8 +111,19 @@ namespace CoopShop.DataShop {
             this.form.UnitPrice.changeSelect2(e => {
                 this.changePrice();
             });
+            
+            //alchiweb
+            this.form.Quantity.addValidationRule(this.uniqueName, e => {
+                var productID = Q.toId(this.form.ProductID.value);
+                if (productID != null) {
+                    var currentProduct: ProductRow = ProductRow.getLookup().itemById[productID];
 
-
+                    var quantity = this.form.Quantity.value;
+                    if (quantity > currentProduct.UnitsInStock)
+                        return "Stock (" + currentProduct.UnitsInStock.toString().replace(".", ",") + ") insuffisant ! Changer la quantité ou cliquer sur le crayon pour mettre à jour le produit.";
+                    }
+            });
+            
 
             this.form.Discount.addValidationRule(this.uniqueName, e => {
                 var price = this.form.UnitPrice.value;

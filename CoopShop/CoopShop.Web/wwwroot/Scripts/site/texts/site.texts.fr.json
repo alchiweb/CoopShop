@@ -995,7 +995,7 @@
   "Validation.IncorrectPassword": "Incorrect password. Please check.",
   "Validation.Integer": "Please enter a valid integer value.",
   "Validation.InvalidActivateToken": "Your token to activate your account is invalid or has expired!",
-  "Validation.InvalidFormMessage": "Please validate empty or invalid inputs (marked with red) before submitting the form.",
+  "Validation.InvalidFormMessage": "Veuillez corriger les champs en rouge avant de continuer.",
   "Validation.InvalidResetToken": "Your token to reset your password is invalid or has expired!",
   "Validation.MaxDate": "Please enter a date before '{0}'.",
   "Validation.MaxLength": "Please enter no more than {0} characters.",

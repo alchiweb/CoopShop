@@ -15,6 +15,8 @@ namespace CoopShop.DataShop {
             super(container);
             //alchiweb
             this.parentContainer = container;
+
+
 //            this.getItems().forEach(x => { x.QuantitySymbol = QuantitySymbolType.Litre; });
         }
 
@@ -71,7 +73,10 @@ namespace CoopShop.DataShop {
                     newTotal += orderDetailRow.LineTotal;
                 });
 
+                newTotal = Math.ceil(newTotal * 20)/20;
+
                 $("input[name='PaymentTotal']").val(newTotal.toLocaleString(currentLanguage)).focus().off("focus");
+                $("input[name='PaymentTotal']").change();
             }
         }
 

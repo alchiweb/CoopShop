@@ -59,8 +59,32 @@
             this.form.DetailList.getItems().forEach((row) => {
                 row.QuantitySymbol = ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
             });
+
+            $("input[name='PaymentTotal']").after("<label>&nbsp;&nbsp;Monnaie&nbsp;:&nbsp;</label><input type='text' id='monnaie' name='monnaie' value='0,00'><div id='rendu' name='rendu'>&nbsp;Rendre&nbsp;:&nbsp;0,00&nbsp;&nbsp;&nbsp;</div>");
+            $("input[name='PaymentTotal']").on('change', this.calculateMonnaie);
+            $("input[name='monnaie']").on('change', this.calculateMonnaie);
         }
-        
+
+        calculateMonnaie() {
+            var payment: number = parseFloat($("input[name='PaymentTotal']").val().replace(".", "").replace(",", "."));
+            if (payment === NaN)
+                payment = 0;
+            var monnaie = parseFloat($("input[name='monnaie']").val().replace(",", "."));
+            monnaie = Math.ceil(monnaie * 100) / 100;
+
+            var monnaieStr = monnaie.toFixed(2).replace(".", ",");
+            if (monnaieStr === "NaN") {
+                monnaie = 0;
+                monnaieStr = "0,00";
+            }
+            if ($("input[name='monnaie']").val() !== monnaieStr)
+                $("input[name='monnaie']").val(monnaieStr);
+            var rendu:number = monnaie - payment;
+            if (rendu < 0)
+                rendu = 0;
+            $("#rendu").html("&nbsp;Rendre&nbsp;:&nbsp;" + rendu.toFixed(2).replace(".", ","));
+        }
+
         getToolbarButtons() {
             var buttons = super.getToolbarButtons();
 
