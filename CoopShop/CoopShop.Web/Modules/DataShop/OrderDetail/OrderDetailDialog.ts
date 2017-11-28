@@ -19,7 +19,6 @@ namespace CoopShop.DataShop {
             this.updateProduct();
 
             this.saveAndCloseButton.bind("click", () => {
-                console.log("click saveandclose savedItem: " + this.savedItem + " - savedItemSuccess : " + this.savedItemSuccess);
                 if (this.savedItem && this.savedItemSuccess) {
                     // clear all the fields for the new product
                     this.form.ProductID.value = "";
@@ -89,6 +88,7 @@ namespace CoopShop.DataShop {
 
         constructor() {
             super();
+            Q.reloadLookup("DataShop.Product");
             this.form = new OrderDetailForm(this.idPrefix);
             this.form.ProductID.changeSelect2(e => {
                 this.updateProduct();
@@ -116,6 +116,8 @@ namespace CoopShop.DataShop {
             this.form.Quantity.addValidationRule(this.uniqueName, e => {
                 var productID = Q.toId(this.form.ProductID.value);
                 if (productID != null) {
+                    Q.reloadLookup("DataShop.Product");
+
                     var currentProduct: ProductRow = ProductRow.getLookup().itemById[productID];
 
                     var quantity = this.form.Quantity.value;
