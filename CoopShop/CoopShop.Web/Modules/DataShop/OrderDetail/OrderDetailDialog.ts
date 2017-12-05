@@ -14,6 +14,21 @@ namespace CoopShop.DataShop {
         protected savedItemSuccess: boolean = false;
         protected isReadOnly: boolean = false;
 
+        getToolbarButtons(): Serenity.ToolButton[] {
+            var buttons = super.getToolbarButtons();
+
+            buttons.push({
+                title: 'Rafraîchir',
+                cssClass: 'refresh-button',
+                icon: 'icon-refresh text-blue',
+                onClick: () => {
+                    Q.reloadLookup("DataShop.Product");
+                    this.updateProduct();
+                }
+            });
+
+            return buttons;        }
+
         afterLoadEntity(): void {
             super.afterLoadEntity();
             this.updateProduct();
@@ -148,6 +163,7 @@ namespace CoopShop.DataShop {
                 this.form.UnitPrice.value = currentProduct.UnitPrice;
                 this.form.InternalRef.value = currentProduct.InternalRef;
                 this.form.QuantitySymbol.value = currentProduct.QuantitySymbol.toString();
+                this.form.UnitsInStock.value = currentProduct.UnitsInStock;
                 this.changePrice();
             } else { //alchiweb
                 if (this.form.InternalRef.value !== "")

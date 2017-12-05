@@ -60,11 +60,11 @@ namespace CoopShop.DataShop.Columns
         public Decimal SupplierCommissionPercentage { get; set; }
 
         [Width(80), AlignRight]
-        public Int16 UnitsInStock { get; set; }
+        public Single UnitsInStock { get; set; }
         [Width(80), AlignRight]
-        public Int16 UnitsOnOrder { get; set; }
+        public Single UnitsOnOrder { get; set; }
         [Width(80), AlignRight]
-        public Int16 ReorderLevel { get; set; }
+        public Single ReorderLevel { get; set; }
 
         //[EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         //public String ProductID { get; set; }

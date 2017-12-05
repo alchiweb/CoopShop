@@ -21,9 +21,12 @@ namespace CoopShop.DataShop.Forms
         public Single Quantity { get; set; }
         [ReadOnly(true)]
         public QuantitySymbolType QuantitySymbol { get; set; }
+
         [ReadOnly(true)]
         [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Single QuantityPerUnitPrice { get; set; }
         public Double Discount { get; set; }
+        [ReadOnly(true)]
+        public Single UnitsInStock { get; set; }
     }
 }
