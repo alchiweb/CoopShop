@@ -1258,6 +1258,7 @@ declare namespace CoopShop.DataShop {
         UnitPrice?: number;
         Quantity?: number;
         Discount?: number;
+        UnitsInStock?: number;
         ProductName?: string;
         QuantityPerUnit?: number;
         LineTotal?: number;
@@ -1278,6 +1279,7 @@ declare namespace CoopShop.DataShop {
             const UnitPrice: string;
             const Quantity: string;
             const Discount: string;
+            const UnitsInStock: string;
             const ProductName: string;
             const QuantityPerUnit: string;
             const LineTotal: string;

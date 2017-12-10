@@ -6,6 +6,7 @@
         UnitPrice?: number;
         Quantity?: number;
         Discount?: number;
+        UnitsInStock?: number;
         ProductName?: string;
         QuantityPerUnit?: number;
         LineTotal?: number;
@@ -28,6 +29,7 @@
             export declare const UnitPrice: string;
             export declare const Quantity: string;
             export declare const Discount: string;
+            export declare const UnitsInStock: string;
             export declare const ProductName: string;
             export declare const QuantityPerUnit: string;
             export declare const LineTotal: string;
@@ -46,6 +48,7 @@
             'UnitPrice', 
             'Quantity', 
             'Discount', 
+            'UnitsInStock', 
             'ProductName', 
             'QuantityPerUnit', 
             'LineTotal', 

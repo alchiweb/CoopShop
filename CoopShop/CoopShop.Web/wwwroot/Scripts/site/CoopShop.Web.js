@@ -1294,6 +1294,7 @@ var CoopShop;
                 'UnitPrice',
                 'Quantity',
                 'Discount',
+                'UnitsInStock',
                 'ProductName',
                 'QuantityPerUnit',
                 'LineTotal',

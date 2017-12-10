@@ -107,6 +107,14 @@ namespace CoopShop.DataShop.Entities
             set { Fields.QuantitySymbol[this] = (Int16?)value; }
         }
 
+        [Origin("p"), DisplayName("Stock")]
+        //                [Expression("p.[QuantitySymbol]")]
+        public Single? UnitsInStock
+        {
+            get { return (Single?)Fields.UnitsInStock[this]; }
+            set { Fields.UnitsInStock[this] = (Single?)value; }
+        }
+
 
         [Origin("p"), DisplayName("Category"), ForeignKey(typeof(CategoryRow), "CategoryID"), LeftJoin("cat"), LookupInclude]
         [LookupEditor(typeof(CategoryRow), InplaceAdd = true)]
@@ -244,6 +252,7 @@ namespace CoopShop.DataShop.Entities
             public DecimalField UnitPrice;
             public SingleField Quantity; // alchiweb
             public SingleField Discount;
+            public SingleField UnitsInStock;
 
             public StringField ProductName;
             public SingleField QuantityPerUnit;
