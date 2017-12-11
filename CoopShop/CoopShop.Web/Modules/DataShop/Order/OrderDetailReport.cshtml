@@ -58,6 +58,7 @@
                     <tr>
                         <th>Produit</th>
                         <th>Prix unitaire</th>
+                        <th>Prix</th>
                         <th>Quantité</th>
                         <th>Total</th>
                     </tr>
@@ -65,12 +66,19 @@
                 <tbody>
                     @foreach (var d in Model.Details)
                     {
-                        <tr>
-                            <td>@d.ProductName</td>
-                            <td>@(d.UnitPrice.ToStringDefault("#,##0.00", frFR)) / @(d.QuantitySymbol.Value.ToString())</td>
-                            <td>@(d.Quantity.ToStringDefault("#,##0.###", frFR))</td>
-                            <td>@(d.LineTotal.ToStringDefault("#,##0.00", frFR))</td>
-                        </tr>
+                    <tr>
+                        @{
+        // var pricePerUnit = (double) d.UnitPrice / (double)d.QuantityPerUnit;
+        // pricePerUnit = Math.Round(pricePerUnit, 2);
+
+        //(d.QuantitySymbol.Value.ToString())
+                        }
+                        <td>@d.ProductName</td>
+                        <td>@(d.UnitPrice.ToStringDefault("#,##0.00", frFR)) (@(d.QuantityPerUnit.ToStringDefault("",frFR)) @(d.QuantitySymbol.Value.ToString()))</td>
+                        <td>@(d.QuantityPerUnitPrice.ToStringDefault("#,##0.00", frFR)) / @(d.QuantitySymbol.Value.ToString())</td>
+                        <td>@(d.Quantity.ToStringDefault("#,##0.###", frFR))</td>
+                        <td>@(d.LineTotal.ToStringDefault("#,##0.00", frFR))</td>
+                    </tr>
                     }
                 </tbody>
             </table>

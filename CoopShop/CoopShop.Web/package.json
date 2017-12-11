@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "serene.aspnetcore",
   "version": "1.0.0",
   "description": "CoopShop ASP.NET Core",
@@ -19,7 +19,10 @@
     "less": "^2.7.2",
     "vue": "^2.5.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/big.js": "^4.0.0",
+    "big.js": "^5.0.3"
+  },
   "scripts": {
     "less": "lessc ./wwwroot/Content/site/site.less ./wwwroot/content/site/site.css"
   },

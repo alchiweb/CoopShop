@@ -331,3 +331,4 @@
 /// <reference path="Scripts/toastr.js" />
 /// <reference path="Scripts/vegas/vegas.js" />
 /// <reference path="Scripts/vue.js" />
+/// <reference path="Scripts/big.js" />

@@ -212,9 +212,9 @@
             Q.first(columns, x => x.field === fld.QuantityPerUnit).format = numMorePrecise;
 
             Q.first(columns, x => x.field === fld.UnitPrice).format = num;
-            Q.first(columns, x => x.field === fld.UnitsInStock).format = num;
-            Q.first(columns, x => x.field === fld.UnitsOnOrder).format = num;
-            Q.first(columns, x => x.field === fld.ReorderLevel).format = num;
+            Q.first(columns, x => x.field === fld.UnitsInStock).format = numMorePrecise;
+            Q.first(columns, x => x.field === fld.UnitsOnOrder).format = numMorePrecise;
+            Q.first(columns, x => x.field === fld.ReorderLevel).format = numMorePrecise;
 
             //alchiweb
             Q.first(columns, x => x.field === fld.BuyingPrice).format = num;
@@ -228,9 +228,8 @@
             var item = this.itemAt(cell.row);
             var input = $(e.target);
             var field = input.data('field');
-            //alchiweb: TODO
             //var text = Q.coalesce(Q.trimToNull(input.val()), '0');
-            var text = Q.coalesce(Q.trimToNull(input.val()), '0').replace(".", ",");
+            var text = Q.coalesce(Q.trimToNull(input.val()), '0').replace(".", Q.Culture.decimalSeparator);
 
             var pending = this.pendingChanges[item.ProductID];
 
@@ -286,7 +285,7 @@
                 var sup = SupplierRow.getLookup().itemById[value].CommissionPercentage;
                 var inputBuyingPrice = input.closest(".slick-row").find("input[data-field='BuyingPrice']");
 
-                inputBuyingPrice.parent().next().text(sup.toString().replace(".", ","));
+                inputBuyingPrice.parent().next().text(sup.toString().replace(".", Q.Culture.decimalSeparator));
                 this.updatePrice(inputBuyingPrice, pending, item);
                 item['SupplierCommissionPercentage'] = sup;
 
@@ -311,16 +310,22 @@
 
         //alchiweb
         private updatePrice(inputBuyingPrice, pending, item) {
+            Big.RM = 3;
             var inputUnitPrice = inputBuyingPrice.closest(".slick-row").find("input[data-field='UnitPrice']");
-            var commPerc = parseFloat(inputBuyingPrice.parent().next().text().replace(",", "."));
+            var commPerc: Big;
+            try {
+                commPerc = Big(inputBuyingPrice.parent().next().text().replace(Q.Culture.decimalSeparator, "."));
+            } catch (Exception) {
+                commPerc = Big(0);
+            }
             var fieldUnitPrice = inputUnitPrice.data('field');
-            var valuePrice: number = 0;
+            var valuePrice: Big = Big(0);
 
-            if (commPerc !== 0.)
-                valuePrice = Math.ceil(parseFloat(inputBuyingPrice.val().replace(",", ".")) * (1. + commPerc) * 10.0) / 10.0;
+            if (!commPerc.eq(0))
+                valuePrice = Big(inputBuyingPrice.val().replace(Q.Culture.decimalSeparator, ".")).times(commPerc.plus(1)).round(1);
 
-            if (valuePrice > 0) {
-                var stringPrice = valuePrice.toString().replace(".", ",");
+            if (valuePrice.gt(0)) {
+                var stringPrice = valuePrice.toString().replace(".", Q.Culture.decimalSeparator);
                 inputUnitPrice.val(stringPrice).addClass('dirty');
                 pending[fieldUnitPrice] = valuePrice;
                 item[fieldUnitPrice] = valuePrice;

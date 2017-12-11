@@ -66,23 +66,46 @@
         }
 
         calculateMonnaie() {
-            var payment: number = parseFloat($("input[name='PaymentTotal']").val().replace(".", "").replace(",", "."));
-            if (payment === NaN)
-                payment = 0;
-            var monnaie = parseFloat($("input[name='monnaie']").val().replace(",", "."));
-            monnaie = Math.ceil(monnaie * 100) / 100;
+//            var currentLanguage = Q.coalesce($.cookie("LanguagePreference"), 'en');
+            Big.RM = 1;
 
-            var monnaieStr = monnaie.toFixed(2).replace(".", ",");
+
+            var paymentStr = Q.coalesce(Q.trimToNull($("input[name='PaymentTotal']").val()), '0');
+            if (paymentStr === NaN)
+                paymentStr = "0";
+            var payment: Big;
+            try {
+                payment = Big(Q.parseDecimal(paymentStr)).round(2);
+            }
+            catch (Exception) {
+                payment = Big(0);
+            }
+//            var payment: number = parseFloat($("input[name='PaymentTotal']").val().replace(".", "").replace(",", "."));
+ //           var monnaie = parseFloat($("input[name='monnaie']").val().replace(",", "."));
+ //           monnaie = Math.ceil(monnaie * 100) / 100;
+
+            var monnaieStr = Q.coalesce(Q.trimToNull($("input[name='monnaie']").val()), '0');
+            var monnaie: Big;
+            try {
+                monnaie = Big(Q.parseDecimal(monnaieStr.replace(".", Q.Culture.decimalSeparator))).round(2);
+            }
+            catch (Exception) {
+                monnaie = Big(0);
+            }
+
+
+            var monnaieStr = monnaie.toFixed(2).replace(".", Q.Culture.decimalSeparator);
             if (monnaieStr === "NaN") {
                 monnaie = 0;
                 monnaieStr = "0,00";
             }
+
             if ($("input[name='monnaie']").val() !== monnaieStr)
                 $("input[name='monnaie']").val(monnaieStr);
-            var rendu:number = monnaie - payment;
+            var rendu:Big = monnaie.minus(payment);
             if (rendu < 0)
                 rendu = 0;
-            $("#rendu").html("&nbsp;Rendre&nbsp;:&nbsp;" + rendu.toFixed(2).replace(".", ","));
+            $("#rendu").html("&nbsp;Rendre&nbsp;:&nbsp;" + rendu.toFixed(2).replace(".", Q.Culture.decimalSeparator));
         }
 
         getToolbarButtons() {

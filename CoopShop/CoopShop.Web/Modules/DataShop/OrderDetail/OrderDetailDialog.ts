@@ -56,7 +56,6 @@ namespace CoopShop.DataShop {
 
         protected saveHandler(options: Serenity.ServiceOptions<Serenity.SaveResponse>,
             callback: (response: Serenity.SaveResponse) => void): void {
-            console.log("saveHandler");
             this.savedItem = true;
             super.saveHandler(options, callback);
         }
@@ -137,7 +136,7 @@ namespace CoopShop.DataShop {
 
                     var quantity = this.form.Quantity.value;
                     if (quantity > currentProduct.UnitsInStock)
-                        return "Stock (" + currentProduct.UnitsInStock.toString().replace(".", ",") + ") insuffisant ! Changer la quantité ou cliquer sur le crayon pour mettre à jour le produit.";
+                        return "Stock (" + currentProduct.UnitsInStock.toString().replace(".", Q.Culture.decimalSeparator) + ") insuffisant ! Changer la quantité ou cliquer sur le crayon pour mettre à jour le produit.";
                     }
             });
             
@@ -180,8 +179,10 @@ namespace CoopShop.DataShop {
             if (this.form != null) {
                 var productID = Q.toId(this.form.ProductID.value);
                 if (productID != null) {
+                    Big.RM = 1;
+
                     var productRow = ProductRow.getLookup().itemById[productID];
-                    this.form.QuantityPerUnitPrice.value = this.form.UnitPrice.value / productRow.QuantityPerUnit;
+                    this.form.QuantityPerUnitPrice.value = Number(Big(this.form.UnitPrice.value).div(Big(productRow.QuantityPerUnit)));
                     this.form.QuantityPerUnitPrice.element.parent().children("label")
                         .text("Prix / " + QuantitySymbolType[productRow.QuantitySymbol]);
                 }

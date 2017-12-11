@@ -35,6 +35,8 @@ namespace CoopShop.DataShop
                     .SelectTableFields()
                     .Select(od.ProductName)
                     .Select(od.LineTotal)
+                    .Select(od.QuantityPerUnit)
+                    .Select(od.QuantityPerUnitPrice)
                     .Where(od.OrderID == this.OrderID));
 
                 var p = ProductRow.Fields;

@@ -49,7 +49,7 @@
 
         //alchiweb
         private validateBuyingPrice(priceInput: JQuery): string {
-
+            Big.RM = 3;
             var text = Q.coalesce(Q.trimToNull(priceInput.val()), '0');
             var value = Q.parseDecimal(text);
 
@@ -57,14 +57,15 @@
                 return Q.text('Validation.BuyingPrice');
             }
             else {
+                var price: Big = Big(value);
                 //                this.form.
-                var commPerc = parseFloat(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(",", "."));
-                if (commPerc === 0.)
-                    value = 0;
+                var commPerc: Big = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
+                if (commPerc.eq(0))
+                    price = Big(0);
 
-                if (value > 0) {
+                if (price.gt(0)) {
 
-                    priceInput.closest(".category").find("input[name='UnitPrice']").val((Math.ceil(value * (1. + commPerc) * 10.0) / 10.0).toString().replace(".", ","));
+                    priceInput.closest(".category").find("input[name='UnitPrice']").val((price.times(commPerc.plus(1)).round(1)).toFixed(2).replace(".", Q.Culture.decimalSeparator));
                 }
                 //                this.byId(this.idPrefix + 'UnitPrice').val(value * .78);
 

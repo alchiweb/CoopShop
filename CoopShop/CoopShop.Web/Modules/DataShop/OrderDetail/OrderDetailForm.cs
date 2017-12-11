@@ -27,6 +27,7 @@ namespace CoopShop.DataShop.Forms
         public Single QuantityPerUnitPrice { get; set; }
         public Double Discount { get; set; }
         [ReadOnly(true)]
+        [DecimalEditor(MinValue = "0", MaxValue = "999999999.999")]
         public Single UnitsInStock { get; set; }
     }
 }

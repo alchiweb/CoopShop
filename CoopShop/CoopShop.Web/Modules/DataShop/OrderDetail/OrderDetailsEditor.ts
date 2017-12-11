@@ -67,15 +67,16 @@ namespace CoopShop.DataShop {
         private setPaymentTotal(items) {
             if (!$("input[name='PaymentTotal']").prop('disabled')) {
                 var currentLanguage = Q.coalesce($.cookie("LanguagePreference"), 'en');
+                Big.RM = 3;
 
-                var newTotal: number = 0;
+                var newTotal:Big = Big(0);
                 items.forEach(orderDetailRow => {
-                    newTotal += orderDetailRow.LineTotal;
+                    newTotal = newTotal.plus(orderDetailRow.LineTotal);
                 });
+                newTotal = newTotal.times(2).round(1).div(2);
+                //newTotal = Math.ceil(newTotal * 20)/20;
 
-                newTotal = Math.ceil(newTotal * 20)/20;
-
-                $("input[name='PaymentTotal']").val(newTotal.toLocaleString(currentLanguage)).focus().off("focus");
+                $("input[name='PaymentTotal']").val(newTotal.toFixed(2).replace('.', Q.Culture.decimalSeparator)).focus().off("focus");
                 $("input[name='PaymentTotal']").change();
             }
         }
@@ -107,8 +108,15 @@ namespace CoopShop.DataShop {
             var currentProduct: ProductRow = ProductRow.getLookup().itemById[row.ProductID];
 
             row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' ('+ currentProduct.BrandName + ')';
-            row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
-            row.LineTotal = Math.ceil(row.LineTotal * 100) / 100;
+            Big.RM = 1;
+
+            var lineTotal: Big;
+            try {
+                lineTotal = Big(row.Quantity || 0).times(Big(row.UnitPrice || 0)).minus(Big(row.Discount || 0));
+            } catch (Exception) {
+                lineTotal = Big(0);
+            }
+            row.LineTotal = Number(lineTotal.round(2));
 //            row.QuantityPerUnit = 1;
             row.QuantitySymbol = ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
 

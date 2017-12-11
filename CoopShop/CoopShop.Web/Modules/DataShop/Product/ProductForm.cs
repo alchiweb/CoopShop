@@ -28,8 +28,13 @@ namespace CoopShop.DataShop.Forms
         public Single SupplierCommissionPercentage { get; set; }
 
         [Category("Status"), DisplayFormat("#,##0.###")]
+        [DecimalEditor(MinValue = "0", MaxValue = "999999999.999")]
         public Single UnitsInStock { get; set; }
+        [DisplayFormat("#,##0.###")]
+        [DecimalEditor(MinValue = "0", MaxValue = "999999999.999")]
         public Single UnitsOnOrder { get; set; }
+        [DisplayFormat("#,##0.###")]
+        [DecimalEditor(MinValue = "0", MaxValue = "999999999.999")]
         public Single ReorderLevel { get; set; }
         [Category("Optionnel")]
         public String SupplierRef { get; set; }

@@ -18,7 +18,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var LanguageForm = (function (_super) {
+        var LanguageForm = /** @class */ (function (_super) {
             __extends(LanguageForm, _super);
             function LanguageForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -84,7 +84,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var RoleForm = (function (_super) {
+        var RoleForm = /** @class */ (function (_super) {
             __extends(RoleForm, _super);
             function RoleForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -237,7 +237,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var UserForm = (function (_super) {
+        var UserForm = /** @class */ (function (_super) {
             __extends(UserForm, _super);
             function UserForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -430,7 +430,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ChangingLookupTextForm = (function (_super) {
+        var ChangingLookupTextForm = /** @class */ (function (_super) {
             __extends(ChangingLookupTextForm, _super);
             function ChangingLookupTextForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -467,7 +467,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var DragDropSampleForm = (function (_super) {
+        var DragDropSampleForm = /** @class */ (function (_super) {
             __extends(DragDropSampleForm, _super);
             function DragDropSampleForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -528,7 +528,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var FilteredLookupInDetailForm = (function (_super) {
+        var FilteredLookupInDetailForm = /** @class */ (function (_super) {
             __extends(FilteredLookupInDetailForm, _super);
             function FilteredLookupInDetailForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -544,7 +544,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var HardcodedValuesForm = (function (_super) {
+        var HardcodedValuesForm = /** @class */ (function (_super) {
             __extends(HardcodedValuesForm, _super);
             function HardcodedValuesForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -560,7 +560,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var LookupFilterByMultipleForm = (function (_super) {
+        var LookupFilterByMultipleForm = /** @class */ (function (_super) {
             __extends(LookupFilterByMultipleForm, _super);
             function LookupFilterByMultipleForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -576,7 +576,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var PopulateLinkedDataForm = (function (_super) {
+        var PopulateLinkedDataForm = /** @class */ (function (_super) {
             __extends(PopulateLinkedDataForm, _super);
             function PopulateLinkedDataForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -592,7 +592,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ProductExcelImportForm = (function (_super) {
+        var ProductExcelImportForm = /** @class */ (function (_super) {
             __extends(ProductExcelImportForm, _super);
             function ProductExcelImportForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -629,7 +629,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var StaticTextBlockForm = (function (_super) {
+        var StaticTextBlockForm = /** @class */ (function (_super) {
             __extends(StaticTextBlockForm, _super);
             function StaticTextBlockForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -689,7 +689,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var BrandForm = (function (_super) {
+        var BrandForm = /** @class */ (function (_super) {
             __extends(BrandForm, _super);
             function BrandForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -803,7 +803,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CategoryForm = (function (_super) {
+        var CategoryForm = /** @class */ (function (_super) {
             __extends(CategoryForm, _super);
             function CategoryForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1007,7 +1007,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CustomerForm = (function (_super) {
+        var CustomerForm = /** @class */ (function (_super) {
             __extends(CustomerForm, _super);
             function CustomerForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1264,7 +1264,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var OrderDetailForm = (function (_super) {
+        var OrderDetailForm = /** @class */ (function (_super) {
             __extends(OrderDetailForm, _super);
             function OrderDetailForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1334,7 +1334,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var OrderForm = (function (_super) {
+        var OrderForm = /** @class */ (function (_super) {
             __extends(OrderForm, _super);
             function OrderForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1454,7 +1454,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ProductForm = (function (_super) {
+        var ProductForm = /** @class */ (function (_super) {
             __extends(ProductForm, _super);
             function ProductForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1649,7 +1649,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var RegionForm = (function (_super) {
+        var RegionForm = /** @class */ (function (_super) {
             __extends(RegionForm, _super);
             function RegionForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1755,7 +1755,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ShipperForm = (function (_super) {
+        var ShipperForm = /** @class */ (function (_super) {
             __extends(ShipperForm, _super);
             function ShipperForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1821,7 +1821,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var SupplierForm = (function (_super) {
+        var SupplierForm = /** @class */ (function (_super) {
             __extends(SupplierForm, _super);
             function SupplierForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1897,7 +1897,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var TerritoryForm = (function (_super) {
+        var TerritoryForm = /** @class */ (function (_super) {
             __extends(TerritoryForm, _super);
             function TerritoryForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1965,7 +1965,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaForm = (function (_super) {
+        var MeetingAgendaForm = /** @class */ (function (_super) {
             __extends(MeetingAgendaForm, _super);
             function MeetingAgendaForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -1981,7 +1981,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaRelevantForm = (function (_super) {
+        var MeetingAgendaRelevantForm = /** @class */ (function (_super) {
             __extends(MeetingAgendaRelevantForm, _super);
             function MeetingAgendaRelevantForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2128,7 +2128,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaTypeForm = (function (_super) {
+        var MeetingAgendaTypeForm = /** @class */ (function (_super) {
             __extends(MeetingAgendaTypeForm, _super);
             function MeetingAgendaTypeForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2207,7 +2207,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAttendeeForm = (function (_super) {
+        var MeetingAttendeeForm = /** @class */ (function (_super) {
             __extends(MeetingAttendeeForm, _super);
             function MeetingAttendeeForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2277,7 +2277,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDecisionForm = (function (_super) {
+        var MeetingDecisionForm = /** @class */ (function (_super) {
             __extends(MeetingDecisionForm, _super);
             function MeetingDecisionForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2293,7 +2293,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDecisionRelevantForm = (function (_super) {
+        var MeetingDecisionRelevantForm = /** @class */ (function (_super) {
             __extends(MeetingDecisionRelevantForm, _super);
             function MeetingDecisionRelevantForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2450,7 +2450,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingForm = (function (_super) {
+        var MeetingForm = /** @class */ (function (_super) {
             __extends(MeetingForm, _super);
             function MeetingForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2466,7 +2466,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingLocationForm = (function (_super) {
+        var MeetingLocationForm = /** @class */ (function (_super) {
             __extends(MeetingLocationForm, _super);
             function MeetingLocationForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2610,7 +2610,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingTypeForm = (function (_super) {
+        var MeetingTypeForm = /** @class */ (function (_super) {
             __extends(MeetingTypeForm, _super);
             function MeetingTypeForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2675,7 +2675,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var ChangePasswordForm = (function (_super) {
+        var ChangePasswordForm = /** @class */ (function (_super) {
             __extends(ChangePasswordForm, _super);
             function ChangePasswordForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2691,7 +2691,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var ForgotPasswordForm = (function (_super) {
+        var ForgotPasswordForm = /** @class */ (function (_super) {
             __extends(ForgotPasswordForm, _super);
             function ForgotPasswordForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2707,7 +2707,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var LoginForm = (function (_super) {
+        var LoginForm = /** @class */ (function (_super) {
             __extends(LoginForm, _super);
             function LoginForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2723,7 +2723,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var ResetPasswordForm = (function (_super) {
+        var ResetPasswordForm = /** @class */ (function (_super) {
             __extends(ResetPasswordForm, _super);
             function ResetPasswordForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2739,7 +2739,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var SignUpForm = (function (_super) {
+        var SignUpForm = /** @class */ (function (_super) {
             __extends(SignUpForm, _super);
             function SignUpForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2755,7 +2755,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var BusinessUnitForm = (function (_super) {
+        var BusinessUnitForm = /** @class */ (function (_super) {
             __extends(BusinessUnitForm, _super);
             function BusinessUnitForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2823,7 +2823,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var ContactForm = (function (_super) {
+        var ContactForm = /** @class */ (function (_super) {
             __extends(ContactForm, _super);
             function ContactForm() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -2907,7 +2907,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var LanguageDialog = (function (_super) {
+        var LanguageDialog = /** @class */ (function (_super) {
             __extends(LanguageDialog, _super);
             function LanguageDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -2931,7 +2931,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var LanguageGrid = (function (_super) {
+        var LanguageGrid = /** @class */ (function (_super) {
             __extends(LanguageGrid, _super);
             function LanguageGrid(container) {
                 return _super.call(this, container) || this;
@@ -2956,7 +2956,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var RoleDialog = (function (_super) {
+        var RoleDialog = /** @class */ (function (_super) {
             __extends(RoleDialog, _super);
             function RoleDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -3000,7 +3000,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var RoleGrid = (function (_super) {
+        var RoleGrid = /** @class */ (function (_super) {
             __extends(RoleGrid, _super);
             function RoleGrid(container) {
                 return _super.call(this, container) || this;
@@ -3025,7 +3025,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var RolePermissionDialog = (function (_super) {
+        var RolePermissionDialog = /** @class */ (function (_super) {
             __extends(RolePermissionDialog, _super);
             function RolePermissionDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -3082,7 +3082,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var SergenPanel = (function (_super) {
+        var SergenPanel = /** @class */ (function (_super) {
             __extends(SergenPanel, _super);
             function SergenPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -3141,7 +3141,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var TranslationGrid = (function (_super) {
+        var TranslationGrid = /** @class */ (function (_super) {
             __extends(TranslationGrid, _super);
             function TranslationGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -3338,7 +3338,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var UserDialog = (function (_super) {
+        var UserDialog = /** @class */ (function (_super) {
             __extends(UserDialog, _super);
             function UserDialog() {
                 var _this = _super.call(this) || this;
@@ -3411,7 +3411,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var UserGrid = (function (_super) {
+        var UserGrid = /** @class */ (function (_super) {
             __extends(UserGrid, _super);
             function UserGrid(container) {
                 return _super.call(this, container) || this;
@@ -3453,7 +3453,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var PermissionCheckEditor = (function (_super) {
+        var PermissionCheckEditor = /** @class */ (function (_super) {
             __extends(PermissionCheckEditor, _super);
             function PermissionCheckEditor(container, opt) {
                 var _this = _super.call(this, container, opt) || this;
@@ -3773,7 +3773,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var UserPermissionDialog = (function (_super) {
+        var UserPermissionDialog = /** @class */ (function (_super) {
             __extends(UserPermissionDialog, _super);
             function UserPermissionDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -3837,7 +3837,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var RoleCheckEditor = (function (_super) {
+        var RoleCheckEditor = /** @class */ (function (_super) {
             __extends(RoleCheckEditor, _super);
             function RoleCheckEditor(div) {
                 return _super.call(this, div) || this;
@@ -3877,7 +3877,7 @@ var CoopShop;
 (function (CoopShop) {
     var Administration;
     (function (Administration) {
-        var UserRoleDialog = (function (_super) {
+        var UserRoleDialog = /** @class */ (function (_super) {
             __extends(UserRoleDialog, _super);
             function UserRoleDialog(opt) {
                 var _this = _super.call(this, opt) || this;
@@ -3925,7 +3925,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ChartInDialog = (function (_super) {
+        var ChartInDialog = /** @class */ (function (_super) {
             __extends(ChartInDialog, _super);
             function ChartInDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -3979,7 +3979,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ProductDialog = (function (_super) {
+        var ProductDialog = /** @class */ (function (_super) {
             __extends(ProductDialog, _super);
             //alchiweb
             function ProductDialog() {
@@ -4023,18 +4023,20 @@ var CoopShop;
             };
             //alchiweb
             ProductDialog.prototype.validateBuyingPrice = function (priceInput) {
+                Big.RM = 3;
                 var text = Q.coalesce(Q.trimToNull(priceInput.val()), '0');
                 var value = Q.parseDecimal(text);
                 if (isNaN(value)) {
                     return Q.text('Validation.BuyingPrice');
                 }
                 else {
+                    var price = Big(value);
                     //                this.form.
-                    var commPerc = parseFloat(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(",", "."));
-                    if (commPerc === 0.)
-                        value = 0;
-                    if (value > 0) {
-                        priceInput.closest(".category").find("input[name='UnitPrice']").val((Math.ceil(value * (1. + commPerc) * 10.0) / 10.0).toString().replace(".", ","));
+                    var commPerc = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
+                    if (commPerc.eq(0))
+                        price = Big(0);
+                    if (price.gt(0)) {
+                        priceInput.closest(".category").find("input[name='UnitPrice']").val((price.times(commPerc.plus(1)).round(1)).toFixed(2).replace(".", Q.Culture.decimalSeparator));
                     }
                     //                this.byId(this.idPrefix + 'UnitPrice').val(value * .78);
                 }
@@ -4072,7 +4074,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var CloneableEntityDialog = (function (_super) {
+        var CloneableEntityDialog = /** @class */ (function (_super) {
             __extends(CloneableEntityDialog, _super);
             function CloneableEntityDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -4120,7 +4122,7 @@ var CoopShop;
         //import CategoryRow = CoopShop.DataShop.CategoryRow;
         //import BrandRow = CoopShop.DataShop.BrandRow;
         //import SupplierRow = CoopShop.DataShop.SupplierRow;
-        var ProductGrid = (function (_super) {
+        var ProductGrid = /** @class */ (function (_super) {
             __extends(ProductGrid, _super);
             function ProductGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -4290,9 +4292,9 @@ var CoopShop;
                 supplier.format = function (ctx) { return _this.selectFormatter(ctx, fld.SupplierID, DataShop.SupplierRow.getLookup()); };
                 Q.first(columns, function (x) { return x.field === fld.QuantityPerUnit; }).format = numMorePrecise;
                 Q.first(columns, function (x) { return x.field === fld.UnitPrice; }).format = num;
-                Q.first(columns, function (x) { return x.field === fld.UnitsInStock; }).format = num;
-                Q.first(columns, function (x) { return x.field === fld.UnitsOnOrder; }).format = num;
-                Q.first(columns, function (x) { return x.field === fld.ReorderLevel; }).format = num;
+                Q.first(columns, function (x) { return x.field === fld.UnitsInStock; }).format = numMorePrecise;
+                Q.first(columns, function (x) { return x.field === fld.UnitsOnOrder; }).format = numMorePrecise;
+                Q.first(columns, function (x) { return x.field === fld.ReorderLevel; }).format = numMorePrecise;
                 //alchiweb
                 Q.first(columns, function (x) { return x.field === fld.BuyingPrice; }).format = num;
                 Q.first(columns, function (x) { return x.field === fld.InternalRef; }).format = str;
@@ -4303,9 +4305,8 @@ var CoopShop;
                 var item = this.itemAt(cell.row);
                 var input = $(e.target);
                 var field = input.data('field');
-                //alchiweb: TODO
                 //var text = Q.coalesce(Q.trimToNull(input.val()), '0');
-                var text = Q.coalesce(Q.trimToNull(input.val()), '0').replace(".", ",");
+                var text = Q.coalesce(Q.trimToNull(input.val()), '0').replace(".", Q.Culture.decimalSeparator);
                 var pending = this.pendingChanges[item.ProductID];
                 var effective = this.getEffectiveValue(item, field);
                 var oldText;
@@ -4348,7 +4349,7 @@ var CoopShop;
                 if (field === "SupplierID") {
                     var sup = DataShop.SupplierRow.getLookup().itemById[value].CommissionPercentage;
                     var inputBuyingPrice = input.closest(".slick-row").find("input[data-field='BuyingPrice']");
-                    inputBuyingPrice.parent().next().text(sup.toString().replace(".", ","));
+                    inputBuyingPrice.parent().next().text(sup.toString().replace(".", Q.Culture.decimalSeparator));
                     this.updatePrice(inputBuyingPrice, pending, item);
                     item['SupplierCommissionPercentage'] = sup;
                 }
@@ -4364,14 +4365,21 @@ var CoopShop;
             };
             //alchiweb
             ProductGrid.prototype.updatePrice = function (inputBuyingPrice, pending, item) {
+                Big.RM = 3;
                 var inputUnitPrice = inputBuyingPrice.closest(".slick-row").find("input[data-field='UnitPrice']");
-                var commPerc = parseFloat(inputBuyingPrice.parent().next().text().replace(",", "."));
+                var commPerc;
+                try {
+                    commPerc = Big(inputBuyingPrice.parent().next().text().replace(Q.Culture.decimalSeparator, "."));
+                }
+                catch (Exception) {
+                    commPerc = Big(0);
+                }
                 var fieldUnitPrice = inputUnitPrice.data('field');
-                var valuePrice = 0;
-                if (commPerc !== 0.)
-                    valuePrice = Math.ceil(parseFloat(inputBuyingPrice.val().replace(",", ".")) * (1. + commPerc) * 10.0) / 10.0;
-                if (valuePrice > 0) {
-                    var stringPrice = valuePrice.toString().replace(".", ",");
+                var valuePrice = Big(0);
+                if (!commPerc.eq(0))
+                    valuePrice = Big(inputBuyingPrice.val().replace(Q.Culture.decimalSeparator, ".")).times(commPerc.plus(1)).round(1);
+                if (valuePrice.gt(0)) {
+                    var stringPrice = valuePrice.toString().replace(".", Q.Culture.decimalSeparator);
                     inputUnitPrice.val(stringPrice).addClass('dirty');
                     pending[fieldUnitPrice] = valuePrice;
                     item[fieldUnitPrice] = valuePrice;
@@ -4451,7 +4459,7 @@ var CoopShop;
         /**
          * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
          */
-        var CloneableEntityGrid = (function (_super) {
+        var CloneableEntityGrid = /** @class */ (function (_super) {
             __extends(CloneableEntityGrid, _super);
             function CloneableEntityGrid(container) {
                 return _super.call(this, container) || this;
@@ -4469,11 +4477,13 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
+        //    import { Big } from "big.js";
+        //import {Big} from "big.js";
         //import IDataGrid = Serenity.IDataGrid;
         //import ListRequest = Serenity.ListRequest;
         //import getColumns = Q.getColumns;
         //import SlickFormatting = Serenity.SlickFormatting;
-        var OrderGrid = (function (_super) {
+        var OrderGrid = /** @class */ (function (_super) {
             __extends(OrderGrid, _super);
             function OrderGrid(container) {
                 return _super.call(this, container) || this;
@@ -4486,23 +4496,23 @@ var CoopShop;
             //alchiweb
             OrderGrid.prototype.onViewProcessData = function (response) {
                 var eltsumtotal = $("#sumtotal")[0];
+                Big.RM = 1;
                 if (eltsumtotal !== undefined) {
-                    var sumtotal = 0.;
+                    var sumtotal = new Big("0");
                     var salestotal = 0;
                     for (var _i = 0, _a = response.Entities; _i < _a.length; _i++) {
                         var resp = _a[_i];
-                        sumtotal += Math.round(resp.PaymentTotal * 100) / 100;
+                        sumtotal = sumtotal.plus(resp.PaymentTotal);
                         salestotal++;
                     }
-                    sumtotal = Math.round(sumtotal * 1000) / 1000;
-                    var salesaverage = Math.round(sumtotal / salestotal * 100) / 100;
+                    var salesaverage = sumtotal.div(salestotal).round(2);
                     eltsumtotal.innerHTML =
                         "<font color=\"#0000FF\">Total des ventes affichées (dans la page) : <font color=\"#FF0000\">" +
-                            sumtotal.toString().replace('.', ',') +
+                            sumtotal.toString().replace('.', Q.Culture.decimalSeparator) +
                             "</font> €<br/>Pour <font color=\"#FF0000\">" +
                             salestotal +
                             "</font> ventes. Prix moyen par vente : <font color=\"#FF0000\">" +
-                            salesaverage.toString().replace('.', ',') +
+                            salesaverage.toString().replace('.', Q.Culture.decimalSeparator) +
                             "</font> €</font>";
                 }
                 return _super.prototype.onViewProcessData.call(this, response);
@@ -4608,7 +4618,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var DefaultValuesInNewGrid = (function (_super) {
+        var DefaultValuesInNewGrid = /** @class */ (function (_super) {
             __extends(DefaultValuesInNewGrid, _super);
             function DefaultValuesInNewGrid(container) {
                 return _super.call(this, container) || this;
@@ -4763,7 +4773,7 @@ var CoopShop;
         //import OrderRow = CoopShop.DataShop.OrderRow;
         //import OrderForm = CoopShop.DataShop.OrderForm;
         //import OrderService = CoopShop.DataShop.OrderService;
-        var OrderDialog = (function (_super) {
+        var OrderDialog = /** @class */ (function (_super) {
             __extends(OrderDialog, _super);
             function OrderDialog() {
                 var _this = _super.call(this) || this;
@@ -4814,22 +4824,40 @@ var CoopShop;
                 $("input[name='monnaie']").on('change', this.calculateMonnaie);
             };
             OrderDialog.prototype.calculateMonnaie = function () {
-                var payment = parseFloat($("input[name='PaymentTotal']").val().replace(".", "").replace(",", "."));
-                if (payment === NaN)
-                    payment = 0;
-                var monnaie = parseFloat($("input[name='monnaie']").val().replace(",", "."));
-                monnaie = Math.ceil(monnaie * 100) / 100;
-                var monnaieStr = monnaie.toFixed(2).replace(".", ",");
+                //            var currentLanguage = Q.coalesce($.cookie("LanguagePreference"), 'en');
+                Big.RM = 1;
+                var paymentStr = Q.coalesce(Q.trimToNull($("input[name='PaymentTotal']").val()), '0');
+                if (paymentStr === NaN)
+                    paymentStr = "0";
+                var payment;
+                try {
+                    payment = Big(Q.parseDecimal(paymentStr)).round(2);
+                }
+                catch (Exception) {
+                    payment = Big(0);
+                }
+                //            var payment: number = parseFloat($("input[name='PaymentTotal']").val().replace(".", "").replace(",", "."));
+                //           var monnaie = parseFloat($("input[name='monnaie']").val().replace(",", "."));
+                //           monnaie = Math.ceil(monnaie * 100) / 100;
+                var monnaieStr = Q.coalesce(Q.trimToNull($("input[name='monnaie']").val()), '0');
+                var monnaie;
+                try {
+                    monnaie = Big(Q.parseDecimal(monnaieStr.replace(".", Q.Culture.decimalSeparator))).round(2);
+                }
+                catch (Exception) {
+                    monnaie = Big(0);
+                }
+                var monnaieStr = monnaie.toFixed(2).replace(".", Q.Culture.decimalSeparator);
                 if (monnaieStr === "NaN") {
                     monnaie = 0;
                     monnaieStr = "0,00";
                 }
                 if ($("input[name='monnaie']").val() !== monnaieStr)
                     $("input[name='monnaie']").val(monnaieStr);
-                var rendu = monnaie - payment;
+                var rendu = monnaie.minus(payment);
                 if (rendu < 0)
                     rendu = 0;
-                $("#rendu").html("&nbsp;Rendre&nbsp;:&nbsp;" + rendu.toFixed(2).replace(".", ","));
+                $("#rendu").html("&nbsp;Rendre&nbsp;:&nbsp;" + rendu.toFixed(2).replace(".", Q.Culture.decimalSeparator));
             };
             OrderDialog.prototype.getToolbarButtons = function () {
                 var _this = this;
@@ -4929,7 +4957,7 @@ var CoopShop;
         /**
          * A version of order dialog converted to a panel by adding Serenity.Decorators.panel decorator.
          */
-        var EntityDialogAsPanel = (function (_super) {
+        var EntityDialogAsPanel = /** @class */ (function (_super) {
             __extends(EntityDialogAsPanel, _super);
             function EntityDialogAsPanel() {
                 return _super.call(this) || this;
@@ -4954,7 +4982,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CategoryDialog = (function (_super) {
+        var CategoryDialog = /** @class */ (function (_super) {
             __extends(CategoryDialog, _super);
             function CategoryDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -4979,7 +5007,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var GetInsertedRecordIdDialog = (function (_super) {
+        var GetInsertedRecordIdDialog = /** @class */ (function (_super) {
             __extends(GetInsertedRecordIdDialog, _super);
             function GetInsertedRecordIdDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -5016,7 +5044,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CategoryGrid = (function (_super) {
+        var CategoryGrid = /** @class */ (function (_super) {
             __extends(CategoryGrid, _super);
             function CategoryGrid(container) {
                 return _super.call(this, container) || this;
@@ -5042,7 +5070,7 @@ var CoopShop;
         /**
          * Subclass of CategoryGrid to override dialog type to GetInsertedRecordIdDialog
          */
-        var GetInsertedRecordIdGrid = (function (_super) {
+        var GetInsertedRecordIdGrid = /** @class */ (function (_super) {
             __extends(GetInsertedRecordIdGrid, _super);
             function GetInsertedRecordIdGrid(container) {
                 return _super.call(this, container) || this;
@@ -5066,7 +5094,7 @@ var CoopShop;
          * When comparing this to MultiColumnDialog sample, you may notice that
          * this version requires much less JS and CSS code.
          */
-        var MultiColumnResponsiveDialog = (function (_super) {
+        var MultiColumnResponsiveDialog = /** @class */ (function (_super) {
             __extends(MultiColumnResponsiveDialog, _super);
             function MultiColumnResponsiveDialog() {
                 return _super.call(this) || this;
@@ -5087,7 +5115,7 @@ var CoopShop;
         /**
          * Subclass of OrderGrid to override dialog type to MultiColumnResponsiveDialog
          */
-        var MultiColumnResponsiveGrid = (function (_super) {
+        var MultiColumnResponsiveGrid = /** @class */ (function (_super) {
             __extends(MultiColumnResponsiveGrid, _super);
             function MultiColumnResponsiveGrid(container) {
                 return _super.call(this, container) || this;
@@ -5109,7 +5137,7 @@ var CoopShop;
         /**
          * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
          */
-        var OtherFormInTabDialog = (function (_super) {
+        var OtherFormInTabDialog = /** @class */ (function (_super) {
             __extends(OtherFormInTabDialog, _super);
             function OtherFormInTabDialog() {
                 var _this = _super.call(this) || this;
@@ -5210,7 +5238,7 @@ var CoopShop;
         /**
          * Subclass of OrderGrid to override dialog type to OtherFormInTabDialog
          */
-        var OtherFormInTabGrid = (function (_super) {
+        var OtherFormInTabGrid = /** @class */ (function (_super) {
             __extends(OtherFormInTabGrid, _super);
             function OtherFormInTabGrid(container) {
                 return _super.call(this, container) || this;
@@ -5233,7 +5261,7 @@ var CoopShop;
          * Our custom order dialog subclass that will have a tab to display and edit selected customer details.
          * With single toolbar for all forms
          */
-        var OtherFormOneBarDialog = (function (_super) {
+        var OtherFormOneBarDialog = /** @class */ (function (_super) {
             __extends(OtherFormOneBarDialog, _super);
             function OtherFormOneBarDialog() {
                 var _this = _super.call(this) || this;
@@ -5355,7 +5383,7 @@ var CoopShop;
         /**
          * Subclass of OrderGrid to override dialog type to OtherFormInTabOneBarDialog
          */
-        var OtherFormInTabOneBarGrid = (function (_super) {
+        var OtherFormInTabOneBarGrid = /** @class */ (function (_super) {
             __extends(OtherFormInTabOneBarGrid, _super);
             function OtherFormInTabOneBarGrid(container) {
                 return _super.call(this, container) || this;
@@ -5373,7 +5401,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var PopulateLinkedDataDialog = (function (_super) {
+        var PopulateLinkedDataDialog = /** @class */ (function (_super) {
             __extends(PopulateLinkedDataDialog, _super);
             function PopulateLinkedDataDialog() {
                 var _this = _super.call(this) || this;
@@ -5439,7 +5467,7 @@ var CoopShop;
         /**
          * A subclass of OrderGrid that launches PopulateLinkedDataDialog
          */
-        var PopulateLinkedDataGrid = (function (_super) {
+        var PopulateLinkedDataGrid = /** @class */ (function (_super) {
             __extends(PopulateLinkedDataGrid, _super);
             function PopulateLinkedDataGrid(container) {
                 return _super.call(this, container) || this;
@@ -5457,7 +5485,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var SupplierDialog = (function (_super) {
+        var SupplierDialog = /** @class */ (function (_super) {
             __extends(SupplierDialog, _super);
             function SupplierDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -5485,7 +5513,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ReadOnlyDialog = (function (_super) {
+        var ReadOnlyDialog = /** @class */ (function (_super) {
             __extends(ReadOnlyDialog, _super);
             function ReadOnlyDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -5584,7 +5612,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var SupplierGrid = (function (_super) {
+        var SupplierGrid = /** @class */ (function (_super) {
             __extends(SupplierGrid, _super);
             function SupplierGrid(container) {
                 return _super.call(this, container) || this;
@@ -5610,7 +5638,7 @@ var CoopShop;
         /**
          * A readonly grid that launches ReadOnlyDialog
          */
-        var ReadOnlyGrid = (function (_super) {
+        var ReadOnlyGrid = /** @class */ (function (_super) {
             __extends(ReadOnlyGrid, _super);
             function ReadOnlyGrid(container) {
                 return _super.call(this, container) || this;
@@ -5639,7 +5667,7 @@ var CoopShop;
         /**
          * Adding Responsive attribute makes this dialog use full screen in mobile devices.
          */
-        var ResponsiveDialog = (function (_super) {
+        var ResponsiveDialog = /** @class */ (function (_super) {
             __extends(ResponsiveDialog, _super);
             function ResponsiveDialog() {
                 return _super.call(this) || this;
@@ -5667,7 +5695,7 @@ var CoopShop;
         /**
          * Subclass of OrderGrid to override dialog type to ResponsiveDialog
          */
-        var ResponsiveGrid = (function (_super) {
+        var ResponsiveGrid = /** @class */ (function (_super) {
             __extends(ResponsiveGrid, _super);
             function ResponsiveGrid(container) {
                 return _super.call(this, container) || this;
@@ -5685,7 +5713,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CustomerDialog = (function (_super) {
+        var CustomerDialog = /** @class */ (function (_super) {
             __extends(CustomerDialog, _super);
             function CustomerDialog() {
                 var _this = _super.call(this) || this;
@@ -5738,7 +5766,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var SerialAutoNumberDialog = (function (_super) {
+        var SerialAutoNumberDialog = /** @class */ (function (_super) {
             __extends(SerialAutoNumberDialog, _super);
             function SerialAutoNumberDialog() {
                 var _this = _super.call(this) || this;
@@ -5785,7 +5813,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CustomerGrid = (function (_super) {
+        var CustomerGrid = /** @class */ (function (_super) {
             __extends(CustomerGrid, _super);
             function CustomerGrid(container) {
                 return _super.call(this, container) || this;
@@ -5827,7 +5855,7 @@ var CoopShop;
         /**
          * Subclass of CustomerGrid to override dialog type to SerialAutoNumberDialog
          */
-        var SerialAutoNumberGrid = (function (_super) {
+        var SerialAutoNumberGrid = /** @class */ (function (_super) {
             __extends(SerialAutoNumberGrid, _super);
             function SerialAutoNumberGrid(container) {
                 return _super.call(this, container) || this;
@@ -5845,7 +5873,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var GridEditorDialog = (function (_super) {
+        var GridEditorDialog = /** @class */ (function (_super) {
             __extends(GridEditorDialog, _super);
             function GridEditorDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -5882,7 +5910,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ChangingLookupTextDialog = (function (_super) {
+        var ChangingLookupTextDialog = /** @class */ (function (_super) {
             __extends(ChangingLookupTextDialog, _super);
             function ChangingLookupTextDialog() {
                 var _this = _super.call(this) || this;
@@ -5926,7 +5954,7 @@ var CoopShop;
         /**
          * Our custom product editor type
          */
-        var ChangingLookupTextEditor = (function (_super) {
+        var ChangingLookupTextEditor = /** @class */ (function (_super) {
             __extends(ChangingLookupTextEditor, _super);
             function ChangingLookupTextEditor(container, options) {
                 return _super.call(this, container, options) || this;
@@ -5956,7 +5984,7 @@ var CoopShop;
     var DataShop;
     (function (DataShop) {
         //import Select2Extensions = Serenity.Select2Extensions;
-        var OrderDetailDialog = (function (_super) {
+        var OrderDetailDialog = /** @class */ (function (_super) {
             __extends(OrderDetailDialog, _super);
             function OrderDetailDialog() {
                 var _this = _super.call(this) || this;
@@ -5991,7 +6019,7 @@ var CoopShop;
                         var currentProduct = DataShop.ProductRow.getLookup().itemById[productID];
                         var quantity = _this.form.Quantity.value;
                         if (quantity > currentProduct.UnitsInStock)
-                            return "Stock (" + currentProduct.UnitsInStock.toString().replace(".", ",") + ") insuffisant ! Changer la quantité ou cliquer sur le crayon pour mettre à jour le produit.";
+                            return "Stock (" + currentProduct.UnitsInStock.toString().replace(".", Q.Culture.decimalSeparator) + ") insuffisant ! Changer la quantité ou cliquer sur le crayon pour mettre à jour le produit.";
                     }
                 });
                 _this.form.Discount.addValidationRule(_this.uniqueName, function (e) {
@@ -6042,7 +6070,6 @@ var CoopShop;
                 _super.prototype.deleteHandler.call(this, options, callback);
             };
             OrderDetailDialog.prototype.saveHandler = function (options, callback) {
-                console.log("saveHandler");
                 this.savedItem = true;
                 _super.prototype.saveHandler.call(this, options, callback);
             };
@@ -6110,8 +6137,9 @@ var CoopShop;
                 if (this.form != null) {
                     var productID = Q.toId(this.form.ProductID.value);
                     if (productID != null) {
+                        Big.RM = 1;
                         var productRow = DataShop.ProductRow.getLookup().itemById[productID];
-                        this.form.QuantityPerUnitPrice.value = this.form.UnitPrice.value / productRow.QuantityPerUnit;
+                        this.form.QuantityPerUnitPrice.value = Number(Big(this.form.UnitPrice.value).div(Big(productRow.QuantityPerUnit)));
                         this.form.QuantityPerUnitPrice.element.parent().children("label")
                             .text("Prix / " + DataShop.QuantitySymbolType[productRow.QuantitySymbol]);
                     }
@@ -6134,7 +6162,7 @@ var CoopShop;
          * Our subclass of order detail dialog with a CategoryID property
          * that will be used to set CascadeValue of product editor
          */
-        var FilteredLookupOrderDetailDialog = (function (_super) {
+        var FilteredLookupOrderDetailDialog = /** @class */ (function (_super) {
             __extends(FilteredLookupOrderDetailDialog, _super);
             function FilteredLookupOrderDetailDialog() {
                 var _this = _super.call(this) || this;
@@ -6171,7 +6199,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var GridEditorBase = (function (_super) {
+        var GridEditorBase = /** @class */ (function (_super) {
             __extends(GridEditorBase, _super);
             function GridEditorBase(container) {
                 var _this = _super.call(this, container) || this;
@@ -6310,7 +6338,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var OrderDetailsEditor = (function (_super) {
+        var OrderDetailsEditor = /** @class */ (function (_super) {
             __extends(OrderDetailsEditor, _super);
             function OrderDetailsEditor(container) {
                 var _this = _super.call(this, container) || this;
@@ -6356,12 +6384,14 @@ var CoopShop;
             OrderDetailsEditor.prototype.setPaymentTotal = function (items) {
                 if (!$("input[name='PaymentTotal']").prop('disabled')) {
                     var currentLanguage = Q.coalesce($.cookie("LanguagePreference"), 'en');
-                    var newTotal = 0;
+                    Big.RM = 3;
+                    var newTotal = Big(0);
                     items.forEach(function (orderDetailRow) {
-                        newTotal += orderDetailRow.LineTotal;
+                        newTotal = newTotal.plus(orderDetailRow.LineTotal);
                     });
-                    newTotal = Math.ceil(newTotal * 20) / 20;
-                    $("input[name='PaymentTotal']").val(newTotal.toLocaleString(currentLanguage)).focus().off("focus");
+                    newTotal = newTotal.times(2).round(1).div(2);
+                    //newTotal = Math.ceil(newTotal * 20)/20;
+                    $("input[name='PaymentTotal']").val(newTotal.toFixed(2).replace('.', Q.Culture.decimalSeparator)).focus().off("focus");
                     $("input[name='PaymentTotal']").change();
                 }
             };
@@ -6385,8 +6415,15 @@ var CoopShop;
                 }
                 var currentProduct = DataShop.ProductRow.getLookup().itemById[row.ProductID];
                 row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' (' + currentProduct.BrandName + ')';
-                row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
-                row.LineTotal = Math.ceil(row.LineTotal * 100) / 100;
+                Big.RM = 1;
+                var lineTotal;
+                try {
+                    lineTotal = Big(row.Quantity || 0).times(Big(row.UnitPrice || 0)).minus(Big(row.Discount || 0));
+                }
+                catch (Exception) {
+                    lineTotal = Big(0);
+                }
+                row.LineTotal = Number(lineTotal.round(2));
                 //            row.QuantityPerUnit = 1;
                 row.QuantitySymbol = DataShop.ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
                 return true;
@@ -6407,7 +6444,7 @@ var CoopShop;
         /**
          * Our subclass of Order Details editor with a CategoryID property
          */
-        var FilteredLookupDetailEditor = (function (_super) {
+        var FilteredLookupDetailEditor = /** @class */ (function (_super) {
             __extends(FilteredLookupDetailEditor, _super);
             function FilteredLookupDetailEditor(container) {
                 return _super.call(this, container) || this;
@@ -6438,7 +6475,7 @@ var CoopShop;
         /**
          * Basic order dialog with a category selection
          */
-        var FilteredLookupInDetailDialog = (function (_super) {
+        var FilteredLookupInDetailDialog = /** @class */ (function (_super) {
             __extends(FilteredLookupInDetailDialog, _super);
             function FilteredLookupInDetailDialog() {
                 var _this = _super.call(this) || this;
@@ -6469,7 +6506,7 @@ var CoopShop;
         /**
          * Subclass of OrderGrid to override dialog type to FilteredLookupInDetailDialog
          */
-        var FilteredLookupInDetailGrid = (function (_super) {
+        var FilteredLookupInDetailGrid = /** @class */ (function (_super) {
             __extends(FilteredLookupInDetailGrid, _super);
             function FilteredLookupInDetailGrid(container) {
                 return _super.call(this, container) || this;
@@ -6492,7 +6529,7 @@ var CoopShop;
          * This is our custom product dialog that uses a different product form
          * (LookupFilterByMultipleForm) with our special category editor.
          */
-        var LookupFilterByMultipleDialog = (function (_super) {
+        var LookupFilterByMultipleDialog = /** @class */ (function (_super) {
             __extends(LookupFilterByMultipleDialog, _super);
             function LookupFilterByMultipleDialog() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -6514,7 +6551,7 @@ var CoopShop;
         /**
          * Subclass of ProductGrid to override dialog type to CloneableEntityDialog
          */
-        var LookupFilterByMultipleGrid = (function (_super) {
+        var LookupFilterByMultipleGrid = /** @class */ (function (_super) {
             __extends(LookupFilterByMultipleGrid, _super);
             function LookupFilterByMultipleGrid(container) {
                 return _super.call(this, container) || this;
@@ -6558,7 +6595,7 @@ var CoopShop;
          * available in server side to use in our LookupFilterByMultipleForm,
          * which is a version of ProductForm that uses our custom editor.
          */
-        var ProduceSeafoodCategoryEditor = (function (_super) {
+        var ProduceSeafoodCategoryEditor = /** @class */ (function (_super) {
             __extends(ProduceSeafoodCategoryEditor, _super);
             function ProduceSeafoodCategoryEditor(container, opt) {
                 return _super.call(this, container, opt) || this;
@@ -6594,7 +6631,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var HardcodedValuesDialog = (function (_super) {
+        var HardcodedValuesDialog = /** @class */ (function (_super) {
             __extends(HardcodedValuesDialog, _super);
             function HardcodedValuesDialog() {
                 var _this = _super.call(this) || this;
@@ -6625,7 +6662,7 @@ var CoopShop;
          * and transform templates for it to be available
          * in server side forms, e.g. [HardCodedValuesEditor]
          */
-        var HardcodedValuesEditor = (function (_super) {
+        var HardcodedValuesEditor = /** @class */ (function (_super) {
             __extends(HardcodedValuesEditor, _super);
             function HardcodedValuesEditor(container) {
                 var _this = _super.call(this, container, null) || this;
@@ -6659,7 +6696,7 @@ var CoopShop;
      * This is an editor widget but it only displays a text, not edits it.
      *
      */
-    var StaticTextBlock = (function (_super) {
+    var StaticTextBlock = /** @class */ (function (_super) {
         __extends(StaticTextBlock, _super);
         function StaticTextBlock(container, options) {
             var _this = _super.call(this, container, options) || this;
@@ -6702,7 +6739,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var StaticTextBlockDialog = (function (_super) {
+        var StaticTextBlockDialog = /** @class */ (function (_super) {
             __extends(StaticTextBlockDialog, _super);
             function StaticTextBlockDialog() {
                 var _this = _super.call(this) || this;
@@ -6737,7 +6774,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var BulkServiceAction = (function () {
+        var BulkServiceAction = /** @class */ (function () {
             function BulkServiceAction() {
             }
             BulkServiceAction.prototype.createProgressDialog = function () {
@@ -6894,7 +6931,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var OrderBulkAction = (function (_super) {
+        var OrderBulkAction = /** @class */ (function (_super) {
             __extends(OrderBulkAction, _super);
             function OrderBulkAction() {
                 return _super !== null && _super.apply(this, arguments) || this;
@@ -6942,7 +6979,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var CancellableBulkActionGrid = (function (_super) {
+        var CancellableBulkActionGrid = /** @class */ (function (_super) {
             __extends(CancellableBulkActionGrid, _super);
             function CancellableBulkActionGrid(container) {
                 return _super.call(this, container) || this;
@@ -6989,7 +7026,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ConditionalFormattingGrid = (function (_super) {
+        var ConditionalFormattingGrid = /** @class */ (function (_super) {
             __extends(ConditionalFormattingGrid, _super);
             function ConditionalFormattingGrid(container) {
                 return _super.call(this, container) || this;
@@ -7048,7 +7085,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var CustomLinksInGrid = (function (_super) {
+        var CustomLinksInGrid = /** @class */ (function (_super) {
             __extends(CustomLinksInGrid, _super);
             function CustomLinksInGrid(container) {
                 return _super.call(this, container) || this;
@@ -7161,7 +7198,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var DragDropSampleDialog = (function (_super) {
+        var DragDropSampleDialog = /** @class */ (function (_super) {
             __extends(DragDropSampleDialog, _super);
             function DragDropSampleDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -7186,7 +7223,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var DragDropSampleGrid = (function (_super) {
+        var DragDropSampleGrid = /** @class */ (function (_super) {
             __extends(DragDropSampleGrid, _super);
             function DragDropSampleGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -7379,7 +7416,7 @@ var CoopShop;
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var SelectableEntityGrid = (function (_super) {
+    var SelectableEntityGrid = /** @class */ (function (_super) {
         __extends(SelectableEntityGrid, _super);
         function SelectableEntityGrid() {
             return _super !== null && _super.apply(this, arguments) || this;
@@ -7408,7 +7445,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var RowSelectionGrid = (function (_super) {
+        var RowSelectionGrid = /** @class */ (function (_super) {
             __extends(RowSelectionGrid, _super);
             function RowSelectionGrid(container) {
                 return _super.call(this, container) || this;
@@ -7431,7 +7468,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var GridFilteredByCriteria = (function (_super) {
+        var GridFilteredByCriteria = /** @class */ (function (_super) {
             __extends(GridFilteredByCriteria, _super);
             function GridFilteredByCriteria(container) {
                 return _super.call(this, container) || this;
@@ -7470,7 +7507,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var GroupingAndSummariesInGrid = (function (_super) {
+        var GroupingAndSummariesInGrid = /** @class */ (function (_super) {
             __extends(GroupingAndSummariesInGrid, _super);
             function GroupingAndSummariesInGrid(container) {
                 return _super.call(this, container) || this;
@@ -7547,7 +7584,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var InitialValuesForQuickFilters = (function (_super) {
+        var InitialValuesForQuickFilters = /** @class */ (function (_super) {
             __extends(InitialValuesForQuickFilters, _super);
             function InitialValuesForQuickFilters(container) {
                 return _super.call(this, container) || this;
@@ -7613,7 +7650,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var InlineActionGrid = (function (_super) {
+        var InlineActionGrid = /** @class */ (function (_super) {
             __extends(InlineActionGrid, _super);
             function InlineActionGrid(container) {
                 return _super.call(this, container) || this;
@@ -7692,7 +7729,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var InlineImageFormatter = (function () {
+        var InlineImageFormatter = /** @class */ (function () {
             function InlineImageFormatter() {
             }
             InlineImageFormatter.prototype.format = function (ctx) {
@@ -7733,7 +7770,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var InlineImageInGrid = (function (_super) {
+        var InlineImageInGrid = /** @class */ (function (_super) {
             __extends(InlineImageInGrid, _super);
             function InlineImageInGrid(container) {
                 return _super.call(this, container) || this;
@@ -7760,7 +7797,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ProductExcelImportDialog = (function (_super) {
+        var ProductExcelImportDialog = /** @class */ (function (_super) {
             __extends(ProductExcelImportDialog, _super);
             function ProductExcelImportDialog() {
                 var _this = _super.call(this) || this;
@@ -7814,7 +7851,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ProductExcelImportGrid = (function (_super) {
+        var ProductExcelImportGrid = /** @class */ (function (_super) {
             __extends(ProductExcelImportGrid, _super);
             function ProductExcelImportGrid(container) {
                 return _super.call(this, container) || this;
@@ -7855,7 +7892,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var QuickFilterCustomization = (function (_super) {
+        var QuickFilterCustomization = /** @class */ (function (_super) {
             __extends(QuickFilterCustomization, _super);
             function QuickFilterCustomization(container) {
                 return _super.call(this, container) || this;
@@ -7983,7 +8020,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var RemovingAddButton = (function (_super) {
+        var RemovingAddButton = /** @class */ (function (_super) {
             __extends(RemovingAddButton, _super);
             function RemovingAddButton(container) {
                 return _super.call(this, container) || this;
@@ -8024,7 +8061,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var CustomerGrossSalesGrid = (function (_super) {
+        var CustomerGrossSalesGrid = /** @class */ (function (_super) {
             __extends(CustomerGrossSalesGrid, _super);
             function CustomerGrossSalesGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -8120,7 +8157,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var TreeGrid = (function (_super) {
+        var TreeGrid = /** @class */ (function (_super) {
             __extends(TreeGrid, _super);
             function TreeGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -8161,7 +8198,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var ViewWithoutIDGrid = (function (_super) {
+        var ViewWithoutIDGrid = /** @class */ (function (_super) {
             __extends(ViewWithoutIDGrid, _super);
             function ViewWithoutIDGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -8203,7 +8240,7 @@ var CoopShop;
 (function (CoopShop) {
     var BasicSamples;
     (function (BasicSamples) {
-        var WrappedHeadersGrid = (function (_super) {
+        var WrappedHeadersGrid = /** @class */ (function (_super) {
             __extends(WrappedHeadersGrid, _super);
             function WrappedHeadersGrid(container) {
                 return _super.call(this, container) || this;
@@ -8245,7 +8282,7 @@ var CoopShop;
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
 (function (CoopShop) {
-    var BasicProgressDialog = (function (_super) {
+    var BasicProgressDialog = /** @class */ (function (_super) {
         __extends(BasicProgressDialog, _super);
         function BasicProgressDialog() {
             var _this = _super.call(this) || this;
@@ -8350,7 +8387,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var EnumSelectFormatter = (function () {
+        var EnumSelectFormatter = /** @class */ (function () {
             function EnumSelectFormatter() {
                 this.allowClear = true;
             }
@@ -8434,7 +8471,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var LanguageSelection = (function (_super) {
+        var LanguageSelection = /** @class */ (function (_super) {
             __extends(LanguageSelection, _super);
             function LanguageSelection(select, currentLanguage) {
                 var _this = _super.call(this, select) || this;
@@ -8476,7 +8513,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var SidebarSearch = (function (_super) {
+        var SidebarSearch = /** @class */ (function (_super) {
             __extends(SidebarSearch, _super);
             function SidebarSearch(input, menuUL) {
                 var _this = _super.call(this, input) || this;
@@ -8529,7 +8566,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var ThemeSelection = (function (_super) {
+        var ThemeSelection = /** @class */ (function (_super) {
             __extends(ThemeSelection, _super);
             function ThemeSelection(select) {
                 var _this = _super.call(this, select) || this;
@@ -8769,7 +8806,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var ReportDialog = (function (_super) {
+        var ReportDialog = /** @class */ (function (_super) {
             __extends(ReportDialog, _super);
             function ReportDialog(options) {
                 var _this = _super.call(this, options) || this;
@@ -8889,7 +8926,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var ReportPage = (function (_super) {
+        var ReportPage = /** @class */ (function (_super) {
             __extends(ReportPage, _super);
             function ReportPage(element) {
                 var _this = _super.call(this, element) || this;
@@ -8960,7 +8997,7 @@ var CoopShop;
 (function (CoopShop) {
     var Common;
     (function (Common) {
-        var UserPreferenceStorage = (function () {
+        var UserPreferenceStorage = /** @class */ (function () {
             function UserPreferenceStorage() {
             }
             UserPreferenceStorage.prototype.getItem = function (key) {
@@ -8989,7 +9026,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var BrandDialog = (function (_super) {
+        var BrandDialog = /** @class */ (function (_super) {
             __extends(BrandDialog, _super);
             function BrandDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9013,7 +9050,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var BrandGrid = (function (_super) {
+        var BrandGrid = /** @class */ (function (_super) {
             __extends(BrandGrid, _super);
             function BrandGrid(container) {
                 return _super.call(this, container) || this;
@@ -9035,7 +9072,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CustomerEditor = (function (_super) {
+        var CustomerEditor = /** @class */ (function (_super) {
             __extends(CustomerEditor, _super);
             function CustomerEditor(hidden) {
                 return _super.call(this, hidden) || this;
@@ -9059,7 +9096,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CustomerOrderDialog = (function (_super) {
+        var CustomerOrderDialog = /** @class */ (function (_super) {
             __extends(CustomerOrderDialog, _super);
             function CustomerOrderDialog() {
                 return _super.call(this) || this;
@@ -9081,7 +9118,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var CustomerOrdersGrid = (function (_super) {
+        var CustomerOrdersGrid = /** @class */ (function (_super) {
             __extends(CustomerOrdersGrid, _super);
             function CustomerOrdersGrid(container) {
                 return _super.call(this, container) || this;
@@ -9130,7 +9167,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var EmployeeListFormatter = (function () {
+        var EmployeeListFormatter = /** @class */ (function () {
             function EmployeeListFormatter() {
             }
             EmployeeListFormatter.prototype.format = function (ctx) {
@@ -9153,7 +9190,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var EmployeeFormatter = (function () {
+        var EmployeeFormatter = /** @class */ (function () {
             function EmployeeFormatter() {
             }
             EmployeeFormatter.prototype.format = function (ctx) {
@@ -9186,7 +9223,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var NoteDialog = (function (_super) {
+        var NoteDialog = /** @class */ (function (_super) {
             __extends(NoteDialog, _super);
             function NoteDialog() {
                 var _this = _super.call(this) || this;
@@ -9238,7 +9275,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var NotesEditor = (function (_super) {
+        var NotesEditor = /** @class */ (function (_super) {
             __extends(NotesEditor, _super);
             function NotesEditor(div) {
                 var _this = _super.call(this, div) || this;
@@ -9370,7 +9407,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var FreightFormatter = (function () {
+        var FreightFormatter = /** @class */ (function () {
             function FreightFormatter() {
             }
             FreightFormatter.prototype.format = function (ctx) {
@@ -9388,7 +9425,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ProductEditor = (function (_super) {
+        var ProductEditor = /** @class */ (function (_super) {
             __extends(ProductEditor, _super);
             function ProductEditor(hidden, opt) {
                 var _this = 
@@ -9448,7 +9485,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var RegionDialog = (function (_super) {
+        var RegionDialog = /** @class */ (function (_super) {
             __extends(RegionDialog, _super);
             function RegionDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9475,7 +9512,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var RegionGrid = (function (_super) {
+        var RegionGrid = /** @class */ (function (_super) {
             __extends(RegionGrid, _super);
             function RegionGrid(container) {
                 return _super.call(this, container) || this;
@@ -9497,7 +9534,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var PhoneEditor = (function (_super) {
+        var PhoneEditor = /** @class */ (function (_super) {
             __extends(PhoneEditor, _super);
             function PhoneEditor(input) {
                 var _this = _super.call(this, input) || this;
@@ -9638,7 +9675,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ShipperDialog = (function (_super) {
+        var ShipperDialog = /** @class */ (function (_super) {
             __extends(ShipperDialog, _super);
             function ShipperDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9665,7 +9702,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ShipperFormatter = (function () {
+        var ShipperFormatter = /** @class */ (function () {
             function ShipperFormatter() {
             }
             ShipperFormatter.prototype.format = function (ctx) {
@@ -9685,7 +9722,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var ShipperGrid = (function (_super) {
+        var ShipperGrid = /** @class */ (function (_super) {
             __extends(ShipperGrid, _super);
             function ShipperGrid(container) {
                 return _super.call(this, container) || this;
@@ -9707,7 +9744,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var TerritoryDialog = (function (_super) {
+        var TerritoryDialog = /** @class */ (function (_super) {
             __extends(TerritoryDialog, _super);
             function TerritoryDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9734,7 +9771,7 @@ var CoopShop;
 (function (CoopShop) {
     var DataShop;
     (function (DataShop) {
-        var TerritoryGrid = (function (_super) {
+        var TerritoryGrid = /** @class */ (function (_super) {
             __extends(TerritoryGrid, _super);
             function TerritoryGrid(container) {
                 return _super.call(this, container) || this;
@@ -9756,7 +9793,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDialog = (function (_super) {
+        var MeetingDialog = /** @class */ (function (_super) {
             __extends(MeetingDialog, _super);
             function MeetingDialog() {
                 var _this = _super.call(this) || this;
@@ -9805,7 +9842,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingGrid = (function (_super) {
+        var MeetingGrid = /** @class */ (function (_super) {
             __extends(MeetingGrid, _super);
             function MeetingGrid(container) {
                 return _super.call(this, container) || this;
@@ -9827,7 +9864,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaDialog = (function (_super) {
+        var MeetingAgendaDialog = /** @class */ (function (_super) {
             __extends(MeetingAgendaDialog, _super);
             function MeetingAgendaDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9852,7 +9889,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaGrid = (function (_super) {
+        var MeetingAgendaGrid = /** @class */ (function (_super) {
             __extends(MeetingAgendaGrid, _super);
             function MeetingAgendaGrid(container) {
                 return _super.call(this, container) || this;
@@ -9897,7 +9934,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaRelevantDialog = (function (_super) {
+        var MeetingAgendaRelevantDialog = /** @class */ (function (_super) {
             __extends(MeetingAgendaRelevantDialog, _super);
             function MeetingAgendaRelevantDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9921,7 +9958,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaRelevantGrid = (function (_super) {
+        var MeetingAgendaRelevantGrid = /** @class */ (function (_super) {
             __extends(MeetingAgendaRelevantGrid, _super);
             function MeetingAgendaRelevantGrid(container) {
                 return _super.call(this, container) || this;
@@ -9943,7 +9980,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaTypeDialog = (function (_super) {
+        var MeetingAgendaTypeDialog = /** @class */ (function (_super) {
             __extends(MeetingAgendaTypeDialog, _super);
             function MeetingAgendaTypeDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -9968,7 +10005,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAgendaTypeGrid = (function (_super) {
+        var MeetingAgendaTypeGrid = /** @class */ (function (_super) {
             __extends(MeetingAgendaTypeGrid, _super);
             function MeetingAgendaTypeGrid(container) {
                 return _super.call(this, container) || this;
@@ -9991,7 +10028,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAttendeeDialog = (function (_super) {
+        var MeetingAttendeeDialog = /** @class */ (function (_super) {
             __extends(MeetingAttendeeDialog, _super);
             function MeetingAttendeeDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10015,7 +10052,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingAttendeeEditor = (function (_super) {
+        var MeetingAttendeeEditor = /** @class */ (function (_super) {
             __extends(MeetingAttendeeEditor, _super);
             function MeetingAttendeeEditor(container) {
                 var _this = _super.call(this, container) || this;
@@ -10112,7 +10149,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDecisionDialog = (function (_super) {
+        var MeetingDecisionDialog = /** @class */ (function (_super) {
             __extends(MeetingDecisionDialog, _super);
             function MeetingDecisionDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10137,7 +10174,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDecisionGrid = (function (_super) {
+        var MeetingDecisionGrid = /** @class */ (function (_super) {
             __extends(MeetingDecisionGrid, _super);
             function MeetingDecisionGrid(container) {
                 return _super.call(this, container) || this;
@@ -10182,7 +10219,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDecisionRelevantDialog = (function (_super) {
+        var MeetingDecisionRelevantDialog = /** @class */ (function (_super) {
             __extends(MeetingDecisionRelevantDialog, _super);
             function MeetingDecisionRelevantDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10206,7 +10243,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingDecisionRelevantGrid = (function (_super) {
+        var MeetingDecisionRelevantGrid = /** @class */ (function (_super) {
             __extends(MeetingDecisionRelevantGrid, _super);
             function MeetingDecisionRelevantGrid(container) {
                 return _super.call(this, container) || this;
@@ -10228,7 +10265,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingLocationDialog = (function (_super) {
+        var MeetingLocationDialog = /** @class */ (function (_super) {
             __extends(MeetingLocationDialog, _super);
             function MeetingLocationDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10253,7 +10290,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingLocationGrid = (function (_super) {
+        var MeetingLocationGrid = /** @class */ (function (_super) {
             __extends(MeetingLocationGrid, _super);
             function MeetingLocationGrid(container) {
                 return _super.call(this, container) || this;
@@ -10275,7 +10312,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingTypeDialog = (function (_super) {
+        var MeetingTypeDialog = /** @class */ (function (_super) {
             __extends(MeetingTypeDialog, _super);
             function MeetingTypeDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10300,7 +10337,7 @@ var CoopShop;
 (function (CoopShop) {
     var Meeting;
     (function (Meeting) {
-        var MeetingTypeGrid = (function (_super) {
+        var MeetingTypeGrid = /** @class */ (function (_super) {
             __extends(MeetingTypeGrid, _super);
             function MeetingTypeGrid(container) {
                 return _super.call(this, container) || this;
@@ -10322,7 +10359,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var ChangePasswordPanel = (function (_super) {
+        var ChangePasswordPanel = /** @class */ (function (_super) {
             __extends(ChangePasswordPanel, _super);
             function ChangePasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -10368,7 +10405,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var ForgotPasswordPanel = (function (_super) {
+        var ForgotPasswordPanel = /** @class */ (function (_super) {
             __extends(ForgotPasswordPanel, _super);
             function ForgotPasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -10404,7 +10441,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var ResetPasswordPanel = (function (_super) {
+        var ResetPasswordPanel = /** @class */ (function (_super) {
             __extends(ResetPasswordPanel, _super);
             function ResetPasswordPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -10451,7 +10488,7 @@ var CoopShop;
 (function (CoopShop) {
     var Membership;
     (function (Membership) {
-        var SignUpPanel = (function (_super) {
+        var SignUpPanel = /** @class */ (function (_super) {
             __extends(SignUpPanel, _super);
             function SignUpPanel(container) {
                 var _this = _super.call(this, container) || this;
@@ -10500,7 +10537,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var BusinessUnitDialog = (function (_super) {
+        var BusinessUnitDialog = /** @class */ (function (_super) {
             __extends(BusinessUnitDialog, _super);
             function BusinessUnitDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10525,7 +10562,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var BusinessUnitEditor = (function (_super) {
+        var BusinessUnitEditor = /** @class */ (function (_super) {
             __extends(BusinessUnitEditor, _super);
             function BusinessUnitEditor(hidden) {
                 return _super.call(this, hidden) || this;
@@ -10557,7 +10594,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var BusinessUnitGrid = (function (_super) {
+        var BusinessUnitGrid = /** @class */ (function (_super) {
             __extends(BusinessUnitGrid, _super);
             function BusinessUnitGrid(container) {
                 var _this = _super.call(this, container) || this;
@@ -10624,7 +10661,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var ContactDialog = (function (_super) {
+        var ContactDialog = /** @class */ (function (_super) {
             __extends(ContactDialog, _super);
             function ContactDialog() {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
@@ -10649,7 +10686,7 @@ var CoopShop;
 (function (CoopShop) {
     var Organization;
     (function (Organization) {
-        var ContactGrid = (function (_super) {
+        var ContactGrid = /** @class */ (function (_super) {
             __extends(ContactGrid, _super);
             function ContactGrid(container) {
                 return _super.call(this, container) || this;

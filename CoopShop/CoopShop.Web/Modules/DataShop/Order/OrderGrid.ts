@@ -1,14 +1,19 @@
-﻿namespace CoopShop.DataShop {
+﻿
+namespace CoopShop.DataShop {
+//    import { Big } from "big.js";
 
+    //import {Big} from "big.js";
     //import IDataGrid = Serenity.IDataGrid;
     //import ListRequest = Serenity.ListRequest;
     //import getColumns = Q.getColumns;
     //import SlickFormatting = Serenity.SlickFormatting;
 
-
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.filterable()
-    export class OrderGrid extends Serenity.EntityGrid<OrderRow, any> {
+        export class OrderGrid extends Serenity.EntityGrid<OrderRow, any> {
+
+
+
         protected getColumnsKey() { return "DataShop.Order"; }
         protected getDialogType() { return <any>OrderDialog; }
         protected getIdProperty() { return OrderRow.idProperty; }
@@ -24,23 +29,25 @@
         //alchiweb
         onViewProcessData(response: Serenity.ListResponse<DataShop.OrderRow>): Serenity.ListResponse<DataShop.OrderRow> {
             var eltsumtotal: Element = $("#sumtotal")[0];
+            Big.RM = 1;
 
             if (eltsumtotal !== undefined) {
-                var sumtotal: number = 0.;
+
+                var sumtotal: Big = new Big("0");
+
                 var salestotal: number = 0;
                 for (var resp of response.Entities) {
-                    sumtotal += Math.round(resp.PaymentTotal * 100) / 100;
+                    sumtotal = sumtotal.plus(resp.PaymentTotal);
                     salestotal++;
                 }
-                sumtotal = Math.round(sumtotal * 1000) / 1000;
-                var salesaverage: number = Math.round(sumtotal / salestotal * 100) / 100;
+                var salesaverage: Big = sumtotal.div(salestotal).round(2);
                 eltsumtotal.innerHTML =
                     "<font color=\"#0000FF\">Total des ventes affichées (dans la page) : <font color=\"#FF0000\">" +
-                    sumtotal.toString().replace('.', ',') +
+                sumtotal.toString().replace('.', Q.Culture.decimalSeparator) +
                     "</font> €<br/>Pour <font color=\"#FF0000\">" +
                     salestotal +
                     "</font> ventes. Prix moyen par vente : <font color=\"#FF0000\">" +
-                    salesaverage.toString().replace('.', ',') +
+                salesaverage.toString().replace('.', Q.Culture.decimalSeparator) +
                     "</font> €</font>";
             }
             return super.onViewProcessData(response);
@@ -75,8 +82,7 @@
 
 
 
-        protected getButtons()
-        {
+        protected getButtons() {
             var buttons = super.getButtons();
 
             buttons.push(Common.ExcelExportHelper.createToolButton({

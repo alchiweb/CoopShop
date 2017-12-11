@@ -1,5 +1,9 @@
 ﻿
 
+using System.Collections.Generic;
+using CoopShop.DataShop.Entities;
+using MVC;
+
 namespace CoopShop.DataShop.Repositories
 {
     using System;
@@ -26,39 +30,37 @@ namespace CoopShop.DataShop.Repositories
         //alchiweb
         private static void UpdateStock(IUnitOfWork uow, SaveRequest<MyRow> request)
         {
-            var productFields = Entities.ProductRow.Fields;
+            var productsToUpdate = new List<ProductRow>();
             var errorTxt = "";
             foreach (var orderDetail in request.Entity.DetailList)
             {
-                bool productError = false;
                 try
                 {
-                    productError = !new SqlQuery().From(productFields)
-                        .Select(productFields.ProductID, productFields.UnitsInStock)
-                        .WhereEqual(productFields.ProductID, orderDetail.ProductID)
-                        .Where(new Criteria(productFields.UnitsInStock) >= (Single) orderDetail.Quantity.Value)
-                        .Exists(uow.Connection);
+                    var product = new ProductRepository().Retrieve(uow.Connection, new RetrieveRequest() { EntityId = orderDetail.ProductID });
+                    if (Math.Round(product.Entity.UnitsInStock.Value,3) < Math.Round(orderDetail.Quantity.Value,3))
+                        errorTxt += $"Erreur produit \"{orderDetail.ProductName}\" : le stock est insuffisant.\n";
+                    else
+                        productsToUpdate.Add(product.Entity);
                 }
                 catch (Exception ex)
                 {
                     errorTxt += $"Erreur produit \"{orderDetail.ProductName}\" : {ex.Message}.\n";
                 }
-                if (productError)
-                    errorTxt += $"Erreur produit \"{orderDetail.ProductName}\" : le stock est insuffisant.\n";
             }
             if (!string.IsNullOrEmpty(errorTxt))
                 throw (new Exception(errorTxt));
 
             var updatedProducts = "";
+            int counterProducts = 0;
             foreach (var orderDetail in request.Entity.DetailList)
             {
                 try {
-                    new SqlUpdate(productFields.TableName)
-                        .SetTo(productFields.UnitsInStock.Name, productFields.UnitsInStock.Name + (orderDetail.Quantity.Value < 0 ? " + " : " - ") + orderDetail.Quantity.Value.ToString(CultureInfo.InvariantCulture))
-                        //                        .Dec(productFields.UnitsInStock, orderDetail.Quantity.Value)
-                        .WhereEqual(productFields.ProductID, orderDetail.ProductID)
-                        .Execute(uow.Connection, ExpectedRows.One);
+                    var product = productsToUpdate[counterProducts];
+                    product.UnitsInStock = (float)Math.Round(Math.Round(product.UnitsInStock.Value,3) - Math.Round(orderDetail.Quantity.Value,3),3); 
+                    var saveProductRequest = new SaveRequest<Entities.ProductRow>(){ EntityId = orderDetail.ProductID, Entity = product};
+                    var prod = new  ProductRepository().Update(uow,saveProductRequest);
                     updatedProducts += "\"{orderDetail.ProductName}\" ";
+                    counterProducts++;
                 }
                 catch (Exception ex)
                 {

@@ -1,5 +1,6 @@
 ﻿{
   "Base": [
+    "~/Scripts/big.js",
     "~/Scripts/pace.js",
     "~/Scripts/jquery-{version}.js",
     "~/Scripts/jquery-ui.js",
