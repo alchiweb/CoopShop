@@ -5733,30 +5733,29 @@ var CoopShop;
             CustomerDialog.prototype.getLocalTextPrefix = function () { return DataShop.CustomerRow.localTextPrefix; };
             CustomerDialog.prototype.getNameProperty = function () { return DataShop.CustomerRow.nameProperty; };
             CustomerDialog.prototype.getService = function () { return DataShop.CustomerService.baseUrl; };
-            CustomerDialog.prototype.sansAccent = function () {
-                var accent = [
-                    /[\300-\306]/g, /[\340-\346]/g,
-                    /[\310-\313]/g, /[\350-\353]/g,
-                    /[\314-\317]/g, /[\354-\357]/g,
-                    /[\322-\330]/g, /[\362-\370]/g,
-                    /[\331-\334]/g, /[\371-\374]/g,
-                    /[\321]/g, /[\361]/g,
-                    /[\307]/g, /[\347]/g,
-                ];
-                var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
-                var str = this;
-                for (var i = 0; i < accent.length; i++) {
-                    str = str.replace(accent[i], noaccent[i]);
-                }
-                return str;
-            };
-            CustomerDialog.prototype.generateId = function () {
+            CustomerDialog.prototype.generateId = function (evt) {
                 var firstName = $("input[name='ContactTitle']").val();
                 var lastName = $("input[name='ContactName']").val();
-                $("input[name='CompanyName']").val(firstName + ((firstName !== '' || lastName !== '') ? " " : "") + lastName);
-                firstName = firstName.toLowerCase().replace(/[\+\- \'\"\.]/g, '');
-                lastName = lastName.toLowerCase().replace(/[-\/\\^$*+?.()|[\]{}]/g, '');
-                $("input[name='CustomerID']").val(firstName + ((firstName !== '' || lastName !== '') ? "." : "") + lastName);
+                $("input[name='CompanyName']").val(firstName + ((firstName !== '' && lastName !== '') ? " " : "") + lastName);
+                if (!$("input[name='CustomerID']").hasClass('readonly')) {
+                    firstName = firstName.replace(/[\+\- \_\(\)\{\}\[\]\°\@\|\#\~\²\&\`\\\^\$\£\¨\*\µ\%\!\§\,\?\;\:\<\>\€\'\"\.]/g, '');
+                    lastName = lastName.replace(/[\+\- \_\(\)\{\}\[\]\°\@\|\#\~\²\&\`\\\^\$\£\¨\*\µ\%\!\§\,\?\;\:\<\>\€\'\"\.]/g, '');
+                    var customerId = firstName + ((firstName !== '' && lastName !== '') ? "." : "") + lastName;
+                    var accents = [
+                        /[\300-\306]/g, /[\340-\346]/g,
+                        /[\310-\313]/g, /[\350-\353]/g,
+                        /[\314-\317]/g, /[\354-\357]/g,
+                        /[\322-\330]/g, /[\362-\370]/g,
+                        /[\331-\334]/g, /[\371-\374]/g,
+                        /[\321]/g, /[\361]/g,
+                        /[\307]/g, /[\347]/g,
+                    ];
+                    var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
+                    for (var i = 0; i < accents.length; i++) {
+                        customerId = customerId.replace(accents[i], noaccent[i]);
+                    }
+                    $("input[name='CustomerID']").val(customerId.toLowerCase());
+                }
             };
             CustomerDialog.prototype.getSaveState = function () {
                 try {

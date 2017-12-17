@@ -15,6 +15,7 @@ namespace CoopShop.DataShop.Forms
         public Boolean? IsCoop { get; set; }
         public String ContactTitle { get; set; }
         public String ContactName { get; set; }
+        [Category("Auto-généré")]
         public String CompanyName { get; set; }
         public String CustomerID { get; set; }
 

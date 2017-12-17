@@ -3443,8 +3443,7 @@ declare namespace CoopShop.DataShop {
         private ordersGrid;
         private loadedState;
         constructor();
-        sansAccent(): this;
-        generateId(): void;
+        generateId(evt: Event): void;
         getSaveState(): string;
         loadResponse(data: any): void;
         loadEntity(entity: CustomerRow): void;

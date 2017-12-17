@@ -27,33 +27,32 @@
             this.byId('NoteList').closest('.field').hide().end().appendTo(this.byId('TabNotes'));
             DialogUtils.pendingChangesConfirmation(this.element, () => this.getSaveState() != this.loadedState);
         }
-        sansAccent() {
-            var accent = [
-                /[\300-\306]/g, /[\340-\346]/g, // A, a
-                /[\310-\313]/g, /[\350-\353]/g, // E, e
-                /[\314-\317]/g, /[\354-\357]/g, // I, i
-                /[\322-\330]/g, /[\362-\370]/g, // O, o
-                /[\331-\334]/g, /[\371-\374]/g, // U, u
-                /[\321]/g, /[\361]/g, // N, n
-                /[\307]/g, /[\347]/g, // C, c
-            ];
-            var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
 
-            var str = this;
-            for (var i = 0; i < accent.length; i++) {
-                str = str.replace(accent[i], noaccent[i]);
-            }
-
-            return str;
-        }
-        generateId() {
+        public generateId(evt: Event) {
             var firstName = $("input[name='ContactTitle']").val();
             var lastName = $("input[name='ContactName']").val();
-            $("input[name='CompanyName']").val(firstName + ((firstName !== '' || lastName !== '') ? " " : "") + lastName);
-            firstName = firstName.toLowerCase().replace(/[\+\- \'\"\.]/g, '');
-            lastName = lastName.toLowerCase().replace(/[-\/\\^$*+?.()|[\]{}]/g, '');
-            $("input[name='CustomerID']").val(firstName + ((firstName !== '' || lastName !== '') ? "." : "") + lastName);
-            
+            $("input[name='CompanyName']").val(firstName + ((firstName !== '' && lastName !== '') ? " " : "") + lastName);
+            if (!$("input[name='CustomerID']").hasClass('readonly')) {
+                firstName = firstName.replace(/[\+\- \_\(\)\{\}\[\]\°\@\|\#\~\²\&\`\\\^\$\£\¨\*\µ\%\!\§\,\?\;\:\<\>\€\'\"\.]/g, '');
+                lastName = lastName.replace(/[\+\- \_\(\)\{\}\[\]\°\@\|\#\~\²\&\`\\\^\$\£\¨\*\µ\%\!\§\,\?\;\:\<\>\€\'\"\.]/g, '');
+                var customerId = firstName + ((firstName !== '' && lastName !== '') ? "." : "") + lastName;
+                var accents= [
+                    /[\300-\306]/g, /[\340-\346]/g, // A, a
+                    /[\310-\313]/g, /[\350-\353]/g, // E, e
+                    /[\314-\317]/g, /[\354-\357]/g, // I, i
+                    /[\322-\330]/g, /[\362-\370]/g, // O, o
+                    /[\331-\334]/g, /[\371-\374]/g, // U, u
+                    /[\321]/g, /[\361]/g, // N, n
+                    /[\307]/g, /[\347]/g, // C, c
+                ];
+                var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
+
+                for (var i = 0; i < accents.length; i++) {
+                    customerId = customerId.replace(accents[i], noaccent[i]);
+                }
+
+                $("input[name='CustomerID']").val(customerId.toLowerCase());
+            }
         }
 
         getSaveState() {
