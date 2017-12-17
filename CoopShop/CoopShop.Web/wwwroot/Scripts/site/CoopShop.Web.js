@@ -6415,7 +6415,7 @@ var CoopShop;
                 }
                 var currentProduct = DataShop.ProductRow.getLookup().itemById[row.ProductID];
                 row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' (' + currentProduct.BrandName + ')';
-                Big.RM = 1;
+                Big.RM = 3;
                 var lineTotal;
                 try {
                     lineTotal = Big(row.Quantity || 0).times(Big(row.UnitPrice || 0)).minus(Big(row.Discount || 0));

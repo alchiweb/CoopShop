@@ -64,7 +64,7 @@ namespace CoopShop.DataShop.Entities
         }
         //alchiweb
         //[DisplayName("Line Total"), Expression("(t0.[UnitPrice] * t0.[Quantity] - t0.[Discount])")]
-        [DisplayName("Line Total"), Expression("(CEILING((t0.[UnitPrice] * t0.[Quantity] - t0.[Discount])*10)/10)")]
+        [DisplayName("Line Total"), Expression("(CEILING((t0.[UnitPrice] * t0.[Quantity] - t0.[Discount])*100)/100)")]
         [AlignRight, DisplayFormat("#,##0.00"), MinSelectLevel(SelectLevel.List)]
         [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
         public Decimal? LineTotal

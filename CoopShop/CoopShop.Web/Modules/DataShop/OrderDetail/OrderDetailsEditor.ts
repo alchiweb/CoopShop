@@ -108,7 +108,7 @@ namespace CoopShop.DataShop {
             var currentProduct: ProductRow = ProductRow.getLookup().itemById[row.ProductID];
 
             row.ProductName = currentProduct.CategoryName + ' - ' + currentProduct.ProductName + ' ('+ currentProduct.BrandName + ')';
-            Big.RM = 1;
+            Big.RM = 3;
 
             var lineTotal: Big;
             try {
