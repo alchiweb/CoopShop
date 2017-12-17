@@ -937,10 +937,10 @@ declare namespace CoopShop.DataShop {
     }
     interface CustomerForm {
         IsCoop: Serenity.BooleanEditor;
-        CustomerID: Serenity.StringEditor;
         ContactTitle: Serenity.StringEditor;
         ContactName: Serenity.StringEditor;
         CompanyName: Serenity.StringEditor;
+        CustomerID: Serenity.StringEditor;
         Email: Serenity.StringEditor;
         SendBulletin: Serenity.BooleanEditor;
         Address: Serenity.StringEditor;
@@ -3443,6 +3443,8 @@ declare namespace CoopShop.DataShop {
         private ordersGrid;
         private loadedState;
         constructor();
+        sansAccent(): this;
+        generateId(): void;
         getSaveState(): string;
         loadResponse(data: any): void;
         loadEntity(entity: CustomerRow): void;

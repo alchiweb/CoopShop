@@ -13,10 +13,10 @@ namespace CoopShop.DataShop.Forms
         [Category("General")]
         //alchiweb
         public Boolean? IsCoop { get; set; }
-        public String CustomerID { get; set; }
         public String ContactTitle { get; set; }
         public String ContactName { get; set; }
         public String CompanyName { get; set; }
+        public String CustomerID { get; set; }
 
         //[Category("Contact")]
         //public List<Int32> Representatives { get; set; }

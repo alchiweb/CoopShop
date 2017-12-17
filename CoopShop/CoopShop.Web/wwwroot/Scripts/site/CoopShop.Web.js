@@ -1016,7 +1016,7 @@ var CoopShop;
             return CustomerForm;
         }(Serenity.PrefixedContext));
         DataShop.CustomerForm = CustomerForm;
-        [['IsCoop', function () { return Serenity.BooleanEditor; }], ['CustomerID', function () { return Serenity.StringEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.StringEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return DataShop.NotesEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
+        [['IsCoop', function () { return Serenity.BooleanEditor; }], ['ContactTitle', function () { return Serenity.StringEditor; }], ['ContactName', function () { return Serenity.StringEditor; }], ['CompanyName', function () { return Serenity.StringEditor; }], ['CustomerID', function () { return Serenity.StringEditor; }], ['Email', function () { return Serenity.StringEditor; }], ['SendBulletin', function () { return Serenity.BooleanEditor; }], ['Address', function () { return Serenity.StringEditor; }], ['PostalCode', function () { return Serenity.StringEditor; }], ['City', function () { return Serenity.StringEditor; }], ['Country', function () { return Serenity.StringEditor; }], ['Phone', function () { return Serenity.StringEditor; }], ['Fax', function () { return Serenity.StringEditor; }], ['NoteList', function () { return DataShop.NotesEditor; }]].forEach(function (x) { return Object.defineProperty(CustomerForm.prototype, x[0], { get: function () { return this.w(x[0], x[1]()); }, enumerable: true, configurable: true }); });
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -5722,6 +5722,8 @@ var CoopShop;
                 // force order dialog to open in Dialog mode instead of Panel mode
                 // which is set as default on OrderDialog with @panelAttribute
                 _this.ordersGrid.openDialogsAsPanel = false;
+                $("input[name='ContactTitle']").on('change', _this.generateId);
+                $("input[name='ContactName']").on('change', _this.generateId);
                 _this.byId('NoteList').closest('.field').hide().end().appendTo(_this.byId('TabNotes'));
                 CoopShop.DialogUtils.pendingChangesConfirmation(_this.element, function () { return _this.getSaveState() != _this.loadedState; });
                 return _this;
@@ -5731,6 +5733,31 @@ var CoopShop;
             CustomerDialog.prototype.getLocalTextPrefix = function () { return DataShop.CustomerRow.localTextPrefix; };
             CustomerDialog.prototype.getNameProperty = function () { return DataShop.CustomerRow.nameProperty; };
             CustomerDialog.prototype.getService = function () { return DataShop.CustomerService.baseUrl; };
+            CustomerDialog.prototype.sansAccent = function () {
+                var accent = [
+                    /[\300-\306]/g, /[\340-\346]/g,
+                    /[\310-\313]/g, /[\350-\353]/g,
+                    /[\314-\317]/g, /[\354-\357]/g,
+                    /[\322-\330]/g, /[\362-\370]/g,
+                    /[\331-\334]/g, /[\371-\374]/g,
+                    /[\321]/g, /[\361]/g,
+                    /[\307]/g, /[\347]/g,
+                ];
+                var noaccent = ['A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u', 'N', 'n', 'C', 'c'];
+                var str = this;
+                for (var i = 0; i < accent.length; i++) {
+                    str = str.replace(accent[i], noaccent[i]);
+                }
+                return str;
+            };
+            CustomerDialog.prototype.generateId = function () {
+                var firstName = $("input[name='ContactTitle']").val();
+                var lastName = $("input[name='ContactName']").val();
+                $("input[name='CompanyName']").val(firstName + ((firstName !== '' || lastName !== '') ? " " : "") + lastName);
+                firstName = firstName.toLowerCase().replace(/[\+\- \'\"\.]/g, '');
+                lastName = lastName.toLowerCase().replace(/[-\/\\^$*+?.()|[\]{}]/g, '');
+                $("input[name='CustomerID']").val(firstName + ((firstName !== '' || lastName !== '') ? "." : "") + lastName);
+            };
             CustomerDialog.prototype.getSaveState = function () {
                 try {
                     return $.toJSON(this.getSaveEntity());
