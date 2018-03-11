@@ -4,6 +4,7 @@
         CategoryName?: string;
         Description?: string;
         Picture?: number[];
+        TaxType?: TaxType;
     }
 
     export namespace CategoryRow {
@@ -21,13 +22,15 @@
             export declare const CategoryName: string;
             export declare const Description: string;
             export declare const Picture: string;
+            export declare const TaxType: string;
         }
 
         [
             'CategoryID', 
             'CategoryName', 
             'Description', 
-            'Picture'
+            'Picture', 
+            'TaxType'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

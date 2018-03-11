@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.DataShop.Tax.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new CoopShop.DataShop.TaxGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+        //alchiweb
+        jQuery('.s-QuickSearchInput').focus();
+    });
+</script>

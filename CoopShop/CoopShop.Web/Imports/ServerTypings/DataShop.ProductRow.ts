@@ -26,6 +26,7 @@
         SupplierFax?: string;
         SupplierHomePage?: string;
         SupplierCommissionPercentage?: number;
+        SupplierRegionID?: number;
         CategoryName?: string;
         CategoryDescription?: string;
         CategoryPicture?: number[];
@@ -35,6 +36,9 @@
         QuantitySymbol?: QuantitySymbolType;
         InternalRef?: string;
         SupplierRef?: string;
+        TaxType?: TaxType;
+        RatePercentage?: number;
+        BrandTax?: number;
     }
 
     export namespace ProductRow {
@@ -74,6 +78,7 @@
             export declare const SupplierFax: string;
             export declare const SupplierHomePage: string;
             export declare const SupplierCommissionPercentage: string;
+            export declare const SupplierRegionID: string;
             export declare const CategoryName: string;
             export declare const CategoryDescription: string;
             export declare const CategoryPicture: string;
@@ -83,6 +88,9 @@
             export declare const QuantitySymbol: string;
             export declare const InternalRef: string;
             export declare const SupplierRef: string;
+            export declare const TaxType: string;
+            export declare const RatePercentage: string;
+            export declare const BrandTax: string;
         }
 
         [
@@ -112,6 +120,7 @@
             'SupplierFax', 
             'SupplierHomePage', 
             'SupplierCommissionPercentage', 
+            'SupplierRegionID', 
             'CategoryName', 
             'CategoryDescription', 
             'CategoryPicture', 
@@ -120,7 +129,10 @@
             'BrandPicture', 
             'QuantitySymbol', 
             'InternalRef', 
-            'SupplierRef'
+            'SupplierRef', 
+            'TaxType', 
+            'RatePercentage', 
+            'BrandTax'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

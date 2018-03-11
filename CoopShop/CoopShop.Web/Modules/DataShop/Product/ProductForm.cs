@@ -27,6 +27,17 @@ namespace CoopShop.DataShop.Forms
         [ReadOnly(true)]
         public Single SupplierCommissionPercentage { get; set; }
 
+        [ReadOnly(true)]
+        public Int32 TaxType { get; set; }
+        [ReadOnly(true)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single RatePercentage { get; set; }
+        [ReadOnly(true)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single BrandTax { get; set; }
+        [ReadOnly(true)]
+        public Int32 SupplierRegionID { get; set; }
+
         [Category("Status"), DisplayFormat("#,##0.###")]
         [DecimalEditor(MinValue = "0", MaxValue = "999999999.999")]
         public Single UnitsInStock { get; set; }
@@ -40,6 +51,7 @@ namespace CoopShop.DataShop.Forms
         public String SupplierRef { get; set; }
         public String ProductImage { get; set; }
         public Boolean Discontinued { get; set; }
+
 
         //[Category("General")]
         //public String ProductName { get; set; }

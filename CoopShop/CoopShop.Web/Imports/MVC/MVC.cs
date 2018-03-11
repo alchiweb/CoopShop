@@ -261,6 +261,11 @@ namespace MVC
                     public const string Index = "~/Modules/BasicSamples/Grids/StoredProcedureGrid/Index.cshtml";
                 }
 
+                public static class StoredProcedureProductsSalesGrid
+                {
+                    public const string Index = "~/Modules/BasicSamples/Grids/StoredProcedureProductsSalesGrid/Index.cshtml";
+                }
+
                 public static class TreeGrid
                 {
                     public const string Index = "~/Modules/BasicSamples/Grids/TreeGrid/Index.cshtml";
@@ -339,6 +344,11 @@ namespace MVC
             public static class Supplier
             {
                 public const string SupplierIndex = "~/Modules/DataShop/Supplier/SupplierIndex.cshtml";
+            }
+
+            public static class Tax
+            {
+                public const string TaxIndex = "~/Modules/DataShop/Tax/TaxIndex.cshtml";
             }
 
             public static class Territory

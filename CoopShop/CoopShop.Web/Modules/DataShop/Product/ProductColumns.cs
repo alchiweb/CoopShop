@@ -66,6 +66,21 @@ namespace CoopShop.DataShop.Columns
         [Width(80), AlignRight]
         public Single ReorderLevel { get; set; }
 
+
+        public Int32 TaxType { get; set; }
+
+        [ReadOnly(true)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single RatePercentage { get; set; }
+
+
+        [ReadOnly(true)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single BrandTax { get; set; }
+
+        [ReadOnly(true)]
+        public Int32 SupplierRegionID { get; set; }
+
         //[EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         //public String ProductID { get; set; }
         //[EditLink, Width(250)]

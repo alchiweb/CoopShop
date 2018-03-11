@@ -1,4 +1,6 @@
 ﻿
+using System.Linq;
+
 namespace CoopShop.DataShop.Entities
 {
     using Serenity.ComponentModel;
@@ -42,6 +44,12 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.Picture[this]; }
             set { Fields.Picture[this] = value; }
         }
+        [DisplayName("Tax type"), Size(20), NotNull, Updatable(true), LookupInclude]
+        public TaxType? TaxType
+        {
+            get { return (TaxType?)Fields.TaxType[this]; }
+            set { Fields.TaxType[this] = (Int32)value; }
+        }
 
         IIdField IIdRow.IdField
         {
@@ -66,6 +74,7 @@ namespace CoopShop.DataShop.Entities
             public StringField CategoryName;
             public StringField Description;
             public StreamField Picture;
+            public Int32Field TaxType;
 
             public RowFields()
             {

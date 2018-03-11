@@ -106,6 +106,20 @@ namespace CoopShop.DataShop.Entities
             set { Fields.CommissionPercentage[this] = value; }
         }
 
+        [DisplayName("Region"), NotNull, ForeignKey(typeof(RegionRow)), LeftJoin("jRegion")]
+        public Int32? RegionID
+        {
+            get { return Fields.RegionID[this]; }
+            set { Fields.RegionID[this] = value; }
+        }
+
+        [Origin("jRegion"), DisplayName("Region"), QuickSearch, LookupInclude]
+        public String RegionDescription
+        {
+            get { return Fields.RegionDescription[this]; }
+            set { Fields.RegionDescription[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.SupplierID; }
@@ -139,6 +153,9 @@ namespace CoopShop.DataShop.Entities
             public StringField HomePage;
             //alchiweb
             public SingleField CommissionPercentage;
+            public Int32Field RegionID;
+
+            public StringField RegionDescription;
 
             public RowFields()
             {

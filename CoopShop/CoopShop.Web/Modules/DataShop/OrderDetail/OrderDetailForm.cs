@@ -29,5 +29,9 @@ namespace CoopShop.DataShop.Forms
         [ReadOnly(true)]
         [DecimalEditor(MinValue = "0", MaxValue = "999999999.999")]
         public Single UnitsInStock { get; set; }
+        [ReadOnly(true)]
+        [DecimalEditor(MinValue = "-999999999.99", MaxValue = "999999999.99")]
+        public Single RatePercentage { get; set; }
+
     }
 }

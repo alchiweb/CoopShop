@@ -68,7 +68,6 @@
 
         private inputsChange(e: JQueryEventObject) {
         }
-
         protected getLookupKey() {
             return 'DataShop.Product';
         }
@@ -91,8 +90,16 @@
 //                    console.log("-:" + this.filterValue + "|");
             }
 //            console.log(lookup.te + "/" + lookup.idField);
-                return lookup.items.filter((x,index) =>
-                    x.Discontinued !== true /*&& x.UnitsInStock > 0*/ && x.ProductID !== index);
+            //return lookup.items.filter((x, index) =>
+            //    x.Discontinued !== true /*&& x.UnitsInStock > 0*/ && x.ProductID !== index).sort((a, b) => {
+            //    if (a.InternalRef == undefined) {
+            //        return -1;
+            //    } else
+            //        return a.InternalRef.localeCompare(b.InternalRef);
+            //});
+            return lookup.items.filter((x, index) =>
+                x.Discontinued !== true /*&& x.UnitsInStock > 0*/ && x.ProductID !== index);
+
         }
 
         protected getItemText(item, lookup) {

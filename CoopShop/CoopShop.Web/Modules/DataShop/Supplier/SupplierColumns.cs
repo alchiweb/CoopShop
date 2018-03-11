@@ -29,5 +29,8 @@ namespace CoopShop.DataShop.Forms
         public String Country { get; set; }
         [Width(130)]
         public String City { get; set; }
+        [EditLink(ItemType = "DataShop.Region", IdField = "RegionID"), Width(150)]
+        [LookupEditor(typeof(Entities.RegionRow)), QuickFilter]
+        public String RegionDescription { get; set; }
     }
 }

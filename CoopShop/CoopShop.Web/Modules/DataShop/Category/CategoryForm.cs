@@ -10,5 +10,6 @@ namespace CoopShop.DataShop.Forms
     {
         public String CategoryName { get; set; }
         public String Description { get; set; }
+        public Int32 TaxType { get; set; }
     }
 }

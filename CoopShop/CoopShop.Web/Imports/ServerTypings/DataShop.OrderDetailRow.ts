@@ -9,6 +9,7 @@
         UnitsInStock?: number;
         ProductName?: string;
         QuantityPerUnit?: number;
+        OrderDate?: string;
         LineTotal?: number;
         QuantityPerUnitPrice?: number;
         QuantitySymbol?: QuantitySymbolType;
@@ -16,6 +17,7 @@
         BrandID?: number;
         CategoryName?: string;
         BrandName?: string;
+        RatePercentage?: number;
     }
 
     export namespace OrderDetailRow {
@@ -32,6 +34,7 @@
             export declare const UnitsInStock: string;
             export declare const ProductName: string;
             export declare const QuantityPerUnit: string;
+            export declare const OrderDate: string;
             export declare const LineTotal: string;
             export declare const QuantityPerUnitPrice: string;
             export declare const QuantitySymbol: string;
@@ -39,6 +42,7 @@
             export declare const BrandID: string;
             export declare const CategoryName: string;
             export declare const BrandName: string;
+            export declare const RatePercentage: string;
         }
 
         [
@@ -51,13 +55,15 @@
             'UnitsInStock', 
             'ProductName', 
             'QuantityPerUnit', 
+            'OrderDate', 
             'LineTotal', 
             'QuantityPerUnitPrice', 
             'QuantitySymbol', 
             'CategoryID', 
             'BrandID', 
             'CategoryName', 
-            'BrandName'
+            'BrandName', 
+            'RatePercentage'
         ].forEach(x => (<any>Fields)[x] = x);
     }
 }

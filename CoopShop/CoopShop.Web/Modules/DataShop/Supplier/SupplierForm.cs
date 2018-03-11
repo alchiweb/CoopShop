@@ -23,5 +23,7 @@ namespace CoopShop.DataShop.Forms
         //alchiweb
         [DefaultValue(.1)]
         public String CommissionPercentage { get; set; }
+        [LookupEditor(typeof(Entities.RegionRow))]
+        public Int32 RegionID { get; set; }
     }
 }

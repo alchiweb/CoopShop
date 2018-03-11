@@ -140,11 +140,33 @@ namespace CoopShop.DataShop.Entities
             set { Fields.CategoryName[this] = value; }
         }
 
+        [DisplayName("RatePercentage")]
+        [Expression("(SELECT [RatePercentage] FROM [Taxes] WHERE [TaxID] = cat.[TaxType] AND [RegionID] = 1 AND [OfficialDate] <= o.[OrderDate] ORDER BY [OfficialDate] DESC)")]
+        public Single? RatePercentage
+        {
+            get
+            {
+                return Fields.RatePercentage[this];
+            }
+            set
+            {
+                Fields.RatePercentage[this] = value;
+            }
+        }
+
+
         [Origin("brand"), DisplayName("Brand"), QuickSearch, LookupInclude]
         public String BrandName
         {
             get { return Fields.BrandName[this]; }
             set { Fields.BrandName[this] = value; }
+        }
+
+        [Origin("o")]
+        public DateTime? OrderDate
+        {
+            get { return Fields.OrderDate[this]; }
+            set { Fields.OrderDate[this] = value; }
         }
 
         /*
@@ -256,6 +278,8 @@ namespace CoopShop.DataShop.Entities
 
             public StringField ProductName;
             public SingleField QuantityPerUnit;
+            public DateTimeField OrderDate;
+
 /*
             public StringField OrderCustomerID;
 
@@ -281,6 +305,8 @@ namespace CoopShop.DataShop.Entities
             public Int32Field BrandID;
             public StringField CategoryName;
             public StringField BrandName;
+
+            public SingleField RatePercentage;
 
             public RowFields()
             {

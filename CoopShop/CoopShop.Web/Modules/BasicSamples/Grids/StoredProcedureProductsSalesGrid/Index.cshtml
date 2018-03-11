@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Stored Procedure Grid";
+}
+
+@section ContentHeader {
+    <h1>@ViewBag.Title<small></small></h1>
+}
+
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <p>How to use a stored procedure as a data source.</p>
+
+    <p style="text-align: right;">
+        <b>Source Files:</b> 
+        @Html.AppSourceFile("Index.cshtml"), 
+        @Html.AppSourceFile("CustomerGrossProductsSalesGrid.ts")
+        @Html.AppSourceFile("CustomerGrossProductsSalesEndpoint.cs")
+        @Html.AppSourceFile("CustomerGrossProductsSalesRepository.cs")
+        @Html.AppSourceFile("CustomerGrossProductsSalesListRequest.cs")
+        @Html.AppSourceFile("CustomerGrossProductsSalesColumns.cs")
+    </p>
+</div>
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new CoopShop.BasicSamples.CustomerGrossProductsSalesGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

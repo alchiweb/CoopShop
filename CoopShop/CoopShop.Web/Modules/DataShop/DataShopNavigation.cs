@@ -10,8 +10,9 @@ using DataShop = CoopShop.DataShop.Pages;
 [assembly: NavigationLink(7600, "DataShop/Categories", typeof(DataShop.CategoryController), icon: "fa-folder-o")]
 [assembly: NavigationLink(7650, "DataShop/Brands", typeof(DataShop.BrandController), icon: "fa-folder-o")]
 [assembly: NavigationLink(7400, "DataShop/Suppliers", typeof(DataShop.SupplierController), icon: "fa-truck")]
+[assembly: NavigationLink(7400, "DataShop/Taxes", typeof(DataShop.TaxController), icon: "fa-money")]
+[assembly: NavigationLink(7900, "DataShop/Reports", typeof(DataShop.ReportsController), icon: "fa-files-o")]
 
 [assembly: NavigationLink(7500, "DataShop/Shippers", typeof(DataShop.ShipperController), icon: "fa-truck", Permission = PermissionKeys.Special)]
 [assembly: NavigationLink(7700, "DataShop/Regions", typeof(DataShop.RegionController), icon: "fa-map-o", Permission = PermissionKeys.Special)]
 [assembly: NavigationLink(7800, "DataShop/Territories", typeof(DataShop.TerritoryController), icon: "fa-puzzle-piece", Permission = PermissionKeys.Special)]
-[assembly: NavigationLink(7900, "DataShop/Reports", typeof(DataShop.ReportsController), icon: "fa-files-o", Permission = PermissionKeys.Special)]

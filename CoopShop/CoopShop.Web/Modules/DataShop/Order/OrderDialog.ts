@@ -57,7 +57,13 @@
             });
             //bug fix
             this.form.DetailList.getItems().forEach((row) => {
-                row.QuantitySymbol = ProductRow.getLookup().itemById[row.ProductID].QuantitySymbol;
+                //var cat = CategoryRow.getLookup().itemById[row.CategoryID];
+                var product = ProductRow.getLookup().itemById[row.ProductID];
+                //var order = OrderRow.getLookup().itemById[row.OrderID];
+                row.QuantitySymbol = product.QuantitySymbol;
+                row.RatePercentage = product.RatePercentage;
+//                row.OrderDate = this.form.OrderDate.value;
+//                row.TaxType = cat.TaxType;
             });
 
             $("input[name='PaymentTotal']").after("<label>&nbsp;&nbsp;Monnaie&nbsp;:&nbsp;</label><input type='text' id='monnaie' name='monnaie' value='0,00'><div id='rendu' name='rendu'>&nbsp;Rendre&nbsp;:&nbsp;0,00&nbsp;&nbsp;&nbsp;</div>");

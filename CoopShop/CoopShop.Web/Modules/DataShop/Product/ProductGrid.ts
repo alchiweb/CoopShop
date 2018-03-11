@@ -312,12 +312,20 @@
         private updatePrice(inputBuyingPrice, pending, item) {
             Big.RM = 3;
             var inputUnitPrice = inputBuyingPrice.closest(".slick-row").find("input[data-field='UnitPrice']");
+            //var brandTax: Big;
+            //try {
+            //    brandTax = Big(inputBuyingPrice.parent().next().next().next().next().text().replace(Q.Culture.decimalSeparator, "."));
+            //} catch (Exception) {
+            //    brandTax = Big(0);
+            //}
             var commPerc: Big;
             try {
                 commPerc = Big(inputBuyingPrice.parent().next().text().replace(Q.Culture.decimalSeparator, "."));
             } catch (Exception) {
                 commPerc = Big(0);
             }
+
+
             var fieldUnitPrice = inputUnitPrice.data('field');
             var valuePrice: Big = Big(0);
 

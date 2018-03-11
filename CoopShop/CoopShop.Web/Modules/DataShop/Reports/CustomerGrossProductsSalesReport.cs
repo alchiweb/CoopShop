@@ -10,8 +10,8 @@ namespace CoopShop.DataShop
     using System.Drawing;
 
     [Report, RequiredPermission(PermissionKeys.General)]
-    [Category("DataShop/Orders"), DisplayName("Customer Gross Sales")]
-    public class CustomerGrossSalesReport : IReport, IDataOnlyReport
+    [Category("DataShop/Orders"), DisplayName("Customer Gross Products Sales")]
+    public class CustomerGrossProductsSalesReport : IReport, IDataOnlyReport
     {
         [DisplayName("Start Date")]
         public DateTime? StartDate { get; set; }
@@ -23,7 +23,7 @@ namespace CoopShop.DataShop
         {
             using (var connection = SqlConnections.NewFor<Entities.SalesByCategoryRow>())
             {
-                return connection.Query<Item>("CustomerGrossSales",
+                return connection.Query<Item>("CustomerGrossProductsSales",
                     param: new
                     {
                         startDate = StartDate,
@@ -38,15 +38,17 @@ namespace CoopShop.DataShop
             return ReportColumnConverter.ObjectTypeToList(typeof(Item));
         }
 
-        [BasedOnRow(typeof(DataShop.Entities.CustomerGrossSalesRow))]
+        [BasedOnRow(typeof(DataShop.Entities.CustomerGrossProductsSalesRow))]
         public class Item
         {
-            public string CustomerId { get; set; }
-            public string ContactName { get; set; }
-            public int? ProductId { get; set; }
+
             public string ProductName { get; set; }
-            [CellDecorator(typeof(AmountDecorator))]
             [DisplayFormat("#,##0.00")]
+            public decimal QuantityTotal { get; set; }
+            [DisplayFormat("#,##0.00")]
+            public decimal SalesTotal { get; set; }
+            [DisplayFormat("#,##0.00")]
+            [CellDecorator(typeof(AmountDecorator))]
             public decimal GrossAmount { get; set; }
         }
 

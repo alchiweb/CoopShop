@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace CoopShop.DataShop.Entities
 {
     using Serenity.ComponentModel;
@@ -136,7 +138,7 @@ namespace CoopShop.DataShop.Entities
             set { Fields.QuantitySymbol[this] = (Int16?)value; }
         }
 
-        [DisplayName("Internal Reference"), Unique, QuickSearch(SearchType.Equals, numericOnly: 1), LookupInclude]
+        [DisplayName("Internal Reference"), QuickSearch(SearchType.Equals, numericOnly: 1), LookupInclude]
         public String InternalRef
         {
             get { return Fields.InternalRef[this]; }
@@ -276,6 +278,12 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.SupplierCommissionPercentage[this]; }
             set { Fields.SupplierCommissionPercentage[this] = value; }
         }
+        [Origin("sup"), LookupInclude]
+        public Int32? SupplierRegionID
+        {
+            get { return Fields.SupplierRegionID[this]; }
+            set { Fields.SupplierRegionID[this] = value; }
+        }
 
         [Origin("cat"), DisplayName("Category")]
         [ QuickSearch, LookupInclude] //alchiweb
@@ -319,6 +327,42 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.BrandPicture[this]; }
             set { Fields.BrandPicture[this] = value; }
         }
+
+
+        [Origin("cat"), DisplayName("TaxType"), LookupInclude]
+        public TaxType? TaxType
+        {
+            get { return (TaxType?)Fields.TaxType[this]; }
+            set { Fields.TaxType[this] = (Int32)value; }
+        }
+
+        [DisplayName("RatePercentage"), LookupInclude]
+        [Expression("(SELECT TOP 1 [RatePercentage] FROM [Taxes] WHERE [TaxID] = cat.[TaxType] AND [RegionID] = sup.[RegionID] ORDER BY [OfficialDate] DESC)")]
+        public Single? RatePercentage
+        {
+            get
+            {
+                return Fields.RatePercentage[this];
+            }
+            set
+            {
+                Fields.RatePercentage[this] = value;
+            }
+        }
+        [DisplayName("BrandTax"), LookupInclude]
+        [Expression("(SELECT TOP 1 CEILING((1+([RatePercentage]/100.0))/(1.0-sup.[CommissionPercentage])*100)/100 FROM [Taxes] WHERE [TaxID] = cat.[TaxType] AND [RegionID] = sup.[RegionID] ORDER BY [OfficialDate] DESC)")]
+        public Single? BrandTax
+        {
+            get
+            {
+                return Fields.BrandTax[this];
+            }
+            set
+            {
+                Fields.BrandTax[this] = value;
+            }
+        }
+
 
 
         IIdField IIdRow.IdField
@@ -374,6 +418,7 @@ namespace CoopShop.DataShop.Entities
             public StringField SupplierFax;
             public StringField SupplierHomePage;
             public SingleField SupplierCommissionPercentage;
+            public Int32Field SupplierRegionID;
 
             public StringField CategoryName;
             public StringField CategoryDescription;
@@ -387,6 +432,10 @@ namespace CoopShop.DataShop.Entities
 
             public StringField InternalRef;
             public StringField SupplierRef;
+
+            public Int32Field TaxType;
+            public SingleField RatePercentage;
+            public SingleField BrandTax;
 
             public RowFields()
             {

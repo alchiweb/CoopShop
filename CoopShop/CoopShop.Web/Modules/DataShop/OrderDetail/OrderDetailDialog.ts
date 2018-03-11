@@ -112,9 +112,13 @@ namespace CoopShop.DataShop {
             this.form.InternalRef.changeSelect2(e => {
                 var tabItems: Array<ProductRow> = ProductRow.getLookup().items
                     .filter(e => e.InternalRef === this.form.InternalRef.value);
+                //ProductRow.getLookup().update(tabItems);
                 if (tabItems.length >= 1) {
                     this.form.ProductID.value = tabItems[0].ProductID.toString();
                     this.form.UnitPrice.value = tabItems[0].UnitPrice;
+
+                    this.form.RatePercentage.value = tabItems[0].RatePercentage;
+
                     this.form.QuantitySymbol.value = tabItems[0].QuantitySymbol.toString();
 
                     this.changePrice();
@@ -158,9 +162,11 @@ namespace CoopShop.DataShop {
             if (productID != null) {
                 //alchiweb
                 //this.form.UnitPrice.value = ProductRow.getLookup().itemById[productID].UnitPrice;
+
                 var currentProduct: ProductRow = ProductRow.getLookup().itemById[productID];
                 this.form.UnitPrice.value = currentProduct.UnitPrice;
                 this.form.InternalRef.value = currentProduct.InternalRef;
+                this.form.RatePercentage.value = currentProduct.RatePercentage;
                 this.form.QuantitySymbol.value = currentProduct.QuantitySymbol.toString();
                 this.form.UnitsInStock.value = currentProduct.UnitsInStock;
                 this.changePrice();
@@ -171,6 +177,8 @@ namespace CoopShop.DataShop {
                 this.form.Quantity.value = 1;
                 this.form.QuantitySymbol.value = null;
                 this.form.UnitPrice.value = null;
+                this.form.RatePercentage.value = 0;
+
                 this.form.QuantityPerUnitPrice.value = null;
 //                this.form.Discount.value = null;
             }

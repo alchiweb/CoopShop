@@ -1,4 +1,5 @@
-﻿namespace CoopShop.DataShop {
+﻿
+namespace CoopShop.DataShop {
 
     @Serenity.Decorators.registerClass()
     @Serenity.Decorators.maximizable()
@@ -58,11 +59,20 @@
             }
             else {
                 var price: Big = Big(value);
-                //                this.form.
-                var commPerc: Big = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
-                if (commPerc.eq(0))
-                    price = Big(0);
+                console.log(priceInput.closest(".category").find("input[name='BrandTax']").val());
+                ////                this.form.
+                //var brandTax: Big = Big(priceInput.closest(".category").find("input[name='BrandTax']").val().replace(Q.Culture.decimalSeparator, "."));
 
+                //if (brandTax.eq(0)) {
+                    
+                //    var commPerc: Big = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
+                //    if (commPerc.eq(0))
+                //        price = Big(0);
+                //    brandTax = commPerc.plus(1);
+                //}
+                    var commPerc: Big = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
+                    if (commPerc.eq(0))
+                        price = Big(0);
                 if (price.gt(0)) {
 
                     priceInput.closest(".category").find("input[name='UnitPrice']").val((price.times(commPerc.plus(1)).round(1)).toFixed(2).replace(".", Q.Culture.decimalSeparator));

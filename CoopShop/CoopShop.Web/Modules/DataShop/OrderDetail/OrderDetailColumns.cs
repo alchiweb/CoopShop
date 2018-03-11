@@ -31,5 +31,11 @@ namespace CoopShop.DataShop.Forms
         public Decimal QuantityPerUnitPrice { get; set; }
         [Width(50)]
         public QuantitySymbolType QuantitySymbol { get; set; }
+
+        public Single  RatePercentage { get; set; }
+        //public DateTime? OrderDate { get; set; }
+
+
+
     }
 }
