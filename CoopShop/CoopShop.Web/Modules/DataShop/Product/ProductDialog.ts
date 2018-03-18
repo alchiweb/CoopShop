@@ -59,23 +59,24 @@ namespace CoopShop.DataShop {
             }
             else {
                 var price: Big = Big(value);
-                console.log(priceInput.closest(".category").find("input[name='BrandTax']").val());
+                var brandTaxElementTxt = priceInput.closest(".category").find("input[name='BrandTax']").val().replace(Q.Culture.decimalSeparator, ".");
+                
+                var brandTax: Big = Big(0);
+                if (brandTaxElementTxt != "")
+                    brandTax = Big(brandTaxElementTxt);
                 ////                this.form.
                 //var brandTax: Big = Big(priceInput.closest(".category").find("input[name='BrandTax']").val().replace(Q.Culture.decimalSeparator, "."));
 
-                //if (brandTax.eq(0)) {
+                if (brandTax.eq(0)) {
                     
-                //    var commPerc: Big = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
-                //    if (commPerc.eq(0))
-                //        price = Big(0);
-                //    brandTax = commPerc.plus(1);
-                //}
                     var commPerc: Big = Big(priceInput.closest(".category").find("input[name='SupplierCommissionPercentage']").val().replace(Q.Culture.decimalSeparator, "."));
                     if (commPerc.eq(0))
                         price = Big(0);
+                    brandTax = commPerc.plus(1);
+                }
                 if (price.gt(0)) {
 
-                    priceInput.closest(".category").find("input[name='UnitPrice']").val((price.times(commPerc.plus(1)).round(1)).toFixed(2).replace(".", Q.Culture.decimalSeparator));
+                    priceInput.closest(".category").find("input[name='UnitPrice']").val((price.times(brandTax).round(1)).toFixed(2).replace(".", Q.Culture.decimalSeparator));
                 }
                 //                this.byId(this.idPrefix + 'UnitPrice').val(value * .78);
 

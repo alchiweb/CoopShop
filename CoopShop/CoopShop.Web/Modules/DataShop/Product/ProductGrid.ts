@@ -312,25 +312,30 @@
         private updatePrice(inputBuyingPrice, pending, item) {
             Big.RM = 3;
             var inputUnitPrice = inputBuyingPrice.closest(".slick-row").find("input[data-field='UnitPrice']");
-            //var brandTax: Big;
-            //try {
-            //    brandTax = Big(inputBuyingPrice.parent().next().next().next().next().text().replace(Q.Culture.decimalSeparator, "."));
-            //} catch (Exception) {
-            //    brandTax = Big(0);
-            //}
-            var commPerc: Big;
+            var brandTax: Big;
             try {
-                commPerc = Big(inputBuyingPrice.parent().next().text().replace(Q.Culture.decimalSeparator, "."));
+                console.log(inputBuyingPrice.parent().next().next().next().next().text());
+                brandTax = Big(inputBuyingPrice.parent().next().next().next().next().text().replace(Q.Culture.decimalSeparator, "."));
             } catch (Exception) {
-                commPerc = Big(0);
+                brandTax = Big(0);
             }
 
+            if (brandTax.eq(0)) {
+                var commPerc: Big;
+
+                try {
+                    commPerc = Big(inputBuyingPrice.parent().next().text().replace(Q.Culture.decimalSeparator, "."));
+                    brandTax = commPerc.plus(1);
+                } catch (Exception) {
+                    brandTax = Big(0);
+                }
+            }
 
             var fieldUnitPrice = inputUnitPrice.data('field');
             var valuePrice: Big = Big(0);
 
-            if (!commPerc.eq(0))
-                valuePrice = Big(inputBuyingPrice.val().replace(Q.Culture.decimalSeparator, ".")).times(commPerc.plus(1)).round(1);
+            if (!brandTax.eq(0))
+                valuePrice = Big(inputBuyingPrice.val().replace(Q.Culture.decimalSeparator, ".")).times(brandTax).round(1);
 
             if (valuePrice.gt(0)) {
                 var stringPrice = valuePrice.toString().replace(".", Q.Culture.decimalSeparator);
