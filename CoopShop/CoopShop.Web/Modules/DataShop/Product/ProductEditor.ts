@@ -103,7 +103,7 @@
         }
 
         protected getItemText(item, lookup) {
-            return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + super.getItemText(item, lookup) + ((item.BrandName === undefined || item.BrandID === 2094) ? "" :  (' (' + item.BrandName+')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
+            return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + super.getItemText(item, lookup) + ((item.BrandName === undefined || item.BrandID === 1) ? "" :  (' (' + item.BrandName+')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
         }
 
         protected getItemDisabled(item, lookup) {

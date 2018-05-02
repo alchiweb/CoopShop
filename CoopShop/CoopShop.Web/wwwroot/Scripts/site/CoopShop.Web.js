@@ -9760,7 +9760,7 @@ var CoopShop;
                 });
             };
             ProductEditor.prototype.getItemText = function (item, lookup) {
-                return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + _super.prototype.getItemText.call(this, item, lookup) + ((item.BrandName === undefined || item.BrandID === 2094) ? "" : (' (' + item.BrandName + ')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
+                return (item.CategoryName === undefined ? "" : (item.CategoryName + ' - ')) + _super.prototype.getItemText.call(this, item, lookup) + ((item.BrandName === undefined || item.BrandID === 1) ? "" : (' (' + item.BrandName + ')')); // + (item.InternalRef != undefined ? ' [' + item.InternalRef + ']' : '');
             };
             ProductEditor.prototype.getItemDisabled = function (item, lookup) {
                 return item.Discontinued /* || item.UnitsInStock <= 0*/;

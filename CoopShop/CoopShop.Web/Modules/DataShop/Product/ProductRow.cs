@@ -69,7 +69,7 @@ namespace CoopShop.DataShop.Entities
             set { Fields.CategoryID[this] = value; }
         }
 
-        [DisplayName("Brand"), ForeignKey(typeof(BrandRow)), LeftJoin("brand"), LookupInclude, NotNull, DefaultValue(2094)]
+        [DisplayName("Brand"), ForeignKey(typeof(BrandRow)), LeftJoin("brand"), LookupInclude, NotNull, DefaultValue(1)]
         [LookupEditor(typeof(BrandRow), InplaceAdd = true)]
         public Int32? BrandID
         {
