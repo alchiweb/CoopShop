@@ -10,13 +10,13 @@ namespace CoopShop.DataShop
     using System.Drawing;
 
     [Report, RequiredPermission(PermissionKeys.General)]
-    [Category("DataShop/Orders"), DisplayName("Customer Gross Products Sales")]
+    [Category("DataShop/Ventes"), DisplayName("Meilleures ventes de produits")]
     public class CustomerGrossProductsSalesReport : IReport, IDataOnlyReport
     {
-        [DisplayName("Start Date")]
+        [DisplayName("Date de début")]
         public DateTime? StartDate { get; set; }
 
-        [DisplayName("End Date")]
+        [DisplayName("Date de fin")]
         public DateTime? EndDate { get; set; }
 
         public object GetData()
@@ -42,13 +42,18 @@ namespace CoopShop.DataShop
         public class Item
         {
 
+            [DisplayName("Produit")]
             public string ProductName { get; set; }
             [DisplayFormat("#,##0.00")]
+            [DisplayName("Quantité")]
             public decimal QuantityTotal { get; set; }
             [DisplayFormat("#,##0.00")]
+            [DisplayName("Total des ventes")]
+
             public decimal SalesTotal { get; set; }
             [DisplayFormat("#,##0.00")]
             [CellDecorator(typeof(AmountDecorator))]
+            [DisplayName("Total")]
             public decimal GrossAmount { get; set; }
         }
 

@@ -9,14 +9,15 @@ namespace CoopShop.DataShop
     using System.ComponentModel;
     using System.Drawing;
 
-    [Report, RequiredPermission(PermissionKeys.General)]
-    [Category("DataShop/Orders"), DisplayName("Customer Gross Sales")]
+    [Report]
+    [RequiredPermission(PermissionKeys.General)]
+    [Category("DataShop/Ventes"), DisplayName("Détail des ventes par produit")]
     public class CustomerGrossSalesReport : IReport, IDataOnlyReport
     {
-        [DisplayName("Start Date")]
+        [DisplayName("Date de début")]
         public DateTime? StartDate { get; set; }
 
-        [DisplayName("End Date")]
+        [DisplayName("Date de fin")]
         public DateTime? EndDate { get; set; }
 
         public object GetData()
@@ -41,12 +42,18 @@ namespace CoopShop.DataShop
         [BasedOnRow(typeof(DataShop.Entities.CustomerGrossSalesRow))]
         public class Item
         {
+            [DisplayName("N° coopérateur")]
+
             public string CustomerId { get; set; }
+            [DisplayName("Coopérateur")]
             public string ContactName { get; set; }
+            [DisplayName("N° produit")]
             public int? ProductId { get; set; }
+            [DisplayName("Nom produit")]
             public string ProductName { get; set; }
             [CellDecorator(typeof(AmountDecorator))]
             [DisplayFormat("#,##0.00")]
+            [DisplayName("Total")]
             public decimal GrossAmount { get; set; }
         }
 

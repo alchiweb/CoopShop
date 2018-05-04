@@ -3313,6 +3313,7 @@ declare namespace CoopShop.DataShop {
         protected form: OrderForm;
         private isInitialized;
         private isOrderClosed;
+        private detailCounter;
         protected beforeItemDeleted: boolean;
         protected beforeItemSaved: boolean;
         constructor();
@@ -3701,6 +3702,7 @@ declare namespace CoopShop.DataShop {
         parentContainer: any;
         constructor(container: JQuery);
         protected editItem(entityOrId: any): void;
+        protected getDefaultSortBy(): string[];
         protected deleteEntity(id: any): boolean;
         protected setEntities(items: any): void;
         private setPaymentTotal(items);

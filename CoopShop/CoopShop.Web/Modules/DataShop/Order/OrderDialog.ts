@@ -19,6 +19,7 @@
         private isInitialized: boolean = false;
         private isOrderClosed: boolean = false;
 
+        private detailCounter: number = 99999999999;
         protected beforeItemDeleted: boolean = false;
         protected beforeItemSaved: boolean = false;
 
@@ -43,12 +44,15 @@
                     this.isInitialized = true;
                 }
             });
+
+
             //no more needed (cf OrderDetailDialog)
             //this.form.DetailList.element.change(
             //    e => {
             //        this.element.find('.add-button').triggerHandler("click");
             //    });
         }
+
 
         afterLoadEntity(): void {
             super.afterLoadEntity();
@@ -62,12 +66,16 @@
                 //var order = OrderRow.getLookup().itemById[row.OrderID];
                 row.QuantitySymbol = product.QuantitySymbol;
                 row.RatePercentage = product.RatePercentage;
+                //if (row.DetailID <= 0)
+                //    row.DetailID = this.detailCounter--;
 //                row.OrderDate = this.form.OrderDate.value;
 //                row.TaxType = cat.TaxType;
             });
+            this.form.DetailList.setItems(this.form.DetailList.getItems().sort((a, b) => b.DetailID - a.DetailID)); 
+            //items.sort((a, b) => Q.turkishLocaleCompare(a.ContactFullName, b.ContactFullName));
 
             $("input[name='PaymentTotal']").after("<label>&nbsp;&nbsp;Monnaie&nbsp;:&nbsp;</label><input type='text' id='monnaie' name='monnaie' value='0,00'><div id='rendu' name='rendu'>&nbsp;Rendre&nbsp;:&nbsp;0,00&nbsp;&nbsp;&nbsp;</div>");
-            $("input[name='PaymentTotal']").on('change', this.calculateMonnaie);
+            $("input[name='PaymentTotal']").on('change', () => { this.form.DetailList.setItems(this.form.DetailList.getItems().sort((a, b) => b.DetailID - a.DetailID));this.calculateMonnaie; });
             $("input[name='monnaie']").on('change', this.calculateMonnaie);
         }
 

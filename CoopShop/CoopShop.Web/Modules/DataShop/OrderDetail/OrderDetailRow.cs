@@ -12,6 +12,8 @@ namespace CoopShop.DataShop.Entities
     [ModifyPermission(PermissionKeys.General)]
     public sealed class OrderDetailRow : Row, IIdRow
     {
+        [SortOrder(0, true)]
+
         [DisplayName("ID"), Identity]
         public Int32? DetailID
         {

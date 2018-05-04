@@ -6,5 +6,5 @@
         SuperReducedRate = 3,
         ParkingRate = 4
     }
-    Serenity.Decorators.registerEnum(TaxType, 'CoopShop.DataShop.Entities.TaxType');
+    Serenity.Decorators.registerEnum(TaxType, 'DataShop.TaxType');
 }

@@ -41,6 +41,7 @@
   "Db.DataShop.OrderDetail.EntitySingular": "un produit",
   "Db.DataShop.OrderDetail.ProductUnitPrice": "Prix de vente",
   "Db.DataShop.OrderDetail.UnitPrice": "Prix de vente",
+  "Db.DataShop.OrderDetail.RatePercentage": "TVA %",
   "Db.DataShop.Product.EntitySingular": "un produit",
   "Db.DataShop.Product.BrandName": "Marque",
   "Db.DataShop.Product.BrandID": "Marque",
@@ -50,14 +51,30 @@
   "Db.DataShop.Product.UnitPrice": "Prix de vente",
   "Db.DataShop.Product.BuyingPrice": "Prix d'achat",
   "Db.DataShop.Product.QuantityPerUnit": "Poids/Vol/Nb unité",
+  "Db.DataShop.Product.Commission": "Commission",
+  "Db.DataShop.Product.TaxType": "Type de TVA",
+  "Db.DataShop.Product.RatePercentage": "TVA %",
+  "Db.DataShop.Product.BrandTax": "Taux de marque",
+  "Db.DataShop.Product.Commission": "Commission",
 
   "Db.DataShop.Supplier.SupplierId": "N°",
+
+  "Db.DataShop.Reports.SalesByDetailReport": "Ventes...",
+  "Db.DataShop.Reports.StartDate": "Venazetes...",
+  "Db.DataShop.Reports.SalesByDetailReport.StartDate": "Ventazzes...",
+
+
 
   "Db.DataShop.Supplier.EntitySingular": "un fournisseur",
   "Enums.DataShop.PaymentMethodType.NotPayed": "Pas encore payé",
   "Enums.DataShop.PaymentMethodType.Cash": "Espèces",
   "Enums.DataShop.PaymentMethodType.Check": "Chèque",
   "Enums.DataShop.PaymentMethodType.Other": "Autre",
+  "Enums.DataShop.TaxType.StandardRate": "Taux normal",
+  "Enums.DataShop.TaxType.ReducedRate": "Taux intermédiaire",
+  "Enums.DataShop.TaxType.ReducedLowerRate": "Taux réduit ",
+  "Enums.DataShop.TaxType.SuperReducedRate": "Taux particulier",
+  "Enums.DataShop.TaxType.ParkingRate": "Taux de transition",
   "Forms.BasicSamples.FilteredLookupInDetail.Categories.Order Details": "Produits de la vente",
   "Forms.BasicSamples.PopulateLinkedData.Categories.Customer Details": "Produits de la vente",
   "Forms.BasicSamples.PopulateLinkedData.Categories.Order": "Vente",

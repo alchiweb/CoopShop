@@ -9,6 +9,7 @@ namespace CoopShop.DataShop.Forms
     [BasedOnRow(typeof(Entities.OrderDetailRow))]
     public class OrderDetailForm
     {
+
         //alchiweb
         [OneWay]
         public String InternalRef { get; set; }

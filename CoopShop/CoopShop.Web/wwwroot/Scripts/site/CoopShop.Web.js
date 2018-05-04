@@ -2025,7 +2025,7 @@ var CoopShop;
             TaxType[TaxType["SuperReducedRate"] = 3] = "SuperReducedRate";
             TaxType[TaxType["ParkingRate"] = 4] = "ParkingRate";
         })(TaxType = DataShop.TaxType || (DataShop.TaxType = {}));
-        Serenity.Decorators.registerEnum(TaxType, 'CoopShop.DataShop.Entities.TaxType');
+        Serenity.Decorators.registerEnum(TaxType, 'DataShop.TaxType');
     })(DataShop = CoopShop.DataShop || (CoopShop.DataShop = {}));
 })(CoopShop || (CoopShop = {}));
 var CoopShop;
@@ -4935,6 +4935,7 @@ var CoopShop;
                 //alchiweb
                 _this.isInitialized = false;
                 _this.isOrderClosed = false;
+                _this.detailCounter = 99999999999;
                 _this.beforeItemDeleted = false;
                 _this.beforeItemSaved = false;
                 //alchiweb
@@ -4976,11 +4977,15 @@ var CoopShop;
                     //var order = OrderRow.getLookup().itemById[row.OrderID];
                     row.QuantitySymbol = product.QuantitySymbol;
                     row.RatePercentage = product.RatePercentage;
+                    //if (row.DetailID <= 0)
+                    //    row.DetailID = this.detailCounter--;
                     //                row.OrderDate = this.form.OrderDate.value;
                     //                row.TaxType = cat.TaxType;
                 });
+                this.form.DetailList.setItems(this.form.DetailList.getItems().sort(function (a, b) { return b.DetailID - a.DetailID; }));
+                //items.sort((a, b) => Q.turkishLocaleCompare(a.ContactFullName, b.ContactFullName));
                 $("input[name='PaymentTotal']").after("<label>&nbsp;&nbsp;Monnaie&nbsp;:&nbsp;</label><input type='text' id='monnaie' name='monnaie' value='0,00'><div id='rendu' name='rendu'>&nbsp;Rendre&nbsp;:&nbsp;0,00&nbsp;&nbsp;&nbsp;</div>");
-                $("input[name='PaymentTotal']").on('change', this.calculateMonnaie);
+                $("input[name='PaymentTotal']").on('change', function () { _this.form.DetailList.setItems(_this.form.DetailList.getItems().sort(function (a, b) { return b.DetailID - a.DetailID; })); _this.calculateMonnaie; });
                 $("input[name='monnaie']").on('change', this.calculateMonnaie);
             };
             OrderDialog.prototype.calculateMonnaie = function () {
@@ -6562,6 +6567,9 @@ var CoopShop;
                 else
                     _super.prototype.editItem.call(this, entityOrId);
             };
+            OrderDetailsEditor.prototype.getDefaultSortBy = function () {
+                return [DataShop.OrderDetailRow.Fields.DetailID];
+            };
             OrderDetailsEditor.prototype.deleteEntity = function (id) {
                 var result = _super.prototype.deleteEntity.call(this, id);
                 this.setPaymentTotal(this.view.getItems());
@@ -6597,6 +6605,10 @@ var CoopShop;
                 //row.LineTotal = (row.Quantity || 0) * (row.UnitPrice || 0) - (row.Discount || 0);
                 var allDetailItems = this.view.getItems();
                 row.ProductID = Q.toId(row.ProductID);
+                if (allDetailItems.length > 0)
+                    row.DetailID = allDetailItems[0].DetailID + 1;
+                else
+                    row.DetailID = 1;
                 //            row.getLookup.ProductName;
                 var sameProduct = Q.tryFirst(allDetailItems, function (x) { return x.ProductID === row.ProductID; });
                 if (sameProduct && this.id(sameProduct) !== id) {

@@ -11,6 +11,10 @@ namespace CoopShop.DataShop.Forms
     [BasedOnRow(typeof(Entities.OrderDetailRow))]
     public class OrderDetailColumns
     {
+        //[SortOrder(1, descending:true)]
+        //public Int32 DetailID { get; set; }
+
+
         [EditLink, Width(200)]
         public String ProductName { get; set; }
         [Width(100)]

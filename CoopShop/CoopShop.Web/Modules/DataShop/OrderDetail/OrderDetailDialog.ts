@@ -118,9 +118,7 @@ namespace CoopShop.DataShop {
                     this.form.UnitPrice.value = tabItems[0].UnitPrice;
 
                     this.form.RatePercentage.value = tabItems[0].RatePercentage;
-
                     this.form.QuantitySymbol.value = tabItems[0].QuantitySymbol.toString();
-
                     this.changePrice();
                 }
 
@@ -181,6 +179,7 @@ namespace CoopShop.DataShop {
 
                 this.form.QuantityPerUnitPrice.value = null;
 //                this.form.Discount.value = null;
+
             }
         }
         changePrice() {

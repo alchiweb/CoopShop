@@ -44,7 +44,7 @@ namespace CoopShop.DataShop.Entities
             get { return Fields.Picture[this]; }
             set { Fields.Picture[this] = value; }
         }
-        [DisplayName("Tax type"), Size(20), NotNull, Updatable(true), LookupInclude]
+        [DisplayName("Tax type"), Size(20), NotNull, Updatable(true), LookupInclude, DefaultValue(0)]
         public TaxType? TaxType
         {
             get { return (TaxType?)Fields.TaxType[this]; }

@@ -1,6 +1,7 @@
 ﻿/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
 
 namespace CoopShop.DataShop {
+    import RoleRow = Administration.RoleRow;
 
     @Serenity.Decorators.registerClass()
     export class OrderDetailsEditor extends Common.GridEditorBase<OrderDetailRow> {
@@ -19,7 +20,6 @@ namespace CoopShop.DataShop {
 
 //            this.getItems().forEach(x => { x.QuantitySymbol = QuantitySymbolType.Litre; });
         }
-
         protected editItem(entityOrId: any): void {
 
             var readonly: boolean = $("input[name='PaymentTotal']").prop('disabled');
@@ -48,6 +48,11 @@ namespace CoopShop.DataShop {
                 super.editItem(entityOrId);
         }
 
+
+
+        protected getDefaultSortBy() {
+            return [OrderDetailRow.Fields.DetailID];
+        }
 
 
 
@@ -81,7 +86,6 @@ namespace CoopShop.DataShop {
             }
         }
 
-
         validateEntity(row, id) {
 
             //alchiweb
@@ -98,6 +102,11 @@ namespace CoopShop.DataShop {
 
             var allDetailItems = this.view.getItems();
             row.ProductID = Q.toId(row.ProductID);
+            if (allDetailItems.length > 0)
+                row.DetailID = allDetailItems[0].DetailID + 1;
+            else
+                row.DetailID = 1;
+
 //            row.getLookup.ProductName;
             var sameProduct = Q.tryFirst(allDetailItems, x => x.ProductID === row.ProductID);
             if (sameProduct && this.id(sameProduct) !== id) {

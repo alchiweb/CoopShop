@@ -9,8 +9,9 @@ namespace CoopShop.DataShop
     using System.Collections.Generic;
     using System.ComponentModel;
 
-    [Report, RequiredPermission(PermissionKeys.General)]
-    [Category("DataShop/Orders"), DisplayName("Sales By Category")]
+    //[Report]
+    [RequiredPermission(PermissionKeys.General)]
+    [Category("DataShop/Pas utile"), DisplayName("Sales By Category")]
     public class SalesByDetailReport : IReport, IDataOnlyReport
     {
         public object GetData()
